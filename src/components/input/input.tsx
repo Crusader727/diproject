@@ -1,6 +1,25 @@
 import './input.scss';
 import * as React from "react";
 
-const Input = () => <div className="input">Hello !</div>;
+interface Props {
+    size?: 'small' | 'medium' | 'large';
+    type?: 'text';
+}
 
-export default Input;
+export default class Input extends React.Component<Props> {
+    defaultProps = {
+        size: 'medium',
+        type: 'text' 
+    }
+    public render() {
+        const {type, size} = this.props;
+        return (
+            <div>
+                <input 
+                    className={'input_size-' + (size ? size : this.defaultProps.size)}
+                    type={type ? type : this.defaultProps.type}
+                />
+            </div>
+        );
+    }
+}

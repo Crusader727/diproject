@@ -98,7 +98,26 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".input {\n  color: red; }\n", ""]);
+exports.push([module.i, ".input {\n  color: red;\n  background-color: black;\n  box-sizing: border-box; }\n  .input .size-small {\n    width: 100px; }\n  .input .size-medium {\n    width: 200px; }\n  .input .size-large {\n    width: 400px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/components-list/components-list.scss":
+/*!***************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/components-list/components-list.scss ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".components-list {\n  display: flex;\n  flex-direction: column; }\n  .components-list * {\n    margin-bottom: 40px; }\n", ""]);
 
 // exports
 
@@ -5259,7 +5278,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "react");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
+var components_list_1 = __webpack_require__(/*! pages/components-list/components-list */ "./src/pages/components-list/components-list.tsx");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
@@ -5268,7 +5287,7 @@ var App = /** @class */ (function (_super) {
     App.prototype.render = function () {
         return (React.createElement(react_router_dom_1.BrowserRouter, null,
             React.createElement(react_router_dom_1.Switch, null,
-                React.createElement(react_router_dom_1.Route, { path: '/', component: input_1.default }))));
+                React.createElement(react_router_dom_1.Route, { path: '/', component: components_list_1.default }))));
     };
     return App;
 }(React.Component));
@@ -5316,10 +5335,39 @@ if(false) {}
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./input.scss */ "./src/components/input/input.scss");
 var React = __webpack_require__(/*! react */ "react");
-var Input = function () { return React.createElement("div", { className: "input" }, "Hello !"); };
+var Input = /** @class */ (function (_super) {
+    __extends(Input, _super);
+    function Input() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.defaultProps = {
+            size: 'medium',
+            type: 'text'
+        };
+        return _this;
+    }
+    Input.prototype.render = function () {
+        var _a = this.props, type = _a.type, size = _a.size;
+        return (React.createElement("div", null,
+            React.createElement("input", { className: 'input_size-' + (size ? size : this.defaultProps.size), type: type ? type : this.defaultProps.type })));
+    };
+    return Input;
+}(React.Component));
 exports.default = Input;
 
 
@@ -5339,6 +5387,80 @@ var React = __webpack_require__(/*! react */ "react");
 var ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
 var app_1 = __webpack_require__(/*! app/app */ "./src/app/app.tsx");
 ReactDOM.render(React.createElement(app_1.default, null), document.getElementById("root"));
+
+
+/***/ }),
+
+/***/ "./src/pages/components-list/components-list.scss":
+/*!********************************************************!*\
+  !*** ./src/pages/components-list/components-list.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./components-list.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/components-list/components-list.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/pages/components-list/components-list.tsx":
+/*!*******************************************************!*\
+  !*** ./src/pages/components-list/components-list.tsx ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./components-list.scss */ "./src/pages/components-list/components-list.scss");
+var React = __webpack_require__(/*! react */ "react");
+var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
+var ComponentsList = /** @class */ (function (_super) {
+    __extends(ComponentsList, _super);
+    function ComponentsList() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ComponentsList.prototype.render = function () {
+        return (React.createElement("div", { className: "components-list" },
+            React.createElement(input_1.default, { size: "large" }),
+            React.createElement(input_1.default, { size: "medium" }),
+            React.createElement(input_1.default, { size: "small" })));
+    };
+    return ComponentsList;
+}(React.Component));
+exports.default = ComponentsList;
 
 
 /***/ }),

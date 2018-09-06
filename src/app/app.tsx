@@ -1,18 +1,16 @@
 import * as React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Input from 'components/input/input';
+import ComponentsList from 'pages/components-list/components-list';
 
-class App extends React.Component {
+export default class App extends React.Component {
     public render() {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route path='/' component={Input}/>
+                    <Route path='/' component={ComponentsList}/>
                 </Switch>
             </BrowserRouter>
         );
     }
 }
-
-export default App;

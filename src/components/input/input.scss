@@ -1,3 +1,14 @@
 .input {
     color: red;
+    background-color: black;
+    box-sizing: border-box;
+    &._size-small {
+        width: 100px;
+    }
+    &._size-medium {
+        width: 200px;
+    }
+    &._size-large {
+        width: 400px;
+    }
 }

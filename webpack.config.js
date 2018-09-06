@@ -21,7 +21,8 @@ module.exports = {
         extensions: [".ts", ".tsx", ".js", ".json"],
         alias: {
             components: srcPath('components'),
-            app: srcPath('app')
+            app: srcPath('app'),
+            pages: srcPath('pages')
         }
     },
 
