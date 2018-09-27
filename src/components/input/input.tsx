@@ -16,7 +16,8 @@ export default class Input extends React.Component<Props> {
         return (
             <div>
                 <input 
-                    className={'input_size-' + (size ? size : this.defaultProps.size)}
+                    // className={'input_size-' + (size ? size : this.defaultProps.size)}
+                    className={'input'}
                     type={type ? type : this.defaultProps.type}
                 />
             </div>

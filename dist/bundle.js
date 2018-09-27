@@ -86,6 +86,44 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/app/app.scss":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/app/app.scss ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: arial;\n  overflow: hidden; }\n\na,\np,\ninput,\nbutton {\n  text-decoration: none;\n  outline: 0; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/botton/button.scss":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/botton/button.scss ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n  width: 100px;\n  height: 50px;\n  font-size: 20px;\n  border-radius: 6px;\n  text-transform: uppercase;\n  display: inline-block; }\n  .button._air {\n    background: none;\n    width: auto;\n    height: auto;\n    font-size: 15px;\n    color: #ffd900;\n    opacity: 0.8; }\n    .button._air:hover {\n      opacity: 1; }\n    .button._air:active {\n      opacity: 1; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/input/input.scss":
 /*!************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/input/input.scss ***!
@@ -98,7 +136,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".input {\n  color: red;\n  background-color: black;\n  box-sizing: border-box; }\n  .input .size-small {\n    width: 100px; }\n  .input .size-medium {\n    width: 200px; }\n  .input .size-large {\n    width: 400px; }\n", ""]);
+exports.push([module.i, ".input {\n  box-sizing: border-box;\n  width: 100px;\n  height: 40px;\n  border: 1px solid #0000ff;\n  font-size: 20px;\n  border-radius: 4px; }\n  .input:focus {\n    border-width: 3px; }\n", ""]);
 
 // exports
 
@@ -118,6 +156,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".components-list {\n  display: flex;\n  flex-direction: column; }\n  .components-list * {\n    margin-bottom: 40px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/main/main.scss":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/main/main.scss ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page-header {\n    display: flex;\n    flex-direction: row;\n    height: 45px;\n    line-height: 45px;\n    background-color: #2d2d2d;\n    justify-content: space-between;\n    padding: 0 30px; }\n    .main-page-header-title {\n      display: inline-block;\n      font-size: 22px; }\n  .main-page-templates {\n    height: 300px;\n    background-color: #515151;\n    padding: 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page-templates-title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page-templates-content {\n      overflow: auto;\n      display: flex;\n      flex-direction: row; }\n      .main-page-templates-content::-webkit-scrollbar {\n        display: none; }\n  .main-page-pages {\n    padding: 0 15%;\n    background-color: #2d2d2d;\n    height: 100vh;\n    overflow: auto;\n    display: flex;\n    flex-direction: column; }\n    .main-page-pages-header {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin-top: 8px;\n      margin-bottom: 8px;\n      line-height: 26px; }\n      .main-page-pages-header-left-block {\n        display: flex;\n        flex-direction: row; }\n      .main-page-pages-header-title {\n        color: white;\n        font-size: 22px;\n        margin-right: 8px; }\n    .main-page-pages-content {\n      flex-direction: row; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:hover {\n    height: 110%;\n    width: 110%; }\n  .template-content {\n    width: 160px;\n    height: 200px;\n    background-color: white;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template-content:hover {\n      border: 2px solid #ffd900; }\n  .template-title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n", ""]);
 
 // exports
 
@@ -5253,6 +5310,36 @@ module.exports = warning;
 
 /***/ }),
 
+/***/ "./src/app/app.scss":
+/*!**************************!*\
+  !*** ./src/app/app.scss ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./app.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/app/app.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./src/app/app.tsx":
 /*!*************************!*\
   !*** ./src/app/app.tsx ***!
@@ -5276,9 +5363,11 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./app.scss */ "./src/app/app.scss");
 var React = __webpack_require__(/*! react */ "react");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var components_list_1 = __webpack_require__(/*! pages/components-list/components-list */ "./src/pages/components-list/components-list.tsx");
+var main_1 = __webpack_require__(/*! pages/main/main */ "./src/pages/main/main.tsx");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
@@ -5287,11 +5376,85 @@ var App = /** @class */ (function (_super) {
     App.prototype.render = function () {
         return (React.createElement(react_router_dom_1.BrowserRouter, null,
             React.createElement(react_router_dom_1.Switch, null,
-                React.createElement(react_router_dom_1.Route, { path: '/', component: components_list_1.default }))));
+                React.createElement(react_router_dom_1.Route, { path: '/cl', component: components_list_1.default }),
+                React.createElement(react_router_dom_1.Route, { path: '/', component: main_1.default }))));
     };
     return App;
 }(React.Component));
 exports.default = App;
+
+
+/***/ }),
+
+/***/ "./src/components/botton/button.scss":
+/*!*******************************************!*\
+  !*** ./src/components/botton/button.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./button.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/botton/button.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/botton/button.tsx":
+/*!******************************************!*\
+  !*** ./src/components/botton/button.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./button.scss */ "./src/components/botton/button.scss");
+var React = __webpack_require__(/*! react */ "react");
+var Button = /** @class */ (function (_super) {
+    __extends(Button, _super);
+    function Button() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Button.prototype.render = function () {
+        var _a = this.props, type = _a.type, size = _a.size, text = _a.text;
+        return (React.createElement("button", { 
+            // className={'input_size-' + (size ? size : this.defaultProps.size)}
+            className: 'button' + (type ? ' _' + type : '') }, text));
+    };
+    return Button;
+}(React.Component));
+exports.default = Button;
 
 
 /***/ }),
@@ -5364,7 +5527,9 @@ var Input = /** @class */ (function (_super) {
     Input.prototype.render = function () {
         var _a = this.props, type = _a.type, size = _a.size;
         return (React.createElement("div", null,
-            React.createElement("input", { className: 'input_size-' + (size ? size : this.defaultProps.size), type: type ? type : this.defaultProps.type })));
+            React.createElement("input", { 
+                // className={'input_size-' + (size ? size : this.defaultProps.size)}
+                className: 'input', type: type ? type : this.defaultProps.type })));
     };
     return Input;
 }(React.Component));
@@ -5447,6 +5612,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./components-list.scss */ "./src/pages/components-list/components-list.scss");
 var React = __webpack_require__(/*! react */ "react");
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
+var button_1 = __webpack_require__(/*! components/botton/button */ "./src/components/botton/button.tsx");
 var ComponentsList = /** @class */ (function (_super) {
     __extends(ComponentsList, _super);
     function ComponentsList() {
@@ -5454,13 +5620,108 @@ var ComponentsList = /** @class */ (function (_super) {
     }
     ComponentsList.prototype.render = function () {
         return (React.createElement("div", { className: "components-list" },
-            React.createElement(input_1.default, { size: "large" }),
-            React.createElement(input_1.default, { size: "medium" }),
-            React.createElement(input_1.default, { size: "small" })));
+            React.createElement(input_1.default, null),
+            React.createElement(button_1.default, { text: "xuy", type: "air" })));
     };
     return ComponentsList;
 }(React.Component));
 exports.default = ComponentsList;
+
+
+/***/ }),
+
+/***/ "./src/pages/main/main.scss":
+/*!**********************************!*\
+  !*** ./src/pages/main/main.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./main.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/main/main.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/pages/main/main.tsx":
+/*!*********************************!*\
+  !*** ./src/pages/main/main.tsx ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./main.scss */ "./src/pages/main/main.scss");
+var React = __webpack_require__(/*! react */ "react");
+// import searchIcon from './icons/search.svg';
+var button_1 = __webpack_require__(/*! components/botton/button */ "./src/components/botton/button.tsx");
+var Templates = [{ title: 'custom' }, { title: 'transport' }, { title: 'cv' }, { title: 'medical' }, { title: 'contacts' }];
+var Pages = [];
+var MainPage = /** @class */ (function (_super) {
+    __extends(MainPage, _super);
+    function MainPage() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MainPage.prototype._renderTemplate = function (title) {
+        return (React.createElement("div", { className: "template", key: title },
+            React.createElement("div", { className: "template-content" }),
+            React.createElement("div", { className: "template-title" }, title)));
+    };
+    MainPage.prototype.render = function () {
+        var _this = this;
+        return (React.createElement("div", { className: "main-page" },
+            React.createElement("div", { className: "main-page-header" },
+                React.createElement("div", { className: "main-page-header-title" }, "Velox"),
+                React.createElement(button_1.default, { text: "Profile", type: "air" })),
+            React.createElement("div", { className: "main-page-templates" },
+                React.createElement("div", { className: "main-page-templates-title" }, "Templates"),
+                React.createElement("div", { className: "main-page-templates-content" }, Templates.map(function (_a) {
+                    var title = _a.title;
+                    return _this._renderTemplate(title);
+                }))),
+            React.createElement("div", { className: "main-page-pages" },
+                React.createElement("div", { className: "main-page-pages-header" },
+                    React.createElement("div", { className: "main-page-pages-header-left-block" },
+                        React.createElement("div", { className: "main-page-pages-header-title" }, "Pages"),
+                        React.createElement("div", null, "searchIcon")),
+                    React.createElement("div", null, "btn")),
+                React.createElement("div", { className: "main-page-pages-content" }, Pages.length ? 'xuy' : 'You dont have any pages yet'))));
+    };
+    return MainPage;
+}(React.Component));
+exports.default = MainPage;
 
 
 /***/ }),

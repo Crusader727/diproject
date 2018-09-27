@@ -1,0 +1,25 @@
+@import '../../common/common.scss';
+.button {
+    border: none;
+    box-sizing: border-box;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    display: inline-block;
+    &._air {
+        background: none;
+        width: auto;
+        height: auto;
+        font-size: $font-size-normal;
+        color: $yellow;
+        opacity: 0.8;
+        &:hover {
+            opacity: 1;
+        }
+        &:active {
+            opacity: 1;
+        }
+    }
+}
