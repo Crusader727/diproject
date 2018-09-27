@@ -1,11 +1,50 @@
+@import '../../common/common.scss';
 .input {
+    caret-color: $dark-grey;
+    color: $dark-grey;
     box-sizing: border-box;
-    width: 100px;
-    height: 40px;
-    border: 1px solid #0000ff;
-    font-size: 20px;
+    height: 30px;
+    border: 2px solid $yellow;
+    font-size: $font-size-normal;
     border-radius: 4px;
+    animation-duration: 1s;
     &:focus {
         border-width: 3px;
+    }
+    &.size-small {
+        width: 100px;
+    }
+    &.size-medium {
+        width: 300px;
+    }
+    &.size-large {
+        width: 500px;
+    }
+}
+
+@keyframes enlarge-small {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100px;
+    }
+}
+
+@keyframes enlarge-medium {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 300px;
+    }
+}
+
+@keyframes enlarge-large {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 500px;
     }
 }

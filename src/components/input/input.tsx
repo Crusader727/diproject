@@ -4,23 +4,36 @@ import * as React from "react";
 interface Props {
     size?: 'small' | 'medium' | 'large';
     type?: 'text';
+    placeholder?: string;
+    isAnimated?: boolean;
+    isFocused?: boolean;
 }
 
 export default class Input extends React.Component<Props> {
+    inputElement: any;
+
     defaultProps = {
         size: 'medium',
         type: 'text' 
     }
+
+    componentDidMount(){
+        if (this.props.isFocused) {
+            this.inputElement.focus();
+        }
+    }
+
     public render() {
-        const {type, size} = this.props;
+        const {type, isAnimated} = this.props;
+        const size = this.props.size ? this.props.size : this.defaultProps.size;
         return (
-            <div>
-                <input 
-                    // className={'input_size-' + (size ? size : this.defaultProps.size)}
-                    className={'input'}
-                    type={type ? type : this.defaultProps.type}
-                />
-            </div>
+            <input
+                ref={input => this.inputElement = input}
+                className={'input size-' + size}
+                style={{animationName: isAnimated ? 'enlarge-' + size : undefined}}
+                type={type ? type : this.defaultProps.type}
+                placeholder={this.props.placeholder}
+            />
         );
     }
 }
