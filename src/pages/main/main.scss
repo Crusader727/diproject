@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     color: $yellow;
-    &-header {
+    &__header {
         display: flex;
         flex-direction: row;
         height: 45px;
@@ -11,27 +11,27 @@
         background-color: $dark-grey;
         justify-content: space-between;
         padding: 0 30px;
-        &-title {
+        &__title {
             display: inline-block;
             font-size: $font-size-larger;
         }
     }
-    &-templates {
+    &__templates {
         height: 300px;
         background-color: $grey;
         padding: 0 10% 0 15%;
         display: flex;
         flex-direction: column;
-        &-title {
+        &__title {
             color: $white;
             margin-top: 12px;
             margin-bottom: 12px;
             font-size: $font-size-larger;
         }
-        &-content {
+        &__content {
             display: flex;
             flex-direction: row;
-            &-scrollable {
+            &__scrollable {
                 overflow-x: auto;
                 overflow-y: none;
                 display: flex;
@@ -40,33 +40,6 @@
                     display: none;
                 }
             }
-        }
-    }
-    &-pages {
-        padding: 0 15%;
-        background-color: $dark-grey;
-        height: 100vh;
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
-        &-header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-top: 12px;
-            margin-bottom: 8px;
-            &-left-block {
-                display: flex;
-                flex-direction: row;
-            }
-            &-title {
-                color: $white;
-                font-size: $font-size-larger;
-                margin-right: 12px;
-            }
-        }
-        &-content {
-            flex-direction: row;
         }
     }
 }
@@ -78,7 +51,7 @@
     &:last-child {
         margin-right: 0px;
     }
-    &-content {
+    &__content {
         width: 160px;
         height: 200px;
         background-color: $white;
@@ -88,27 +61,13 @@
             border: 2px solid $yellow;
         }
     }
-    &-title {
+    &__title {
         color: $white;
         text-transform: capitalize;
         margin-top: 8px;
         margin-bottom: 8px;
         font-size: $font-size-normal;
     }
-}
-
-.search-icon {
-    width: 26px;
-    height: 26px;
-    opacity: 0.8;
-    &:hover {
-        opacity: 1;
-    }
-}
-
-.search-bar {
-    background-color: $white;
-    border-radius: 8px;
 }
 
 .arrow-container {

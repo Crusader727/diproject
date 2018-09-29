@@ -1,0 +1,69 @@
+@import '../../../common/common.scss';
+.pages {
+    padding: 0 15%;
+    background-color: $dark-grey;
+    min-height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 12px;
+        margin-bottom: 8px;
+        &__left-block {
+            display: flex;
+            flex-direction: row;
+        }
+        &__title {
+            color: $white;
+            font-size: $font-size-larger;
+            margin-right: 12px;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.icon {
+    width: 26px;
+    height: 26px;
+    opacity: 0.8;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.search-bar {
+    background-color: $white;
+    border-radius: 8px;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    &:last-child {
+        margin-right: 0px;
+    }
+    &__content {
+        width: 160px;
+        height: 160px;
+        background-color: $white;
+        margin: 2px;
+        box-sizing: border-box;
+        &:hover {
+            border: 2px solid $yellow;
+        }
+    }
+    &__title {
+        color: $white;
+        text-transform: capitalize;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: $font-size-normal;
+    }
+}

@@ -2,20 +2,17 @@ import './main.scss';
 import * as React from 'react';
 import ReactSVG from 'react-svg'
 import Button from 'components/botton/button';
-import Input from 'components/input/input';
+import Pages from './components/pages';
 
 const Templates = [{title: 'awd'}, {title: 'transport'}, {title: 'cv'}, {title: 'medical'}, {title: 'contacts'}, {title: 'contacts2'}];
-const Pages: string[] = [];
 
 interface State {
-    isSearchOpen: boolean;
     isRightArrowShown: boolean;
     isLeftArrowShown: boolean;
 }
 
 export default class MainPage extends React.Component {
     state: State = {
-        isSearchOpen: false,
         isRightArrowShown: true,
         isLeftArrowShown: false
     }
@@ -37,29 +34,12 @@ export default class MainPage extends React.Component {
     private _renderTemplate(title: string): React.ReactNode {
         return (
             <div className="template" key={title}>
-                <div className="template-content">
+                <div className="template__content">
                     
                 </div>
-                <div className="template-title">
+                <div className="template__title">
                     {title}
                 </div>
-            </div>
-        );
-    }
-
-    private _renderSearch(): React.ReactNode {
-        if (!this.state.isSearchOpen) {          
-            return (
-                <ReactSVG
-                    src="icons/search.svg"
-                    svgClassName="search-icon"
-                    onClick={() => this.setState({isSearchOpen: true})}
-                />
-            );
-        }
-        return (
-            <div className="search-bar" onBlur={() => this.setState({isSearchOpen: false})}>
-                <Input size="large" isAnimated isFocused placeholder="Search"/>
             </div>
         );
     }
@@ -80,42 +60,37 @@ export default class MainPage extends React.Component {
         );
     }
 
-    public render() {
+    
+
+    private _renderHeader(): React.ReactNode {
         return (
-            <div className="main-page">
-                <div className="main-page-header">
-                    <div className="main-page-header-title">Velox</div>
+            <>
+                <div className="main-page__header">
+                    <div className="main-page__header__title">Velox</div>
                     <Button text="Profile" type="air"/>
                 </div>
-                <div className="main-page-templates">
-                    <div className="main-page-templates-title">
+                <div className="main-page__templates">
+                    <div className="main-page__templates__title">
                         Templates
                     </div>
-                    <div className="main-page-templates-content">
+                    <div className="main-page__templates__content">
                         {this._renderTemplate('custom')}
                         {this._renderArrow('left')}
-                        <div className="main-page-templates-content-scrollable" onScroll={this._onTemplatesScroll}>
+                        <div className="main-page__templates__content__scrollable" onScroll={this._onTemplatesScroll}>
                             {Templates.map(({title}) => this._renderTemplate(title))}
                         </div>
                         {this._renderArrow('right')}
                     </div>
                 </div>
-                <div className="main-page-pages">
-                    <div className="main-page-pages-header">
-                        <div className="main-page-pages-header-left-block">
-                            <div className="main-page-pages-header-title">
-                                Pages
-                            </div>
-                            {this._renderSearch()}
-                        </div>
-                        <div>
-                            btn
-                        </div>
-                    </div>
-                    <div className="main-page-pages-content">
-                        {Pages.length ? 'xuy' : 'You dont have any pages yet'}
-                    </div>
-                </div>
+            </>
+        );
+    }
+
+    public render() {
+        return (
+            <div className="main-page">
+                {this._renderHeader()}
+                <Pages />
             </div>
         );
     }

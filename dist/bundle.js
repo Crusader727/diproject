@@ -691,6 +691,25 @@ exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/dropdown/dropdown.scss":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/dropdown/dropdown.scss ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".dropdown {\n  position: relative;\n  display: inline-block; }\n  .dropdown__content {\n    display: none;\n    position: absolute;\n    background-color: #515151;\n    min-width: 100px;\n    z-index: 1;\n    border-radius: 10px; }\n    .dropdown__content__item {\n      font-size: 15px;\n      color: white;\n      padding: 8px 12px;\n      display: block;\n      box-sizing: border-box; }\n      .dropdown__content__item:hover {\n        color: #ffd900; }\n\n.dropdown:hover .dropdown__content {\n  display: block; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/input/input.scss":
 /*!************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/input/input.scss ***!
@@ -729,6 +748,25 @@ exports.push([module.i, ".components-list {\n  display: flex;\n  flex-direction:
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/main/components/pages.scss":
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/main/components/pages.scss ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".pages {\n  padding: 0 15%;\n  background-color: #2d2d2d;\n  min-height: 100vh;\n  overflow: auto;\n  display: flex;\n  flex-direction: column; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 8px; }\n    .pages__header__left-block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8; }\n  .icon:hover {\n    opacity: 1; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n\n.page {\n  display: flex;\n  flex-direction: column;\n  margin-right: 20px; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    width: 160px;\n    height: 160px;\n    background-color: white;\n    margin: 2px;\n    box-sizing: border-box; }\n    .page__content:hover {\n      border: 2px solid #ffd900; }\n  .page__title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/main/main.scss":
 /*!*****************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/main/main.scss ***!
@@ -741,7 +779,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page-header {\n    display: flex;\n    flex-direction: row;\n    height: 45px;\n    line-height: 45px;\n    background-color: #2d2d2d;\n    justify-content: space-between;\n    padding: 0 30px; }\n    .main-page-header-title {\n      display: inline-block;\n      font-size: 22px; }\n  .main-page-templates {\n    height: 300px;\n    background-color: #515151;\n    padding: 0 10% 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page-templates-title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page-templates-content {\n      display: flex;\n      flex-direction: row; }\n      .main-page-templates-content-scrollable {\n        overflow-x: auto;\n        overflow-y: none;\n        display: flex;\n        flex-direction: row; }\n        .main-page-templates-content-scrollable::-webkit-scrollbar {\n          display: none; }\n  .main-page-pages {\n    padding: 0 15%;\n    background-color: #2d2d2d;\n    height: 100vh;\n    overflow: auto;\n    display: flex;\n    flex-direction: column; }\n    .main-page-pages-header {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin-top: 12px;\n      margin-bottom: 8px; }\n      .main-page-pages-header-left-block {\n        display: flex;\n        flex-direction: row; }\n      .main-page-pages-header-title {\n        color: white;\n        font-size: 22px;\n        margin-right: 12px; }\n    .main-page-pages-content {\n      flex-direction: row; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template-content {\n    width: 160px;\n    height: 200px;\n    background-color: white;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template-content:hover {\n      border: 2px solid #ffd900; }\n  .template-title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n\n.search-icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8; }\n  .search-icon:hover {\n    opacity: 1; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n", ""]);
+exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page__header {\n    display: flex;\n    flex-direction: row;\n    height: 45px;\n    line-height: 45px;\n    background-color: #2d2d2d;\n    justify-content: space-between;\n    padding: 0 30px; }\n    .main-page__header__title {\n      display: inline-block;\n      font-size: 22px; }\n  .main-page__templates {\n    height: 300px;\n    background-color: #515151;\n    padding: 0 10% 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page__templates__title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: row; }\n      .main-page__templates__content__scrollable {\n        overflow-x: auto;\n        overflow-y: none;\n        display: flex;\n        flex-direction: row; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    width: 160px;\n    height: 200px;\n    background-color: white;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template__content:hover {\n      border: 2px solid #ffd900; }\n  .template__title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n", ""]);
 
 // exports
 
@@ -9391,6 +9429,80 @@ exports.default = Button;
 
 /***/ }),
 
+/***/ "./src/components/dropdown/dropdown.scss":
+/*!***********************************************!*\
+  !*** ./src/components/dropdown/dropdown.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./dropdown.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/dropdown/dropdown.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/dropdown/dropdown.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/dropdown/dropdown.tsx ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./dropdown.scss */ "./src/components/dropdown/dropdown.scss");
+var React = __webpack_require__(/*! react */ "react");
+;
+var DropDown = /** @class */ (function (_super) {
+    __extends(DropDown, _super);
+    function DropDown() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    DropDown.prototype.render = function () {
+        var items = this.props.items;
+        return (React.createElement("div", { className: "dropdown" },
+            this.props.children,
+            React.createElement("div", { className: "dropdown__content" }, items.map(function (item) { return (React.createElement("div", { key: item.name, className: "dropdown__content__item", onClick: item.onClick }, item.name)); }))));
+    };
+    return DropDown;
+}(React.Component));
+exports.default = DropDown;
+
+
+/***/ }),
+
 /***/ "./src/components/input/input.scss":
 /*!*****************************************!*\
   !*** ./src/components/input/input.scss ***!
@@ -9566,6 +9678,123 @@ exports.default = ComponentsList;
 
 /***/ }),
 
+/***/ "./src/pages/main/components/pages.scss":
+/*!**********************************************!*\
+  !*** ./src/pages/main/components/pages.scss ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/sass-loader/lib/loader.js!./pages.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/main/components/pages.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/pages/main/components/pages.tsx":
+/*!*********************************************!*\
+  !*** ./src/pages/main/components/pages.tsx ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./pages.scss */ "./src/pages/main/components/pages.scss");
+var React = __webpack_require__(/*! react */ "react");
+var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
+var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
+var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
+var pages = [
+    { title: 'first', url: 'url' },
+    { title: 'second', url: 'url' },
+    { title: 'third', url: 'url' },
+    { title: 'forth', url: 'url' }
+];
+var Pages = /** @class */ (function (_super) {
+    __extends(Pages, _super);
+    function Pages() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            isSearchOpen: false
+        };
+        return _this;
+    }
+    Pages.prototype._renderSortButton = function () {
+        var items = [
+            { name: 'awd', onClick: function () { return console.log('awd'); } },
+            { name: 'awd1', onClick: function () { return console.log('awd1'); } },
+            { name: 'awd2', onClick: function () { return console.log('awd2'); } }
+        ];
+        return (React.createElement(dropdown_1.default, { items: items },
+            React.createElement(react_svg_1.default, { src: "icons/sort.svg", svgClassName: "icon", onClick: function () { return console.log('sort'); } })));
+    };
+    Pages.prototype._renderSearch = function () {
+        var _this = this;
+        if (!this.state.isSearchOpen) {
+            return (React.createElement(react_svg_1.default, { src: "icons/search.svg", svgClassName: "icon", onClick: function () { return _this.setState({ isSearchOpen: true }); } }));
+        }
+        return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: false }); } },
+            React.createElement(input_1.default, { size: "large", isAnimated: true, isFocused: true, placeholder: "Search" })));
+    };
+    Pages.prototype._renderPage = function (title, url) {
+        return (React.createElement("div", { className: "page", key: title },
+            React.createElement("div", { className: "page__content" }),
+            React.createElement("div", { className: "page__title" }, title)));
+    };
+    Pages.prototype.render = function () {
+        var _this = this;
+        return (React.createElement("div", { className: "pages" },
+            React.createElement("div", { className: "pages__header" },
+                React.createElement("div", { className: "pages__header__left-block" },
+                    React.createElement("div", { className: "pages__header__title" }, "Pages"),
+                    this._renderSearch()),
+                this._renderSortButton()),
+            React.createElement("div", { className: "pages__content" }, pages.length ?
+                pages.map(function (_a) {
+                    var title = _a.title, url = _a.url;
+                    return _this._renderPage(title, url);
+                }) :
+                React.createElement("div", null, "You dont have any pages yet."))));
+    };
+    return Pages;
+}(React.Component));
+exports.default = Pages;
+
+
+/***/ }),
+
 /***/ "./src/pages/main/main.scss":
 /*!**********************************!*\
   !*** ./src/pages/main/main.scss ***!
@@ -9623,15 +9852,13 @@ __webpack_require__(/*! ./main.scss */ "./src/pages/main/main.scss");
 var React = __webpack_require__(/*! react */ "react");
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var button_1 = __webpack_require__(/*! components/botton/button */ "./src/components/botton/button.tsx");
-var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
+var pages_1 = __webpack_require__(/*! ./components/pages */ "./src/pages/main/components/pages.tsx");
 var Templates = [{ title: 'awd' }, { title: 'transport' }, { title: 'cv' }, { title: 'medical' }, { title: 'contacts' }, { title: 'contacts2' }];
-var Pages = [];
 var MainPage = /** @class */ (function (_super) {
     __extends(MainPage, _super);
     function MainPage() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
-            isSearchOpen: false,
             isRightArrowShown: true,
             isLeftArrowShown: false
         };
@@ -9654,16 +9881,8 @@ var MainPage = /** @class */ (function (_super) {
     }
     MainPage.prototype._renderTemplate = function (title) {
         return (React.createElement("div", { className: "template", key: title },
-            React.createElement("div", { className: "template-content" }),
-            React.createElement("div", { className: "template-title" }, title)));
-    };
-    MainPage.prototype._renderSearch = function () {
-        var _this = this;
-        if (!this.state.isSearchOpen) {
-            return (React.createElement(react_svg_1.default, { src: "icons/search.svg", svgClassName: "search-icon", onClick: function () { return _this.setState({ isSearchOpen: true }); } }));
-        }
-        return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: false }); } },
-            React.createElement(input_1.default, { size: "large", isAnimated: true, isFocused: true, placeholder: "Search" })));
+            React.createElement("div", { className: "template__content" }),
+            React.createElement("div", { className: "template__title" }, title)));
     };
     MainPage.prototype._renderArrow = function (type) {
         var style = {};
@@ -9673,29 +9892,27 @@ var MainPage = /** @class */ (function (_super) {
         }
         return (React.createElement(react_svg_1.default, { src: "icons/arrow-" + type + ".svg", className: "arrow-container", svgClassName: "arrow", style: style }));
     };
-    MainPage.prototype.render = function () {
+    MainPage.prototype._renderHeader = function () {
         var _this = this;
-        return (React.createElement("div", { className: "main-page" },
-            React.createElement("div", { className: "main-page-header" },
-                React.createElement("div", { className: "main-page-header-title" }, "Velox"),
+        return (React.createElement(React.Fragment, null,
+            React.createElement("div", { className: "main-page__header" },
+                React.createElement("div", { className: "main-page__header__title" }, "Velox"),
                 React.createElement(button_1.default, { text: "Profile", type: "air" })),
-            React.createElement("div", { className: "main-page-templates" },
-                React.createElement("div", { className: "main-page-templates-title" }, "Templates"),
-                React.createElement("div", { className: "main-page-templates-content" },
+            React.createElement("div", { className: "main-page__templates" },
+                React.createElement("div", { className: "main-page__templates__title" }, "Templates"),
+                React.createElement("div", { className: "main-page__templates__content" },
                     this._renderTemplate('custom'),
                     this._renderArrow('left'),
-                    React.createElement("div", { className: "main-page-templates-content-scrollable", onScroll: this._onTemplatesScroll }, Templates.map(function (_a) {
+                    React.createElement("div", { className: "main-page__templates__content__scrollable", onScroll: this._onTemplatesScroll }, Templates.map(function (_a) {
                         var title = _a.title;
                         return _this._renderTemplate(title);
                     })),
-                    this._renderArrow('right'))),
-            React.createElement("div", { className: "main-page-pages" },
-                React.createElement("div", { className: "main-page-pages-header" },
-                    React.createElement("div", { className: "main-page-pages-header-left-block" },
-                        React.createElement("div", { className: "main-page-pages-header-title" }, "Pages"),
-                        this._renderSearch()),
-                    React.createElement("div", null, "btn")),
-                React.createElement("div", { className: "main-page-pages-content" }, Pages.length ? 'xuy' : 'You dont have any pages yet'))));
+                    this._renderArrow('right')))));
+    };
+    MainPage.prototype.render = function () {
+        return (React.createElement("div", { className: "main-page" },
+            this._renderHeader(),
+            React.createElement(pages_1.default, null)));
     };
     return MainPage;
 }(React.Component));
