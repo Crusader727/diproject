@@ -35,7 +35,10 @@ export default class MainPage extends React.Component {
         return (
             <div className="template" key={title}>
                 <div className="template__content">
-                    
+                    <ReactSVG
+                        src={`icons/cross.svg`}
+                        svgClassName="cross"
+                    />
                 </div>
                 <div className="template__title">
                     {title}

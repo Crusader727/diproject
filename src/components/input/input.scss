@@ -18,7 +18,10 @@
         width: 300px;
     }
     &.size-large {
-        width: 500px;
+        width: 600px;
+    }
+    &.size-larger {
+        width: 900px;
     }
 }
 
@@ -45,6 +48,15 @@
         width: 0;
     }
     100% {
-        width: 500px;
+        width: 600px;
+    }
+}
+
+@keyframes enlarge-larger {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 900px;
     }
 }

@@ -8,7 +8,8 @@
         background-color: $grey;
         min-width: 100px;
         z-index: 1;
-        border-radius: 10px;
+        border-radius: 3px;
+        border: 2px solid $dark-grey;
         &__item {
             font-size: $font-size-normal;
             color: $white;
@@ -16,6 +17,9 @@
             display: block;
             box-sizing: border-box;
             &:hover {
+                color: $yellow;
+            }
+            &.chosen {
                 color: $yellow;
             }
         }

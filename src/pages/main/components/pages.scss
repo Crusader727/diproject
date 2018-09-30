@@ -1,17 +1,16 @@
 @import '../../../common/common.scss';
 .pages {
-    padding: 0 15%;
+    padding: 0 11% 0 15%;
     background-color: $dark-grey;
-    min-height: 100vh;
-    overflow: auto;
     display: flex;
     flex-direction: column;
+    height: 58vh;
     &__header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-top: 12px;
-        margin-bottom: 8px;
+        margin-bottom: 30px;
         &__left-block {
             display: flex;
             flex-direction: row;
@@ -25,6 +24,43 @@
     &__content {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    min-width: 0;
+    min-height: 0;
+    box-sizing: border-box;
+    border: 3px solid $grey;
+    &:last-child {
+        margin-right: 0px;
+    }
+    &__content {
+        height: 130px;
+        width: 130px;
+        box-sizing: border-box;
+    }
+    &__title {
+        background-color: $grey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: $white;
+        text-transform: capitalize;
+        font-size: $font-size-normal;
+        line-height: 25px;
+    }
+    &:hover {
+        border: 3px solid $yellow;
     }
 }
 
@@ -35,35 +71,26 @@
     &:hover {
         opacity: 1;
     }
+    &.small {
+        width: 20px;
+        height: 20px;
+    }
+    &-owner {
+        margin-right: 16px;
+    }
+}
+
+.icon-more {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    margin-right: -5px;
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .search-bar {
     background-color: $white;
     border-radius: 8px;
-}
-
-.page {
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-    &:last-child {
-        margin-right: 0px;
-    }
-    &__content {
-        width: 160px;
-        height: 160px;
-        background-color: $white;
-        margin: 2px;
-        box-sizing: border-box;
-        &:hover {
-            border: 2px solid $yellow;
-        }
-    }
-    &__title {
-        color: $white;
-        text-transform: capitalize;
-        margin-top: 8px;
-        margin-bottom: 8px;
-        font-size: $font-size-normal;
-    }
 }

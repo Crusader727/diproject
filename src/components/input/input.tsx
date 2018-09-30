@@ -2,7 +2,7 @@ import './input.scss';
 import * as React from "react";
 
 interface Props {
-    size?: 'small' | 'medium' | 'large';
+    size?: 'small' | 'medium' | 'large' | 'larger';
     type?: 'text';
     placeholder?: string;
     isAnimated?: boolean;
