@@ -3,7 +3,7 @@ import './app.scss';
 import * as React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import ComponentsList from 'pages/components-list/components-list';
+import Constructor from 'pages/constructor/constructor';
 import MainPage from 'pages/main/main';
 
 export default class App extends React.Component {
@@ -11,7 +11,7 @@ export default class App extends React.Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route path='/cl' component={ComponentsList}/>
+                    <Route path='/new' component={Constructor}/>
                     <Route path='/' component={MainPage}/>
                 </Switch>
             </BrowserRouter>

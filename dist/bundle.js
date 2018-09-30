@@ -710,6 +710,25 @@ exports.push([module.i, ".dropdown {\n  position: relative;\n  display: inline-b
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/header/header.scss":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/header/header.scss ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".header {\n  display: flex;\n  flex-direction: row;\n  height: 45px;\n  line-height: 45px;\n  background-color: #2d2d2d;\n  justify-content: space-between;\n  padding: 0 30px;\n  border-bottom: 1px solid #ffd900; }\n  .header__title {\n    display: inline-block;\n    font-size: 22px;\n    color: #ffd900; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/input/input.scss":
 /*!************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/input/input.scss ***!
@@ -729,10 +748,10 @@ exports.push([module.i, ".input {\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/components-list/components-list.scss":
-/*!***************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/components-list/components-list.scss ***!
-  \***************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor.scss":
+/*!*******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor.scss ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -741,7 +760,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".components-list {\n  display: flex;\n  flex-direction: column; }\n  .components-list * {\n    margin-bottom: 40px; }\n", ""]);
+exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 95vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 80%; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #2d2d2d;\n    width: 20%; }\n", ""]);
 
 // exports
 
@@ -779,7 +798,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page__header {\n    display: flex;\n    flex-direction: row;\n    height: 45px;\n    line-height: 45px;\n    background-color: #2d2d2d;\n    justify-content: space-between;\n    padding: 0 30px; }\n    .main-page__header__title {\n      display: inline-block;\n      font-size: 22px; }\n  .main-page__templates {\n    height: 300px;\n    background-color: #515151;\n    padding: 0 10% 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page__templates__title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: row; }\n      .main-page__templates__content__scrollable {\n        overflow-x: auto;\n        overflow-y: none;\n        display: flex;\n        flex-direction: row; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    position: relative;\n    width: 160px;\n    height: 200px;\n    background-color: white;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template__content:hover {\n      border: 2px solid #ffd900; }\n  .template__title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 90px;\n  height: 90px; }\n", ""]);
+exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page__templates {\n    height: 300px;\n    background-color: #515151;\n    padding: 0 10% 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page__templates__title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: row; }\n      .main-page__templates__content__scrollable {\n        overflow-x: auto;\n        overflow-y: none;\n        display: flex;\n        flex-direction: row; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    color: #ffd900;\n    position: relative;\n    width: 160px;\n    height: 200px;\n    background-color: white;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template__content:hover {\n      border: 2px solid #ffd900; }\n  .template__title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 90px;\n  height: 90px; }\n", ""]);
 
 // exports
 
@@ -10995,7 +11014,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./app.scss */ "./src/app/app.scss");
 var React = __webpack_require__(/*! react */ "react");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-var components_list_1 = __webpack_require__(/*! pages/components-list/components-list */ "./src/pages/components-list/components-list.tsx");
+var constructor_1 = __webpack_require__(/*! pages/constructor/constructor */ "./src/pages/constructor/constructor.tsx");
 var main_1 = __webpack_require__(/*! pages/main/main */ "./src/pages/main/main.tsx");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
@@ -11005,7 +11024,7 @@ var App = /** @class */ (function (_super) {
     App.prototype.render = function () {
         return (React.createElement(react_router_dom_1.BrowserRouter, null,
             React.createElement(react_router_dom_1.Switch, null,
-                React.createElement(react_router_dom_1.Route, { path: '/cl', component: components_list_1.default }),
+                React.createElement(react_router_dom_1.Route, { path: '/new', component: constructor_1.default }),
                 React.createElement(react_router_dom_1.Route, { path: '/', component: main_1.default }))));
     };
     return App;
@@ -11162,6 +11181,80 @@ exports.default = DropDown;
 
 /***/ }),
 
+/***/ "./src/components/header/header.scss":
+/*!*******************************************!*\
+  !*** ./src/components/header/header.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./header.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/header/header.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/header/header.tsx":
+/*!******************************************!*\
+  !*** ./src/components/header/header.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./header.scss */ "./src/components/header/header.scss");
+var React = __webpack_require__(/*! react */ "react");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+var button_1 = __webpack_require__(/*! components/botton/button */ "./src/components/botton/button.tsx");
+var Header = /** @class */ (function (_super) {
+    __extends(Header, _super);
+    function Header() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Header.prototype.render = function () {
+        return (React.createElement(react_router_dom_1.Link, { className: "header", to: "/" },
+            React.createElement("div", { className: "header__title" }, "Velox"),
+            React.createElement(button_1.default, { text: "Profile", type: "air" })));
+    };
+    return Header;
+}(React.Component));
+exports.default = Header;
+
+
+/***/ }),
+
 /***/ "./src/components/input/input.scss":
 /*!*****************************************!*\
   !*** ./src/components/input/input.scss ***!
@@ -11263,15 +11356,15 @@ ReactDOM.render(React.createElement(app_1.default, null), document.getElementByI
 
 /***/ }),
 
-/***/ "./src/pages/components-list/components-list.scss":
-/*!********************************************************!*\
-  !*** ./src/pages/components-list/components-list.scss ***!
-  \********************************************************/
+/***/ "./src/pages/constructor/constructor.scss":
+/*!************************************************!*\
+  !*** ./src/pages/constructor/constructor.scss ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./components-list.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/components-list/components-list.scss");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./constructor.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -11293,10 +11386,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./src/pages/components-list/components-list.tsx":
-/*!*******************************************************!*\
-  !*** ./src/pages/components-list/components-list.tsx ***!
-  \*******************************************************/
+/***/ "./src/pages/constructor/constructor.tsx":
+/*!***********************************************!*\
+  !*** ./src/pages/constructor/constructor.tsx ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11316,23 +11409,24 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! ./components-list.scss */ "./src/pages/components-list/components-list.scss");
+__webpack_require__(/*! ./constructor.scss */ "./src/pages/constructor/constructor.scss");
 var React = __webpack_require__(/*! react */ "react");
-var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
-var button_1 = __webpack_require__(/*! components/botton/button */ "./src/components/botton/button.tsx");
-var ComponentsList = /** @class */ (function (_super) {
-    __extends(ComponentsList, _super);
-    function ComponentsList() {
+var header_1 = __webpack_require__(/*! components/header/header */ "./src/components/header/header.tsx");
+var Constructor = /** @class */ (function (_super) {
+    __extends(Constructor, _super);
+    function Constructor() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    ComponentsList.prototype.render = function () {
-        return (React.createElement("div", { className: "components-list" },
-            React.createElement(input_1.default, null),
-            React.createElement(button_1.default, { text: "xuy", type: "air" })));
+    Constructor.prototype.render = function () {
+        return (React.createElement(React.Fragment, null,
+            React.createElement(header_1.default, null),
+            React.createElement("div", { className: "constructor" },
+                React.createElement("div", { className: "constructor__content" }),
+                React.createElement("div", { className: "constructor__menu" }))));
     };
-    return ComponentsList;
+    return Constructor;
 }(React.Component));
-exports.default = ComponentsList;
+exports.default = Constructor;
 
 
 /***/ }),
@@ -11548,9 +11642,10 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./main.scss */ "./src/pages/main/main.scss");
 var React = __webpack_require__(/*! react */ "react");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
-var button_1 = __webpack_require__(/*! components/botton/button */ "./src/components/botton/button.tsx");
 var pages_1 = __webpack_require__(/*! ./components/pages */ "./src/pages/main/components/pages.tsx");
+var header_1 = __webpack_require__(/*! components/header/header */ "./src/components/header/header.tsx");
 var Templates = [{ title: 'awd' }, { title: 'transport' }, { title: 'cv' }, { title: 'medical' }, { title: 'contacts' }, { title: 'contacts2' }];
 var MainPage = /** @class */ (function (_super) {
     __extends(MainPage, _super);
@@ -11578,7 +11673,7 @@ var MainPage = /** @class */ (function (_super) {
         return _this;
     }
     MainPage.prototype._renderTemplate = function (title) {
-        return (React.createElement("div", { className: "template", key: title },
+        return (React.createElement(react_router_dom_1.Link, { to: "/new", className: "template", key: title },
             React.createElement("div", { className: "template__content" },
                 React.createElement(react_svg_1.default, { src: "icons/cross.svg", svgClassName: "cross" })),
             React.createElement("div", { className: "template__title" }, title)));
@@ -11591,12 +11686,10 @@ var MainPage = /** @class */ (function (_super) {
         }
         return (React.createElement(react_svg_1.default, { src: "icons/arrow-" + type + ".svg", className: "arrow-container", svgClassName: "arrow", style: style }));
     };
-    MainPage.prototype._renderHeader = function () {
+    MainPage.prototype._renderTemplates = function () {
         var _this = this;
         return (React.createElement(React.Fragment, null,
-            React.createElement("div", { className: "main-page__header" },
-                React.createElement("div", { className: "main-page__header__title" }, "Velox"),
-                React.createElement(button_1.default, { text: "Profile", type: "air" })),
+            React.createElement(header_1.default, null),
             React.createElement("div", { className: "main-page__templates" },
                 React.createElement("div", { className: "main-page__templates__title" }, "Templates"),
                 React.createElement("div", { className: "main-page__templates__content" },
@@ -11610,7 +11703,7 @@ var MainPage = /** @class */ (function (_super) {
     };
     MainPage.prototype.render = function () {
         return (React.createElement("div", { className: "main-page" },
-            this._renderHeader(),
+            this._renderTemplates(),
             React.createElement(pages_1.default, null)));
     };
     return MainPage;

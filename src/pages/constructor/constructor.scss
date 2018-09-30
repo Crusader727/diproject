@@ -1,0 +1,18 @@
+@import '../../common/common.scss';
+.constructor {
+    display: flex;
+    flex-direction: row;
+    height: 95vh;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        background-color: $grey;
+        width: 80%;
+    }
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        background-color: $dark-grey;
+        width: 20%;
+    }
+}

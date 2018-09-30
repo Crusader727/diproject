@@ -1,8 +1,9 @@
 import './main.scss';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import ReactSVG from 'react-svg'
-import Button from 'components/botton/button';
 import Pages from './components/pages';
+import Header from 'components/header/header';
 
 const Templates = [{title: 'awd'}, {title: 'transport'}, {title: 'cv'}, {title: 'medical'}, {title: 'contacts'}, {title: 'contacts2'}];
 
@@ -33,7 +34,7 @@ export default class MainPage extends React.Component {
 
     private _renderTemplate(title: string): React.ReactNode {
         return (
-            <div className="template" key={title}>
+            <Link to="/new" className="template" key={title}>
                 <div className="template__content">
                     <ReactSVG
                         src={`icons/cross.svg`}
@@ -43,7 +44,7 @@ export default class MainPage extends React.Component {
                 <div className="template__title">
                     {title}
                 </div>
-            </div>
+            </Link>
         );
     }
 
@@ -65,13 +66,10 @@ export default class MainPage extends React.Component {
 
     
 
-    private _renderHeader(): React.ReactNode {
+    private _renderTemplates(): React.ReactNode {
         return (
             <>
-                <div className="main-page__header">
-                    <div className="main-page__header__title">Velox</div>
-                    <Button text="Profile" type="air"/>
-                </div>
+                <Header />
                 <div className="main-page__templates">
                     <div className="main-page__templates__title">
                         Templates
@@ -92,7 +90,7 @@ export default class MainPage extends React.Component {
     public render() {
         return (
             <div className="main-page">
-                {this._renderHeader()}
+                {this._renderTemplates()}
                 <Pages />
             </div>
         );

@@ -3,19 +3,6 @@
     display: flex;
     flex-direction: column;
     color: $yellow;
-    &__header {
-        display: flex;
-        flex-direction: row;
-        height: 45px;
-        line-height: 45px;
-        background-color: $dark-grey;
-        justify-content: space-between;
-        padding: 0 30px;
-        &__title {
-            display: inline-block;
-            font-size: $font-size-larger;
-        }
-    }
     &__templates {
         height: 300px;
         background-color: $grey;
@@ -52,6 +39,7 @@
         margin-right: 0px;
     }
     &__content {
+        color: $yellow;
         position: relative;
         width: 160px;
         height: 200px;
