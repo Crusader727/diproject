@@ -7,12 +7,14 @@ interface Props {
     placeholder?: string;
     isAnimated?: boolean;
     isFocused?: boolean;
+    value?: string;
+    onChange?: (e: any) => void
 }
 
 export default class Input extends React.Component<Props> {
     inputElement: any;
 
-    defaultProps = {
+    default = {
         size: 'medium',
         type: 'text' 
     }
@@ -25,14 +27,16 @@ export default class Input extends React.Component<Props> {
 
     public render() {
         const {type, isAnimated} = this.props;
-        const size = this.props.size ? this.props.size : this.defaultProps.size;
+        const size = this.props.size ? this.props.size : this.default.size;
         return (
             <input
                 ref={input => this.inputElement = input}
                 className={'input size-' + size}
                 style={{animationName: isAnimated ? 'enlarge-' + size : undefined}}
-                type={type ? type : this.defaultProps.type}
+                type={type ? type : this.default.type}
                 placeholder={this.props.placeholder}
+                value={this.props.value}
+                onChange={this.props.onChange}
             />
         );
     }

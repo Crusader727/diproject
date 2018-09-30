@@ -665,7 +665,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: arial;\n  overflow: hidden; }\n\na,\np,\ninput,\nbutton {\n  text-decoration: none;\n  outline: 0; }\n", ""]);
+exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: arial;\n  overflow: hidden; }\n\na,\ntextarea,\np,\ninput,\nbutton {\n  text-decoration: none;\n  outline: 0; }\n", ""]);
 
 // exports
 
@@ -748,6 +748,25 @@ exports.push([module.i, ".input {\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/text-area/text-area.scss":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/text-area/text-area.scss ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".text-area {\n  width: 70%;\n  height: 200px;\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  border: 2px solid #ffd900;\n  font-size: 15px;\n  border-radius: 4px; }\n  .text-area:focus {\n    border-width: 3px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor.scss":
 /*!*******************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor.scss ***!
@@ -760,7 +779,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 95vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 80%; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #2d2d2d;\n    width: 20%; }\n", ""]);
+exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 94vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: white;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #515151;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      min-height: 250px;\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      border: 3px solid #515151; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n    .constructor__content__item {\n      display: flex;\n      min-height: 30px;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 3px solid #515151; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 20%; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #ffd900;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
 
 // exports
 
@@ -11314,7 +11333,7 @@ var Input = /** @class */ (function (_super) {
     __extends(Input, _super);
     function Input() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.defaultProps = {
+        _this.default = {
             size: 'medium',
             type: 'text'
         };
@@ -11328,12 +11347,88 @@ var Input = /** @class */ (function (_super) {
     Input.prototype.render = function () {
         var _this = this;
         var _a = this.props, type = _a.type, isAnimated = _a.isAnimated;
-        var size = this.props.size ? this.props.size : this.defaultProps.size;
-        return (React.createElement("input", { ref: function (input) { return _this.inputElement = input; }, className: 'input size-' + size, style: { animationName: isAnimated ? 'enlarge-' + size : undefined }, type: type ? type : this.defaultProps.type, placeholder: this.props.placeholder }));
+        var size = this.props.size ? this.props.size : this.default.size;
+        return (React.createElement("input", { ref: function (input) { return _this.inputElement = input; }, className: 'input size-' + size, style: { animationName: isAnimated ? 'enlarge-' + size : undefined }, type: type ? type : this.default.type, placeholder: this.props.placeholder, value: this.props.value, onChange: this.props.onChange }));
     };
     return Input;
 }(React.Component));
 exports.default = Input;
+
+
+/***/ }),
+
+/***/ "./src/components/text-area/text-area.scss":
+/*!*************************************************!*\
+  !*** ./src/components/text-area/text-area.scss ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./text-area.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/text-area/text-area.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/text-area/text-area.tsx":
+/*!************************************************!*\
+  !*** ./src/components/text-area/text-area.tsx ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./text-area.scss */ "./src/components/text-area/text-area.scss");
+var React = __webpack_require__(/*! react */ "react");
+var TextArea = /** @class */ (function (_super) {
+    __extends(TextArea, _super);
+    function TextArea() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TextArea.prototype.componentDidMount = function () {
+        if (this.props.isFocused) {
+            this.inputElement.focus();
+        }
+    };
+    TextArea.prototype.render = function () {
+        var _this = this;
+        return (React.createElement("textarea", { ref: function (input) { return _this.inputElement = input; }, className: 'text-area', placeholder: this.props.placeholder, maxLength: 2000, onChange: this.props.onChange, value: this.props.value }));
+    };
+    return TextArea;
+}(React.Component));
+exports.default = TextArea;
 
 
 /***/ }),
@@ -11411,17 +11506,82 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./constructor.scss */ "./src/pages/constructor/constructor.scss");
 var React = __webpack_require__(/*! react */ "react");
+var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var header_1 = __webpack_require__(/*! components/header/header */ "./src/components/header/header.tsx");
+var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
+var text_area_1 = __webpack_require__(/*! components/text-area/text-area */ "./src/components/text-area/text-area.tsx");
 var Constructor = /** @class */ (function (_super) {
     __extends(Constructor, _super);
     function Constructor() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            items: []
+        };
+        _this._handleItemNameChange = function (index, type) {
+            return function (event) {
+                var items = _this.state.items;
+                if (type === 'name') {
+                    items[index].name = event.target.value;
+                }
+                else {
+                    items[index].value = event.target.value;
+                }
+                _this.setState({ items: items });
+            };
+        };
+        _this._renderItem = function (item, index) {
+            if (item.isEditing) {
+                return _this._renderEditItem(item.name, item.value, index);
+            }
+            return (React.createElement("div", { key: index, className: "constructor__content__item", style: { flexDirection: item.value.length > 30 ? 'column' : 'row' }, onClick: function () { return _this._openEditor(index); } },
+                React.createElement("div", { className: "constructor__content__item__title" }, item.name + ":"),
+                React.createElement("div", null, item.value)));
+        };
+        return _this;
     }
+    Constructor.prototype._openEditor = function (index) {
+        var items = this.state.items;
+        items.forEach(function (item) { return item.isEditing = false; });
+        if (index !== undefined) {
+            items[index].isEditing = true;
+        }
+        this.setState({ items: items });
+    };
+    Constructor.prototype._deleteItem = function (index) {
+        var oldItems = this.state.items;
+        var items = oldItems.filter(function (item, i) { return i !== index; });
+        this.setState({ items: items });
+    };
+    Constructor.prototype._addItem = function () {
+        this._openEditor();
+        var item = { name: '', value: '', isEditing: true };
+        var items = this.state.items;
+        items.push(item);
+        this.setState({ items: items });
+    };
+    Constructor.prototype._renderEditItem = function (name, value, index) {
+        var _this = this;
+        return (React.createElement("div", { className: "constructor__content__edit-item", key: index },
+            React.createElement("div", { className: "constructor__content__edit-item__content" },
+                React.createElement(input_1.default, { size: "large", placeholder: "Title", isFocused: true, value: name, onChange: this._handleItemNameChange(index, 'name') }),
+                React.createElement("div", { className: "constructor__content__edit-item__text-wrapper" },
+                    React.createElement(text_area_1.default, { placeholder: "Description", value: value, onChange: this._handleItemNameChange(index, 'value') }))),
+            React.createElement(react_svg_1.default, { src: "icons/delete.svg", svgClassName: "close", onClick: function () { return _this._deleteItem(index); } }),
+            React.createElement(react_svg_1.default, { src: "icons/close.svg", svgClassName: "close", onClick: function () { return _this._openEditor(); } })));
+    };
+    Constructor.prototype._renderAddItem = function () {
+        var _this = this;
+        return (React.createElement("div", { className: "constructor__content__add-item", onClick: function () { return _this._addItem(); } },
+            React.createElement(react_svg_1.default, { src: "icons/round-cross.svg", svgClassName: "round-cross" })));
+    };
     Constructor.prototype.render = function () {
+        var _this = this;
         return (React.createElement(React.Fragment, null,
             React.createElement(header_1.default, null),
             React.createElement("div", { className: "constructor" },
-                React.createElement("div", { className: "constructor__content" }),
+                React.createElement("div", { className: "constructor__content" },
+                    this.state.items.map(function (item, i) { return _this._renderItem(item, i); }),
+                    this._renderAddItem()),
                 React.createElement("div", { className: "constructor__menu" }))));
     };
     return Constructor;

@@ -2,17 +2,91 @@
 .constructor {
     display: flex;
     flex-direction: row;
-    height: 95vh;
+    height: 94vh;
     &__content {
         display: flex;
         flex-direction: column;
-        background-color: $grey;
+        background-color: $white;
         width: 80%;
+        overflow: auto;
+        &__add-item {
+            position: relative;
+            margin: 12px;
+            width: auto;
+            height: 120px;
+            min-height: 120px;
+            color: $yellow;
+            background-color: $grey;
+            box-sizing: border-box;
+            border-radius: 10px;
+            &:hover {
+                border: 3px solid $yellow;
+            }
+        }
+        &__edit-item {
+            min-height: 250px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 12px;
+            padding: 12px;
+            background-color: $white;
+            border-radius: 10px;
+            border: 3px solid $grey;
+            &__text-wrapper {
+                margin-top: 12px;
+            }
+            &__content {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        &__item {
+            display: flex;
+            min-height: 30px;
+            margin: 12px;
+            padding: 12px;
+            background-color: $white;
+            border-radius: 10px;
+            font-family: $font-size-large;
+            border: 3px solid $grey;
+            &__title {
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+            &:hover {
+                border: 3px solid $yellow;
+            }
+        }
     }
     &__menu {
         display: flex;
         flex-direction: column;
-        background-color: $dark-grey;
+        background-color: $grey;
         width: 20%;
+    }
+}
+
+.round-cross {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 70px;
+    height: 70px;
+}
+
+.close {
+    color: $yellow;
+    margin-top: -7px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+    margin-right: 5px;
+    &:hover {
+        opacity: 1;
     }
 }

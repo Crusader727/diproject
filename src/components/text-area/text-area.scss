@@ -1,0 +1,14 @@
+@import '../../common/common.scss';
+.text-area {
+    width: 70%;
+    height: 200px;
+    caret-color: $dark-grey;
+    color: $dark-grey;
+    box-sizing: border-box;
+    border: 2px solid $yellow;
+    font-size: $font-size-normal;
+    border-radius: 4px;
+    &:focus {
+        border-width: 3px;
+    }
+}
