@@ -5,28 +5,7 @@ import * as QRCode from 'qrcode.react';
 
 import DropDown from 'components/dropdown/dropdown';
 import Input from 'components/input/input';
-
-const pages = [
-    {title: 'first', url: 'url'},
-    {title: 'second', url: 'urlewadadawdawdawd1'},
-    {title: 'third', url: 'url2'},
-    {title: 'forth', url: 'url3'},
-    {title: '1', url: 'url4'},
-    {title: '2', url: 'ur123'},
-    {title: '3', url: 'urawdl'},
-    {title: '4', url: 'uradl'},
-    {title: '5', url: 'ur`cl'},
-    {title: '6', url: 'url'},
-    {title: '7', url: 'ur23dgl'},
-    {title: '8', url: 'url'},
-    {title: '9', url: 'uradjnl'},
-    {title: '10', url: 'url'},
-    {title: '11', url: 'url'},
-    {title: '12', url: 'url'},
-    {title: '13', url: 'url'},
-    {title: '14', url: 'url'},
-    {title: '15', url: 'url'},
-];
+import PageCut from 'types/pageCut';
 
 const pageActions = [
     {name: 'Print', onClick: () => console.log('awd')},
@@ -46,7 +25,11 @@ interface State {
     ownerTypeIndex: number;
 }
 
-export default class Pages extends React.Component {
+interface Props {
+    pages: PageCut[];
+}
+
+export default class Pages extends React.Component<Props> {
     state: State = {
         isSearchOpen: false,
         ownerTypeIndex: 0
@@ -94,7 +77,7 @@ export default class Pages extends React.Component {
         return (
             <div className="page" key={title}>
                 <div className="page__content">
-                    <QRCode value={url} size={130}/>
+                    <QRCode value={`127.0.0.1:8000/qr/${url}`} size={130}/>
                 </div>
                 <div className="page__title">
                     <div>
@@ -107,6 +90,7 @@ export default class Pages extends React.Component {
     }
 
     render() {
+        const {pages} = this.props;
         return (
             <div className="pages">
                 <div className="pages__header">
@@ -129,7 +113,7 @@ export default class Pages extends React.Component {
                 </div>
                 <div className="pages__content">
                     {pages.length ?
-                        pages.map(({title, url}) => this._renderPage(title, url)) :
+                        pages.map(({title, id}) => this._renderPage(title, id)) :
                         <div>
                             You dont have any pages yet.
                         </div>

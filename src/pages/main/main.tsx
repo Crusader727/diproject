@@ -5,18 +5,25 @@ import ReactSVG from 'react-svg'
 import Pages from './components/pages';
 import Header from 'components/header/header';
 import {getPages} from './main-provider';
+import PageCut from 'types/pageCut';
 
 const Templates = [{title: 'awd'}, {title: 'transport'}, {title: 'cv'}, {title: 'medical'}, {title: 'contacts'}, {title: 'contacts2'}];
 
 interface State {
     isRightArrowShown: boolean;
     isLeftArrowShown: boolean;
+    pages: PageCut[];
 }
 
 export default class MainPage extends React.Component {
     state: State = {
         isRightArrowShown: true,
-        isLeftArrowShown: false
+        isLeftArrowShown: false,
+        pages: []
+    }
+
+    componentDidMount() {
+        getPages().then(({body}) => this.setState({pages: body})); //todo Error
     }
 
     private _onTemplatesScroll = (e: any): void => {
@@ -89,11 +96,10 @@ export default class MainPage extends React.Component {
     }
 
     public render() {
-        getPages().then((result) => console.log(result));
         return (
             <div className="main-page">
                 {this._renderTemplates()}
-                <Pages />
+                <Pages pages={this.state.pages}/>
             </div>
         );
     }

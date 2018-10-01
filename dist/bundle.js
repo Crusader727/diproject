@@ -12110,7 +12110,7 @@ var Constructor = /** @class */ (function (_super) {
             fieldsNames: this.state.items.map(function (el) { return el.name; }),
             fieldsValues: this.state.items.map(function (el) { return el.value; })
         };
-        console.log(constructor_provider_1.createPage(page));
+        console.log(constructor_provider_1.createPage(page)); //todo Error
     };
     Constructor.prototype._openEditor = function (index) {
         var items = this.state.items;
@@ -12232,27 +12232,6 @@ var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg
 var QRCode = __webpack_require__(/*! qrcode.react */ "./node_modules/qrcode.react/lib/index.js");
 var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
-var pages = [
-    { title: 'first', url: 'url' },
-    { title: 'second', url: 'urlewadadawdawdawd1' },
-    { title: 'third', url: 'url2' },
-    { title: 'forth', url: 'url3' },
-    { title: '1', url: 'url4' },
-    { title: '2', url: 'ur123' },
-    { title: '3', url: 'urawdl' },
-    { title: '4', url: 'uradl' },
-    { title: '5', url: 'ur`cl' },
-    { title: '6', url: 'url' },
-    { title: '7', url: 'ur23dgl' },
-    { title: '8', url: 'url' },
-    { title: '9', url: 'uradjnl' },
-    { title: '10', url: 'url' },
-    { title: '11', url: 'url' },
-    { title: '12', url: 'url' },
-    { title: '13', url: 'url' },
-    { title: '14', url: 'url' },
-    { title: '15', url: 'url' },
-];
 var pageActions = [
     { name: 'Print', onClick: function () { return console.log('awd'); } },
     { name: 'Download', onClick: function () { return console.log('awd1'); } },
@@ -12295,13 +12274,14 @@ var Pages = /** @class */ (function (_super) {
     Pages.prototype._renderPage = function (title, url) {
         return (React.createElement("div", { className: "page", key: title },
             React.createElement("div", { className: "page__content" },
-                React.createElement(QRCode, { value: url, size: 130 })),
+                React.createElement(QRCode, { value: "127.0.0.1:8000/qr/" + url, size: 130 })),
             React.createElement("div", { className: "page__title" },
                 React.createElement("div", null, title),
                 this._renderDropDownButton({ icon: 'more', items: pageActions, className: 'more' }))));
     };
     Pages.prototype.render = function () {
         var _this = this;
+        var pages = this.props.pages;
         return (React.createElement("div", { className: "pages" },
             React.createElement("div", { className: "pages__header" },
                 React.createElement("div", { className: "pages__header__left-block" },
@@ -12317,8 +12297,8 @@ var Pages = /** @class */ (function (_super) {
                     this._renderDropDownButton({ icon: 'sort', items: sortActions }))),
             React.createElement("div", { className: "pages__content" }, pages.length ?
                 pages.map(function (_a) {
-                    var title = _a.title, url = _a.url;
-                    return _this._renderPage(title, url);
+                    var title = _a.title, id = _a.id;
+                    return _this._renderPage(title, id);
                 }) :
                 React.createElement("div", null, "You dont have any pages yet."))));
     };
@@ -12420,7 +12400,8 @@ var MainPage = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
             isRightArrowShown: true,
-            isLeftArrowShown: false
+            isLeftArrowShown: false,
+            pages: []
         };
         _this._onTemplatesScroll = function (e) {
             var position = e.target.scrollLeft + e.target.offsetWidth;
@@ -12439,6 +12420,13 @@ var MainPage = /** @class */ (function (_super) {
         };
         return _this;
     }
+    MainPage.prototype.componentDidMount = function () {
+        var _this = this;
+        main_provider_1.getPages().then(function (_a) {
+            var body = _a.body;
+            return _this.setState({ pages: body });
+        }); //todo Error
+    };
     MainPage.prototype._renderTemplate = function (title) {
         return (React.createElement(react_router_dom_1.Link, { to: "/new", className: "template", key: title },
             React.createElement("div", { className: "template__content" },
@@ -12469,10 +12457,9 @@ var MainPage = /** @class */ (function (_super) {
                     this._renderArrow('right')))));
     };
     MainPage.prototype.render = function () {
-        main_provider_1.getPages().then(function (result) { return console.log(result); });
         return (React.createElement("div", { className: "main-page" },
             this._renderTemplates(),
-            React.createElement(pages_1.default, null)));
+            React.createElement(pages_1.default, { pages: this.state.pages })));
     };
     return MainPage;
 }(React.Component));

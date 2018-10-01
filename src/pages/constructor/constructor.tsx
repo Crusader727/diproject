@@ -34,7 +34,7 @@ export default class Constructor extends React.Component {
             fieldsNames: this.state.items.map((el) => el.name),
             fieldsValues: this.state.items.map((el) => el.value)
         }
-        console.log(createPage(page));
+        console.log(createPage(page)); //todo Error
     }
 
     private _openEditor(index?: number) {
