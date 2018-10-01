@@ -23,7 +23,7 @@ export default class MainPage extends React.Component {
     }
 
     componentDidMount() {
-        getPages().then(({body}) => {console.log(body);this.setState({pages: body})}); //todo Error
+        getPages().then((res) => {console.log(res.json());this.setState({pages: {}})}); //todo Error
     }
 
     private _onTemplatesScroll = (e: any): void => {
