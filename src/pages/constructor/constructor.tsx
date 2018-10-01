@@ -1,9 +1,14 @@
 import './constructor.scss';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import ReactSVG from 'react-svg'
 import Header from 'components/header/header';
 import Input from 'components/input/input';
 import TextArea from 'components/text-area/text-area';
+import Button from 'components/button/button';
+
+import Page from 'types/page';
+import {createPage} from './constructor-provider';
 
 interface Item {
     name?: string;
@@ -12,12 +17,24 @@ interface Item {
 }
 
 interface State {
+    documentName: string;
     items: Item[];
 }
 
 export default class Constructor extends React.Component {
     state: State = {
+        documentName: '',
         items: []
+    }
+
+    private _savePage() {
+        const page: Page = {
+            title: this.state.documentName,
+            isPublic: true,
+            fieldsNames: this.state.items.map((el) => el.name),
+            fieldsValues: this.state.items.map((el) => el.value)
+        }
+        console.log(createPage(page));
     }
 
     private _openEditor(index?: number) {
@@ -123,18 +140,35 @@ export default class Constructor extends React.Component {
         );
     }
 
+    private _renderMenu(): React.ReactNode {
+        return (
+            <div className="constructor__menu">
+                <Input
+                    size="medium"
+                    placeholder="Document Title"
+                    value={this.state.documentName}
+                    onChange={(e) => this.setState({documentName: e.target.value})}
+                />
+                <div className="constructor__menu__actions">
+                    <Button text="Save" onClick={() => this._savePage()}/>
+                    <Link to="/">
+                        <Button text="Cancel"/>
+                    </Link>
+                </div>
+            </div>
+        );
+    }
+
     public render(): React.ReactNode {
         return (
             <>
                 <Header />
                 <div className="constructor">
-                        <div className="constructor__content">
-                            {this.state.items.map((item, i) => this._renderItem(item, i))}
-                            {this._renderAddItem()}
-                        </div>
-                        <div className="constructor__menu">
-
-                        </div>
+                    <div className="constructor__content">
+                        {this.state.items.map((item, i) => this._renderItem(item, i))}
+                        {this._renderAddItem()}
+                    </div>
+                    {this._renderMenu()}
                 </div>
             </>
         );

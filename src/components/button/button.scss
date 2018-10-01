@@ -2,12 +2,17 @@
 .button {
     border: none;
     box-sizing: border-box;
-    width: 100px;
-    height: 50px;
-    font-size: 20px;
+    width: 80px;
+    height: 40px;
+    font-size: $font-size-normal;
     border-radius: 6px;
     text-transform: uppercase;
     display: inline-block;
+    background-color: $yellow;
+    opacity: 0.9;
+    &:hover {
+        opacity: 1;
+    }
     &._air {
         background: none;
         width: auto;

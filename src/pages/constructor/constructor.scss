@@ -65,6 +65,13 @@
         flex-direction: column;
         background-color: $grey;
         width: 20%;
+        padding: 12px;
+        &__actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px 38px 0 0;
+        }
     }
 }
 
@@ -80,7 +87,7 @@
 }
 
 .close {
-    color: $yellow;
+    color: $dark-grey;
     margin-top: -7px;
     width: 40px;
     height: 40px;
