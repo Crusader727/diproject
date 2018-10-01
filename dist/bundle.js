@@ -12424,7 +12424,8 @@ var MainPage = /** @class */ (function (_super) {
         var _this = this;
         main_provider_1.getPages().then(function (_a) {
             var body = _a.body;
-            return _this.setState({ pages: body });
+            console.log(body);
+            _this.setState({ pages: body });
         }); //todo Error
     };
     MainPage.prototype._renderTemplate = function (title) {
