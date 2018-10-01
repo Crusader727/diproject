@@ -12422,7 +12422,7 @@ var MainPage = /** @class */ (function (_super) {
     }
     MainPage.prototype.componentDidMount = function () {
         var _this = this;
-        main_provider_1.getPages().then(function (res) { res.json().then(function (result) { return console.log(result); }); _this.setState({ pages: {} }); }); //todo Error
+        main_provider_1.getPages().then(function (res) { return res.json().then(function (pages) { return _this.setState({ pages: pages }); }); }); //todo Error
     };
     MainPage.prototype._renderTemplate = function (title) {
         return (React.createElement(react_router_dom_1.Link, { to: "/new", className: "template", key: title },
