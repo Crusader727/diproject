@@ -12329,6 +12329,30 @@ exports.default = Pages;
 
 /***/ }),
 
+/***/ "./src/pages/main/main-provider.ts":
+/*!*****************************************!*\
+  !*** ./src/pages/main/main-provider.ts ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+function getPages() {
+    return fetch('http://127.0.0.1:5000/', {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        }
+    });
+}
+exports.getPages = getPages;
+
+
+/***/ }),
+
 /***/ "./src/pages/main/main.scss":
 /*!**********************************!*\
   !*** ./src/pages/main/main.scss ***!
@@ -12388,6 +12412,7 @@ var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_mod
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var pages_1 = __webpack_require__(/*! ./components/pages */ "./src/pages/main/components/pages.tsx");
 var header_1 = __webpack_require__(/*! components/header/header */ "./src/components/header/header.tsx");
+var main_provider_1 = __webpack_require__(/*! ./main-provider */ "./src/pages/main/main-provider.ts");
 var Templates = [{ title: 'awd' }, { title: 'transport' }, { title: 'cv' }, { title: 'medical' }, { title: 'contacts' }, { title: 'contacts2' }];
 var MainPage = /** @class */ (function (_super) {
     __extends(MainPage, _super);
@@ -12444,6 +12469,7 @@ var MainPage = /** @class */ (function (_super) {
                     this._renderArrow('right')))));
     };
     MainPage.prototype.render = function () {
+        main_provider_1.getPages().then(function (result) { return console.log(result); });
         return (React.createElement("div", { className: "main-page" },
             this._renderTemplates(),
             React.createElement(pages_1.default, null)));

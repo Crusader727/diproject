@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ReactSVG from 'react-svg'
 import Pages from './components/pages';
 import Header from 'components/header/header';
+import {getPages} from './main-provider';
 
 const Templates = [{title: 'awd'}, {title: 'transport'}, {title: 'cv'}, {title: 'medical'}, {title: 'contacts'}, {title: 'contacts2'}];
 
@@ -88,6 +89,7 @@ export default class MainPage extends React.Component {
     }
 
     public render() {
+        getPages().then((result) => console.log(result));
         return (
             <div className="main-page">
                 {this._renderTemplates()}
