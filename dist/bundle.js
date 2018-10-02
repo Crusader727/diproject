@@ -824,6 +824,25 @@ exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: colum
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/qr/qr.scss":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/qr/qr.scss ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/lib/css-base.js":
 /*!*************************************************!*\
   !*** ./node_modules/css-loader/lib/css-base.js ***!
@@ -11569,6 +11588,7 @@ var React = __webpack_require__(/*! react */ "react");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var constructor_1 = __webpack_require__(/*! pages/constructor/constructor */ "./src/pages/constructor/constructor.tsx");
 var main_1 = __webpack_require__(/*! pages/main/main */ "./src/pages/main/main.tsx");
+var qr_1 = __webpack_require__(/*! pages/qr/qr */ "./src/pages/qr/qr.tsx");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
@@ -11577,6 +11597,7 @@ var App = /** @class */ (function (_super) {
     App.prototype.render = function () {
         return (React.createElement(react_router_dom_1.BrowserRouter, null,
             React.createElement(react_router_dom_1.Switch, null,
+                React.createElement(react_router_dom_1.Route, { path: '/qr/:id', render: function (props) { return (React.createElement(qr_1.default, { id: props.match.params.id })); } }),
                 React.createElement(react_router_dom_1.Route, { path: '/new', component: constructor_1.default }),
                 React.createElement(react_router_dom_1.Route, { path: '/', component: main_1.default }))));
     };
@@ -12273,7 +12294,7 @@ var Pages = /** @class */ (function (_super) {
     };
     Pages.prototype._renderPage = function (title, url) {
         return (React.createElement("div", { className: "page", key: title },
-            React.createElement("div", { className: "page__content" },
+            React.createElement("a", { className: "page__content", href: "qr/" + url },
                 React.createElement(QRCode, { value: "127.0.0.1:8000/qr/" + url, size: 130 })),
             React.createElement("div", { className: "page__title" },
                 React.createElement("div", null, title),
@@ -12401,7 +12422,7 @@ var MainPage = /** @class */ (function (_super) {
         _this.state = {
             isRightArrowShown: true,
             isLeftArrowShown: false,
-            pages: []
+            pages: [{ title: 'adw', id: '12' }]
         };
         _this._onTemplatesScroll = function (e) {
             var position = e.target.scrollLeft + e.target.offsetWidth;
@@ -12461,6 +12482,93 @@ var MainPage = /** @class */ (function (_super) {
     return MainPage;
 }(React.Component));
 exports.default = MainPage;
+
+
+/***/ }),
+
+/***/ "./src/pages/qr/qr.scss":
+/*!******************************!*\
+  !*** ./src/pages/qr/qr.scss ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./qr.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/qr/qr.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/pages/qr/qr.tsx":
+/*!*****************************!*\
+  !*** ./src/pages/qr/qr.tsx ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./qr.scss */ "./src/pages/qr/qr.scss");
+var React = __webpack_require__(/*! react */ "react");
+var Qr = /** @class */ (function (_super) {
+    __extends(Qr, _super);
+    function Qr() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            page: {
+                title: 'test',
+                isPublic: true,
+                fieldsNames: ['first', 'second', 'third'],
+                fieldsValues: ['firstV', 'secondV', 'thirdV']
+            }
+        };
+        return _this;
+    }
+    Qr.prototype._renderItem = function (name, value, index) {
+        return (React.createElement("div", { key: index }, name + ": " + value));
+    };
+    Qr.prototype.render = function () {
+        var _this = this;
+        var _a = this.state.page, title = _a.title, fieldsNames = _a.fieldsNames, fieldsValues = _a.fieldsValues;
+        console.log(this.props.id);
+        return (React.createElement("div", null,
+            React.createElement("div", null, title),
+            React.createElement("div", null, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); }))));
+    };
+    return Qr;
+}(React.Component));
+exports.default = Qr;
 
 
 /***/ }),

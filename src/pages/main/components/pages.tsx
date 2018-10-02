@@ -76,9 +76,9 @@ export default class Pages extends React.Component<Props> {
     private _renderPage(title: string, url: string) {
         return (
             <div className="page" key={title}>
-                <div className="page__content">
+                <a className="page__content" href={`qr/${url}`}>
                     <QRCode value={`127.0.0.1:8000/qr/${url}`} size={130}/>
-                </div>
+                </a>
                 <div className="page__title">
                     <div>
                         {title}

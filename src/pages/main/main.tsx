@@ -19,7 +19,7 @@ export default class MainPage extends React.Component {
     state: State = {
         isRightArrowShown: true,
         isLeftArrowShown: false,
-        pages: []
+        pages: [{title: 'adw', id: '12'}]
     }
 
     componentDidMount() {
