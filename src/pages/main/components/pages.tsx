@@ -77,7 +77,7 @@ export default class Pages extends React.Component<Props> {
         return (
             <div className="page" key={title}>
                 <a className="page__content" href={`qr/${url}`} target="_blank">
-                    <QRCode value={`127.0.0.1:8000/qr/${url}`} size={130}/>
+                    <QRCode value={`https://velox-app.herokuapp.com/qr/${url}`} size={130}/>
                 </a>
                 <div className="page__title">
                     <div>
