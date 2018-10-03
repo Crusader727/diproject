@@ -1,23 +1,24 @@
 import './qr.scss';
 import * as React from 'react';
 import Page from 'types/page';
+import {getQr} from './qr-provider';
 
 interface Props {
     id: string
 }
 
 interface State {
-    page: Page;
+    page: Page | null;
 }
 
 export default class Qr extends React.Component<Props> {
     state: State = {
-        page: {
-            title: 'test',
-            isPublic: true,
-            fieldsNames: ['first', 'second', 'third'],
-            fieldsValues: ['firstV', 'secondV', 'thirdV']
-        }
+        page: null
+    }
+    componentDidMount() {
+        getQr(this.props.id).then(
+            (res) => res.json().then(page => this.setState({page}))
+        ); //todo Error
     }
 
     private _renderItem(name: string, value: string, index: number) {
@@ -29,8 +30,10 @@ export default class Qr extends React.Component<Props> {
     }
 
     render(): React.ReactNode {
+        if (!this.state.page) {
+            return null;
+        }
         const {title, fieldsNames, fieldsValues} = this.state.page;
-        console.log(this.props.id);
         return (
             <div>
                 <div>
