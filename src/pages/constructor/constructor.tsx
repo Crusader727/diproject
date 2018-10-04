@@ -6,9 +6,10 @@ import Header from 'components/header/header';
 import Input from 'components/input/input';
 import TextArea from 'components/text-area/text-area';
 import Button from 'components/button/button';
+import Notification from 'components/notification/notification';
 
 import Page from 'types/page';
-import {createPage} from './constructor-provider';
+import {createPage, editPage} from './constructor-provider';
 
 interface Item {
     name?: string;
@@ -19,12 +20,18 @@ interface Item {
 interface State {
     documentName: string;
     items: Item[];
+    notification: 'error' | 'success' | null;
+    isCreated: boolean;
+    id: string;
 }
 
 export default class Constructor extends React.Component {
     state: State = {
         documentName: '',
-        items: []
+        items: [],
+        notification: null,
+        isCreated: false,
+        id: ''
     }
 
     private _savePage() {
@@ -34,7 +41,22 @@ export default class Constructor extends React.Component {
             fieldsNames: this.state.items.map((el) => el.name),
             fieldsValues: this.state.items.map((el) => el.value)
         }
-        console.log(createPage(page)); //todo Error
+        if (!this.state.isCreated) {
+            createPage(page).then(
+                res => this.setState({
+                    notification: 'success',
+                    isCreated: true,
+                    id: res.uuid
+                }),
+                () => this.setState({notification: 'error'})
+            );
+        } else {
+            editPage(page, this.state.id).then(
+                () => this.setState({notification: 'success'}),
+                () => this.setState({notification: 'error'})
+            )
+        }
+        setTimeout(() => this.setState({notification: null}), 3000);
     }
 
     private _openEditor(index?: number) {
@@ -160,6 +182,7 @@ export default class Constructor extends React.Component {
     }
 
     public render(): React.ReactNode {
+        const {notification} = this.state;
         return (
             <>
                 <Header />
@@ -170,6 +193,7 @@ export default class Constructor extends React.Component {
                     </div>
                     {this._renderMenu()}
                 </div>
+                {notification && <Notification text={notification} type={notification}/>}
             </>
         );
     }

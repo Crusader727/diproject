@@ -748,6 +748,25 @@ exports.push([module.i, ".input {\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/notification/notification.scss":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/notification/notification.scss ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".notification {\n  position: absolute;\n  padding-top: 22px;\n  padding-left: 12px;\n  width: 30%;\n  height: 8%;\n  font-size: 22px;\n  border-radius: 20px;\n  bottom: 16px;\n  left: 16px;\n  text-transform: capitalize; }\n  .notification._error {\n    background-color: rgba(255, 0, 0, 0.4); }\n  .notification._success {\n    background-color: rgba(13, 206, 29, 0.4); }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/text-area/text-area.scss":
 /*!********************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/text-area/text-area.scss ***!
@@ -11913,6 +11932,77 @@ exports.default = Input;
 
 /***/ }),
 
+/***/ "./src/components/notification/notification.scss":
+/*!*******************************************************!*\
+  !*** ./src/components/notification/notification.scss ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./notification.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/notification/notification.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/notification/notification.tsx":
+/*!******************************************************!*\
+  !*** ./src/components/notification/notification.tsx ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./notification.scss */ "./src/components/notification/notification.scss");
+var React = __webpack_require__(/*! react */ "react");
+var Notification = /** @class */ (function (_super) {
+    __extends(Notification, _super);
+    function Notification() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Notification.prototype.render = function () {
+        var _a = this.props, text = _a.text, type = _a.type;
+        return (React.createElement("div", { className: "notification _" + type }, text));
+    };
+    return Notification;
+}(React.Component));
+exports.default = Notification;
+
+
+/***/ }),
+
 /***/ "./src/components/text-area/text-area.scss":
 /*!*************************************************!*\
   !*** ./src/components/text-area/text-area.scss ***!
@@ -12025,9 +12115,29 @@ function createPage(body) {
             "Content-Type": "application/json; charset=utf-8",
         },
         body: JSON.stringify(body)
+    }).then(function (res) {
+        if (!res.ok) {
+            throw new Error;
+        }
+        return res.json();
     });
 }
 exports.createPage = createPage;
+function editPage(body, id) {
+    return fetch("https://velox-server.herokuapp.com/qr/" + id + "/edit", {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify(body)
+    }).then(function (res) {
+        if (!res.ok) {
+            throw new Error;
+        }
+        return res.json();
+    });
+}
+exports.editPage = editPage;
 
 
 /***/ }),
@@ -12093,6 +12203,7 @@ var header_1 = __webpack_require__(/*! components/header/header */ "./src/compon
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
 var text_area_1 = __webpack_require__(/*! components/text-area/text-area */ "./src/components/text-area/text-area.tsx");
 var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
+var notification_1 = __webpack_require__(/*! components/notification/notification */ "./src/components/notification/notification.tsx");
 var constructor_provider_1 = __webpack_require__(/*! ./constructor-provider */ "./src/pages/constructor/constructor-provider.ts");
 var Constructor = /** @class */ (function (_super) {
     __extends(Constructor, _super);
@@ -12100,7 +12211,10 @@ var Constructor = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
             documentName: '',
-            items: []
+            items: [],
+            notification: null,
+            isCreated: false,
+            id: ''
         };
         _this._handleItemNameChange = function (index, type) {
             return function (event) {
@@ -12125,13 +12239,24 @@ var Constructor = /** @class */ (function (_super) {
         return _this;
     }
     Constructor.prototype._savePage = function () {
+        var _this = this;
         var page = {
             title: this.state.documentName,
             isPublic: true,
             fieldsNames: this.state.items.map(function (el) { return el.name; }),
             fieldsValues: this.state.items.map(function (el) { return el.value; })
         };
-        console.log(constructor_provider_1.createPage(page)); //todo Error
+        if (!this.state.isCreated) {
+            constructor_provider_1.createPage(page).then(function (res) { return _this.setState({
+                notification: 'success',
+                isCreated: true,
+                id: res.uuid
+            }); }, function () { return _this.setState({ notification: 'error' }); });
+        }
+        else {
+            constructor_provider_1.editPage(page, this.state.id).then(function () { return _this.setState({ notification: 'success' }); }, function () { return _this.setState({ notification: 'error' }); });
+        }
+        setTimeout(function () { return _this.setState({ notification: null }); }, 3000);
     };
     Constructor.prototype._openEditor = function (index) {
         var items = this.state.items;
@@ -12179,13 +12304,15 @@ var Constructor = /** @class */ (function (_super) {
     };
     Constructor.prototype.render = function () {
         var _this = this;
+        var notification = this.state.notification;
         return (React.createElement(React.Fragment, null,
             React.createElement(header_1.default, null),
             React.createElement("div", { className: "constructor" },
                 React.createElement("div", { className: "constructor__content" },
                     this.state.items.map(function (item, i) { return _this._renderItem(item, i); }),
                     this._renderAddItem()),
-                this._renderMenu())));
+                this._renderMenu()),
+            notification && React.createElement(notification_1.default, { text: notification, type: notification })));
     };
     return Constructor;
 }(React.Component));
@@ -12293,7 +12420,7 @@ var Pages = /** @class */ (function (_super) {
             React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search" })));
     };
     Pages.prototype._renderPage = function (title, url) {
-        return (React.createElement("div", { className: "page", key: title },
+        return (React.createElement("div", { className: "page", key: url },
             React.createElement("a", { className: "page__content", href: "qr/" + url, target: "_blank" },
                 React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + url, size: 130 })),
             React.createElement("div", { className: "page__title" },
