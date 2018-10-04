@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route, RouteComponentProps } from 'react-router-
 import Constructor from 'pages/constructor/constructor';
 import MainPage from 'pages/main/main';
 import Qr from 'pages/qr/qr';
+import Login from 'pages/login/login';
 
 export default class App extends React.Component {
     public render() {
@@ -15,6 +16,10 @@ export default class App extends React.Component {
                     <Route
                         path='/qr/:id'
                         render={(props: RouteComponentProps<{id: string}>) => (<Qr id={props.match.params.id}/>)}
+                    />
+                    <Route
+                        path='/login'
+                        render={(props) => (<Login qs={props.location.search}/>)}
                     />
                     <Route path='/new' component={Constructor}/>
                     <Route path='/' component={MainPage}/>
