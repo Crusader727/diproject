@@ -665,7 +665,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: arial;\n  overflow: hidden; }\n\na,\ntextarea,\np,\ninput,\nbutton {\n  text-decoration: none;\n  outline: 0; }\n", ""]);
+exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: arial;\n  overflow: hidden; }\n\na,\ntextarea,\np,\ninput,\nbutton,\ndiv {\n  text-decoration: none;\n  outline: 0; }\n", ""]);
 
 // exports
 
@@ -703,7 +703,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".dropdown {\n  position: relative;\n  display: inline-block; }\n  .dropdown__content {\n    display: none;\n    position: absolute;\n    background-color: #515151;\n    min-width: 100px;\n    z-index: 1;\n    border-radius: 3px;\n    border: 2px solid #2d2d2d; }\n    .dropdown__content__item {\n      font-size: 15px;\n      color: white;\n      padding: 8px 12px;\n      display: block;\n      box-sizing: border-box; }\n      .dropdown__content__item:hover {\n        color: #ffd900; }\n      .dropdown__content__item.chosen {\n        color: #ffd900; }\n\n.dropdown:hover .dropdown__content {\n  display: block; }\n", ""]);
+exports.push([module.i, ".dropdown__content {\n  position: absolute;\n  background-color: #515151;\n  min-width: 100px;\n  z-index: 1;\n  border-radius: 3px;\n  border: 2px solid #2d2d2d; }\n  .dropdown__content__item {\n    font-size: 15px;\n    color: white;\n    padding: 8px 12px;\n    display: block;\n    box-sizing: border-box; }\n    .dropdown__content__item:hover {\n      color: #ffd900; }\n    .dropdown__content__item.chosen {\n      color: #ffd900; }\n", ""]);
 
 // exports
 
@@ -805,6 +805,25 @@ exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/main/components/page.scss":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/main/components/page.scss ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  min-width: 0;\n  min-height: 0;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    margin-right: -5px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    top: 10px; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/main/components/pages.scss":
 /*!*****************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/main/components/pages.scss ***!
@@ -817,7 +836,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".pages {\n  padding: 0 11% 0 15%;\n  background-color: #2d2d2d;\n  display: flex;\n  flex-direction: column;\n  height: 58vh; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px; }\n    .pages__header__left-block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.page {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  min-width: 0;\n  min-height: 0;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    margin-right: 16px; }\n\n.icon-more {\n  width: 24px;\n  height: 24px;\n  opacity: 0.8;\n  margin-right: -5px; }\n  .icon-more:hover {\n    opacity: 1; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n", ""]);
+exports.push([module.i, ".pages {\n  padding: 0 11% 0 15%;\n  background-color: #2d2d2d;\n  display: flex;\n  flex-direction: column;\n  height: 58vh; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    margin-right: 16px; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n", ""]);
 
 // exports
 
@@ -11682,16 +11701,19 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./button.scss */ "./src/components/button/button.scss");
 var React = __webpack_require__(/*! react */ "react");
+var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype.render = function () {
-        var _a = this.props, type = _a.type, size = _a.size, text = _a.text, onClick = _a.onClick;
+        var _a = this.props, type = _a.type, size = _a.size, text = _a.text, onClick = _a.onClick, icon = _a.icon;
         return (React.createElement("button", { 
             // className={'input_size-' + (size ? size : this.defaultProps.size)}
-            className: 'button' + (type ? ' _' + type : ''), onClick: onClick }, text));
+            className: 'button' + (type ? ' _' + type : ''), onClick: onClick },
+            text,
+            icon && React.createElement(react_svg_1.default, { src: "icons/" + icon + ".svg", svgClassName: "" })));
     };
     return Button;
 }(React.Component));
@@ -11759,13 +11781,24 @@ var React = __webpack_require__(/*! react */ "react");
 var DropDown = /** @class */ (function (_super) {
     __extends(DropDown, _super);
     function DropDown() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            isContentShown: false
+        };
+        return _this;
     }
-    DropDown.prototype.render = function () {
+    DropDown.prototype._renderContent = function () {
+        if (!this.state.isContentShown) {
+            return null;
+        }
         var _a = this.props, items = _a.items, chosenIndex = _a.chosenIndex;
-        return (React.createElement("div", { className: "dropdown" },
+        return (React.createElement("div", { className: "dropdown__content" }, items.map(function (item, index) { return (React.createElement("div", { key: item.name, className: "dropdown__content__item" + (chosenIndex === index ? ' chosen' : ''), onClick: item.onClick }, item.name)); })));
+    };
+    DropDown.prototype.render = function () {
+        var _this = this;
+        return (React.createElement("div", { className: "dropdown", onClick: function () { return _this.setState({ isContentShown: true }); }, onBlur: function () { return _this.setState({ isContentShown: false }); }, tabIndex: 0 },
             this.props.children,
-            React.createElement("div", { className: "dropdown__content" }, items.map(function (item, index) { return (React.createElement("div", { key: item.name, className: "dropdown__content__item" + (chosenIndex === index ? ' chosen' : ''), onClick: item.onClick }, item.name)); }))));
+            this._renderContent()));
     };
     return DropDown;
 }(React.Component));
@@ -12134,7 +12167,6 @@ function editPage(body, id) {
         if (!res.ok) {
             throw new Error;
         }
-        return res.json();
     });
 }
 exports.editPage = editPage;
@@ -12321,6 +12353,101 @@ exports.default = Constructor;
 
 /***/ }),
 
+/***/ "./src/pages/main/components/page.scss":
+/*!*********************************************!*\
+  !*** ./src/pages/main/components/page.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/sass-loader/lib/loader.js!./page.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/main/components/page.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/pages/main/components/page.tsx":
+/*!********************************************!*\
+  !*** ./src/pages/main/components/page.tsx ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./page.scss */ "./src/pages/main/components/page.scss");
+var React = __webpack_require__(/*! react */ "react");
+var QRCode = __webpack_require__(/*! qrcode.react */ "./node_modules/qrcode.react/lib/index.js");
+var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
+var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
+var Page = /** @class */ (function (_super) {
+    __extends(Page, _super);
+    function Page() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            isMenuShown: false
+        };
+        return _this;
+    }
+    Page.prototype._renderMenu = function () {
+        if (!this.state.isMenuShown) {
+            return null;
+        }
+        return (React.createElement("div", { className: "page__menu" },
+            React.createElement(button_1.default, { type: "air", icon: "edit" }),
+            React.createElement(button_1.default, { type: "air", icon: "delete" }),
+            React.createElement(button_1.default, { type: "air", icon: "print" }),
+            React.createElement(button_1.default, { type: "air", icon: "download" })));
+    };
+    Page.prototype.render = function () {
+        var _this = this;
+        var _a = this.props, id = _a.id, title = _a.title;
+        return (React.createElement("div", { className: "page" },
+            React.createElement("a", { className: "page__content", href: "qr/" + id, target: "_blank" },
+                React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + id, size: 130 })),
+            this._renderMenu(),
+            React.createElement("div", { className: "page__title" },
+                React.createElement("div", null, title),
+                React.createElement(react_svg_1.default, { src: "icons/more.svg", svgClassName: "page__icon", onClick: function () { return _this.setState({ isMenuShown: true }); }, onBlur: function () { return _this.setState({ isMenuShown: false }); }, tabIndex: 0 }))));
+    };
+    return Page;
+}(React.Component));
+exports.default = Page;
+
+
+/***/ }),
+
 /***/ "./src/pages/main/components/pages.scss":
 /*!**********************************************!*\
   !*** ./src/pages/main/components/pages.scss ***!
@@ -12377,15 +12504,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./pages.scss */ "./src/pages/main/components/pages.scss");
 var React = __webpack_require__(/*! react */ "react");
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
-var QRCode = __webpack_require__(/*! qrcode.react */ "./node_modules/qrcode.react/lib/index.js");
 var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
-var pageActions = [
-    { name: 'Print', onClick: function () { return console.log('awd'); } },
-    { name: 'Download', onClick: function () { return console.log('awd1'); } },
-    { name: 'Edit', onClick: function () { return console.log('awd2'); } },
-    { name: 'Delete', onClick: function () { return console.log('awd2'); } }
-];
+var page_1 = __webpack_require__(/*! ./page */ "./src/pages/main/components/page.tsx");
 var sortActions = [
     { name: 'A-Z', onClick: function () { return console.log('awd'); } },
     { name: 'Z-A', onClick: function () { return console.log('awd1'); } },
@@ -12419,23 +12540,14 @@ var Pages = /** @class */ (function (_super) {
         return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: false }); } },
             React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search" })));
     };
-    Pages.prototype._renderPage = function (title, url) {
-        return (React.createElement("div", { className: "page", key: url },
-            React.createElement("a", { className: "page__content", href: "qr/" + url, target: "_blank" },
-                React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + url, size: 130 })),
-            React.createElement("div", { className: "page__title" },
-                React.createElement("div", null, title),
-                this._renderDropDownButton({ icon: 'more', items: pageActions, className: 'more' }))));
-    };
     Pages.prototype.render = function () {
-        var _this = this;
         var pages = this.props.pages;
         return (React.createElement("div", { className: "pages" },
             React.createElement("div", { className: "pages__header" },
-                React.createElement("div", { className: "pages__header__left-block" },
+                React.createElement("div", { className: "pages__header__block" },
                     React.createElement("div", { className: "pages__header__title" }, "Pages"),
                     this._renderSearch()),
-                React.createElement("div", null,
+                React.createElement("div", { className: "pages__header__block" },
                     this._renderDropDownButton({
                         icon: 'owner',
                         items: this.ownerTypes,
@@ -12446,7 +12558,7 @@ var Pages = /** @class */ (function (_super) {
             React.createElement("div", { className: "pages__content" }, pages.length ?
                 pages.map(function (_a) {
                     var title = _a.title, id = _a.id;
-                    return _this._renderPage(title, id);
+                    return React.createElement(page_1.default, { title: title, id: id, key: id });
                 }) :
                 React.createElement("div", null, "You dont have any pages yet."))));
     };

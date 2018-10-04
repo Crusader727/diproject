@@ -1,9 +1,6 @@
 @import '../../common/common.scss';
 .dropdown {
-    position: relative;
-    display: inline-block;
     &__content {
-        display: none;
         position: absolute;
         background-color: $grey;
         min-width: 100px;
@@ -24,8 +21,4 @@
             }
         }
     }
-}
-
-.dropdown:hover .dropdown__content {
-    display: block;
 }

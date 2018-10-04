@@ -1,18 +1,11 @@
 import './pages.scss';
 import * as React from 'react';
 import ReactSVG from 'react-svg'
-import * as QRCode from 'qrcode.react';
 
 import DropDown from 'components/dropdown/dropdown';
 import Input from 'components/input/input';
 import PageCut from 'types/pageCut';
-
-const pageActions = [
-    {name: 'Print', onClick: () => console.log('awd')},
-    {name: 'Download', onClick: () => console.log('awd1')},
-    {name: 'Edit', onClick: () => console.log('awd2')},
-    {name: 'Delete', onClick: () => console.log('awd2')}
-];
+import Page from './page';
 
 const sortActions = [
     {name: 'A-Z', onClick: () => console.log('awd')},
@@ -73,34 +66,18 @@ export default class Pages extends React.Component<Props> {
         );
     }
 
-    private _renderPage(title: string, url: string) {
-        return (
-            <div className="page" key={url}>
-                <a className="page__content" href={`qr/${url}`} target="_blank">
-                    <QRCode value={`https://velox-app.herokuapp.com/qr/${url}`} size={130}/>
-                </a>
-                <div className="page__title">
-                    <div>
-                        {title}
-                    </div>
-                    {this._renderDropDownButton({icon: 'more', items: pageActions, className: 'more'})}
-                </div>
-            </div>
-        );
-    }
-
     render() {
         const {pages} = this.props;
         return (
             <div className="pages">
                 <div className="pages__header">
-                    <div className="pages__header__left-block">
+                    <div className="pages__header__block">
                         <div className="pages__header__title">
                             Pages
                         </div>
                         {this._renderSearch()}
                     </div>
-                    <div>
+                    <div className="pages__header__block">
                         {this._renderDropDownButton({
                             icon: 'owner',
                             items: this.ownerTypes,
@@ -113,7 +90,7 @@ export default class Pages extends React.Component<Props> {
                 </div>
                 <div className="pages__content">
                     {pages.length ?
-                        pages.map(({title, id}) => this._renderPage(title, id)) :
+                        pages.map(({title, id}) => <Page title={title} id={id} key={id}/>) :
                         <div>
                             You dont have any pages yet.
                         </div>

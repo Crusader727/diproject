@@ -26,6 +26,5 @@ export function editPage(body: Page, id: string) {
         if (!res.ok) {
             throw new Error;
         }
-        return res.json();
     });
 }

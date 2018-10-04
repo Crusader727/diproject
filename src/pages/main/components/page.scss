@@ -1,0 +1,50 @@
+@import '../../../common/common.scss';
+.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    min-width: 0;
+    min-height: 0;
+    box-sizing: border-box;
+    border: 3px solid $grey;
+    &:last-child {
+        margin-right: 0px;
+    }
+    &__content {
+        height: 130px;
+        width: 130px;
+        box-sizing: border-box;
+    }
+    &__title {
+        background-color: $grey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: $white;
+        text-transform: capitalize;
+        font-size: $font-size-normal;
+        line-height: 25px;
+    }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        opacity: 0.8;
+        margin-right: -5px;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__menu {
+        position: absolute;
+        background-color: $dark-grey;
+        display: flex;
+        flex-direction: column;
+        right: 0;
+        top: 10px;
+    }
+    &:hover {
+        border: 3px solid $yellow;
+    }
+}
