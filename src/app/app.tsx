@@ -12,19 +12,18 @@ interface State {
     isLoggedIn: boolean
 }
 
-export default class App extends React.Component {
+export default class App extends React.Component<{}, State> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            isLoggedIn: true
+        }//HERE MUST BE WHO AM I
+    }
     _redirectTo = (url: string, props: any) => (
         <Redirect
             to={{pathname: url, state: { from: props.location }}}
         />
     );
-    state: State = {
-        isLoggedIn: false
-    }
-    componentDidMount () {
-        //HERE MUST BE WHOAMI
-        this.setState({isLoggedIn: true});
-    }
     public render() {
         const {isLoggedIn} = this.state;
         return (

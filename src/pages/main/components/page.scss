@@ -26,12 +26,22 @@
         text-transform: capitalize;
         font-size: $font-size-normal;
         line-height: 25px;
+        &__left-block {
+            display: flex;
+            flex-direction: column;
+        }
+        &__date {
+            line-height: 12px;
+            font-size: $font-size-small;
+        }
     }
     &__icon {
         width: 24px;
         height: 24px;
         opacity: 0.8;
+        cursor: pointer;
         margin-right: -5px;
+        padding-top: 7px;
         &:hover {
             opacity: 1;
         }

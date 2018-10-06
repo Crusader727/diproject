@@ -684,7 +684,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n  width: 80px;\n  height: 40px;\n  font-size: 15px;\n  border-radius: 6px;\n  text-transform: uppercase;\n  display: inline-block;\n  background-color: #ffd900;\n  opacity: 0.9; }\n  .button:hover {\n    opacity: 1; }\n  .button._air {\n    background: none;\n    width: auto;\n    height: auto;\n    font-size: 15px;\n    color: #ffd900;\n    opacity: 0.8; }\n    .button._air:hover {\n      opacity: 1; }\n    .button._air:active {\n      opacity: 1; }\n", ""]);
+exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n  width: 80px;\n  height: 40px;\n  font-size: 15px;\n  border-radius: 6px;\n  text-transform: uppercase;\n  display: inline-block;\n  background-color: #ffd900;\n  opacity: 0.9;\n  cursor: pointer; }\n  .button:hover {\n    opacity: 1; }\n  .button._air {\n    background: none;\n    width: auto;\n    height: auto;\n    font-size: 15px;\n    color: #ffd900;\n    opacity: 0.8; }\n    .button._air:hover {\n      opacity: 1; }\n    .button._air:active {\n      opacity: 1; }\n", ""]);
 
 // exports
 
@@ -855,7 +855,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  min-width: 0;\n  min-height: 0;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    margin-right: -5px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    top: 10px; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n", ""]);
+exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  min-width: 0;\n  min-height: 0;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n    .page__title__left-block {\n      display: flex;\n      flex-direction: column; }\n    .page__title__date {\n      line-height: 12px;\n      font-size: 12px; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    top: 10px; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n", ""]);
 
 // exports
 
@@ -874,7 +874,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".pages {\n  padding: 0 11% 0 15%;\n  background-color: #2d2d2d;\n  display: flex;\n  flex-direction: column;\n  height: 58vh; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    margin-right: 16px; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n", ""]);
+exports.push([module.i, ".pages {\n  padding: 0 11% 0 15%;\n  background-color: #2d2d2d;\n  display: flex;\n  flex-direction: column;\n  height: 58vh; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer;\n    margin-right: 16px; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n", ""]);
 
 // exports
 
@@ -12354,18 +12354,14 @@ var qr_1 = __webpack_require__(/*! pages/qr/qr */ "./src/pages/qr/qr.tsx");
 var login_1 = __webpack_require__(/*! pages/login/login */ "./src/pages/login/login.tsx");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
-    function App() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+    function App(props) {
+        var _this = _super.call(this, props) || this;
         _this._redirectTo = function (url, props) { return (React.createElement(react_router_dom_1.Redirect, { to: { pathname: url, state: { from: props.location } } })); };
         _this.state = {
-            isLoggedIn: false
-        };
+            isLoggedIn: true
+        }; //HERE MUST BE WHO AM I
         return _this;
     }
-    App.prototype.componentDidMount = function () {
-        //HERE MUST BE WHOAMI
-        this.setState({ isLoggedIn: true });
-    };
     App.prototype.render = function () {
         var _this = this;
         var isLoggedIn = this.state.isLoggedIn;
@@ -12457,10 +12453,10 @@ var Button = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype.render = function () {
-        var _a = this.props, type = _a.type, size = _a.size, text = _a.text, onClick = _a.onClick, icon = _a.icon;
+        var _a = this.props, type = _a.type, size = _a.size, text = _a.text, onClick = _a.onClick, icon = _a.icon, onBlur = _a.onBlur;
         return (React.createElement("button", { 
             // className={'input_size-' + (size ? size : this.defaultProps.size)}
-            className: 'button' + (type ? ' _' + type : ''), onClick: onClick },
+            className: 'button' + (type ? ' _' + type : ''), onClick: onClick, onBlur: onBlur },
             text,
             icon && React.createElement(react_svg_1.default, { src: "icons/" + icon + ".svg", svgClassName: "" })));
     };
@@ -12957,7 +12953,7 @@ exports.default = TextArea;
 Object.defineProperty(exports, "__esModule", { value: true });
 var backendUrl = 'https://velox-server.herokuapp.com';
 exports.backendUrl = backendUrl;
-var yandexId = 'фвц';
+var yandexId = '6f0aee3855ce4eee9bf32bf716010d1e';
 exports.yandexId = yandexId;
 
 
@@ -13343,6 +13339,36 @@ exports.default = Login;
 
 /***/ }),
 
+/***/ "./src/pages/main/components/page-provider.ts":
+/*!****************************************************!*\
+  !*** ./src/pages/main/components/page-provider.ts ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+var config_1 = __webpack_require__(/*! ../../../core/config/config */ "./src/core/config/config.ts");
+function deletePage(id) {
+    return fetch(config_1.backendUrl + "/qr/" + id + "/delete", {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        }
+    }).then(function (res) {
+        if (!res.ok) {
+            throw new Error;
+        }
+        return;
+    });
+}
+exports.deletePage = deletePage;
+
+
+/***/ }),
+
 /***/ "./src/pages/main/components/page.scss":
 /*!*********************************************!*\
   !*** ./src/pages/main/components/page.scss ***!
@@ -13401,12 +13427,18 @@ var React = __webpack_require__(/*! react */ "react");
 var QRCode = __webpack_require__(/*! qrcode.react */ "./node_modules/qrcode.react/lib/index.js");
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
+var page_provider_1 = __webpack_require__(/*! ./page-provider */ "./src/pages/main/components/page-provider.ts");
 var Page = /** @class */ (function (_super) {
     __extends(Page, _super);
     function Page() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
-            isMenuShown: false
+            isMenuShown: false,
+            isShown: true
+        };
+        _this._deletePage = function () {
+            page_provider_1.deletePage(_this.props.id).then(function () { return _this.setState({ isShown: false }); }, function () { return console.log('error'); } //TODO error
+            );
         };
         return _this;
     }
@@ -13416,20 +13448,26 @@ var Page = /** @class */ (function (_super) {
         }
         return (React.createElement("div", { className: "page__menu" },
             React.createElement(button_1.default, { type: "air", icon: "edit" }),
-            React.createElement(button_1.default, { type: "air", icon: "delete" }),
+            React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage }),
             React.createElement(button_1.default, { type: "air", icon: "print" }),
             React.createElement(button_1.default, { type: "air", icon: "download" })));
     };
     Page.prototype.render = function () {
         var _this = this;
-        var _a = this.props, id = _a.id, title = _a.title;
+        if (!this.state.isShown) {
+            return null;
+        }
+        var _a = this.props, id = _a.id, title = _a.title, date = _a.date;
+        var formatedDate = new Date(date).toDateString();
         return (React.createElement("div", { className: "page" },
             React.createElement("a", { className: "page__content", href: "qr/" + id, target: "_blank" },
                 React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + id, size: 130 })),
             this._renderMenu(),
             React.createElement("div", { className: "page__title" },
-                React.createElement("div", null, title),
-                React.createElement(react_svg_1.default, { src: "icons/more.svg", svgClassName: "page__icon", onClick: function () { return _this.setState({ isMenuShown: true }); }, onBlur: function () { return _this.setState({ isMenuShown: false }); }, tabIndex: 0 }))));
+                React.createElement("div", { className: "page__title__left-block" },
+                    React.createElement("div", null, title),
+                    React.createElement("div", { className: "page__title__date" }, formatedDate)),
+                React.createElement(react_svg_1.default, { src: "icons/more.svg", svgClassName: "page__icon", tabIndex: 0, onBlur: function () { return setTimeout(function () { return _this.setState({ isMenuShown: false }); }, 200); }, onClick: function () { return _this.setState({ isMenuShown: true }); } }))));
     };
     return Page;
 }(React.Component));
@@ -13490,6 +13528,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./pages.scss */ "./src/pages/main/components/pages.scss");
 var React = __webpack_require__(/*! react */ "react");
@@ -13520,7 +13569,7 @@ var Pages = /** @class */ (function (_super) {
     Pages.prototype._renderDropDownButton = function (_a) {
         var icon = _a.icon, items = _a.items, chosenIndex = _a.chosenIndex, className = _a.className;
         return (React.createElement(dropdown_1.default, { items: items, chosenIndex: chosenIndex },
-            React.createElement(react_svg_1.default, { src: "icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : undefined), onClick: function () { return console.log('sort'); } })));
+            React.createElement(react_svg_1.default, { src: "icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : ''), onClick: function () { return console.log('sort'); } })));
     };
     Pages.prototype._renderSearch = function () {
         var _this = this;
@@ -13546,10 +13595,7 @@ var Pages = /** @class */ (function (_super) {
                     }),
                     this._renderDropDownButton({ icon: 'sort', items: sortActions }))),
             React.createElement("div", { className: "pages__content" }, pages.length ?
-                pages.map(function (_a) {
-                    var title = _a.title, id = _a.id;
-                    return React.createElement(page_1.default, { title: title, id: id, key: id });
-                }) :
+                pages.map(function (page) { return React.createElement(page_1.default, __assign({}, page, { key: page.id })); }) :
                 React.createElement("div", null, "You dont have any pages yet."))));
     };
     return Pages;

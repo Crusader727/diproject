@@ -36,6 +36,7 @@
     width: 26px;
     height: 26px;
     opacity: 0.8;
+    cursor: pointer;
     &:hover {
         opacity: 1;
     }
@@ -44,6 +45,7 @@
         height: 20px;
     }
     &-owner {
+        cursor: pointer;
         margin-right: 16px;
     }
 }

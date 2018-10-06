@@ -42,7 +42,7 @@ export default class Pages extends React.Component<Props> {
             <DropDown items={items} chosenIndex={chosenIndex}>
                 <ReactSVG
                     src={`icons/${icon}.svg`}
-                    svgClassName={"icon" + (className ? `-${className}` : undefined)}
+                    svgClassName={"icon" + (className ? `-${className}` : '')}
                     onClick={() => console.log('sort')}
                 />
             </DropDown>  
@@ -90,7 +90,7 @@ export default class Pages extends React.Component<Props> {
                 </div>
                 <div className="pages__content">
                     {pages.length ?
-                        pages.map(({title, id}) => <Page title={title} id={id} key={id}/>) :
+                        pages.map((page) => <Page {...page} key={page.id}/>) :
                         <div>
                             You dont have any pages yet.
                         </div>

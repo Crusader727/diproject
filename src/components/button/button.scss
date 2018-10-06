@@ -10,6 +10,7 @@
     display: inline-block;
     background-color: $yellow;
     opacity: 0.9;
+    cursor: pointer;
     &:hover {
         opacity: 1;
     }
