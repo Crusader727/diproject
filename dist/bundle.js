@@ -12450,15 +12450,28 @@ var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.anchor = null;
+        _this._onClick = function () {
+            if (_this.anchor) {
+                _this.anchor.click();
+                return;
+            }
+            _this.props.onClick();
+        };
+        return _this;
     }
     Button.prototype.render = function () {
-        var _a = this.props, type = _a.type, size = _a.size, text = _a.text, onClick = _a.onClick, icon = _a.icon, onBlur = _a.onBlur;
+        var _this = this;
+        var _a = this.props, type = _a.type, downloadHref = _a.downloadHref, downloadTitle = _a.downloadTitle, text = _a.text, onClick = _a.onClick, icon = _a.icon, onBlur = _a.onBlur;
         return (React.createElement("button", { 
             // className={'input_size-' + (size ? size : this.defaultProps.size)}
-            className: 'button' + (type ? ' _' + type : ''), onClick: onClick, onBlur: onBlur },
+            className: 'button' + (type ? ' _' + type : ''), onClick: this._onClick, onBlur: onBlur },
             text,
-            icon && React.createElement(react_svg_1.default, { src: "icons/" + icon + ".svg", svgClassName: "" })));
+            icon && React.createElement(react_svg_1.default, { src: "icons/" + icon + ".svg", svgClassName: "" }),
+            downloadHref ?
+                React.createElement("a", { href: downloadHref, download: downloadTitle, ref: function (anchor) { return _this.anchor = anchor; } }) :
+                null));
     };
     return Button;
 }(React.Component));
@@ -13424,6 +13437,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./page.scss */ "./src/pages/main/components/page.scss");
 var React = __webpack_require__(/*! react */ "react");
+var server_1 = __webpack_require__(/*! react-dom/server */ "./node_modules/react-dom/server.browser.js");
 var QRCode = __webpack_require__(/*! qrcode.react */ "./node_modules/qrcode.react/lib/index.js");
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
@@ -13440,6 +13454,12 @@ var Page = /** @class */ (function (_super) {
             page_provider_1.deletePage(_this.props.id).then(function () { return _this.setState({ isShown: false }); }, function () { return console.log('error'); } //TODO error
             );
         };
+        _this._downloadSVG = function () {
+            var svg = server_1.renderToString(React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + _this.props.id, size: 130, renderAs: "svg" }));
+            svg = svg.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+            svg = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+            return svg;
+        };
         return _this;
     }
     Page.prototype._renderMenu = function () {
@@ -13450,15 +13470,19 @@ var Page = /** @class */ (function (_super) {
             React.createElement(button_1.default, { type: "air", icon: "edit" }),
             React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage }),
             React.createElement(button_1.default, { type: "air", icon: "print" }),
-            React.createElement(button_1.default, { type: "air", icon: "download" })));
+            React.createElement(button_1.default, { type: "air", icon: "download", downloadHref: this._downloadSVG(), downloadTitle: this.props.title })));
     };
     Page.prototype.render = function () {
         var _this = this;
         if (!this.state.isShown) {
             return null;
         }
-        var _a = this.props, id = _a.id, title = _a.title, date = _a.date;
-        var formatedDate = new Date(date).toDateString();
+        var _a = this.props, id = _a.id, title = _a.title;
+        var date = new Date(this.props.date);
+        var now = new Date();
+        var formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
+            date.toDateString() :
+            date.toLocaleTimeString();
         return (React.createElement("div", { className: "page" },
             React.createElement("a", { className: "page__content", href: "qr/" + id, target: "_blank" },
                 React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + id, size: 130 })),
@@ -13467,7 +13491,7 @@ var Page = /** @class */ (function (_super) {
                 React.createElement("div", { className: "page__title__left-block" },
                     React.createElement("div", null, title),
                     React.createElement("div", { className: "page__title__date" }, formatedDate)),
-                React.createElement(react_svg_1.default, { src: "icons/more.svg", svgClassName: "page__icon", tabIndex: 0, onBlur: function () { return setTimeout(function () { return _this.setState({ isMenuShown: false }); }, 200); }, onClick: function () { return _this.setState({ isMenuShown: true }); } }))));
+                React.createElement(react_svg_1.default, { src: "icons/more.svg", svgClassName: "page__icon", tabIndex: 0, onBlur: function () { return setTimeout(function () { return _this.setState({ isMenuShown: false }); }, 200); }, onClick: function () { return _this.setState({ isMenuShown: !_this.state.isMenuShown }); } }))));
     };
     return Page;
 }(React.Component));
