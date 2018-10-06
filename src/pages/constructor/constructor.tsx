@@ -31,6 +31,12 @@ interface State {
     notification: 'error' | 'success' | null;
     isCreated: boolean;
     id: string;
+    checkboxes: {
+        isPrivate: boolean,
+        isPrivateLocked: boolean,
+        isStatic: boolean,
+        isStaticLocked: boolean
+    }
 }
 
 export default class Constructor extends React.Component<Props, State> {
@@ -38,10 +44,12 @@ export default class Constructor extends React.Component<Props, State> {
         super(props);
         let items: Item[] = [];
         let isNotEditable = false;
+        let isStatic = false;
         const {type} = this.props;
         if (type && CommonItems[type]) {
-            items = CommonItems[type].items,
-            isNotEditable = CommonItems[type].isNotEditable
+            items = CommonItems[type].items;
+            isNotEditable = CommonItems[type].isNotEditable;
+            isStatic = CommonItems[type].isStatic
         }
         this.state = {
             documentName: '',
@@ -49,7 +57,13 @@ export default class Constructor extends React.Component<Props, State> {
             isNotEditable,
             notification: null,
             isCreated: false,
-            id: ''
+            id: '',
+            checkboxes: {
+                isPrivate: false,
+                isStatic,
+                isStaticLocked: isStatic,
+                isPrivateLocked: isStatic
+            }
         }
     }
 
@@ -184,6 +198,15 @@ export default class Constructor extends React.Component<Props, State> {
         );
     }
 
+    private _renderCheckboxes(): React.ReactNode {
+        return (
+            <div className="constructor__menu__checkboxes">
+                <Checkbox text="Private"/>
+                <Checkbox text="Static"/>
+            </div>
+        );
+    }
+
     private _renderMenu(): React.ReactNode {
         return (
             <div className="constructor__menu">
@@ -193,10 +216,7 @@ export default class Constructor extends React.Component<Props, State> {
                     value={this.state.documentName}
                     onChange={(e) => this.setState({documentName: e.target.value})}
                 />
-                <div className="constructor__menu__checkboxes">
-                    <Checkbox text="Private" checked disabled/>
-                    <Checkbox text="Static"/>
-                </div>
+                {this._renderCheckboxes()}
                 <div className="constructor__menu__actions">
                     <Button text="Save" onClick={() => this._savePage()}/>
                     <Link to="/">

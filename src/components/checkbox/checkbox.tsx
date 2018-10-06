@@ -4,7 +4,7 @@ import * as React from 'react';
 interface Props {
     disabled?: boolean;
     checked?: boolean;
-    text: string,
+    text: string
 }
 
 interface State {
@@ -17,7 +17,7 @@ export default class Checkbox extends React.Component<Props> {
     }
     private _onClick = () => {
         if (!this.props.disabled) {
-            this.setState({checked: !this.state.checked})
+            this.setState({checked: !this.state.checked});
         }
     }
     render(): React.ReactNode {
