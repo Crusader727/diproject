@@ -1,4 +1,4 @@
 const backendUrl = 'https://velox-server.herokuapp.com';
-const yandexId = 'awd';
+const yandexId = 'adw';
 
 export {backendUrl, yandexId};

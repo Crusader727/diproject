@@ -7,6 +7,7 @@ import Input from 'components/input/input';
 import TextArea from 'components/text-area/text-area';
 import Button from 'components/button/button';
 import Notification from 'components/notification/notification';
+import Checkbox from 'components/checkbox/checkbox';
 
 import Page from 'types/page';
 import {createPage, editPage} from './constructor-provider';
@@ -192,6 +193,10 @@ export default class Constructor extends React.Component<Props, State> {
                     value={this.state.documentName}
                     onChange={(e) => this.setState({documentName: e.target.value})}
                 />
+                <div className="constructor__menu__checkboxes">
+                    <Checkbox text="Private" checked disabled/>
+                    <Checkbox text="Static"/>
+                </div>
                 <div className="constructor__menu__actions">
                     <Button text="Save" onClick={() => this._savePage()}/>
                     <Link to="/">

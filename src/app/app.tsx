@@ -19,7 +19,7 @@ export default class App extends React.Component {
                     />
                     <Route
                         path='/login'
-                        render={(props) => (<Login qs={props.location.search}/>)}
+                        render={(props) => (<Login hash={props.location.hash}/>)}
                     />
                     <Route
                         path='/new/:type'

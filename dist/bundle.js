@@ -691,6 +691,25 @@ exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/checkbox/checkbox.scss":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/checkbox/checkbox.scss ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".checkbox {\n  display: block;\n  position: relative;\n  padding-left: 28px;\n  cursor: pointer;\n  font-size: 18px;\n  line-height: 20px;\n  user-select: none;\n  color: white; }\n  .checkbox__input {\n    position: absolute;\n    opacity: 0;\n    cursor: pointer;\n    height: 0;\n    width: 0; }\n  .checkbox__checkmark {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 20px;\n    width: 20px;\n    border-radius: 4px;\n    border: 3px solid #ffd900;\n    box-sizing: border-box; }\n    .checkbox__checkmark._checked {\n      background-color: #ffd900; }\n    .checkbox__checkmark._disabled {\n      opacity: 0.7; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/dropdown/dropdown.scss":
 /*!******************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/components/dropdown/dropdown.scss ***!
@@ -798,7 +817,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 94vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: white;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #515151;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      min-height: 250px;\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      border: 3px solid #515151; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n    .constructor__content__item {\n      display: flex;\n      min-height: 30px;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 3px solid #515151; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #2d2d2d;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
+exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 94vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: white;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #515151;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      min-height: 250px;\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      border: 3px solid #515151; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n    .constructor__content__item {\n      display: flex;\n      min-height: 30px;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 3px solid #515151; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      padding: 10px 0;\n      height: 10vh; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #2d2d2d;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
 
 // exports
 
@@ -12342,7 +12361,7 @@ var App = /** @class */ (function (_super) {
         return (React.createElement(react_router_dom_1.BrowserRouter, null,
             React.createElement(react_router_dom_1.Switch, null,
                 React.createElement(react_router_dom_1.Route, { path: '/qr/:id', render: function (props) { return (React.createElement(qr_1.default, { id: props.match.params.id })); } }),
-                React.createElement(react_router_dom_1.Route, { path: '/login', render: function (props) { return (React.createElement(login_1.default, { qs: props.location.search })); } }),
+                React.createElement(react_router_dom_1.Route, { path: '/login', render: function (props) { return (React.createElement(login_1.default, { hash: props.location.hash })); } }),
                 React.createElement(react_router_dom_1.Route, { path: '/new/:type', render: function (props) {
                         return (React.createElement(constructor_1.default, { type: props.match.params.type }));
                     } }),
@@ -12427,6 +12446,90 @@ var Button = /** @class */ (function (_super) {
     return Button;
 }(React.Component));
 exports.default = Button;
+
+
+/***/ }),
+
+/***/ "./src/components/checkbox/checkbox.scss":
+/*!***********************************************!*\
+  !*** ./src/components/checkbox/checkbox.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./checkbox.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/components/checkbox/checkbox.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/checkbox/checkbox.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/checkbox/checkbox.tsx ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./checkbox.scss */ "./src/components/checkbox/checkbox.scss");
+var React = __webpack_require__(/*! react */ "react");
+var Checkbox = /** @class */ (function (_super) {
+    __extends(Checkbox, _super);
+    function Checkbox() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            checked: _this.props.checked
+        };
+        _this._onClick = function () {
+            if (!_this.props.disabled) {
+                _this.setState({ checked: !_this.state.checked });
+            }
+        };
+        return _this;
+    }
+    Checkbox.prototype.render = function () {
+        var _a = this.props, text = _a.text, disabled = _a.disabled;
+        var checked = this.state.checked;
+        return (React.createElement("div", { className: "checkbox", onClick: this._onClick },
+            text,
+            React.createElement("input", { type: "checkbox", className: "checkbox__input" }),
+            React.createElement("span", { className: "checkbox__checkmark" + (checked ? ' _checked' : '') + (disabled ? ' _disabled' : '') })));
+    };
+    return Checkbox;
+}(React.Component));
+exports.default = Checkbox;
 
 
 /***/ }),
@@ -12833,7 +12936,7 @@ exports.default = TextArea;
 Object.defineProperty(exports, "__esModule", { value: true });
 var backendUrl = 'https://velox-server.herokuapp.com';
 exports.backendUrl = backendUrl;
-var yandexId = 'awd';
+var yandexId = '6f0aee3855ce4eee9bf32bf716010d1e';
 exports.yandexId = yandexId;
 
 
@@ -12964,6 +13067,7 @@ var input_1 = __webpack_require__(/*! components/input/input */ "./src/component
 var text_area_1 = __webpack_require__(/*! components/text-area/text-area */ "./src/components/text-area/text-area.tsx");
 var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
 var notification_1 = __webpack_require__(/*! components/notification/notification */ "./src/components/notification/notification.tsx");
+var checkbox_1 = __webpack_require__(/*! components/checkbox/checkbox */ "./src/components/checkbox/checkbox.tsx");
 var constructor_provider_1 = __webpack_require__(/*! ./constructor-provider */ "./src/pages/constructor/constructor-provider.ts");
 var items_1 = __webpack_require__(/*! ./views/items */ "./src/pages/constructor/views/items.ts");
 var Constructor = /** @class */ (function (_super) {
@@ -13069,6 +13173,9 @@ var Constructor = /** @class */ (function (_super) {
         var _this = this;
         return (React.createElement("div", { className: "constructor__menu" },
             React.createElement(input_1.default, { size: "medium", placeholder: "Document Title", value: this.state.documentName, onChange: function (e) { return _this.setState({ documentName: e.target.value }); } }),
+            React.createElement("div", { className: "constructor__menu__checkboxes" },
+                React.createElement(checkbox_1.default, { text: "Private", checked: true, disabled: true }),
+                React.createElement(checkbox_1.default, { text: "Static" })),
             React.createElement("div", { className: "constructor__menu__actions" },
                 React.createElement(button_1.default, { text: "Save", onClick: function () { return _this._savePage(); } }),
                 React.createElement(react_router_dom_1.Link, { to: "/" },
@@ -13182,17 +13289,19 @@ var Login = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Login.prototype.componentDidMount = function () {
-        var code = qs.parse(this.props.qs, { ignoreQueryPrefix: true }).code;
+        var params = qs.parse(this.props.hash.slice(1), { ignoreQueryPrefix: true });
+        var access_token = params.access_token, error = params.error;
+        console.log(error);
+        console.log(access_token);
         // sendCode(code);
     };
     Login.prototype.render = function () {
-        console.log(qs.parse(this.props.qs, { ignoreQueryPrefix: true }));
         return (React.createElement("div", { className: "login" },
             React.createElement("div", { className: "login__content" },
                 React.createElement("div", { className: "login__content__title" }, "Welcome to Velox"),
                 React.createElement("div", { className: "login__content__title" }, "Please Sign In with one of Services"),
                 React.createElement("div", { className: "login__content__services" },
-                    React.createElement(react_svg_1.default, { src: "icons/oauth/yandex.svg", svgClassName: "oauth-icon", onClick: function () { window.open("https://oauth.yandex.ru/authorize?response_type=code&client_id=" + config_1.yandexId + "&display=popup", "_self"); } })))));
+                    React.createElement(react_svg_1.default, { src: "icons/oauth/yandex.svg", svgClassName: "oauth-icon", onClick: function () { window.open("https://oauth.yandex.ru/authorize?response_type=token&client_id=" + config_1.yandexId, "_self"); } })))));
     };
     return Login;
 }(React.Component));

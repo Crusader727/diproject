@@ -6,17 +6,19 @@ import {sendCode} from './login-provider';
 import {yandexId} from '../../core/config/config';
 
 interface Props {
-    qs: string
+    hash: string
 }
 
 export default class Login extends React.Component<Props> {
     componentDidMount() {
-        const code = qs.parse(this.props.qs, {ignoreQueryPrefix: true}).code;
+        const params = qs.parse(this.props.hash.slice(1), {ignoreQueryPrefix: true});
+        const {access_token, error} = params;
+        console.log(error);
+        console.log(access_token);
         // sendCode(code);
     }
 
     render(): React.ReactNode {
-        console.log(qs.parse(this.props.qs, {ignoreQueryPrefix: true}));
         return (
             <div className="login">
                 <div className="login__content">
@@ -27,12 +29,11 @@ export default class Login extends React.Component<Props> {
                         Please Sign In with one of Services
                     </div>
                     <div className="login__content__services">
-                    {/* <a href="https://oauth.yandex.ru/authorize?response_type=code&client_id=&display=popup">adw</a> */}
                         <ReactSVG
                             src={`icons/oauth/yandex.svg`}
                             svgClassName="oauth-icon"
                             onClick={() =>
-                                {window.open(`https://oauth.yandex.ru/authorize?response_type=code&client_id=${yandexId}&display=popup`, "_self")}
+                                {window.open(`https://oauth.yandex.ru/authorize?response_type=token&client_id=${yandexId}`, "_self")}
                             }
                         />
                     </div>
