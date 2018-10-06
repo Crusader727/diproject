@@ -7,7 +7,9 @@ import Header from 'components/header/header';
 import {getPages} from './main-provider';
 import PageCut from 'types/pageCut';
 
-const Templates = [{title: 'awd'}, {title: 'transport'}, {title: 'cv'}, {title: 'medical'}, {title: 'contacts'}, {title: 'contacts2'}];
+const Templates = [
+    {title: 'wifi', type: 'wifi'}, 
+];
 
 interface State {
     isRightArrowShown: boolean;
@@ -42,13 +44,13 @@ export default class MainPage extends React.Component {
         }
     }
 
-    private _renderTemplate(title: string): React.ReactNode {
+    private _renderTemplate(title: string, type: string): React.ReactNode {
         return (
-            <Link to="/new" className="template" key={title}>
+            <Link to={`/new/${type}`} className="template" key={title}>
                 <div className="template__content">
                     <ReactSVG
-                        src={`icons/cross.svg`}
-                        svgClassName="cross"
+                        src={`icons/templates/${type}.svg`}
+                        svgClassName="template-icon"
                     />
                 </div>
                 <div className="template__title">
@@ -85,10 +87,10 @@ export default class MainPage extends React.Component {
                         Templates
                     </div>
                     <div className="main-page__templates__content">
-                        {this._renderTemplate('custom')}
+                        {this._renderTemplate('custom', 'custom')}
                         {this._renderArrow('left')}
                         <div className="main-page__templates__content__scrollable" onScroll={this._onTemplatesScroll}>
-                            {Templates.map(({title}) => this._renderTemplate(title))}
+                            {Templates.map(({title, type}) => this._renderTemplate(title, type))}
                         </div>
                         {this._renderArrow('right')}
                     </div>

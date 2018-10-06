@@ -1,7 +1,8 @@
 import 'whatwg-fetch';
+import {backendUrl} from '../../core/config/config';
 
 export function getPages() {
-    return fetch('https://velox-server.herokuapp.com/', {
+    return fetch(backendUrl + '/', {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",

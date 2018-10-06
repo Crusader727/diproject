@@ -817,7 +817,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".login {\n  width: 100%;\n  height: 100vh;\n  background-color: #515151;\n  background-size: cover;\n  display: flex;\n  justify-content: center; }\n  .login__content {\n    display: flex;\n    flex-direction: column;\n    margin-top: 20vh;\n    width: 60vw;\n    height: 60vh;\n    background-color: #2d2d2d;\n    border-radius: 20px; }\n    .login__content__title {\n      margin-left: auto;\n      margin-right: auto;\n      margin-top: 10vh;\n      font-size: 35px;\n      color: #ffd900; }\n    .login__content__services {\n      margin-top: 5vh;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: row; }\n\n.oauth-icon {\n  width: 10vh;\n  height: 10vh; }\n", ""]);
 
 // exports
 
@@ -874,7 +874,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page__templates {\n    height: 300px;\n    background-color: #515151;\n    padding: 0 10% 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page__templates__title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: row; }\n      .main-page__templates__content__scrollable {\n        overflow-x: auto;\n        overflow-y: none;\n        display: flex;\n        flex-direction: row; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    color: #ffd900;\n    position: relative;\n    width: 160px;\n    height: 200px;\n    background-color: white;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template__content:hover {\n      border: 2px solid #ffd900; }\n  .template__title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 90px;\n  height: 90px; }\n", ""]);
+exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page__templates {\n    height: 300px;\n    background-color: #515151;\n    padding: 0 10% 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page__templates__title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: row; }\n      .main-page__templates__content__scrollable {\n        overflow-x: auto;\n        overflow-y: none;\n        display: flex;\n        flex-direction: row; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    color: #ffd900;\n    position: relative;\n    width: 160px;\n    height: 200px;\n    background-color: white;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template__content:hover {\n      border: 2px solid #ffd900; }\n  .template__title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.template-icon {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 90px;\n  height: 90px; }\n", ""]);
 
 // exports
 
@@ -12343,7 +12343,9 @@ var App = /** @class */ (function (_super) {
             React.createElement(react_router_dom_1.Switch, null,
                 React.createElement(react_router_dom_1.Route, { path: '/qr/:id', render: function (props) { return (React.createElement(qr_1.default, { id: props.match.params.id })); } }),
                 React.createElement(react_router_dom_1.Route, { path: '/login', render: function (props) { return (React.createElement(login_1.default, { qs: props.location.search })); } }),
-                React.createElement(react_router_dom_1.Route, { path: '/new', component: constructor_1.default }),
+                React.createElement(react_router_dom_1.Route, { path: '/new/:type', render: function (props) {
+                        return (React.createElement(constructor_1.default, { type: props.match.params.type }));
+                    } }),
                 React.createElement(react_router_dom_1.Route, { path: '/', component: main_1.default }))));
     };
     return App;
@@ -12819,6 +12821,24 @@ exports.default = TextArea;
 
 /***/ }),
 
+/***/ "./src/core/config/config.ts":
+/*!***********************************!*\
+  !*** ./src/core/config/config.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var backendUrl = 'https://velox-server.herokuapp.com';
+exports.backendUrl = backendUrl;
+var yandexId = 'awd';
+exports.yandexId = yandexId;
+
+
+/***/ }),
+
 /***/ "./src/index.tsx":
 /*!***********************!*\
   !*** ./src/index.tsx ***!
@@ -12848,8 +12868,9 @@ ReactDOM.render(React.createElement(app_1.default, null), document.getElementByI
 
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
 function createPage(body) {
-    return fetch('https://velox-server.herokuapp.com/qr/create', {
+    return fetch(config_1.backendUrl + '/qr/create', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -12864,7 +12885,7 @@ function createPage(body) {
 }
 exports.createPage = createPage;
 function editPage(body, id) {
-    return fetch("https://velox-server.herokuapp.com/qr/" + id + "/edit", {
+    return fetch(config_1.backendUrl + "/qr/" + id + "/edit", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -12944,24 +12965,18 @@ var text_area_1 = __webpack_require__(/*! components/text-area/text-area */ "./s
 var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
 var notification_1 = __webpack_require__(/*! components/notification/notification */ "./src/components/notification/notification.tsx");
 var constructor_provider_1 = __webpack_require__(/*! ./constructor-provider */ "./src/pages/constructor/constructor-provider.ts");
+var items_1 = __webpack_require__(/*! ./views/items */ "./src/pages/constructor/views/items.ts");
 var Constructor = /** @class */ (function (_super) {
     __extends(Constructor, _super);
-    function Constructor() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.state = {
-            documentName: '',
-            items: [],
-            notification: null,
-            isCreated: false,
-            id: ''
-        };
+    function Constructor(props) {
+        var _this = _super.call(this, props) || this;
         _this._handleItemNameChange = function (index, type) {
             return function (event) {
                 var items = _this.state.items;
-                if (type === 'name') {
+                if (type === 'name' && !_this.state.isNotEditable) {
                     items[index].name = event.target.value;
                 }
-                else {
+                else if (type === 'value') {
                     items[index].value = event.target.value;
                 }
                 _this.setState({ items: items });
@@ -12974,6 +12989,21 @@ var Constructor = /** @class */ (function (_super) {
             return (React.createElement("div", { key: index, className: "constructor__content__item", style: { flexDirection: item.value.length > 30 ? 'column' : 'row' }, onClick: function () { return _this._openEditor(index); } },
                 React.createElement("div", { className: "constructor__content__item__title" }, item.name + ":"),
                 React.createElement("div", null, item.value)));
+        };
+        var items = [];
+        var isNotEditable = false;
+        var type = _this.props.type;
+        if (type && items_1.default[type]) {
+            items = items_1.default[type].items,
+                isNotEditable = items_1.default[type].isNotEditable;
+        }
+        _this.state = {
+            documentName: '',
+            items: items,
+            isNotEditable: isNotEditable,
+            notification: null,
+            isCreated: false,
+            id: ''
         };
         return _this;
     }
@@ -13029,6 +13059,9 @@ var Constructor = /** @class */ (function (_super) {
     };
     Constructor.prototype._renderAddItem = function () {
         var _this = this;
+        if (this.state.isNotEditable) {
+            return null;
+        }
         return (React.createElement("div", { className: "constructor__content__add-item", onClick: function () { return _this._addItem(); } },
             React.createElement(react_svg_1.default, { src: "icons/round-cross.svg", svgClassName: "round-cross" })));
     };
@@ -13060,26 +13093,27 @@ exports.default = Constructor;
 
 /***/ }),
 
-/***/ "./src/pages/login/login-provider.ts":
-/*!*******************************************!*\
-  !*** ./src/pages/login/login-provider.ts ***!
-  \*******************************************/
+/***/ "./src/pages/constructor/views/items.ts":
+/*!**********************************************!*\
+  !*** ./src/pages/constructor/views/items.ts ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
-function sendCode(code) {
-    return fetch('https://velox-server.herokuapp.com/login/yandex/' + code, {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        }
-    });
-}
-exports.sendCode = sendCode;
+var wifiItems = [
+    { name: 'name', value: '', isEditing: true },
+    { name: 'password', value: '', isEditing: true }
+];
+var Items = {
+    'wifi': {
+        isNotEditable: true,
+        items: wifiItems
+    }
+};
+exports.default = Items;
 
 
 /***/ }),
@@ -13140,7 +13174,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./login.scss */ "./src/pages/login/login.scss");
 var React = __webpack_require__(/*! react */ "react");
 var qs = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
-var login_provider_1 = __webpack_require__(/*! ./login-provider */ "./src/pages/login/login-provider.ts");
+var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
+var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
 var Login = /** @class */ (function (_super) {
     __extends(Login, _super);
     function Login() {
@@ -13148,12 +13183,16 @@ var Login = /** @class */ (function (_super) {
     }
     Login.prototype.componentDidMount = function () {
         var code = qs.parse(this.props.qs, { ignoreQueryPrefix: true }).code;
-        login_provider_1.sendCode(code);
+        // sendCode(code);
     };
     Login.prototype.render = function () {
         console.log(qs.parse(this.props.qs, { ignoreQueryPrefix: true }));
         return (React.createElement("div", { className: "login" },
-            React.createElement("a", { href: "https://oauth.yandex.ru/authorize?response_type=code&client_id=&display=popup" }, "xuy")));
+            React.createElement("div", { className: "login__content" },
+                React.createElement("div", { className: "login__content__title" }, "Welcome to Velox"),
+                React.createElement("div", { className: "login__content__title" }, "Please Sign In with one of Services"),
+                React.createElement("div", { className: "login__content__services" },
+                    React.createElement(react_svg_1.default, { src: "icons/oauth/yandex.svg", svgClassName: "oauth-icon", onClick: function () { window.open("https://oauth.yandex.ru/authorize?response_type=code&client_id=" + config_1.yandexId + "&display=popup", "_self"); } })))));
     };
     return Login;
 }(React.Component));
@@ -13389,8 +13428,9 @@ exports.default = Pages;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
 function getPages() {
-    return fetch('https://velox-server.herokuapp.com/', {
+    return fetch(config_1.backendUrl + '/', {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -13462,7 +13502,9 @@ var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg
 var pages_1 = __webpack_require__(/*! ./components/pages */ "./src/pages/main/components/pages.tsx");
 var header_1 = __webpack_require__(/*! components/header/header */ "./src/components/header/header.tsx");
 var main_provider_1 = __webpack_require__(/*! ./main-provider */ "./src/pages/main/main-provider.ts");
-var Templates = [{ title: 'awd' }, { title: 'transport' }, { title: 'cv' }, { title: 'medical' }, { title: 'contacts' }, { title: 'contacts2' }];
+var Templates = [
+    { title: 'wifi', type: 'wifi' },
+];
 var MainPage = /** @class */ (function (_super) {
     __extends(MainPage, _super);
     function MainPage() {
@@ -13493,10 +13535,10 @@ var MainPage = /** @class */ (function (_super) {
         var _this = this;
         main_provider_1.getPages().then(function (res) { return res.json().then(function (pages) { return _this.setState({ pages: pages }); }); }); //todo Error
     };
-    MainPage.prototype._renderTemplate = function (title) {
-        return (React.createElement(react_router_dom_1.Link, { to: "/new", className: "template", key: title },
+    MainPage.prototype._renderTemplate = function (title, type) {
+        return (React.createElement(react_router_dom_1.Link, { to: "/new/" + type, className: "template", key: title },
             React.createElement("div", { className: "template__content" },
-                React.createElement(react_svg_1.default, { src: "icons/cross.svg", svgClassName: "cross" })),
+                React.createElement(react_svg_1.default, { src: "icons/templates/" + type + ".svg", svgClassName: "template-icon" })),
             React.createElement("div", { className: "template__title" }, title)));
     };
     MainPage.prototype._renderArrow = function (type) {
@@ -13514,11 +13556,11 @@ var MainPage = /** @class */ (function (_super) {
             React.createElement("div", { className: "main-page__templates" },
                 React.createElement("div", { className: "main-page__templates__title" }, "Templates"),
                 React.createElement("div", { className: "main-page__templates__content" },
-                    this._renderTemplate('custom'),
+                    this._renderTemplate('custom', 'custom'),
                     this._renderArrow('left'),
                     React.createElement("div", { className: "main-page__templates__content__scrollable", onScroll: this._onTemplatesScroll }, Templates.map(function (_a) {
-                        var title = _a.title;
-                        return _this._renderTemplate(title);
+                        var title = _a.title, type = _a.type;
+                        return _this._renderTemplate(title, type);
                     })),
                     this._renderArrow('right')))));
     };
@@ -13545,8 +13587,9 @@ exports.default = MainPage;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
 function getQr(id) {
-    return fetch('https://velox-server.herokuapp.com/qr/' + id, {
+    return fetch(config_1.backendUrl + '/qr/' + id, {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",

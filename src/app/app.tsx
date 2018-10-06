@@ -21,7 +21,11 @@ export default class App extends React.Component {
                         path='/login'
                         render={(props) => (<Login qs={props.location.search}/>)}
                     />
-                    <Route path='/new' component={Constructor}/>
+                    <Route
+                        path='/new/:type'
+                        render={(props: RouteComponentProps<{type: string}>) =>
+                            (<Constructor type={props.match.params.type}/>)}
+                    />
                     <Route path='/' component={MainPage}/>
                 </Switch>
             </BrowserRouter>

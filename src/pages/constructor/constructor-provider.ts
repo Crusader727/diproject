@@ -1,8 +1,9 @@
 import 'whatwg-fetch';
+import {backendUrl} from '../../core/config/config';
 import Page from 'types/page';
 
 export function createPage(body: Page) {
-    return fetch('https://velox-server.herokuapp.com/qr/create', {
+    return fetch(backendUrl + '/qr/create', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -16,7 +17,7 @@ export function createPage(body: Page) {
     });
 }
 export function editPage(body: Page, id: string) {
-    return fetch(`https://velox-server.herokuapp.com/qr/${id}/edit`, {
+    return fetch(`${backendUrl}/qr/${id}/edit`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json; charset=utf-8",

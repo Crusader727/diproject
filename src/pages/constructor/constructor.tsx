@@ -1,7 +1,7 @@
 import './constructor.scss';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import ReactSVG from 'react-svg'
+import ReactSVG from 'react-svg';
 import Header from 'components/header/header';
 import Input from 'components/input/input';
 import TextArea from 'components/text-area/text-area';
@@ -11,13 +11,20 @@ import Notification from 'components/notification/notification';
 import Page from 'types/page';
 import {createPage, editPage} from './constructor-provider';
 
-interface Item {
+import CommonItems from './views/items';
+
+interface Props {
+    type: string
+}
+
+export interface Item {
     name?: string;
     value?: string;
     isEditing?: boolean;
 }
 
 interface State {
+    isNotEditable: boolean;
     documentName: string;
     items: Item[];
     notification: 'error' | 'success' | null;
@@ -25,13 +32,24 @@ interface State {
     id: string;
 }
 
-export default class Constructor extends React.Component {
-    state: State = {
-        documentName: '',
-        items: [],
-        notification: null,
-        isCreated: false,
-        id: ''
+export default class Constructor extends React.Component<Props, State> {
+    constructor(props: any) {
+        super(props);
+        let items: Item[] = [];
+        let isNotEditable = false;
+        const {type} = this.props;
+        if (type && CommonItems[type]) {
+            items = CommonItems[type].items,
+            isNotEditable = CommonItems[type].isNotEditable
+        }
+        this.state = {
+            documentName: '',
+            items,
+            isNotEditable,
+            notification: null,
+            isCreated: false,
+            id: ''
+        }
     }
 
     private _savePage() {
@@ -85,9 +103,9 @@ export default class Constructor extends React.Component {
     private _handleItemNameChange = (index: number, type?: 'name' | 'value') => {
         return (event: any) => {
             const items = this.state.items;
-            if (type === 'name') {
+            if (type === 'name' && !this.state.isNotEditable) {
                 items[index].name = event.target.value
-            } else {
+            } else if (type === 'value') {
                 items[index].value = event.target.value
             }
             this.setState({items});
@@ -152,6 +170,9 @@ export default class Constructor extends React.Component {
     }
 
     private _renderAddItem(): React.ReactNode {
+        if (this.state.isNotEditable) {
+            return null;
+        }
         return (
             <div className="constructor__content__add-item" onClick={() => this._addItem()}>
                 <ReactSVG
