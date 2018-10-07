@@ -49,6 +49,14 @@ export default class App extends React.Component<{}, State> {
                                 this._redirectTo('/login', this.props)
                             }
                     />
+                    <Route
+                        path='/:id/edit'
+                        render={(props: RouteComponentProps<{id: string}>) =>
+                            isLoggedIn ?
+                                (<Constructor id={props.match.params.id}/>):
+                                this._redirectTo('/login', this.props)
+                            }
+                    />
                     <Route path='/' 
                         render={() =>
                             isLoggedIn ?

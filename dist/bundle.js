@@ -779,7 +779,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".notification {\n  position: absolute;\n  padding-top: 22px;\n  padding-left: 12px;\n  width: 30%;\n  height: 8%;\n  font-size: 22px;\n  border-radius: 20px;\n  bottom: 16px;\n  left: 16px;\n  text-transform: capitalize; }\n  .notification._error {\n    background-color: rgba(255, 0, 0, 0.4); }\n  .notification._success {\n    background-color: rgba(13, 206, 29, 0.4); }\n", ""]);
+exports.push([module.i, ".notification {\n  position: absolute;\n  padding-top: 22px;\n  padding-left: 12px;\n  width: 30%;\n  height: 8%;\n  font-size: 22px;\n  border-radius: 20px;\n  bottom: 16px;\n  left: 16px;\n  text-transform: capitalize; }\n  .notification._error {\n    background-color: rgba(255, 0, 0, 0.3);\n    border: 2px solid rgba(211, 1, 1, 0.8);\n    color: #d30101; }\n  .notification._success {\n    background-color: rgba(13, 206, 29, 0.3);\n    border: 2px solid rgba(17, 143, 28, 0.8);\n    color: #118f1c; }\n", ""]);
 
 // exports
 
@@ -817,7 +817,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 94vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: white;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #515151;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      min-height: 250px;\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      border: 3px solid #515151; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n    .constructor__content__item {\n      display: flex;\n      min-height: 30px;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 3px solid #515151; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0;\n      height: 8vh; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #2d2d2d;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
+exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 94vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: white;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #515151;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      min-height: 250px;\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      border: 3px solid #515151; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n    .constructor__content__item {\n      display: flex;\n      min-height: 30px;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 3px solid #515151; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0;\n      height: 8vh; }\n    .constructor__menu__date {\n      color: white;\n      margin-top: 8px; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #2d2d2d;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
 
 // exports
 
@@ -12378,6 +12378,11 @@ var App = /** @class */ (function (_super) {
                             (React.createElement(constructor_1.default, { type: props.match.params.type })) :
                             _this._redirectTo('/login', _this.props);
                     } }),
+                React.createElement(react_router_dom_1.Route, { path: '/:id/edit', render: function (props) {
+                        return isLoggedIn ?
+                            (React.createElement(constructor_1.default, { id: props.match.params.id })) :
+                            _this._redirectTo('/login', _this.props);
+                    } }),
                 React.createElement(react_router_dom_1.Route, { path: '/', render: function () {
                         return isLoggedIn ?
                             (React.createElement(main_1.default, null)) :
@@ -13031,6 +13036,20 @@ function editPage(body, id) {
     });
 }
 exports.editPage = editPage;
+function getPage(id) {
+    return fetch(config_1.backendUrl + "/qr/" + id, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        }
+    }).then(function (res) {
+        if (!res.ok) {
+            throw new Error;
+        }
+        return res.json();
+    });
+}
+exports.getPage = getPage;
 
 
 /***/ }),
@@ -13135,6 +13154,7 @@ var Constructor = /** @class */ (function (_super) {
         }
         _this.state = {
             documentName: '',
+            date: null,
             items: items,
             isNotEditable: isNotEditable,
             notification: null,
@@ -13149,6 +13169,23 @@ var Constructor = /** @class */ (function (_super) {
         };
         return _this;
     }
+    Constructor.prototype.componentDidMount = function () {
+        var _this = this;
+        if (!this.props.id) {
+            return;
+        }
+        constructor_provider_1.getPage(this.props.id).then(function (res) {
+            var items = res.fieldsNames.map(function (el, i) { return ({ name: el, value: res.fieldsValues[i] }); });
+            var d = new Date(res.date);
+            var date = d.toDateString() + ' ' + d.toLocaleTimeString();
+            _this.setState({
+                items: items,
+                documentName: res.title,
+                date: date,
+                isCreated: true
+            });
+        }, function () { return console.log('error'); });
+    };
     Constructor.prototype._savePage = function () {
         var _this = this;
         var page = {
@@ -13216,6 +13253,7 @@ var Constructor = /** @class */ (function (_super) {
         var _this = this;
         return (React.createElement("div", { className: "constructor__menu" },
             React.createElement(input_1.default, { size: "medium", placeholder: "Document Title", value: this.state.documentName, onChange: function (e) { return _this.setState({ documentName: e.target.value }); } }),
+            React.createElement("div", { className: "constructor__menu__date" }, this.state.date),
             this._renderCheckboxes(),
             React.createElement("div", { className: "constructor__menu__actions" },
                 React.createElement(button_1.default, { text: "Save", onClick: function () { return _this._savePage(); } }),
@@ -13438,6 +13476,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./page.scss */ "./src/pages/main/components/page.scss");
 var React = __webpack_require__(/*! react */ "react");
 var server_1 = __webpack_require__(/*! react-dom/server */ "./node_modules/react-dom/server.browser.js");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var QRCode = __webpack_require__(/*! qrcode.react */ "./node_modules/qrcode.react/lib/index.js");
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
@@ -13467,7 +13506,8 @@ var Page = /** @class */ (function (_super) {
             return null;
         }
         return (React.createElement("div", { className: "page__menu" },
-            React.createElement(button_1.default, { type: "air", icon: "edit" }),
+            React.createElement(react_router_dom_1.Link, { to: "/" + this.props.id + "/edit" },
+                React.createElement(button_1.default, { type: "air", icon: "edit" })),
             React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage }),
             React.createElement(button_1.default, { type: "air", icon: "print" }),
             React.createElement(button_1.default, { type: "air", icon: "download", downloadHref: this._downloadSVG(), downloadTitle: this.props.title })));

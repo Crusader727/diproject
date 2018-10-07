@@ -10,12 +10,13 @@ import Notification from 'components/notification/notification';
 import Checkbox from 'components/checkbox/checkbox';
 
 import Page from 'types/page';
-import {createPage, editPage} from './constructor-provider';
+import {createPage, editPage, getPage} from './constructor-provider';
 
 import CommonItems from './views/items';
 
 interface Props {
-    type: string
+    type?: string,
+    id?: string
 }
 
 export interface Item {
@@ -31,6 +32,7 @@ interface State {
     notification: 'error' | 'success' | null;
     isCreated: boolean;
     id: string;
+    date: string | null;
     checkboxes: {
         isPrivate: boolean,
         isPrivateLocked: boolean,
@@ -53,6 +55,7 @@ export default class Constructor extends React.Component<Props, State> {
         }
         this.state = {
             documentName: '',
+            date: null,
             items,
             isNotEditable,
             notification: null,
@@ -65,6 +68,26 @@ export default class Constructor extends React.Component<Props, State> {
                 isPrivateLocked: isStatic
             }
         }
+    }
+
+    componentDidMount() {
+        if (!this.props.id) {
+            return;
+        }
+        getPage(this.props.id).then(
+            (res: Page) => {
+                const items = res.fieldsNames.map((el, i) => ({name: el, value: res.fieldsValues[i]}));
+                const d = new Date(res.date);
+                const date = d.toDateString() + ' ' + d.toLocaleTimeString();
+                this.setState({
+                    items,
+                    documentName: res.title,
+                    date,
+                    isCreated: true
+                })
+            }, 
+            () => console.log('error') 
+        );
     }
 
     private _savePage() {
@@ -216,6 +239,9 @@ export default class Constructor extends React.Component<Props, State> {
                     value={this.state.documentName}
                     onChange={(e) => this.setState({documentName: e.target.value})}
                 />
+                <div className="constructor__menu__date">
+                    {this.state.date}
+                </div>
                 {this._renderCheckboxes()}
                 <div className="constructor__menu__actions">
                     <Button text="Save" onClick={() => this._savePage()}/>

@@ -1,6 +1,7 @@
 import './page.scss';
 import * as React from 'react';
 import { renderToString } from 'react-dom/server';
+import { Link } from 'react-router-dom';
 import * as QRCode from 'qrcode.react';
 import ReactSVG from 'react-svg';
 import Button from 'components/button/button';
@@ -41,7 +42,9 @@ export default class Page extends React.Component<PageCut> {
         }
         return (
             <div className="page__menu">
-                <Button type="air" icon="edit" />
+                <Link to={`/${this.props.id}/edit`}>
+                    <Button type="air" icon="edit" />
+                </Link>
                 <Button type="air" icon="delete" onClick={this._deletePage}/>
                 <Button type="air" icon="print"/>
                 <Button
@@ -50,7 +53,6 @@ export default class Page extends React.Component<PageCut> {
                     downloadHref={this._downloadSVG()}
                     downloadTitle={this.props.title}
                 />
-                {/* <a href={this._downloadSVG()} download="awd.svg">adw</a> */}
             </div>
         );
     }

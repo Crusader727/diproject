@@ -29,3 +29,17 @@ export function editPage(body: Page, id: string) {
         }
     });
 }
+
+export function getPage(id: string) {
+    return fetch(`${backendUrl}/qr/${id}`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        }
+    }).then((res) => {
+        if (!res.ok) {
+            throw new Error;
+        }
+        return res.json();
+    });
+}

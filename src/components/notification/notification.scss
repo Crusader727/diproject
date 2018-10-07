@@ -11,9 +11,13 @@
     left: 16px;
     text-transform: capitalize;
     &._error {
-        background-color: rgba(255, 0, 0, 0.4);
+        background-color: rgba(255, 0, 0, 0.3);
+        border: 2px solid rgba(211, 1, 1, 0.8);
+        color: rgb(211, 1, 1);
     }
     &._success {
-        background-color: rgba(13, 206, 29, 0.4);
+        background-color: rgba(13, 206, 29, 0.3);
+        border: 2px solid rgba(17, 143, 28, 0.8);
+        color: rgb(17, 143, 28);
     }
 }
