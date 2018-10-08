@@ -6,6 +6,8 @@ export function getQr(id: string) {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
-        }
+        },
+        mode: "cors",
+        credentials: "include"
     });
 }

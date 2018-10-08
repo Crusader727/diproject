@@ -8,6 +8,8 @@ export function createPage(body: Page) {
         headers: {
             "Content-Type": "application/json; charset=utf-8",
         },
+        mode: "cors",
+        credentials: "include",
         body: JSON.stringify(body)
     }).then((res) => {
         if (!res.ok) {
@@ -22,6 +24,8 @@ export function editPage(body: Page, id: string) {
         headers: {
             "Content-Type": "application/json; charset=utf-8",
         },
+        mode: "cors",
+        credentials: "include",
         body: JSON.stringify(body)
     }).then((res) => {
         if (!res.ok) {
@@ -35,7 +39,9 @@ export function getPage(id: string) {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
-        }
+        },
+        mode: "cors",
+        credentials: "include"
     }).then((res) => {
         if (!res.ok) {
             throw new Error;

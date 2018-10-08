@@ -6,6 +6,8 @@ export function getPages() {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
-        }
+        },
+        mode: "cors",
+        credentials: "include"
     });
 }

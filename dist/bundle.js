@@ -13013,6 +13013,8 @@ function createPage(body) {
         headers: {
             "Content-Type": "application/json; charset=utf-8",
         },
+        mode: "cors",
+        credentials: "include",
         body: JSON.stringify(body)
     }).then(function (res) {
         if (!res.ok) {
@@ -13028,6 +13030,8 @@ function editPage(body, id) {
         headers: {
             "Content-Type": "application/json; charset=utf-8",
         },
+        mode: "cors",
+        credentials: "include",
         body: JSON.stringify(body)
     }).then(function (res) {
         if (!res.ok) {
@@ -13041,7 +13045,9 @@ function getPage(id) {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
-        }
+        },
+        mode: "cors",
+        credentials: "include"
     }).then(function (res) {
         if (!res.ok) {
             throw new Error;
@@ -13732,7 +13738,9 @@ function getPages() {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
-        }
+        },
+        mode: "cors",
+        credentials: "include"
     });
 }
 exports.getPages = getPages;
@@ -13891,7 +13899,9 @@ function getQr(id) {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
-        }
+        },
+        mode: "cors",
+        credentials: "include"
     });
 }
 exports.getQr = getQr;
