@@ -16,19 +16,11 @@ interface State {
 export default class App extends React.Component<{}, State> {
     constructor(props: any) {
         super(props);
-        // this.state = {
-        //     isLoggedIn: true
-        // }//HERE MUST BE WHO AM I
         this.state = {isLoggedIn: false};
-        setTimeout(() => {
-            getUser().then(
-            () => {console.log('user'); 
-                this.setState({isLoggedIn: true});
-            },
-            () => {console.log('error')},
+        getUser().then(
+            () => this.setState({isLoggedIn: true}),
+            () => {},//error handling
         );
-        }, 5000);
-        
     }
     _redirectTo = (url: string, props: any) => (
         <Redirect

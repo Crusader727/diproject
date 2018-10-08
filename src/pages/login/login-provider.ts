@@ -7,6 +7,8 @@ export function sendToken(token: string) {
         headers: {
             "Content-Type": "application/json; charset=utf-8",
         },
+        mode: "cors",
+        credentials: "include",
         body: JSON.stringify({token})
     });
 }
@@ -15,8 +17,10 @@ export function getUser() {
     return fetch(backendUrl + '/getuser', {
         method: 'GET',
         headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        }
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        mode: "cors",
+        credentials: "include"
     }).then((res) => {
         if (!res.ok) {
             throw new Error;

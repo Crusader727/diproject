@@ -12358,16 +12358,8 @@ var App = /** @class */ (function (_super) {
     function App(props) {
         var _this = _super.call(this, props) || this;
         _this._redirectTo = function (url, props) { return (React.createElement(react_router_dom_1.Redirect, { to: { pathname: url, state: { from: props.location } } })); };
-        // this.state = {
-        //     isLoggedIn: true
-        // }//HERE MUST BE WHO AM I
         _this.state = { isLoggedIn: false };
-        setTimeout(function () {
-            login_provider_1.getUser().then(function () {
-                console.log('user');
-                _this.setState({ isLoggedIn: true });
-            }, function () { console.log('error'); });
-        }, 5000);
+        login_provider_1.getUser().then(function () { return _this.setState({ isLoggedIn: true }); }, function () { });
         return _this;
     }
     App.prototype.render = function () {
@@ -13331,6 +13323,8 @@ function sendToken(token) {
         headers: {
             "Content-Type": "application/json; charset=utf-8",
         },
+        mode: "cors",
+        credentials: "include",
         body: JSON.stringify({ token: token })
     });
 }
@@ -13339,8 +13333,10 @@ function getUser() {
     return fetch(config_1.backendUrl + '/getuser', {
         method: 'GET',
         headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        }
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        mode: "cors",
+        credentials: "include"
     }).then(function (res) {
         if (!res.ok) {
             throw new Error;
