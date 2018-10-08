@@ -2,7 +2,7 @@ import './login.scss';
 import * as React from 'react';
 import * as qs from 'qs';
 import ReactSVG from 'react-svg';
-import {sendCode} from './login-provider';
+import {sendToken} from './login-provider';
 import {yandexId} from '../../core/config/config';
 
 interface Props {
@@ -13,9 +13,11 @@ export default class Login extends React.Component<Props> {
     componentDidMount() {
         const params = qs.parse(this.props.hash.slice(1), {ignoreQueryPrefix: true});
         const {access_token, error} = params;
-        console.log(error);
         console.log(access_token);
-        // sendCode(code);
+        if (access_token) {
+            sendToken(access_token);
+        }
+        // TODO if error
     }
 
     render(): React.ReactNode {

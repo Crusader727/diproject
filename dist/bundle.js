@@ -12352,14 +12352,22 @@ var constructor_1 = __webpack_require__(/*! pages/constructor/constructor */ "./
 var main_1 = __webpack_require__(/*! pages/main/main */ "./src/pages/main/main.tsx");
 var qr_1 = __webpack_require__(/*! pages/qr/qr */ "./src/pages/qr/qr.tsx");
 var login_1 = __webpack_require__(/*! pages/login/login */ "./src/pages/login/login.tsx");
+var login_provider_1 = __webpack_require__(/*! pages/login/login-provider */ "./src/pages/login/login-provider.ts");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App(props) {
         var _this = _super.call(this, props) || this;
         _this._redirectTo = function (url, props) { return (React.createElement(react_router_dom_1.Redirect, { to: { pathname: url, state: { from: props.location } } })); };
-        _this.state = {
-            isLoggedIn: true
-        }; //HERE MUST BE WHO AM I
+        // this.state = {
+        //     isLoggedIn: true
+        // }//HERE MUST BE WHO AM I
+        _this.state = { isLoggedIn: false };
+        setTimeout(function () {
+            login_provider_1.getUser().then(function () {
+                console.log('user');
+                _this.setState({ isLoggedIn: true });
+            }, function () { console.log('error'); });
+        }, 5000);
         return _this;
     }
     App.prototype.render = function () {
@@ -13305,6 +13313,45 @@ exports.default = Items;
 
 /***/ }),
 
+/***/ "./src/pages/login/login-provider.ts":
+/*!*******************************************!*\
+  !*** ./src/pages/login/login-provider.ts ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
+function sendToken(token) {
+    return fetch(config_1.backendUrl + '/login/yandex', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify({ token: token })
+    });
+}
+exports.sendToken = sendToken;
+function getUser() {
+    return fetch(config_1.backendUrl + '/getuser', {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        }
+    }).then(function (res) {
+        if (!res.ok) {
+            throw new Error;
+        }
+    });
+}
+exports.getUser = getUser;
+
+
+/***/ }),
+
 /***/ "./src/pages/login/login.scss":
 /*!************************************!*\
   !*** ./src/pages/login/login.scss ***!
@@ -13362,6 +13409,7 @@ __webpack_require__(/*! ./login.scss */ "./src/pages/login/login.scss");
 var React = __webpack_require__(/*! react */ "react");
 var qs = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
+var login_provider_1 = __webpack_require__(/*! ./login-provider */ "./src/pages/login/login-provider.ts");
 var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
 var Login = /** @class */ (function (_super) {
     __extends(Login, _super);
@@ -13371,9 +13419,11 @@ var Login = /** @class */ (function (_super) {
     Login.prototype.componentDidMount = function () {
         var params = qs.parse(this.props.hash.slice(1), { ignoreQueryPrefix: true });
         var access_token = params.access_token, error = params.error;
-        console.log(error);
         console.log(access_token);
-        // sendCode(code);
+        if (access_token) {
+            login_provider_1.sendToken(access_token);
+        }
+        // TODO if error
     };
     Login.prototype.render = function () {
         return (React.createElement("div", { className: "login" },

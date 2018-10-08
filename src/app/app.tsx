@@ -7,6 +7,7 @@ import Constructor from 'pages/constructor/constructor';
 import MainPage from 'pages/main/main';
 import Qr from 'pages/qr/qr';
 import Login from 'pages/login/login';
+import {getUser} from 'pages/login/login-provider';
 
 interface State {
     isLoggedIn: boolean
@@ -15,9 +16,19 @@ interface State {
 export default class App extends React.Component<{}, State> {
     constructor(props: any) {
         super(props);
-        this.state = {
-            isLoggedIn: true
-        }//HERE MUST BE WHO AM I
+        // this.state = {
+        //     isLoggedIn: true
+        // }//HERE MUST BE WHO AM I
+        this.state = {isLoggedIn: false};
+        setTimeout(() => {
+            getUser().then(
+            () => {console.log('user'); 
+                this.setState({isLoggedIn: true});
+            },
+            () => {console.log('error')},
+        );
+        }, 5000);
+        
     }
     _redirectTo = (url: string, props: any) => (
         <Redirect
