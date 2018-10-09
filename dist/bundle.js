@@ -13152,7 +13152,7 @@ var Constructor = /** @class */ (function (_super) {
         var items = [];
         var isNotEditable = false;
         var isStatic = false;
-        var type = _this.props.type;
+        var _a = _this.props, type = _a.type, id = _a.id;
         if (type && items_1.default[type]) {
             items = items_1.default[type].items;
             isNotEditable = items_1.default[type].isNotEditable;
@@ -13165,7 +13165,7 @@ var Constructor = /** @class */ (function (_super) {
             isNotEditable: isNotEditable,
             notification: null,
             isCreated: false,
-            id: '',
+            id: id,
             checkboxes: {
                 isPrivate: false,
                 isStatic: isStatic,
@@ -13177,10 +13177,10 @@ var Constructor = /** @class */ (function (_super) {
     }
     Constructor.prototype.componentDidMount = function () {
         var _this = this;
-        if (!this.props.id) {
+        if (!this.state.id) {
             return;
         }
-        constructor_provider_1.getPage(this.props.id).then(function (res) {
+        constructor_provider_1.getPage(this.state.id).then(function (res) {
             var items = res.fieldsNames.map(function (el, i) { return ({ name: el, value: res.fieldsValues[i] }); });
             var d = new Date(res.date);
             var date = d.toDateString() + ' ' + d.toLocaleTimeString();
@@ -13459,7 +13459,9 @@ function deletePage(id) {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
-        }
+        },
+        mode: "cors",
+        credentials: "include"
     }).then(function (res) {
         if (!res.ok) {
             throw new Error;

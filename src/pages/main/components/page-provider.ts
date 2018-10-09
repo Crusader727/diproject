@@ -6,7 +6,9 @@ export function deletePage(id: string) {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
-        }
+        },
+        mode: "cors",
+        credentials: "include"
     }).then((res) => {
         if (!res.ok) {
             throw new Error;

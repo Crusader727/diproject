@@ -47,7 +47,7 @@ export default class Constructor extends React.Component<Props, State> {
         let items: Item[] = [];
         let isNotEditable = false;
         let isStatic = false;
-        const {type} = this.props;
+        const {type, id} = this.props;
         if (type && CommonItems[type]) {
             items = CommonItems[type].items;
             isNotEditable = CommonItems[type].isNotEditable;
@@ -60,7 +60,7 @@ export default class Constructor extends React.Component<Props, State> {
             isNotEditable,
             notification: null,
             isCreated: false,
-            id: '',
+            id,
             checkboxes: {
                 isPrivate: false,
                 isStatic,
@@ -71,10 +71,10 @@ export default class Constructor extends React.Component<Props, State> {
     }
 
     componentDidMount() {
-        if (!this.props.id) {
+        if (!this.state.id) {
             return;
         }
-        getPage(this.props.id).then(
+        getPage(this.state.id).then(
             (res: Page) => {
                 const items = res.fieldsNames.map((el, i) => ({name: el, value: res.fieldsValues[i]}));
                 const d = new Date(res.date);
