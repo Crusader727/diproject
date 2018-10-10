@@ -12359,7 +12359,8 @@ var App = /** @class */ (function (_super) {
         var _this = _super.call(this, props) || this;
         _this._redirectTo = function (url, props) { return (React.createElement(react_router_dom_1.Redirect, { to: { pathname: url, state: { from: props.location } } })); };
         _this.state = { isLoggedIn: false };
-        login_provider_1.getUser().then(function () { return _this.setState({ isLoggedIn: true }); }, function () { });
+        login_provider_1.getUser().then(//loader
+        function () { return _this.setState({ isLoggedIn: true }); }, function () { });
         return _this;
     }
     App.prototype.render = function () {
@@ -12473,7 +12474,7 @@ var Button = /** @class */ (function (_super) {
             // className={'input_size-' + (size ? size : this.defaultProps.size)}
             className: 'button' + (type ? ' _' + type : ''), onClick: this._onClick, onBlur: onBlur },
             text,
-            icon && React.createElement(react_svg_1.default, { src: "icons/" + icon + ".svg", svgClassName: "" }),
+            icon && React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/" + icon + ".svg", svgClassName: "" }),
             downloadHref ?
                 React.createElement("a", { href: downloadHref, download: downloadTitle, ref: function (anchor) { return _this.anchor = anchor; } }) :
                 null));
@@ -13239,8 +13240,8 @@ var Constructor = /** @class */ (function (_super) {
                 React.createElement(input_1.default, { size: "large", placeholder: "Title", isFocused: true, value: name, onChange: this._handleItemNameChange(index, 'name') }),
                 React.createElement("div", { className: "constructor__content__edit-item__text-wrapper" },
                     React.createElement(text_area_1.default, { placeholder: "Description", value: value, onChange: this._handleItemNameChange(index, 'value') }))),
-            React.createElement(react_svg_1.default, { src: "icons/delete.svg", svgClassName: "close", onClick: function () { return _this._deleteItem(index); } }),
-            React.createElement(react_svg_1.default, { src: "icons/close.svg", svgClassName: "close", onClick: function () { return _this._openEditor(); } })));
+            React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/delete.svg", svgClassName: "close", onClick: function () { return _this._deleteItem(index); } }),
+            React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/close.svg", svgClassName: "close", onClick: function () { return _this._openEditor(); } })));
     };
     Constructor.prototype._renderAddItem = function () {
         var _this = this;
@@ -13248,7 +13249,7 @@ var Constructor = /** @class */ (function (_super) {
             return null;
         }
         return (React.createElement("div", { className: "constructor__content__add-item", onClick: function () { return _this._addItem(); } },
-            React.createElement(react_svg_1.default, { src: "icons/round-cross.svg", svgClassName: "round-cross" })));
+            React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/round-cross.svg", svgClassName: "round-cross" })));
     };
     Constructor.prototype._renderCheckboxes = function () {
         return (React.createElement("div", { className: "constructor__menu__checkboxes" },
@@ -13432,7 +13433,7 @@ var Login = /** @class */ (function (_super) {
                 React.createElement("div", { className: "login__content__title" }, "Welcome to Velox"),
                 React.createElement("div", { className: "login__content__title" }, "Please Sign In with one of Services"),
                 React.createElement("div", { className: "login__content__services" },
-                    React.createElement(react_svg_1.default, { src: "icons/oauth/yandex.svg", svgClassName: "oauth-icon", onClick: function () { window.open("https://oauth.yandex.ru/authorize?response_type=token&client_id=" + config_1.yandexId, "_self"); } })))));
+                    React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/oauth/yandex.svg", svgClassName: "oauth-icon", onClick: function () { window.open("https://oauth.yandex.ru/authorize?response_type=token&client_id=" + config_1.yandexId, "_self"); } })))));
     };
     return Login;
 }(React.Component));
@@ -13584,7 +13585,7 @@ var Page = /** @class */ (function (_super) {
                 React.createElement("div", { className: "page__title__left-block" },
                     React.createElement("div", null, title),
                     React.createElement("div", { className: "page__title__date" }, formatedDate)),
-                React.createElement(react_svg_1.default, { src: "icons/more.svg", svgClassName: "page__icon", tabIndex: 0, onBlur: function () { return setTimeout(function () { return _this.setState({ isMenuShown: false }); }, 200); }, onClick: function () { return _this.setState({ isMenuShown: !_this.state.isMenuShown }); } }))));
+                React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/more.svg", svgClassName: "page__icon", tabIndex: 0, onBlur: function () { return setTimeout(function () { return _this.setState({ isMenuShown: false }); }, 200); }, onClick: function () { return _this.setState({ isMenuShown: !_this.state.isMenuShown }); } }))));
     };
     return Page;
 }(React.Component));
@@ -13686,12 +13687,12 @@ var Pages = /** @class */ (function (_super) {
     Pages.prototype._renderDropDownButton = function (_a) {
         var icon = _a.icon, items = _a.items, chosenIndex = _a.chosenIndex, className = _a.className;
         return (React.createElement(dropdown_1.default, { items: items, chosenIndex: chosenIndex },
-            React.createElement(react_svg_1.default, { src: "icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : ''), onClick: function () { return console.log('sort'); } })));
+            React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : ''), onClick: function () { return console.log('sort'); } })));
     };
     Pages.prototype._renderSearch = function () {
         var _this = this;
         if (!this.state.isSearchOpen) {
-            return (React.createElement(react_svg_1.default, { src: "icons/search.svg", svgClassName: "icon", onClick: function () { return _this.setState({ isSearchOpen: true }); } }));
+            return (React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/search.svg", svgClassName: "icon", onClick: function () { return _this.setState({ isSearchOpen: true }); } }));
         }
         return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: false }); } },
             React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search" })));
@@ -13845,7 +13846,7 @@ var MainPage = /** @class */ (function (_super) {
     MainPage.prototype._renderTemplate = function (title, type) {
         return (React.createElement(react_router_dom_1.Link, { to: "/new/" + type, className: "template", key: title },
             React.createElement("div", { className: "template__content" },
-                React.createElement(react_svg_1.default, { src: "icons/templates/" + type + ".svg", svgClassName: "template-icon" })),
+                React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/templates/" + type + ".svg", svgClassName: "template-icon" })),
             React.createElement("div", { className: "template__title" }, title)));
     };
     MainPage.prototype._renderArrow = function (type) {
@@ -13854,7 +13855,7 @@ var MainPage = /** @class */ (function (_super) {
         if (!flag) {
             style = { opacity: 0.2 };
         }
-        return (React.createElement(react_svg_1.default, { src: "icons/arrow-" + type + ".svg", className: "arrow-container", svgClassName: "arrow", style: style }));
+        return (React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/arrow-" + type + ".svg", className: "arrow-container", svgClassName: "arrow", style: style }));
     };
     MainPage.prototype._renderTemplates = function () {
         var _this = this;

@@ -17,7 +17,7 @@ export default class App extends React.Component<{}, State> {
     constructor(props: any) {
         super(props);
         this.state = {isLoggedIn: false};
-        getUser().then(
+        getUser().then( //loader
             () => this.setState({isLoggedIn: true}),
             () => {},//error handling
         );

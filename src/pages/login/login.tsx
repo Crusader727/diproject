@@ -34,7 +34,7 @@ export default class Login extends React.Component<Props> {
                     </div>
                     <div className="login__content__services">
                         <ReactSVG
-                            src={`icons/oauth/yandex.svg`}
+                            src={`https://velox-app.herokuapp.com/icons/oauth/yandex.svg`}
                             svgClassName="oauth-icon"
                             onClick={() =>
                                 {window.open(`https://oauth.yandex.ru/authorize?response_type=token&client_id=${yandexId}`, "_self")}

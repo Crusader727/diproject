@@ -83,7 +83,7 @@ export default class Page extends React.Component<PageCut> {
                         </div>
                     </div>
                     <ReactSVG
-                        src="icons/more.svg"
+                        src="https://velox-app.herokuapp.com/icons/more.svg"
                         svgClassName="page__icon"
                         tabIndex={0}
                         onBlur={() => setTimeout(() => this.setState({isMenuShown: false}), 200)}

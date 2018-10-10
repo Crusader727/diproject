@@ -33,7 +33,7 @@ export default class Button extends React.Component<Props> {
             >
                 {text}
                 {icon && <ReactSVG
-                        src={`icons/${icon}.svg`}
+                        src={`https://velox-app.herokuapp.com/icons/${icon}.svg`}
                         svgClassName=""
                     />
                 }

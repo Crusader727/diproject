@@ -194,12 +194,12 @@ export default class Constructor extends React.Component<Props, State> {
                     </div>
                 </div>
                 <ReactSVG
-                    src={`icons/delete.svg`}
+                    src={`https://velox-app.herokuapp.com/icons/delete.svg`}
                     svgClassName="close"
                     onClick={() => this._deleteItem(index)}
                 />
                 <ReactSVG
-                    src={`icons/close.svg`}
+                    src={`https://velox-app.herokuapp.com/icons/close.svg`}
                     svgClassName="close"
                     onClick={() => this._openEditor()}
                 />
@@ -214,7 +214,7 @@ export default class Constructor extends React.Component<Props, State> {
         return (
             <div className="constructor__content__add-item" onClick={() => this._addItem()}>
                 <ReactSVG
-                    src={`icons/round-cross.svg`}
+                    src={`https://velox-app.herokuapp.com/icons/round-cross.svg`}
                     svgClassName="round-cross"
                 />
             </div>

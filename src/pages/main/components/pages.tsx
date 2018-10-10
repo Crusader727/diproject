@@ -41,7 +41,7 @@ export default class Pages extends React.Component<Props> {
         return (
             <DropDown items={items} chosenIndex={chosenIndex}>
                 <ReactSVG
-                    src={`icons/${icon}.svg`}
+                    src={`https://velox-app.herokuapp.com/icons/${icon}.svg`}
                     svgClassName={"icon" + (className ? `-${className}` : '')}
                     onClick={() => console.log('sort')}
                 />
@@ -53,7 +53,7 @@ export default class Pages extends React.Component<Props> {
         if (!this.state.isSearchOpen) {          
             return (
                 <ReactSVG
-                    src="icons/search.svg"
+                    src="https://velox-app.herokuapp.com/icons/search.svg"
                     svgClassName="icon"
                     onClick={() => this.setState({isSearchOpen: true})}
                 />
