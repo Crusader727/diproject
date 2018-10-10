@@ -40,7 +40,7 @@ export default class App extends React.Component<{}, State> {
                         path='/login'
                         render={(props) =>
                             !isLoggedIn ?
-                                (<Login hash={props.location.hash}/>):
+                                (<Login hash={props.location.hash} loginFunction={() => this.setState({isLoggedIn: true})}/>):
                                 this._redirectTo('/', this.props)
                         }
                     />

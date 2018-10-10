@@ -12370,7 +12370,7 @@ var App = /** @class */ (function (_super) {
                 React.createElement(react_router_dom_1.Route, { path: '/qr/:id', render: function (props) { return (React.createElement(qr_1.default, { id: props.match.params.id })); } }),
                 React.createElement(react_router_dom_1.Route, { path: '/login', render: function (props) {
                         return !isLoggedIn ?
-                            (React.createElement(login_1.default, { hash: props.location.hash })) :
+                            (React.createElement(login_1.default, { hash: props.location.hash, loginFunction: function () { return _this.setState({ isLoggedIn: true }); } })) :
                             _this._redirectTo('/', _this.props);
                     } }),
                 React.createElement(react_router_dom_1.Route, { path: '/new/:type', render: function (props) {
@@ -13421,9 +13421,8 @@ var Login = /** @class */ (function (_super) {
     Login.prototype.componentDidMount = function () {
         var params = qs.parse(this.props.hash.slice(1), { ignoreQueryPrefix: true });
         var access_token = params.access_token, error = params.error;
-        console.log(access_token);
         if (access_token) {
-            login_provider_1.sendToken(access_token);
+            login_provider_1.sendToken(access_token).then(this.props.loginFunction);
         }
         // TODO if error
     };

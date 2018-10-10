@@ -6,16 +6,18 @@ import {sendToken} from './login-provider';
 import {yandexId} from '../../core/config/config';
 
 interface Props {
-    hash: string
+    hash: string;
+    loginFunction: () => void;
 }
 
 export default class Login extends React.Component<Props> {
     componentDidMount() {
         const params = qs.parse(this.props.hash.slice(1), {ignoreQueryPrefix: true});
         const {access_token, error} = params;
-        console.log(access_token);
         if (access_token) {
-            sendToken(access_token);
+            sendToken(access_token).then(
+                this.props.loginFunction
+            );
         }
         // TODO if error
     }
