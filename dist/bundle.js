@@ -12463,7 +12463,9 @@ var Button = /** @class */ (function (_super) {
                 _this.anchor.click();
                 return;
             }
-            _this.props.onClick();
+            if (_this.props.onClick) {
+                _this.props.onClick();
+            }
         };
         return _this;
     }
@@ -12474,7 +12476,7 @@ var Button = /** @class */ (function (_super) {
             // className={'input_size-' + (size ? size : this.defaultProps.size)}
             className: 'button' + (type ? ' _' + type : ''), onClick: this._onClick, onBlur: onBlur },
             text,
-            icon && React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/" + icon + ".svg", svgClassName: "" }),
+            icon && React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "" }),
             downloadHref ?
                 React.createElement("a", { href: downloadHref, download: downloadTitle, ref: function (anchor) { return _this.anchor = anchor; } }) :
                 null));
@@ -12551,6 +12553,7 @@ var Checkbox = /** @class */ (function (_super) {
         _this._onClick = function () {
             if (!_this.props.disabled) {
                 _this.setState({ checked: !_this.state.checked });
+                _this.props.onClick();
             }
         };
         return _this;
@@ -13130,6 +13133,7 @@ var Constructor = /** @class */ (function (_super) {
     __extends(Constructor, _super);
     function Constructor(props) {
         var _this = _super.call(this, props) || this;
+        _this.notificationTimeout = null;
         _this._handleItemNameChange = function (index, type) {
             return function (event) {
                 var items = _this.state.items;
@@ -13150,6 +13154,12 @@ var Constructor = /** @class */ (function (_super) {
                 React.createElement("div", { className: "constructor__content__item__title" }, item.name + ":"),
                 React.createElement("div", null, item.value)));
         };
+        _this._renderCheckboxes = function () {
+            var _a = _this.state, isStatic = _a.isStatic, isPrivate = _a.isPrivate;
+            return (React.createElement("div", { className: "constructor__menu__checkboxes" },
+                React.createElement(checkbox_1.default, { text: "Private", disabled: isStatic, onClick: function () { return _this.setState({ isPrivate: !isPrivate }); } }),
+                React.createElement(checkbox_1.default, { text: "Static", disabled: isPrivate, onClick: function () { return _this.setState({ isStatic: !isStatic }); } })));
+        };
         var items = [];
         var isNotEditable = false;
         var isStatic = false;
@@ -13167,12 +13177,8 @@ var Constructor = /** @class */ (function (_super) {
             notification: null,
             isCreated: false,
             id: id,
-            checkboxes: {
-                isPrivate: false,
-                isStatic: isStatic,
-                isStaticLocked: isStatic,
-                isPrivateLocked: isStatic
-            }
+            isPrivate: false,
+            isStatic: isStatic,
         };
         return _this;
     }
@@ -13193,11 +13199,16 @@ var Constructor = /** @class */ (function (_super) {
             });
         }, function () { return console.log('error'); });
     };
+    Constructor.prototype.componentWillUnmount = function () {
+        if (this.notificationTimeout) {
+            clearTimeout(this.notificationTimeout);
+        }
+    };
     Constructor.prototype._savePage = function () {
         var _this = this;
         var page = {
             title: this.state.documentName,
-            isPublic: true,
+            isPublic: !this.state.isPrivate,
             fieldsNames: this.state.items.map(function (el) { return el.name; }),
             fieldsValues: this.state.items.map(function (el) { return el.value; })
         };
@@ -13211,7 +13222,7 @@ var Constructor = /** @class */ (function (_super) {
         else {
             constructor_provider_1.editPage(page, this.state.id).then(function () { return _this.setState({ notification: 'success' }); }, function () { return _this.setState({ notification: 'error' }); });
         }
-        setTimeout(function () { return _this.setState({ notification: null }); }, 3000);
+        this.notificationTimeout = setTimeout(function () { return _this.setState({ notification: null }); }, 3000);
     };
     Constructor.prototype._openEditor = function (index) {
         var items = this.state.items;
@@ -13240,8 +13251,8 @@ var Constructor = /** @class */ (function (_super) {
                 React.createElement(input_1.default, { size: "large", placeholder: "Title", isFocused: true, value: name, onChange: this._handleItemNameChange(index, 'name') }),
                 React.createElement("div", { className: "constructor__content__edit-item__text-wrapper" },
                     React.createElement(text_area_1.default, { placeholder: "Description", value: value, onChange: this._handleItemNameChange(index, 'value') }))),
-            React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/delete.svg", svgClassName: "close", onClick: function () { return _this._deleteItem(index); } }),
-            React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/close.svg", svgClassName: "close", onClick: function () { return _this._openEditor(); } })));
+            React.createElement(react_svg_1.default, { src: "/icons/delete.svg", svgClassName: "close", onClick: function () { return _this._deleteItem(index); } }),
+            React.createElement(react_svg_1.default, { src: "/icons/close.svg", svgClassName: "close", onClick: function () { return _this._openEditor(); } })));
     };
     Constructor.prototype._renderAddItem = function () {
         var _this = this;
@@ -13249,12 +13260,7 @@ var Constructor = /** @class */ (function (_super) {
             return null;
         }
         return (React.createElement("div", { className: "constructor__content__add-item", onClick: function () { return _this._addItem(); } },
-            React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/round-cross.svg", svgClassName: "round-cross" })));
-    };
-    Constructor.prototype._renderCheckboxes = function () {
-        return (React.createElement("div", { className: "constructor__menu__checkboxes" },
-            React.createElement(checkbox_1.default, { text: "Private" }),
-            React.createElement(checkbox_1.default, { text: "Static" })));
+            React.createElement(react_svg_1.default, { src: "/icons/round-cross.svg", svgClassName: "round-cross" })));
     };
     Constructor.prototype._renderMenu = function () {
         var _this = this;
@@ -13433,7 +13439,7 @@ var Login = /** @class */ (function (_super) {
                 React.createElement("div", { className: "login__content__title" }, "Welcome to Velox"),
                 React.createElement("div", { className: "login__content__title" }, "Please Sign In with one of Services"),
                 React.createElement("div", { className: "login__content__services" },
-                    React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/oauth/yandex.svg", svgClassName: "oauth-icon", onClick: function () { window.open("https://oauth.yandex.ru/authorize?response_type=token&client_id=" + config_1.yandexId, "_self"); } })))));
+                    React.createElement(react_svg_1.default, { src: "/icons/oauth/yandex.svg", svgClassName: "oauth-icon", onClick: function () { window.open("https://oauth.yandex.ru/authorize?response_type=token&client_id=" + config_1.yandexId, "_self"); } })))));
     };
     return Login;
 }(React.Component));
@@ -13539,28 +13545,34 @@ var Page = /** @class */ (function (_super) {
     __extends(Page, _super);
     function Page() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.menuTimeout = null;
         _this.state = {
             isMenuShown: false,
             isShown: true
         };
         _this._deletePage = function () {
-            page_provider_1.deletePage(_this.props.id).then(function () { return _this.setState({ isShown: false }); }, function () { return console.log('error'); } //TODO error
+            page_provider_1.deletePage(_this.props.uuid).then(function () { return _this.setState({ isShown: false }); }, function () { return console.log('error'); } //TODO error
             );
         };
         _this._downloadSVG = function () {
-            var svg = server_1.renderToString(React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + _this.props.id, size: 130, renderAs: "svg" }));
+            var svg = server_1.renderToString(React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + _this.props.uuid, size: 130, renderAs: "svg" }));
             svg = svg.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
             svg = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
             return svg;
         };
         return _this;
     }
+    Page.prototype.componentWillUnmount = function () {
+        if (this.menuTimeout) {
+            clearTimeout(this.menuTimeout);
+        }
+    };
     Page.prototype._renderMenu = function () {
         if (!this.state.isMenuShown) {
             return null;
         }
         return (React.createElement("div", { className: "page__menu" },
-            React.createElement(react_router_dom_1.Link, { to: "/" + this.props.id + "/edit" },
+            React.createElement(react_router_dom_1.Link, { to: "/" + this.props.uuid + "/edit" },
                 React.createElement(button_1.default, { type: "air", icon: "edit" })),
             React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage }),
             React.createElement(button_1.default, { type: "air", icon: "print" }),
@@ -13571,21 +13583,21 @@ var Page = /** @class */ (function (_super) {
         if (!this.state.isShown) {
             return null;
         }
-        var _a = this.props, id = _a.id, title = _a.title;
+        var _a = this.props, uuid = _a.uuid, title = _a.title;
         var date = new Date(this.props.date);
         var now = new Date();
         var formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
             date.toDateString() :
             date.toLocaleTimeString();
         return (React.createElement("div", { className: "page" },
-            React.createElement("a", { className: "page__content", href: "qr/" + id, target: "_blank" },
-                React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + id, size: 130 })),
+            React.createElement("a", { className: "page__content", href: "qr/" + uuid, target: "_blank" },
+                React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + uuid, size: 130 })),
             this._renderMenu(),
             React.createElement("div", { className: "page__title" },
                 React.createElement("div", { className: "page__title__left-block" },
                     React.createElement("div", null, title),
                     React.createElement("div", { className: "page__title__date" }, formatedDate)),
-                React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/more.svg", svgClassName: "page__icon", tabIndex: 0, onBlur: function () { return setTimeout(function () { return _this.setState({ isMenuShown: false }); }, 200); }, onClick: function () { return _this.setState({ isMenuShown: !_this.state.isMenuShown }); } }))));
+                React.createElement(react_svg_1.default, { src: "/icons/more.svg", svgClassName: "page__icon", tabIndex: 0, onBlur: function () { return _this.menuTimeout = setTimeout(function () { return _this.setState({ isMenuShown: false }); }, 200); }, onClick: function () { return _this.setState({ isMenuShown: !_this.state.isMenuShown }); } }))));
     };
     return Page;
 }(React.Component));
@@ -13687,12 +13699,12 @@ var Pages = /** @class */ (function (_super) {
     Pages.prototype._renderDropDownButton = function (_a) {
         var icon = _a.icon, items = _a.items, chosenIndex = _a.chosenIndex, className = _a.className;
         return (React.createElement(dropdown_1.default, { items: items, chosenIndex: chosenIndex },
-            React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : ''), onClick: function () { return console.log('sort'); } })));
+            React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : ''), onClick: function () { return console.log('sort'); } })));
     };
     Pages.prototype._renderSearch = function () {
         var _this = this;
         if (!this.state.isSearchOpen) {
-            return (React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/search.svg", svgClassName: "icon", onClick: function () { return _this.setState({ isSearchOpen: true }); } }));
+            return (React.createElement(react_svg_1.default, { src: "/icons/search.svg", svgClassName: "icon", onClick: function () { return _this.setState({ isSearchOpen: true }); } }));
         }
         return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: false }); } },
             React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search" })));
@@ -13713,7 +13725,7 @@ var Pages = /** @class */ (function (_super) {
                     }),
                     this._renderDropDownButton({ icon: 'sort', items: sortActions }))),
             React.createElement("div", { className: "pages__content" }, pages.length ?
-                pages.map(function (page) { return React.createElement(page_1.default, __assign({}, page, { key: page.id })); }) :
+                pages.map(function (page) { return React.createElement(page_1.default, __assign({}, page, { key: page.uuid })); }) :
                 React.createElement("div", null, "You dont have any pages yet."))));
     };
     return Pages;
@@ -13734,9 +13746,12 @@ exports.default = Pages;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+var qs = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
 var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
-function getPages() {
-    return fetch(config_1.backendUrl + '/', {
+function getPages(_a) {
+    var search = _a.search, sort = _a.sort, own = _a.own;
+    var params = qs.stringify({ search: search, sort: sort, own: own });
+    return fetch(config_1.backendUrl + "/" + params, {
         method: 'GET',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -13841,12 +13856,12 @@ var MainPage = /** @class */ (function (_super) {
     }
     MainPage.prototype.componentDidMount = function () {
         var _this = this;
-        main_provider_1.getPages().then(function (res) { return res.json().then(function (pages) { return _this.setState({ pages: pages }); }); }); //todo Error
+        main_provider_1.getPages({}).then(function (res) { return res.json().then(function (pages) { return _this.setState({ pages: pages }); }); }); //todo Error
     };
     MainPage.prototype._renderTemplate = function (title, type) {
         return (React.createElement(react_router_dom_1.Link, { to: "/new/" + type, className: "template", key: title },
             React.createElement("div", { className: "template__content" },
-                React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/templates/" + type + ".svg", svgClassName: "template-icon" })),
+                React.createElement(react_svg_1.default, { src: "/icons/templates/" + type + ".svg", svgClassName: "template-icon" })),
             React.createElement("div", { className: "template__title" }, title)));
     };
     MainPage.prototype._renderArrow = function (type) {
@@ -13855,7 +13870,7 @@ var MainPage = /** @class */ (function (_super) {
         if (!flag) {
             style = { opacity: 0.2 };
         }
-        return (React.createElement(react_svg_1.default, { src: "https://velox-app.herokuapp.com/icons/arrow-" + type + ".svg", className: "arrow-container", svgClassName: "arrow", style: style }));
+        return (React.createElement(react_svg_1.default, { src: "/icons/arrow-" + type + ".svg", className: "arrow-container", svgClassName: "arrow", style: style }));
     };
     MainPage.prototype._renderTemplates = function () {
         var _this = this;
@@ -13972,13 +13987,15 @@ var Qr = /** @class */ (function (_super) {
     function Qr() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
-            page: null
+            page: null,
+            isNotAvilable: false
         };
         return _this;
     }
     Qr.prototype.componentDidMount = function () {
         var _this = this;
-        qr_provider_1.getQr(this.props.id).then(function (res) { return res.json().then(function (page) { return _this.setState({ page: page }); }); }); //todo Error
+        qr_provider_1.getQr(this.props.id).then(function (res) { return res.json().then(function (page) { return _this.setState({ page: page }); }); }, function () { return _this.setState({ isNotAvilable: true }); } // todo Error
+        );
     };
     Qr.prototype._renderItem = function (name, value, index) {
         return (React.createElement("div", { key: index }, name + ": " + value));
@@ -13987,6 +14004,9 @@ var Qr = /** @class */ (function (_super) {
         var _this = this;
         if (!this.state.page) {
             return null;
+        }
+        if (this.state.isNotAvilable) {
+            return (React.createElement("div", null, "This page is Private or deleted"));
         }
         var _a = this.state.page, title = _a.title, fieldsNames = _a.fieldsNames, fieldsValues = _a.fieldsValues;
         return (React.createElement("div", null,

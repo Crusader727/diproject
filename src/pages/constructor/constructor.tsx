@@ -33,15 +33,12 @@ interface State {
     isCreated: boolean;
     id: string;
     date: string | null;
-    checkboxes: {
-        isPrivate: boolean,
-        isPrivateLocked: boolean,
-        isStatic: boolean,
-        isStaticLocked: boolean
-    }
+    isPrivate: boolean,
+    isStatic: boolean
 }
 
 export default class Constructor extends React.Component<Props, State> {
+    notificationTimeout: any = null;
     constructor(props: any) {
         super(props);
         let items: Item[] = [];
@@ -61,12 +58,8 @@ export default class Constructor extends React.Component<Props, State> {
             notification: null,
             isCreated: false,
             id,
-            checkboxes: {
-                isPrivate: false,
-                isStatic,
-                isStaticLocked: isStatic,
-                isPrivateLocked: isStatic
-            }
+            isPrivate: false,
+            isStatic,
         }
     }
 
@@ -90,10 +83,16 @@ export default class Constructor extends React.Component<Props, State> {
         );
     }
 
+    componentWillUnmount() {
+        if (this.notificationTimeout) {
+            clearTimeout(this.notificationTimeout);
+        }
+    }
+
     private _savePage() {
         const page: Page = {
             title: this.state.documentName,
-            isPublic: true,
+            isPublic: !this.state.isPrivate,
             fieldsNames: this.state.items.map((el) => el.name),
             fieldsValues: this.state.items.map((el) => el.value)
         }
@@ -112,7 +111,7 @@ export default class Constructor extends React.Component<Props, State> {
                 () => this.setState({notification: 'error'})
             )
         }
-        setTimeout(() => this.setState({notification: null}), 3000);
+        this.notificationTimeout = setTimeout(() => this.setState({notification: null}), 3000);
     }
 
     private _openEditor(index?: number) {
@@ -194,12 +193,12 @@ export default class Constructor extends React.Component<Props, State> {
                     </div>
                 </div>
                 <ReactSVG
-                    src={`https://velox-app.herokuapp.com/icons/delete.svg`}
+                    src={`/icons/delete.svg`}
                     svgClassName="close"
                     onClick={() => this._deleteItem(index)}
                 />
                 <ReactSVG
-                    src={`https://velox-app.herokuapp.com/icons/close.svg`}
+                    src={`/icons/close.svg`}
                     svgClassName="close"
                     onClick={() => this._openEditor()}
                 />
@@ -214,18 +213,27 @@ export default class Constructor extends React.Component<Props, State> {
         return (
             <div className="constructor__content__add-item" onClick={() => this._addItem()}>
                 <ReactSVG
-                    src={`https://velox-app.herokuapp.com/icons/round-cross.svg`}
+                    src={`/icons/round-cross.svg`}
                     svgClassName="round-cross"
                 />
             </div>
         );
     }
 
-    private _renderCheckboxes(): React.ReactNode {
+    private _renderCheckboxes = (): React.ReactNode => {
+        const {isStatic, isPrivate} = this.state;
         return (
             <div className="constructor__menu__checkboxes">
-                <Checkbox text="Private"/>
-                <Checkbox text="Static"/>
+                <Checkbox
+                    text="Private"
+                    disabled={isStatic}
+                    onClick={() => this.setState({isPrivate: !isPrivate})}
+                />
+                <Checkbox
+                    text="Static"
+                    disabled={isPrivate}
+                    onClick={() => this.setState({isStatic: !isStatic})}
+                />
             </div>
         );
     }

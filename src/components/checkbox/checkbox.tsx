@@ -2,6 +2,7 @@ import './checkbox.scss';
 import * as React from 'react';
 
 interface Props {
+    onClick?: () => void;
     disabled?: boolean;
     checked?: boolean;
     text: string
@@ -18,6 +19,7 @@ export default class Checkbox extends React.Component<Props> {
     private _onClick = () => {
         if (!this.props.disabled) {
             this.setState({checked: !this.state.checked});
+            this.props.onClick();
         }
     }
     render(): React.ReactNode {

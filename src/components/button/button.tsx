@@ -20,7 +20,9 @@ export default class Button extends React.Component<Props> {
             this.anchor.click();
             return;
         }
-        this.props.onClick();
+        if (this.props.onClick) {
+            this.props.onClick();
+        }
     }
     public render() {
         const {type, downloadHref, downloadTitle, text, onClick, icon, onBlur} = this.props;
@@ -33,7 +35,7 @@ export default class Button extends React.Component<Props> {
             >
                 {text}
                 {icon && <ReactSVG
-                        src={`https://velox-app.herokuapp.com/icons/${icon}.svg`}
+                        src={`/icons/${icon}.svg`}
                         svgClassName=""
                     />
                 }

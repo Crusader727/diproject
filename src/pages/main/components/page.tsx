@@ -15,13 +15,20 @@ interface State {
 }
 
 export default class Page extends React.Component<PageCut> {
+    menuTimeout: any = null;
     state: State = {
         isMenuShown: false,
         isShown: true
     }
 
+    componentWillUnmount() {
+        if (this.menuTimeout) {
+            clearTimeout(this.menuTimeout);
+        }
+    }
+
     private _deletePage = (): void => {
-        deletePage(this.props.id).then(
+        deletePage(this.props.uuid).then(
             () => this.setState({isShown: false}),
             () => console.log('error')//TODO error
         );
@@ -29,7 +36,7 @@ export default class Page extends React.Component<PageCut> {
 
     private _downloadSVG = (): string => {
         let svg = renderToString(
-            <QRCode value={`https://velox-app.herokuapp.com/qr/${this.props.id}`} size={130} renderAs="svg"/>
+            <QRCode value={`https://velox-app.herokuapp.com/qr/${this.props.uuid}`} size={130} renderAs="svg"/>
         );
         svg = svg.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
         svg = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
@@ -42,7 +49,7 @@ export default class Page extends React.Component<PageCut> {
         }
         return (
             <div className="page__menu">
-                <Link to={`/${this.props.id}/edit`}>
+                <Link to={`/${this.props.uuid}/edit`}>
                     <Button type="air" icon="edit" />
                 </Link>
                 <Button type="air" icon="delete" onClick={this._deletePage}/>
@@ -61,7 +68,7 @@ export default class Page extends React.Component<PageCut> {
         if (!this.state.isShown) {
             return null;
         }
-        const {id, title} = this.props;
+        const {uuid, title} = this.props;
         const date = new Date(this.props.date);
         const now = new Date();
         const formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
@@ -69,8 +76,8 @@ export default class Page extends React.Component<PageCut> {
             date.toLocaleTimeString();
         return (
             <div className="page">
-                <a className="page__content" href={`qr/${id}`} target="_blank">
-                    <QRCode value={`https://velox-app.herokuapp.com/qr/${id}`} size={130}/>
+                <a className="page__content" href={`qr/${uuid}`} target="_blank">
+                    <QRCode value={`https://velox-app.herokuapp.com/qr/${uuid}`} size={130}/>
                 </a>
                 {this._renderMenu()}
                 <div className="page__title">
@@ -83,10 +90,10 @@ export default class Page extends React.Component<PageCut> {
                         </div>
                     </div>
                     <ReactSVG
-                        src="https://velox-app.herokuapp.com/icons/more.svg"
+                        src="/icons/more.svg"
                         svgClassName="page__icon"
                         tabIndex={0}
-                        onBlur={() => setTimeout(() => this.setState({isMenuShown: false}), 200)}
+                        onBlur={() => this.menuTimeout = setTimeout(() => this.setState({isMenuShown: false}), 200)}
                         onClick={() => this.setState({isMenuShown: !this.state.isMenuShown})}
                     />
                 </div>

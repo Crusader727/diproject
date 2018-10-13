@@ -25,7 +25,7 @@ export default class MainPage extends React.Component {
     }
 
     componentDidMount() {
-        getPages().then(
+        getPages({}).then(
             (res) => res.json().then(pages => this.setState({pages}))
         ); //todo Error
     }
@@ -49,7 +49,7 @@ export default class MainPage extends React.Component {
             <Link to={`/new/${type}`} className="template" key={title}>
                 <div className="template__content">
                     <ReactSVG
-                        src={`https://velox-app.herokuapp.com/icons/templates/${type}.svg`}
+                        src={`/icons/templates/${type}.svg`}
                         svgClassName="template-icon"
                     />
                 </div>
@@ -68,7 +68,7 @@ export default class MainPage extends React.Component {
         }
         return (
             <ReactSVG
-                src={`https://velox-app.herokuapp.com/icons/arrow-${type}.svg`}
+                src={`/icons/arrow-${type}.svg`}
                 className="arrow-container"
                 svgClassName="arrow"
                 style={style}
