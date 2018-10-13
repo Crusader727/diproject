@@ -912,7 +912,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".qr__not-found {\n  display: flex;\n  flex-direction: column;\n  background-color: #515151;\n  justify-content: center;\n  align-items: center;\n  height: 100vh; }\n  .qr__not-found__404 {\n    color: #ffd900;\n    font-size: 30vh; }\n  .qr__not-found__text {\n    color: #ffd900;\n    font-size: 22px; }\n", ""]);
 
 // exports
 
@@ -13925,6 +13925,11 @@ function getQr(id) {
         },
         mode: "cors",
         credentials: "include"
+    }).then(function (res) {
+        if (!res.ok) {
+            throw new Error;
+        }
+        return res.json();
     });
 }
 exports.getQr = getQr;
@@ -14000,7 +14005,7 @@ var Qr = /** @class */ (function (_super) {
     }
     Qr.prototype.componentDidMount = function () {
         var _this = this;
-        qr_provider_1.getQr(this.props.id).then(function (res) { return res.json().then(function (page) { return _this.setState({ page: page }); }); }, function () { return _this.setState({ isNotAvilable: true }); } // todo Error
+        qr_provider_1.getQr(this.props.id).then(function (page) { return _this.setState({ page: page }); }, function () { return _this.setState({ isNotAvilable: true }); } // todo Error
         );
     };
     Qr.prototype._renderItem = function (name, value, index) {
@@ -14008,11 +14013,13 @@ var Qr = /** @class */ (function (_super) {
     };
     Qr.prototype.render = function () {
         var _this = this;
-        if (!this.state.page) {
+        if (!this.state.page && !this.state.isNotAvilable) {
             return null;
         }
         if (this.state.isNotAvilable) {
-            return (React.createElement("div", null, "This page is Private or deleted"));
+            return (React.createElement("div", { className: "qr__not-found" },
+                React.createElement("div", { className: "qr__not-found__404" }, "404"),
+                React.createElement("div", { className: "qr__not-found__text" }, "This page is Private or Deleted")));
         }
         var _a = this.state.page, title = _a.title, fieldsNames = _a.fieldsNames, fieldsValues = _a.fieldsValues;
         return (React.createElement("div", null,

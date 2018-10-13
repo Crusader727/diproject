@@ -19,7 +19,7 @@ export default class Qr extends React.Component<Props> {
     }
     componentDidMount() {
         getQr(this.props.id).then(
-            (res) => res.json().then(page => this.setState({page})),
+            (page) => this.setState({page}),
             () => this.setState({isNotAvilable: true}) // todo Error
         );
     }
@@ -33,13 +33,18 @@ export default class Qr extends React.Component<Props> {
     }
 
     render(): React.ReactNode {
-        if (!this.state.page) {
+        if (!this.state.page && !this.state.isNotAvilable) {
             return null;
         }
         if (this.state.isNotAvilable) {
             return (
-                <div>
-                    This page is Private or deleted
+                <div className="qr__not-found">
+                    <div className="qr__not-found__404">
+                        404
+                    </div>
+                    <div className="qr__not-found__text">
+                        This page is Private or Deleted
+                    </div>
                 </div>
             );
         }

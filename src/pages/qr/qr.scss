@@ -1,0 +1,19 @@
+@import '../../common/common.scss';
+.qr {
+    &__not-found {
+        display: flex;
+        flex-direction: column;
+        background-color: $grey;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        &__404 {
+            color: $yellow;
+            font-size: 30vh;
+        }
+        &__text {
+            color: $yellow;
+            font-size: $font-size-larger;
+        }
+    }
+}

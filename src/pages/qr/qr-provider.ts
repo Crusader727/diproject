@@ -9,5 +9,10 @@ export function getQr(id: string) {
         },
         mode: "cors",
         credentials: "include"
+    }).then((res) => {
+        if (!res.ok) {
+            throw new Error;
+        }
+        return res.json();
     });
 }
