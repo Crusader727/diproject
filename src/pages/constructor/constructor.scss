@@ -6,7 +6,7 @@
     &__content {
         display: flex;
         flex-direction: column;
-        background-color: $white;
+        background-color: $grey;
         width: 80%;
         overflow: auto;
         &__add-item {
@@ -16,7 +16,8 @@
             height: 120px;
             min-height: 120px;
             color: $yellow;
-            background-color: $grey;
+            background-color: $dark-grey;
+            border: 1px solid $yellow;
             box-sizing: border-box;
             border-radius: 10px;
             &:hover {
@@ -30,9 +31,9 @@
             justify-content: space-between;
             margin: 12px;
             padding: 12px;
-            background-color: $white;
+            background-color: $grey;
             border-radius: 10px;
-            border: 3px solid $grey;
+            border: 2px solid $yellow;
             &__text-wrapper {
                 margin-top: 12px;
             }
@@ -47,10 +48,11 @@
             min-height: 30px;
             margin: 12px;
             padding: 12px;
-            background-color: $white;
+            background-color: $grey;
             border-radius: 10px;
             font-family: $font-size-large;
-            border: 3px solid $grey;
+            border: 2px solid $yellow;
+            color: $white;
             &__title {
                 margin-right: 10px;
                 margin-bottom: 10px;
@@ -63,7 +65,7 @@
     &__menu {
         display: flex;
         flex-direction: column;
-        background-color: $grey;
+        background-color: $dark-grey;
         width: 20%;
         padding: 12px;
         &__actions {
@@ -98,7 +100,7 @@
 }
 
 .close {
-    color: $dark-grey;
+    color: $yellow;
     margin-top: -7px;
     width: 40px;
     height: 40px;

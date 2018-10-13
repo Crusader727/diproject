@@ -26,13 +26,13 @@ export default class Checkbox extends React.Component<Props> {
         const {text, disabled} = this.props;
         const {checked} = this.state;
         return (
-            <div className="checkbox" onClick={this._onClick}>
+            <div className={"checkbox" + (disabled ? ' _disabled' : '')} onClick={this._onClick}>
                 {text}
                 <input
                     type="checkbox"
                     className="checkbox__input"
                 />
-                <span className={"checkbox__checkmark" + (checked ? ' _checked' : '') + (disabled ? ' _disabled' : '')}/>
+                <span className={"checkbox__checkmark" + (checked ? ' _checked' : '')}/>
             </div>
         );
     }

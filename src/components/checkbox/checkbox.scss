@@ -27,8 +27,8 @@
         &._checked {
             background-color: $yellow;
         }
-        &._disabled {
-            opacity: 0.7;
-        }
+    }
+    &._disabled {
+        opacity: 0.7;
     }
 }

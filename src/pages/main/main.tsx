@@ -15,13 +15,14 @@ interface State {
     isRightArrowShown: boolean;
     isLeftArrowShown: boolean;
     pages: PageCut[];
-    searchValue?: string; 
+    searchValue: string; 
 }
 
 export default class MainPage extends React.Component {
     state: State = {
         isRightArrowShown: true,
         isLeftArrowShown: false,
+        searchValue: '',
         pages: []
     }
 
@@ -32,9 +33,11 @@ export default class MainPage extends React.Component {
     }
 
     private _onSearchChange = (e: any) => {
-        getPages({search: e.target.value}).then(
-            (res) => res.json().then(pages => this.setState({searchValue: e.target.value, pages}))
-        ); 
+        const value = e.target.value;
+        this.setState({searchValue: value});
+        getPages({search: value}).then(
+            (res) => res.json().then(pages => this.setState({pages}))
+        );
     }
 
     private _onTemplatesScroll = (e: any): void => {

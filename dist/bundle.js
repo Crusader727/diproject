@@ -703,7 +703,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".checkbox {\n  display: block;\n  position: relative;\n  padding-left: 28px;\n  cursor: pointer;\n  font-size: 18px;\n  line-height: 20px;\n  user-select: none;\n  color: white; }\n  .checkbox__input {\n    position: absolute;\n    opacity: 0;\n    cursor: pointer;\n    height: 0;\n    width: 0; }\n  .checkbox__checkmark {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 20px;\n    width: 20px;\n    border-radius: 4px;\n    border: 3px solid #ffd900;\n    box-sizing: border-box; }\n    .checkbox__checkmark._checked {\n      background-color: #ffd900; }\n    .checkbox__checkmark._disabled {\n      opacity: 0.7; }\n", ""]);
+exports.push([module.i, ".checkbox {\n  display: block;\n  position: relative;\n  padding-left: 28px;\n  cursor: pointer;\n  font-size: 18px;\n  line-height: 20px;\n  user-select: none;\n  color: white; }\n  .checkbox__input {\n    position: absolute;\n    opacity: 0;\n    cursor: pointer;\n    height: 0;\n    width: 0; }\n  .checkbox__checkmark {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 20px;\n    width: 20px;\n    border-radius: 4px;\n    border: 3px solid #ffd900;\n    box-sizing: border-box; }\n    .checkbox__checkmark._checked {\n      background-color: #ffd900; }\n  .checkbox._disabled {\n    opacity: 0.7; }\n", ""]);
 
 // exports
 
@@ -760,7 +760,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".input {\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  height: 30px;\n  border: 2px solid #ffd900;\n  font-size: 15px;\n  border-radius: 4px;\n  animation-duration: 1s; }\n  .input:focus {\n    border-width: 3px; }\n  .input.size-small {\n    width: 100px; }\n  .input.size-medium {\n    width: 250px; }\n  .input.size-large {\n    width: 600px; }\n  .input.size-larger {\n    width: 900px; }\n\n@keyframes enlarge-small {\n  0% {\n    width: 0; }\n  100% {\n    width: 100px; } }\n\n@keyframes enlarge-medium {\n  0% {\n    width: 0; }\n  100% {\n    width: 300px; } }\n\n@keyframes enlarge-large {\n  0% {\n    width: 0; }\n  100% {\n    width: 600px; } }\n\n@keyframes enlarge-larger {\n  0% {\n    width: 0; }\n  100% {\n    width: 900px; } }\n", ""]);
+exports.push([module.i, ".input {\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  height: 30px;\n  border: 2px solid #ffd900;\n  background-color: white;\n  font-size: 15px;\n  border-radius: 4px;\n  animation-duration: 1s; }\n  .input:focus {\n    border-width: 3px; }\n  .input.size-small {\n    width: 100px; }\n  .input.size-medium {\n    width: 250px; }\n  .input.size-large {\n    width: 600px; }\n  .input.size-larger {\n    width: 900px; }\n\n@keyframes enlarge-small {\n  0% {\n    width: 0; }\n  100% {\n    width: 100px; } }\n\n@keyframes enlarge-medium {\n  0% {\n    width: 0; }\n  100% {\n    width: 300px; } }\n\n@keyframes enlarge-large {\n  0% {\n    width: 0; }\n  100% {\n    width: 600px; } }\n\n@keyframes enlarge-larger {\n  0% {\n    width: 0; }\n  100% {\n    width: 900px; } }\n", ""]);
 
 // exports
 
@@ -798,7 +798,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".text-area {\n  width: 70%;\n  height: 200px;\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  border: 2px solid #ffd900;\n  font-size: 15px;\n  border-radius: 4px; }\n  .text-area:focus {\n    border-width: 3px; }\n", ""]);
+exports.push([module.i, ".text-area {\n  width: 70%;\n  height: 200px;\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  border: 2px solid #ffd900;\n  font-size: 15px;\n  border-radius: 4px;\n  background-color: white; }\n  .text-area:focus {\n    border-width: 3px; }\n", ""]);
 
 // exports
 
@@ -817,7 +817,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 94vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: white;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #515151;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      min-height: 250px;\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      border: 3px solid #515151; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n    .constructor__content__item {\n      display: flex;\n      min-height: 30px;\n      margin: 12px;\n      padding: 12px;\n      background-color: white;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 3px solid #515151; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0;\n      height: 8vh; }\n    .constructor__menu__date {\n      color: white;\n      margin-top: 8px; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #2d2d2d;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
+exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 94vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #2d2d2d;\n      border: 1px solid #ffd900;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      min-height: 250px;\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      border: 2px solid #ffd900; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n    .constructor__content__item {\n      display: flex;\n      min-height: 30px;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #2d2d2d;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0;\n      height: 8vh; }\n    .constructor__menu__date {\n      color: white;\n      margin-top: 8px; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #ffd900;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
 
 // exports
 
@@ -12561,10 +12561,10 @@ var Checkbox = /** @class */ (function (_super) {
     Checkbox.prototype.render = function () {
         var _a = this.props, text = _a.text, disabled = _a.disabled;
         var checked = this.state.checked;
-        return (React.createElement("div", { className: "checkbox", onClick: this._onClick },
+        return (React.createElement("div", { className: "checkbox" + (disabled ? ' _disabled' : ''), onClick: this._onClick },
             text,
             React.createElement("input", { type: "checkbox", className: "checkbox__input" }),
-            React.createElement("span", { className: "checkbox__checkmark" + (checked ? ' _checked' : '') + (disabled ? ' _disabled' : '') })));
+            React.createElement("span", { className: "checkbox__checkmark" + (checked ? ' _checked' : '') })));
     };
     return Checkbox;
 }(React.Component));
@@ -13835,10 +13835,13 @@ var MainPage = /** @class */ (function (_super) {
         _this.state = {
             isRightArrowShown: true,
             isLeftArrowShown: false,
+            searchValue: '',
             pages: []
         };
         _this._onSearchChange = function (e) {
-            main_provider_1.getPages({ search: e.target.value }).then(function (res) { return res.json().then(function (pages) { return _this.setState({ searchValue: e.target.value, pages: pages }); }); });
+            var value = e.target.value;
+            _this.setState({ searchValue: value });
+            main_provider_1.getPages({ search: value }).then(function (res) { return res.json().then(function (pages) { return _this.setState({ pages: pages }); }); });
         };
         _this._onTemplatesScroll = function (e) {
             var position = e.target.scrollLeft + e.target.offsetWidth;
