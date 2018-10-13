@@ -15,6 +15,7 @@ interface State {
     isRightArrowShown: boolean;
     isLeftArrowShown: boolean;
     pages: PageCut[];
+    searchValue?: string; 
 }
 
 export default class MainPage extends React.Component {
@@ -28,6 +29,12 @@ export default class MainPage extends React.Component {
         getPages({}).then(
             (res) => res.json().then(pages => this.setState({pages}))
         ); //todo Error
+    }
+
+    private _onSearchChange = (e: any) => {
+        getPages({search: e.target.value}).then(
+            (res) => res.json().then(pages => this.setState({searchValue: e.target.value, pages}))
+        ); 
     }
 
     private _onTemplatesScroll = (e: any): void => {
@@ -103,7 +110,14 @@ export default class MainPage extends React.Component {
         return (
             <div className="main-page">
                 {this._renderTemplates()}
-                <Pages pages={this.state.pages}/>
+                <Pages
+                    pages={this.state.pages}
+                    sorts={{search: {
+                            value: this.state.searchValue,
+                            onChange: this._onSearchChange
+                        }}
+                    }
+                />
             </div>
         );
     }

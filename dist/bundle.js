@@ -836,7 +836,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".login {\n  width: 100%;\n  height: 100vh;\n  background-color: #515151;\n  background-size: cover;\n  display: flex;\n  justify-content: center; }\n  .login__content {\n    display: flex;\n    flex-direction: column;\n    margin-top: 20vh;\n    width: 60vw;\n    height: 60vh;\n    background-color: #2d2d2d;\n    border-radius: 20px; }\n    .login__content__title {\n      margin-left: auto;\n      margin-right: auto;\n      margin-top: 10vh;\n      font-size: 35px;\n      color: #ffd900; }\n    .login__content__services {\n      margin-top: 5vh;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: row; }\n\n.oauth-icon {\n  width: 10vh;\n  height: 10vh; }\n", ""]);
+exports.push([module.i, ".login {\n  width: 100%;\n  height: 100vh;\n  background-color: #515151;\n  background-size: cover;\n  display: flex;\n  justify-content: center; }\n  .login__content {\n    display: flex;\n    flex-direction: column;\n    margin-top: 20vh;\n    width: 60vw;\n    height: 60vh;\n    background-color: #2d2d2d;\n    border-radius: 20px; }\n    .login__content__title {\n      margin-left: auto;\n      margin-right: auto;\n      margin-top: 10vh;\n      font-size: 35px;\n      color: #ffd900; }\n    .login__content__services {\n      cursor: pointer;\n      margin-top: 5vh;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: row; }\n\n.oauth-icon {\n  width: 10vh;\n  height: 10vh; }\n", ""]);
 
 // exports
 
@@ -13707,7 +13707,7 @@ var Pages = /** @class */ (function (_super) {
             return (React.createElement(react_svg_1.default, { src: "/icons/search.svg", svgClassName: "icon", onClick: function () { return _this.setState({ isSearchOpen: true }); } }));
         }
         return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: false }); } },
-            React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search" })));
+            React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search", value: this.props.sorts.search.value, onChange: this.props.sorts.search.onChange })));
     };
     Pages.prototype.render = function () {
         var pages = this.props.pages;
@@ -13750,7 +13750,7 @@ var qs = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
 var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
 function getPages(_a) {
     var search = _a.search, sort = _a.sort, own = _a.own;
-    var params = qs.stringify({ search: search, sort: sort, own: own });
+    var params = qs.stringify({ search: search, sort: sort, own: own }, { addQueryPrefix: true });
     return fetch(config_1.backendUrl + "/" + params, {
         method: 'GET',
         headers: {
@@ -13837,6 +13837,9 @@ var MainPage = /** @class */ (function (_super) {
             isLeftArrowShown: false,
             pages: []
         };
+        _this._onSearchChange = function (e) {
+            main_provider_1.getPages({ search: e.target.value }).then(function (res) { return res.json().then(function (pages) { return _this.setState({ searchValue: e.target.value, pages: pages }); }); });
+        };
         _this._onTemplatesScroll = function (e) {
             var position = e.target.scrollLeft + e.target.offsetWidth;
             if (position === e.target.scrollWidth) {
@@ -13890,7 +13893,10 @@ var MainPage = /** @class */ (function (_super) {
     MainPage.prototype.render = function () {
         return (React.createElement("div", { className: "main-page" },
             this._renderTemplates(),
-            React.createElement(pages_1.default, { pages: this.state.pages })));
+            React.createElement(pages_1.default, { pages: this.state.pages, sorts: { search: {
+                        value: this.state.searchValue,
+                        onChange: this._onSearchChange
+                    } } })));
     };
     return MainPage;
 }(React.Component));

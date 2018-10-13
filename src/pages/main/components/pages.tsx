@@ -20,6 +20,12 @@ interface State {
 
 interface Props {
     pages: PageCut[];
+    sorts?: {
+        search?: {
+            value: string;
+            onChange: (e: any) => void;
+        }
+    }
 }
 
 export default class Pages extends React.Component<Props> {
@@ -61,7 +67,14 @@ export default class Pages extends React.Component<Props> {
         }
         return (
             <div className="search-bar" onBlur={() => this.setState({isSearchOpen: false})}>
-                <Input size="larger" isAnimated isFocused placeholder="Search"/>
+                <Input
+                    size="larger"
+                    isAnimated
+                    isFocused
+                    placeholder="Search"
+                    value={this.props.sorts.search.value}
+                    onChange={this.props.sorts.search.onChange}
+                />
             </div>
         );
     }

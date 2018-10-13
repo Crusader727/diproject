@@ -8,7 +8,7 @@ interface Props {
     isAnimated?: boolean;
     isFocused?: boolean;
     value?: string;
-    onChange?: (e: any) => void
+    onChange?: (e: any) => void;
 }
 
 export default class Input extends React.Component<Props> {
