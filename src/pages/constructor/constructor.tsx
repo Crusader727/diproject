@@ -9,14 +9,15 @@ import Button from 'components/button/button';
 import Notification from 'components/notification/notification';
 import Checkbox from 'components/checkbox/checkbox';
 
-import Page from 'types/page';
+import PageCut from 'types/PageCut';
 import {createPage, editPage, getPage} from './constructor-provider';
 
 import CommonItems from './views/items';
 
 interface Props {
-    type?: string,
-    id?: string
+    username: string;
+    type?: string;
+    id?: string;
 }
 
 export interface Item {
@@ -34,7 +35,8 @@ interface State {
     id: string;
     date: string | null;
     isPrivate: boolean,
-    isStatic: boolean
+    isStatic: boolean,
+    type?: string
 }
 
 export default class Constructor extends React.Component<Props, State> {
@@ -43,12 +45,10 @@ export default class Constructor extends React.Component<Props, State> {
         super(props);
         let items: Item[] = [];
         let isNotEditable = false;
-        let isStatic = false;
         const {type, id} = this.props;
         if (type && CommonItems[type]) {
             items = CommonItems[type].items;
             isNotEditable = CommonItems[type].isNotEditable;
-            isStatic = CommonItems[type].isStatic
         }
         this.state = {
             documentName: '',
@@ -59,7 +59,8 @@ export default class Constructor extends React.Component<Props, State> {
             isCreated: false,
             id,
             isPrivate: false,
-            isStatic,
+            isStatic: isNotEditable,
+            type
         }
     }
 
@@ -68,7 +69,7 @@ export default class Constructor extends React.Component<Props, State> {
             return;
         }
         getPage(this.state.id).then(
-            (res: Page) => {
+            (res: PageCut) => {
                 const items = res.fieldsNames.map((el, i) => ({name: el, value: res.fieldsValues[i]}));
                 const d = new Date(res.date);
                 const date = d.toDateString() + ' ' + d.toLocaleTimeString();
@@ -76,6 +77,7 @@ export default class Constructor extends React.Component<Props, State> {
                     items,
                     documentName: res.title,
                     date,
+                    type: res.template,
                     isCreated: true
                 })
             }, 
@@ -90,11 +92,13 @@ export default class Constructor extends React.Component<Props, State> {
     }
 
     private _savePage() {
-        const page: Page = {
+        const page = {
             title: this.state.documentName,
             isPublic: !this.state.isPrivate,
+            isStatic: this.state.isStatic,
             fieldsNames: this.state.items.map((el) => el.name),
-            fieldsValues: this.state.items.map((el) => el.value)
+            fieldsValues: this.state.items.map((el) => el.value),
+            template: this.state.type
         }
         if (!this.state.isCreated) {
             createPage(page).then(
@@ -192,11 +196,11 @@ export default class Constructor extends React.Component<Props, State> {
                         />
                     </div>
                 </div>
-                <ReactSVG
+                {!this.state.isNotEditable ? <ReactSVG
                     src={`/icons/delete.svg`}
                     svgClassName="close"
                     onClick={() => this._deleteItem(index)}
-                />
+                /> : null}
                 <ReactSVG
                     src={`/icons/close.svg`}
                     svgClassName="close"
@@ -221,7 +225,7 @@ export default class Constructor extends React.Component<Props, State> {
     }
 
     private _renderCheckboxes = (): React.ReactNode => {
-        const {isStatic, isPrivate} = this.state;
+        const {isStatic, isPrivate, isNotEditable} = this.state;
         return (
             <div className="constructor__menu__checkboxes">
                 <Checkbox
@@ -231,7 +235,8 @@ export default class Constructor extends React.Component<Props, State> {
                 />
                 <Checkbox
                     text="Static"
-                    disabled={isPrivate}
+                    disabled={isPrivate || isNotEditable}
+                    checked={isNotEditable}
                     onClick={() => this.setState({isStatic: !isStatic})}
                 />
             </div>
@@ -265,7 +270,7 @@ export default class Constructor extends React.Component<Props, State> {
         const {notification} = this.state;
         return (
             <>
-                <Header />
+                <Header username={this.props.username}/>
                 <div className="constructor">
                     <div className="constructor__content">
                         {this.state.items.map((item, i) => this._renderItem(item, i))}

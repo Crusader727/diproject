@@ -10,15 +10,19 @@ import Login from 'pages/login/login';
 import {getUser} from 'pages/login/login-provider';
 
 interface State {
-    isLoggedIn: boolean
+    isLoggedIn: boolean;
+    username: string;
 }
 
 export default class App extends React.Component<{}, State> {
     constructor(props: any) {
         super(props);
-        this.state = {isLoggedIn: false};
+        this.state = {
+            isLoggedIn: false,
+            username: 'Profile'
+        };
         getUser().then( //loader
-            () => this.setState({isLoggedIn: true}),
+            ({message}) => this.setState({isLoggedIn: true, username: message}),
             () => {},//error handling
         );
     }
@@ -48,7 +52,7 @@ export default class App extends React.Component<{}, State> {
                         path='/new/:type'
                         render={(props: RouteComponentProps<{type: string}>) =>
                             isLoggedIn ?
-                                (<Constructor type={props.match.params.type}/>):
+                                (<Constructor type={props.match.params.type} username={this.state.username}/>):
                                 this._redirectTo('/login', this.props)
                             }
                     />
@@ -56,14 +60,14 @@ export default class App extends React.Component<{}, State> {
                         path='/:id/edit'
                         render={(props: RouteComponentProps<{id: string}>) =>
                             isLoggedIn ?
-                                (<Constructor id={props.match.params.id}/>):
+                                (<Constructor id={props.match.params.id} username={this.state.username}/>):
                                 this._redirectTo('/login', this.props)
                             }
                     />
                     <Route path='/' 
                         render={() =>
                             isLoggedIn ?
-                                (<MainPage />):
+                                (<MainPage username={this.state.username}/>):
                                 this._redirectTo('/login', this.props)
                         }
                     />

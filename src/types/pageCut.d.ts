@@ -1,10 +1,13 @@
 interface PageCut {
     uuid: string,
     title: string,
-    isPublic: boolean,
+    mine: boolean,
+    public: boolean,
+    static: boolean,
     fieldsNames: string[],
     fieldsValues: string[],
-    date?: string
+    date?: string,
+    template?: string;
 }
 
 export default PageCut;

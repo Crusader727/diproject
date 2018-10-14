@@ -30,7 +30,7 @@ export default class Login extends React.Component<Props> {
                         Welcome to Velox
                     </div>
                     <div className="login__content__title">
-                        Please Sign In with one of Services
+                        Please Sign In with one of the Services
                     </div>
                     <div className="login__content__services">
                         <ReactSVG

@@ -7,9 +7,11 @@ import Header from 'components/header/header';
 import {getPages} from './main-provider';
 import PageCut from 'types/pageCut';
 
-const Templates = [
-    {title: 'wifi', type: 'wifi'}, 
-];
+
+
+interface Props {
+    username: string;
+}
 
 interface State {
     isRightArrowShown: boolean;
@@ -18,7 +20,11 @@ interface State {
     searchValue: string;
 }
 
-export default class MainPage extends React.Component {
+const Templates = [
+    {title: 'wifi', type: 'wifi'}, 
+];
+
+export default class MainPage extends React.Component<Props> {
     _ownerType = 'all';
     _sortValue = 'a-z';
     state: State = {
@@ -34,7 +40,7 @@ export default class MainPage extends React.Component {
     private _getPages(search?: string) {
         getPages(
             {
-                search: search ? search : this.state.searchValue,
+                search: search !== undefined ? search : this.state.searchValue,
                 sort: this._sortValue,
                 own: this._ownerType
             }
@@ -119,7 +125,7 @@ export default class MainPage extends React.Component {
     public render() {
         return (
             <div className="main-page">
-                <Header />
+                <Header username={this.props.username}/>
                 {this._renderTemplates()}
                 <Pages
                     pages={this.state.pages}

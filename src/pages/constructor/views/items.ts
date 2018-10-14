@@ -5,10 +5,9 @@ const wifiItems: Item[] = [
     {name: 'password', value: '', isEditing: true}
 ];
 
-const Items: Record<string, {items: Item[], isNotEditable: boolean, isStatic: boolean}> = {
+const Items: Record<string, {items: Item[], isNotEditable: boolean}> = {
     'wifi': {
         isNotEditable: true,
-        isStatic: true,
         items: wifiItems
     }
 }
