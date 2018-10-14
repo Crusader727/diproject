@@ -1,40 +1,41 @@
 import './dropdown.scss';
 import * as React from "react";
 
-interface Item {
-    name: string;
-    onClick: () => void;
-};
-
 interface Props {
-    items: Item[];
-    chosenIndex?: number;
+    items: string[];
+    onClick: (value: string) => void;
 }
 
 interface State {
-    isContentShown: boolean
+    isContentShown: boolean,
+    chosenIndex: number
 }
 
 export default class DropDown extends React.Component<Props> {
     state: State = {
-        isContentShown: false
+        isContentShown: false,
+        chosenIndex: 0
     }
 
     private _renderContent() {
         if (!this.state.isContentShown) {
             return null;
         }
-        const {items, chosenIndex} = this.props;
+        const {items} = this.props;
+        const {chosenIndex} = this.state;
         return (
             <div className="dropdown__content">
                 {
                     items.map((item, index) => (
                         <div 
-                            key={item.name}
+                            key={item}
                             className={"dropdown__content__item" + (chosenIndex === index ? ' chosen': '')}
-                            onClick={item.onClick}
+                            onClick={() => {
+                                this.props.onClick(item);
+                                this.setState({chosenIndex: index});
+                            }}
                         >
-                            {item.name}
+                            {item}
                         </div>
                     ))
                 }

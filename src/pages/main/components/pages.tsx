@@ -7,49 +7,35 @@ import Input from 'components/input/input';
 import PageCut from 'types/pageCut';
 import Page from './page';
 
-const sortActions = [
-    {name: 'A-Z', onClick: () => console.log('awd')},
-    {name: 'Z-A', onClick: () => console.log('awd1')},
-    {name: 'Date', onClick: () => console.log('awd2')},
-];
+const sortActions = ['a-z', 'z-a', 'date'];
+const ownerTypes = ['all', 'me', 'others'];
 
 interface State {
     isSearchOpen: boolean;
-    ownerTypeIndex: number;
 }
 
 interface Props {
     pages: PageCut[];
-    sorts?: {
-        search?: {
-            value: string;
-            onChange: (e: any) => void;
-        }
-    }
+    searchValue: string;
+    onSearchChange: (e: any) => void;
+    getOwnerType: (value: string) => void;
+    getSortValue: (value: string) => void;
 }
 
 export default class Pages extends React.Component<Props> {
     state: State = {
-        isSearchOpen: false,
-        ownerTypeIndex: 0
+        isSearchOpen: false
     }
 
-    ownerTypes = [
-        {name: 'All', onClick: () => this.setState({ownerTypeIndex: 0})},
-        {name: 'Me', onClick: () => this.setState({ownerTypeIndex: 1})},
-        {name: 'Others', onClick: () => this.setState({ownerTypeIndex: 2})},
-    ];
-
     private _renderDropDownButton(
-        {icon, items, chosenIndex, className}:
-        {icon: string, items: any[], chosenIndex?: number, className?: string})
+        {icon, items, onClick, className}:
+        {icon: string, items: any[], onClick: (value: string) => void, className?: string})
     : React.ReactNode {
         return (
-            <DropDown items={items} chosenIndex={chosenIndex}>
+            <DropDown items={items} onClick={onClick}>
                 <ReactSVG
                     src={`/icons/${icon}.svg`}
                     svgClassName={"icon" + (className ? `-${className}` : '')}
-                    onClick={() => console.log('sort')}
                 />
             </DropDown>  
         );
@@ -72,8 +58,8 @@ export default class Pages extends React.Component<Props> {
                     isAnimated
                     isFocused
                     placeholder="Search"
-                    value={this.props.sorts.search.value}
-                    onChange={this.props.sorts.search.onChange}
+                    value={this.props.searchValue}
+                    onChange={this.props.onSearchChange}
                 />
             </div>
         );
@@ -93,12 +79,17 @@ export default class Pages extends React.Component<Props> {
                     <div className="pages__header__block">
                         {this._renderDropDownButton({
                             icon: 'owner',
-                            items: this.ownerTypes,
-                            chosenIndex: this.state.ownerTypeIndex,
+                            items: ownerTypes,
+                            onClick: this.props.getOwnerType,
                             className: 'owner'
                         })
                         }
-                        {this._renderDropDownButton({icon: 'sort', items: sortActions})}
+                        {this._renderDropDownButton({
+                            icon: 'sort',
+                            items: sortActions,
+                            onClick: this.props.getSortValue
+                        })
+                        }
                     </div>
                 </div>
                 <div className="pages__content">

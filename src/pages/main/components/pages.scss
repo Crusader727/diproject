@@ -1,10 +1,10 @@
-@import '../../../common/common.scss';
+@import 'common/common.scss';
 .pages {
     padding: 0 11% 0 15%;
     background-color: $dark-grey;
     display: flex;
     flex-direction: column;
-    height: 58vh;
+    height: 100%;
     &__header {
         display: flex;
         flex-direction: row;
@@ -26,6 +26,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         overflow: auto;
+        height: 100%;
         &::-webkit-scrollbar {
             display: none;
         }

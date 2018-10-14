@@ -1,8 +1,8 @@
-@import '../../common/common.scss';
+@import 'common/common.scss';
 .header {
     display: flex;
     flex-direction: row;
-    height: 45px;
+    min-height: 45px;
     line-height: 45px;
     background-color: $dark-grey;
     justify-content: space-between;

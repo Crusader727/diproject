@@ -22,7 +22,10 @@ module.exports = {
         alias: {
             components: srcPath('components'),
             app: srcPath('app'),
-            pages: srcPath('pages')
+            pages: srcPath('pages'),
+            core: srcPath('core'),
+            common: srcPath('common'),
+            types: srcPath('types')
         }
     },
 

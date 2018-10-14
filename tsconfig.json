@@ -10,7 +10,10 @@
         "paths": {
             "components/*": [ "components/*" ],
             "app/*": [ "app/*" ],
-            "pages/*": [ "pages/*" ]
+            "pages/*": [ "pages/*" ],
+            "core/*": [ "core/*" ],
+            "common/*": [ "common/*" ],
+            "types/*": [ "types/*" ]
         }
     },
     "include": [

@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as qs from 'qs';
 import ReactSVG from 'react-svg';
 import {sendToken} from './login-provider';
-import {yandexId} from '../../core/config/config';
+import {yandexId} from 'core/config/config';
 
 interface Props {
     hash: string;

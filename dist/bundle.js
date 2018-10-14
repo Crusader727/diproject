@@ -665,7 +665,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: arial;\n  overflow: hidden; }\n\na,\ntextarea,\np,\ninput,\nbutton,\ndiv {\n  text-decoration: none;\n  outline: 0; }\n", ""]);
+exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: arial;\n  overflow: hidden; }\n\na,\ntextarea,\np,\ninput,\nbutton,\ndiv {\n  text-decoration: none;\n  outline: 0; }\n\n.root {\n  height: 100vh; }\n", ""]);
 
 // exports
 
@@ -722,7 +722,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".dropdown__content {\n  position: absolute;\n  background-color: #515151;\n  min-width: 100px;\n  z-index: 1;\n  border-radius: 3px;\n  border: 2px solid #2d2d2d; }\n  .dropdown__content__item {\n    font-size: 15px;\n    color: white;\n    padding: 8px 12px;\n    display: block;\n    box-sizing: border-box; }\n    .dropdown__content__item:hover {\n      color: #ffd900; }\n    .dropdown__content__item.chosen {\n      color: #ffd900; }\n", ""]);
+exports.push([module.i, ".dropdown__content {\n  position: absolute;\n  background-color: #515151;\n  min-width: 100px;\n  z-index: 1;\n  border-radius: 3px;\n  border: 2px solid #2d2d2d; }\n  .dropdown__content__item {\n    text-transform: capitalize;\n    font-size: 15px;\n    color: white;\n    padding: 8px 12px;\n    display: block;\n    box-sizing: border-box; }\n    .dropdown__content__item:hover {\n      color: #ffd900; }\n    .dropdown__content__item.chosen {\n      color: #ffd900; }\n", ""]);
 
 // exports
 
@@ -741,7 +741,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".header {\n  display: flex;\n  flex-direction: row;\n  height: 45px;\n  line-height: 45px;\n  background-color: #2d2d2d;\n  justify-content: space-between;\n  padding: 0 30px;\n  border-bottom: 1px solid #ffd900; }\n  .header__title {\n    display: inline-block;\n    font-size: 22px;\n    color: #ffd900; }\n", ""]);
+exports.push([module.i, ".header {\n  display: flex;\n  flex-direction: row;\n  min-height: 45px;\n  line-height: 45px;\n  background-color: #2d2d2d;\n  justify-content: space-between;\n  padding: 0 30px;\n  border-bottom: 1px solid #ffd900; }\n  .header__title {\n    display: inline-block;\n    font-size: 22px;\n    color: #ffd900; }\n", ""]);
 
 // exports
 
@@ -817,7 +817,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 94vh; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #2d2d2d;\n      border: 1px solid #ffd900;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      min-height: 250px;\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      border: 2px solid #ffd900; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n    .constructor__content__item {\n      display: flex;\n      min-height: 30px;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #2d2d2d;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0;\n      height: 8vh; }\n    .constructor__menu__date {\n      color: white;\n      margin-top: 8px; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #ffd900;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
+exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 100%; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #2d2d2d;\n      border: 1px solid #ffd900;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      min-height: 250px;\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      border: 2px solid #ffd900; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n    .constructor__content__item {\n      display: flex;\n      min-height: 30px;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #2d2d2d;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0;\n      height: 8vh; }\n    .constructor__menu__date {\n      color: white;\n      margin-top: 8px; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #ffd900;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
 
 // exports
 
@@ -855,7 +855,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  min-width: 0;\n  min-height: 0;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n    .page__title__left-block {\n      display: flex;\n      flex-direction: column; }\n    .page__title__date {\n      line-height: 12px;\n      font-size: 12px; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    top: 10px; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n", ""]);
+exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  max-height: 168px;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n    .page__title__left-block {\n      display: flex;\n      flex-direction: column; }\n    .page__title__date {\n      line-height: 12px;\n      font-size: 12px; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    top: 10px; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n", ""]);
 
 // exports
 
@@ -874,7 +874,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".pages {\n  padding: 0 11% 0 15%;\n  background-color: #2d2d2d;\n  display: flex;\n  flex-direction: column;\n  height: 58vh; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer;\n    margin-right: 16px; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n", ""]);
+exports.push([module.i, ".pages {\n  padding: 0 11% 0 15%;\n  background-color: #2d2d2d;\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto;\n    height: 100%; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer;\n    margin-right: 16px; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n", ""]);
 
 // exports
 
@@ -893,7 +893,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page__templates {\n    height: 300px;\n    background-color: #515151;\n    padding: 0 10% 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page__templates__title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: row; }\n      .main-page__templates__content__scrollable {\n        overflow-x: auto;\n        overflow-y: none;\n        display: flex;\n        flex-direction: row; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    color: #ffd900;\n    position: relative;\n    width: 160px;\n    height: 200px;\n    background-color: white;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template__content:hover {\n      border: 2px solid #ffd900; }\n  .template__title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.template-icon {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 90px;\n  height: 90px; }\n", ""]);
+exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900;\n  height: 100%; }\n  .main-page__templates {\n    background-color: #515151;\n    padding: 0 10% 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page__templates__title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: row; }\n      .main-page__templates__content__scrollable {\n        overflow-x: auto;\n        overflow-y: none;\n        display: flex;\n        flex-direction: row; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    color: #ffd900;\n    position: relative;\n    background-color: white;\n    height: 48vh;\n    width: 11vw;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template__content:hover {\n      border: 2px solid #ffd900; }\n  .template__title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.template-icon {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 90px;\n  height: 90px; }\n", ""]);
 
 // exports
 
@@ -12628,22 +12628,27 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./dropdown.scss */ "./src/components/dropdown/dropdown.scss");
 var React = __webpack_require__(/*! react */ "react");
-;
 var DropDown = /** @class */ (function (_super) {
     __extends(DropDown, _super);
     function DropDown() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
-            isContentShown: false
+            isContentShown: false,
+            chosenIndex: 0
         };
         return _this;
     }
     DropDown.prototype._renderContent = function () {
+        var _this = this;
         if (!this.state.isContentShown) {
             return null;
         }
-        var _a = this.props, items = _a.items, chosenIndex = _a.chosenIndex;
-        return (React.createElement("div", { className: "dropdown__content" }, items.map(function (item, index) { return (React.createElement("div", { key: item.name, className: "dropdown__content__item" + (chosenIndex === index ? ' chosen' : ''), onClick: item.onClick }, item.name)); })));
+        var items = this.props.items;
+        var chosenIndex = this.state.chosenIndex;
+        return (React.createElement("div", { className: "dropdown__content" }, items.map(function (item, index) { return (React.createElement("div", { key: item, className: "dropdown__content__item" + (chosenIndex === index ? ' chosen' : ''), onClick: function () {
+                _this.props.onClick(item);
+                _this.setState({ chosenIndex: index });
+            } }, item)); })));
     };
     DropDown.prototype.render = function () {
         var _this = this;
@@ -12981,6 +12986,43 @@ exports.yandexId = yandexId;
 
 /***/ }),
 
+/***/ "./src/core/request/request.ts":
+/*!*************************************!*\
+  !*** ./src/core/request/request.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+var config_1 = __webpack_require__(/*! core/config/config */ "./src/core/config/config.ts");
+function request(url, method, body) {
+    return fetch(config_1.backendUrl + url, {
+        method: method,
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+        mode: "cors",
+        credentials: "include",
+        body: JSON.stringify(body)
+    }).then(function (res) {
+        if (!res.ok) {
+            throw new Error;
+        }
+        var contentType = res.headers.get("content-type");
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+            return res.json();
+        }
+        return res.text();
+    });
+}
+exports.default = request;
+
+
+/***/ }),
+
 /***/ "./src/index.tsx":
 /*!***********************!*\
   !*** ./src/index.tsx ***!
@@ -13009,55 +13051,17 @@ ReactDOM.render(React.createElement(app_1.default, null), document.getElementByI
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
-var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
+var request_1 = __webpack_require__(/*! core/request/request */ "./src/core/request/request.ts");
 function createPage(body) {
-    return fetch(config_1.backendUrl + '/qr/create', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include",
-        body: JSON.stringify(body)
-    }).then(function (res) {
-        if (!res.ok) {
-            throw new Error;
-        }
-        return res.json();
-    });
+    return request_1.default('/qr/create', 'POST', body);
 }
 exports.createPage = createPage;
 function editPage(body, id) {
-    return fetch(config_1.backendUrl + "/qr/" + id + "/edit", {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include",
-        body: JSON.stringify(body)
-    }).then(function (res) {
-        if (!res.ok) {
-            throw new Error;
-        }
-    });
+    return request_1.default("/qr/" + id + "/edit", 'POST', body);
 }
 exports.editPage = editPage;
 function getPage(id) {
-    return fetch(config_1.backendUrl + "/qr/" + id, {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include"
-    }).then(function (res) {
-        if (!res.ok) {
-            throw new Error;
-        }
-        return res.json();
-    });
+    return request_1.default("/qr/" + id, 'GET');
 }
 exports.getPage = getPage;
 
@@ -13328,33 +13332,13 @@ exports.default = Items;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
-var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
+var request_1 = __webpack_require__(/*! core/request/request */ "./src/core/request/request.ts");
 function sendToken(token) {
-    return fetch(config_1.backendUrl + '/login/yandex', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include",
-        body: JSON.stringify({ token: token })
-    });
+    return request_1.default('/login/yandex', 'POST', { token: token });
 }
 exports.sendToken = sendToken;
 function getUser() {
-    return fetch(config_1.backendUrl + '/getuser', {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8"
-        },
-        mode: "cors",
-        credentials: "include"
-    }).then(function (res) {
-        if (!res.ok) {
-            throw new Error;
-        }
-    });
+    return request_1.default('/getuser');
 }
 exports.getUser = getUser;
 
@@ -13419,7 +13403,7 @@ var React = __webpack_require__(/*! react */ "react");
 var qs = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var login_provider_1 = __webpack_require__(/*! ./login-provider */ "./src/pages/login/login-provider.ts");
-var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
+var config_1 = __webpack_require__(/*! core/config/config */ "./src/core/config/config.ts");
 var Login = /** @class */ (function (_super) {
     __extends(Login, _super);
     function Login() {
@@ -13458,22 +13442,9 @@ exports.default = Login;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
-var config_1 = __webpack_require__(/*! ../../../core/config/config */ "./src/core/config/config.ts");
+var request_1 = __webpack_require__(/*! core/request/request */ "./src/core/request/request.ts");
 function deletePage(id) {
-    return fetch(config_1.backendUrl + "/qr/" + id + "/delete", {
-        method: 'DELETE',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include"
-    }).then(function (res) {
-        if (!res.ok) {
-            throw new Error;
-        }
-        return;
-    });
+    return request_1.default("/qr/" + id + "/delete", 'DELETE');
 }
 exports.deletePage = deletePage;
 
@@ -13676,30 +13647,21 @@ var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg
 var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
 var page_1 = __webpack_require__(/*! ./page */ "./src/pages/main/components/page.tsx");
-var sortActions = [
-    { name: 'A-Z', onClick: function () { return console.log('awd'); } },
-    { name: 'Z-A', onClick: function () { return console.log('awd1'); } },
-    { name: 'Date', onClick: function () { return console.log('awd2'); } },
-];
+var sortActions = ['a-z', 'z-a', 'date'];
+var ownerTypes = ['all', 'me', 'others'];
 var Pages = /** @class */ (function (_super) {
     __extends(Pages, _super);
     function Pages() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
-            isSearchOpen: false,
-            ownerTypeIndex: 0
+            isSearchOpen: false
         };
-        _this.ownerTypes = [
-            { name: 'All', onClick: function () { return _this.setState({ ownerTypeIndex: 0 }); } },
-            { name: 'Me', onClick: function () { return _this.setState({ ownerTypeIndex: 1 }); } },
-            { name: 'Others', onClick: function () { return _this.setState({ ownerTypeIndex: 2 }); } },
-        ];
         return _this;
     }
     Pages.prototype._renderDropDownButton = function (_a) {
-        var icon = _a.icon, items = _a.items, chosenIndex = _a.chosenIndex, className = _a.className;
-        return (React.createElement(dropdown_1.default, { items: items, chosenIndex: chosenIndex },
-            React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : ''), onClick: function () { return console.log('sort'); } })));
+        var icon = _a.icon, items = _a.items, onClick = _a.onClick, className = _a.className;
+        return (React.createElement(dropdown_1.default, { items: items, onClick: onClick },
+            React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : '') })));
     };
     Pages.prototype._renderSearch = function () {
         var _this = this;
@@ -13707,7 +13669,7 @@ var Pages = /** @class */ (function (_super) {
             return (React.createElement(react_svg_1.default, { src: "/icons/search.svg", svgClassName: "icon", onClick: function () { return _this.setState({ isSearchOpen: true }); } }));
         }
         return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: false }); } },
-            React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search", value: this.props.sorts.search.value, onChange: this.props.sorts.search.onChange })));
+            React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search", value: this.props.searchValue, onChange: this.props.onSearchChange })));
     };
     Pages.prototype.render = function () {
         var pages = this.props.pages;
@@ -13719,11 +13681,15 @@ var Pages = /** @class */ (function (_super) {
                 React.createElement("div", { className: "pages__header__block" },
                     this._renderDropDownButton({
                         icon: 'owner',
-                        items: this.ownerTypes,
-                        chosenIndex: this.state.ownerTypeIndex,
+                        items: ownerTypes,
+                        onClick: this.props.getOwnerType,
                         className: 'owner'
                     }),
-                    this._renderDropDownButton({ icon: 'sort', items: sortActions }))),
+                    this._renderDropDownButton({
+                        icon: 'sort',
+                        items: sortActions,
+                        onClick: this.props.getSortValue
+                    }))),
             React.createElement("div", { className: "pages__content" }, pages.length ?
                 pages.map(function (page) { return React.createElement(page_1.default, __assign({}, page, { key: page.uuid })); }) :
                 React.createElement("div", null, "You dont have any pages yet."))));
@@ -13745,20 +13711,12 @@ exports.default = Pages;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
 var qs = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
-var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
+var request_1 = __webpack_require__(/*! core/request/request */ "./src/core/request/request.ts");
 function getPages(_a) {
     var search = _a.search, sort = _a.sort, own = _a.own;
     var params = qs.stringify({ search: search, sort: sort, own: own }, { addQueryPrefix: true });
-    return fetch(config_1.backendUrl + "/" + params, {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include"
-    });
+    return request_1.default("/" + params);
 }
 exports.getPages = getPages;
 
@@ -13836,12 +13794,14 @@ var MainPage = /** @class */ (function (_super) {
             isRightArrowShown: true,
             isLeftArrowShown: false,
             searchValue: '',
+            sortValue: 'a-z',
+            ownerType: 'all',
             pages: []
         };
         _this._onSearchChange = function (e) {
             var value = e.target.value;
             _this.setState({ searchValue: value });
-            main_provider_1.getPages({ search: value }).then(function (res) { return res.json().then(function (pages) { return _this.setState({ pages: pages }); }); });
+            _this._getPages();
         };
         _this._onTemplatesScroll = function (e) {
             var position = e.target.scrollLeft + e.target.offsetWidth;
@@ -13861,8 +13821,11 @@ var MainPage = /** @class */ (function (_super) {
         return _this;
     }
     MainPage.prototype.componentDidMount = function () {
+        this._getPages();
+    };
+    MainPage.prototype._getPages = function () {
         var _this = this;
-        main_provider_1.getPages({}).then(function (res) { return res.json().then(function (pages) { return _this.setState({ pages: pages }); }); }); //todo Error
+        main_provider_1.getPages({ search: this.state.searchValue, sort: this.state.sortValue, own: this.state.ownerType }).then(function (pages) { return _this.setState({ pages: pages }); }); //todo Error
     };
     MainPage.prototype._renderTemplate = function (title, type) {
         return (React.createElement(react_router_dom_1.Link, { to: "/new/" + type, className: "template", key: title },
@@ -13880,26 +13843,29 @@ var MainPage = /** @class */ (function (_super) {
     };
     MainPage.prototype._renderTemplates = function () {
         var _this = this;
-        return (React.createElement(React.Fragment, null,
-            React.createElement(header_1.default, null),
-            React.createElement("div", { className: "main-page__templates" },
-                React.createElement("div", { className: "main-page__templates__title" }, "Templates"),
-                React.createElement("div", { className: "main-page__templates__content" },
-                    this._renderTemplate('custom', 'custom'),
-                    this._renderArrow('left'),
-                    React.createElement("div", { className: "main-page__templates__content__scrollable", onScroll: this._onTemplatesScroll }, Templates.map(function (_a) {
-                        var title = _a.title, type = _a.type;
-                        return _this._renderTemplate(title, type);
-                    })),
-                    this._renderArrow('right')))));
+        return (React.createElement("div", { className: "main-page__templates" },
+            React.createElement("div", { className: "main-page__templates__title" }, "Templates"),
+            React.createElement("div", { className: "main-page__templates__content" },
+                this._renderTemplate('custom', 'custom'),
+                this._renderArrow('left'),
+                React.createElement("div", { className: "main-page__templates__content__scrollable", onScroll: this._onTemplatesScroll }, Templates.map(function (_a) {
+                    var title = _a.title, type = _a.type;
+                    return _this._renderTemplate(title, type);
+                })),
+                this._renderArrow('right'))));
     };
     MainPage.prototype.render = function () {
+        var _this = this;
         return (React.createElement("div", { className: "main-page" },
+            React.createElement(header_1.default, null),
             this._renderTemplates(),
-            React.createElement(pages_1.default, { pages: this.state.pages, sorts: { search: {
-                        value: this.state.searchValue,
-                        onChange: this._onSearchChange
-                    } } })));
+            React.createElement(pages_1.default, { pages: this.state.pages, searchValue: this.state.searchValue, onSearchChange: this._onSearchChange, getOwnerType: function (value) {
+                    _this.setState({ ownerType: value });
+                    _this._getPages();
+                }, getSortValue: function (value) {
+                    _this.setState({ sortValue: value });
+                    _this._getPages();
+                } })));
     };
     return MainPage;
 }(React.Component));
@@ -13918,22 +13884,9 @@ exports.default = MainPage;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
-var config_1 = __webpack_require__(/*! ../../core/config/config */ "./src/core/config/config.ts");
+var request_1 = __webpack_require__(/*! core/request/request */ "./src/core/request/request.ts");
 function getQr(id) {
-    return fetch(config_1.backendUrl + '/qr/' + id, {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include"
-    }).then(function (res) {
-        if (!res.ok) {
-            throw new Error;
-        }
-        return res.json();
-    });
+    return request_1.default('/qr/' + id);
 }
 exports.getQr = getQr;
 

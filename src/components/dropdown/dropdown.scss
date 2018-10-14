@@ -1,4 +1,4 @@
-@import '../../common/common.scss';
+@import 'common/common.scss';
 .dropdown {
     &__content {
         position: absolute;
@@ -8,6 +8,7 @@
         border-radius: 3px;
         border: 2px solid $dark-grey;
         &__item {
+            text-transform: capitalize;
             font-size: $font-size-normal;
             color: $white;
             padding: 8px 12px;

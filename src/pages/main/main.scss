@@ -1,10 +1,10 @@
-@import '../../common/common.scss';
+@import 'common/common.scss';
 .main-page {
     display: flex;
     flex-direction: column;
     color: $yellow;
+    height: 100%;
     &__templates {
-        height: 300px;
         background-color: $grey;
         padding: 0 10% 0 15%;
         display: flex;
@@ -41,9 +41,9 @@
     &__content {
         color: $yellow;
         position: relative;
-        width: 160px;
-        height: 200px;
         background-color: $white;
+        height: 48vh;
+        width: 11vw;
         margin: 2px;
         box-sizing: border-box;
         &:hover {

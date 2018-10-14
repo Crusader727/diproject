@@ -1,29 +1,9 @@
-import 'whatwg-fetch';
-import {backendUrl} from '../../core/config/config';
+import request from 'core/request/request';
 
 export function sendToken(token: string) {
-    return fetch(backendUrl + '/login/yandex', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include",
-        body: JSON.stringify({token})
-    });
+    return request('/login/yandex', 'POST', {token});
 }
 
 export function getUser() {
-    return fetch(backendUrl + '/getuser', {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8"
-        },
-        mode: "cors",
-        credentials: "include"
-    }).then((res) => {
-        if (!res.ok) {
-            throw new Error;
-        }
-    });
+    return request('/getuser');
 }

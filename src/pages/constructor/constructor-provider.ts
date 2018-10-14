@@ -1,51 +1,13 @@
-import 'whatwg-fetch';
-import {backendUrl} from '../../core/config/config';
+import request from 'core/request/request';
 import Page from 'types/page';
 
 export function createPage(body: Page) {
-    return fetch(backendUrl + '/qr/create', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include",
-        body: JSON.stringify(body)
-    }).then((res) => {
-        if (!res.ok) {
-            throw new Error;
-        }
-        return res.json();
-    });
+    return request('/qr/create', 'POST', body);
 }
 export function editPage(body: Page, id: string) {
-    return fetch(`${backendUrl}/qr/${id}/edit`, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include",
-        body: JSON.stringify(body)
-    }).then((res) => {
-        if (!res.ok) {
-            throw new Error;
-        }
-    });
+    return request(`/qr/${id}/edit`, 'POST', body);
 }
 
 export function getPage(id: string) {
-    return fetch(`${backendUrl}/qr/${id}`, {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        mode: "cors",
-        credentials: "include"
-    }).then((res) => {
-        if (!res.ok) {
-            throw new Error;
-        }
-        return res.json();
-    });
+    return request(`/qr/${id}`, 'GET');
 }

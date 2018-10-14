@@ -15,7 +15,9 @@ interface State {
     isRightArrowShown: boolean;
     isLeftArrowShown: boolean;
     pages: PageCut[];
-    searchValue: string; 
+    searchValue: string;
+    sortValue: string;
+    ownerType: string;
 }
 
 export default class MainPage extends React.Component {
@@ -23,21 +25,25 @@ export default class MainPage extends React.Component {
         isRightArrowShown: true,
         isLeftArrowShown: false,
         searchValue: '',
+        sortValue: 'a-z',
+        ownerType: 'all',
         pages: []
     }
 
     componentDidMount() {
-        getPages({}).then(
-            (res) => res.json().then(pages => this.setState({pages}))
+        this._getPages();
+    }
+
+    private _getPages() {
+        getPages({search: this.state.searchValue, sort: this.state.sortValue, own: this.state.ownerType}).then(
+            pages => this.setState({pages})
         ); //todo Error
     }
 
     private _onSearchChange = (e: any) => {
         const value = e.target.value;
         this.setState({searchValue: value});
-        getPages({search: value}).then(
-            (res) => res.json().then(pages => this.setState({pages}))
-        );
+        this._getPages();
     }
 
     private _onTemplatesScroll = (e: any): void => {
@@ -90,36 +96,39 @@ export default class MainPage extends React.Component {
 
     private _renderTemplates(): React.ReactNode {
         return (
-            <>
-                <Header />
-                <div className="main-page__templates">
-                    <div className="main-page__templates__title">
-                        Templates
-                    </div>
-                    <div className="main-page__templates__content">
-                        {this._renderTemplate('custom', 'custom')}
-                        {this._renderArrow('left')}
-                        <div className="main-page__templates__content__scrollable" onScroll={this._onTemplatesScroll}>
-                            {Templates.map(({title, type}) => this._renderTemplate(title, type))}
-                        </div>
-                        {this._renderArrow('right')}
-                    </div>
+            <div className="main-page__templates">
+                <div className="main-page__templates__title">
+                    Templates
                 </div>
-            </>
+                <div className="main-page__templates__content">
+                    {this._renderTemplate('custom', 'custom')}
+                    {this._renderArrow('left')}
+                    <div className="main-page__templates__content__scrollable" onScroll={this._onTemplatesScroll}>
+                        {Templates.map(({title, type}) => this._renderTemplate(title, type))}
+                    </div>
+                    {this._renderArrow('right')}
+                </div>
+            </div>
         );
     }
 
     public render() {
         return (
             <div className="main-page">
+                <Header />
                 {this._renderTemplates()}
                 <Pages
                     pages={this.state.pages}
-                    sorts={{search: {
-                            value: this.state.searchValue,
-                            onChange: this._onSearchChange
-                        }}
-                    }
+                    searchValue={this.state.searchValue}
+                    onSearchChange={this._onSearchChange}
+                    getOwnerType={value => {
+                        this.setState({ownerType: value});
+                        this._getPages();
+                    }}
+                    getSortValue={value => {
+                        this.setState({sortValue: value});
+                        this._getPages();
+                    }}
                 />
             </div>
         );

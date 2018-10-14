@@ -1,8 +1,8 @@
-@import '../../common/common.scss';
+@import 'common/common.scss';
 .constructor {
     display: flex;
     flex-direction: row;
-    height: 94vh;
+    height: 100%;
     &__content {
         display: flex;
         flex-direction: column;
