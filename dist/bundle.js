@@ -13790,18 +13790,18 @@ var MainPage = /** @class */ (function (_super) {
     __extends(MainPage, _super);
     function MainPage() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._ownerType = 'all';
+        _this._sortValue = 'a-z';
         _this.state = {
             isRightArrowShown: true,
             isLeftArrowShown: false,
             searchValue: '',
-            sortValue: 'a-z',
-            ownerType: 'all',
             pages: []
         };
         _this._onSearchChange = function (e) {
             var value = e.target.value;
             _this.setState({ searchValue: value });
-            _this._getPages();
+            _this._getPages(value);
         };
         _this._onTemplatesScroll = function (e) {
             var position = e.target.scrollLeft + e.target.offsetWidth;
@@ -13823,9 +13823,13 @@ var MainPage = /** @class */ (function (_super) {
     MainPage.prototype.componentDidMount = function () {
         this._getPages();
     };
-    MainPage.prototype._getPages = function () {
+    MainPage.prototype._getPages = function (search) {
         var _this = this;
-        main_provider_1.getPages({ search: this.state.searchValue, sort: this.state.sortValue, own: this.state.ownerType }).then(function (pages) { return _this.setState({ pages: pages }); }); //todo Error
+        main_provider_1.getPages({
+            search: search ? search : this.state.searchValue,
+            sort: this._sortValue,
+            own: this._ownerType
+        }).then(function (pages) { return _this.setState({ pages: pages }); }, function () { return _this.setState({ pages: [] }); }); // error
     };
     MainPage.prototype._renderTemplate = function (title, type) {
         return (React.createElement(react_router_dom_1.Link, { to: "/new/" + type, className: "template", key: title },
@@ -13860,10 +13864,10 @@ var MainPage = /** @class */ (function (_super) {
             React.createElement(header_1.default, null),
             this._renderTemplates(),
             React.createElement(pages_1.default, { pages: this.state.pages, searchValue: this.state.searchValue, onSearchChange: this._onSearchChange, getOwnerType: function (value) {
-                    _this.setState({ ownerType: value });
+                    _this._ownerType = value;
                     _this._getPages();
                 }, getSortValue: function (value) {
-                    _this.setState({ sortValue: value });
+                    _this._sortValue = value;
                     _this._getPages();
                 } })));
     };

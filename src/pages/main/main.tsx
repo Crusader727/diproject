@@ -16,34 +16,38 @@ interface State {
     isLeftArrowShown: boolean;
     pages: PageCut[];
     searchValue: string;
-    sortValue: string;
-    ownerType: string;
 }
 
 export default class MainPage extends React.Component {
+    _ownerType = 'all';
+    _sortValue = 'a-z';
     state: State = {
         isRightArrowShown: true,
         isLeftArrowShown: false,
         searchValue: '',
-        sortValue: 'a-z',
-        ownerType: 'all',
         pages: []
     }
-
     componentDidMount() {
         this._getPages();
     }
 
-    private _getPages() {
-        getPages({search: this.state.searchValue, sort: this.state.sortValue, own: this.state.ownerType}).then(
-            pages => this.setState({pages})
-        ); //todo Error
+    private _getPages(search?: string) {
+        getPages(
+            {
+                search: search ? search : this.state.searchValue,
+                sort: this._sortValue,
+                own: this._ownerType
+            }
+        ).then(
+            pages => this.setState({pages}),
+            () => this.setState({pages: []})
+        );// error
     }
 
     private _onSearchChange = (e: any) => {
         const value = e.target.value;
         this.setState({searchValue: value});
-        this._getPages();
+        this._getPages(value);
     }
 
     private _onTemplatesScroll = (e: any): void => {
@@ -122,11 +126,11 @@ export default class MainPage extends React.Component {
                     searchValue={this.state.searchValue}
                     onSearchChange={this._onSearchChange}
                     getOwnerType={value => {
-                        this.setState({ownerType: value});
+                        this._ownerType = value;
                         this._getPages();
                     }}
                     getSortValue={value => {
-                        this.setState({sortValue: value});
+                        this._sortValue = value;
                         this._getPages();
                     }}
                 />
