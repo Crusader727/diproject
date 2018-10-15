@@ -1,6 +1,6 @@
 import './main.scss';
 import * as React from 'react';
-import { SketchPicker } from 'react-color'
+// import { SketchPicker } from 'react-color'
 import { Link } from 'react-router-dom';
 import ReactSVG from 'react-svg'
 import Pages from './components/pages';
@@ -129,7 +129,7 @@ export default class MainPage extends React.Component<Props> {
         return (
             <div className="main-page">
                 <Header username={this.props.username}/>
-                <SketchPicker onChange={(color) => console.log(color)}/>
+                {/* <SketchPicker onChange={(color) => console.log(color)}/> */}
                 {this._renderTemplates()}
                 <Pages
                     pages={this.state.pages}
