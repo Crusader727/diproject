@@ -1,10 +1,10 @@
 import request from 'core/request/request';
-import Page from 'types/page';
+import PageCut from 'types/pagecut';
 
-export function createPage(body: Page) {
+export function createPage(body: PageCut) {
     return request('/qr/create', 'POST', body);
 }
-export function editPage(body: Page, id: string) {
+export function editPage(body: PageCut, id: string) {
     return request(`/qr/${id}/edit`, 'POST', body);
 }
 

@@ -13218,8 +13218,8 @@ var Constructor = /** @class */ (function (_super) {
         var _this = this;
         var page = {
             title: this.state.documentName,
-            isPublic: !this.state.isPrivate,
-            isStatic: this.state.isStatic,
+            public: !this.state.isPrivate,
+            static: this.state.isStatic,
             fieldsNames: this.state.items.map(function (el) { return el.name; }),
             fieldsValues: this.state.items.map(function (el) { return el.value; }),
             template: this.state.type
@@ -13318,11 +13318,43 @@ var wifiItems = [
     { name: 'name', value: '', isEditing: true },
     { name: 'password', value: '', isEditing: true }
 ];
+var telephoneItems = [
+    { name: 'Phone Number', value: '', isEditing: true },
+];
+var smsItems = [
+    { name: 'Phone Number', value: '', isEditing: true },
+    { name: 'Message', value: '', isEditing: true },
+];
+var ylocationItems = [
+    { name: 'Coordinates or Organization Name', value: '', isEditing: true },
+];
+var eventItems = [
+    { name: 'Summary', value: '', isEditing: true },
+    { name: 'Location Description', value: '', isEditing: true },
+    { name: 'Start Date', value: '', isEditing: true },
+    { name: 'End Date', value: '', isEditing: true }
+];
 var Items = {
     'wifi': {
         isNotEditable: true,
         items: wifiItems
-    }
+    },
+    'telephone': {
+        isNotEditable: true,
+        items: telephoneItems
+    },
+    'sms': {
+        isNotEditable: true,
+        items: smsItems
+    },
+    'event': {
+        isNotEditable: true,
+        items: eventItems
+    },
+    'ylocation': {
+        isNotEditable: true,
+        items: ylocationItems
+    },
 };
 exports.default = Items;
 
@@ -13519,6 +13551,7 @@ var QRCode = __webpack_require__(/*! qrcode.react */ "./node_modules/qrcode.reac
 var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
 var page_provider_1 = __webpack_require__(/*! ./page-provider */ "./src/pages/main/components/page-provider.ts");
+var static_qr_gens_1 = __webpack_require__(/*! ./static-qr-gens */ "./src/pages/main/components/static-qr-gens.ts");
 var Page = /** @class */ (function (_super) {
     __extends(Page, _super);
     function Page() {
@@ -13533,7 +13566,7 @@ var Page = /** @class */ (function (_super) {
             );
         };
         _this._downloadSVG = function () {
-            var svg = server_1.renderToString(React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + _this.props.uuid, size: 130, renderAs: "svg" }));
+            var svg = server_1.renderToString(React.createElement(QRCode, { value: _this._getQrCodeValue(), size: 130, renderAs: "svg" }));
             svg = svg.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
             svg = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
             return svg;
@@ -13544,6 +13577,15 @@ var Page = /** @class */ (function (_super) {
         if (this.menuTimeout) {
             clearTimeout(this.menuTimeout);
         }
+    };
+    Page.prototype._getQrCodeValue = function () {
+        var _a = this.props, uuid = _a.uuid, fieldsNames = _a.fieldsNames, fieldsValues = _a.fieldsValues, title = _a.title, template = _a.template;
+        if (template && template !== 'custom') {
+            return static_qr_gens_1.default[template](fieldsValues);
+        }
+        return (this.props.static ?
+            title + "\n" + fieldsNames.map(function (el, i) { return '\n' + el + ': ' + fieldsValues[i]; }) :
+            "https://velox-app.herokuapp.com/qr/" + uuid);
     };
     Page.prototype._renderMenu = function () {
         if (!this.state.isMenuShown) {
@@ -13569,7 +13611,7 @@ var Page = /** @class */ (function (_super) {
             date.toLocaleTimeString();
         return (React.createElement("div", { className: "page" },
             React.createElement("a", { className: "page__content", href: "qr/" + uuid, target: "_blank" },
-                React.createElement(QRCode, { value: "https://velox-app.herokuapp.com/qr/" + uuid, size: 130 })),
+                React.createElement(QRCode, { value: this._getQrCodeValue(), size: 130 })),
             this._renderMenu(),
             React.createElement("div", { className: "page__title" },
                 React.createElement("div", { className: "page__title__left-block" },
@@ -13708,6 +13750,38 @@ exports.default = Pages;
 
 /***/ }),
 
+/***/ "./src/pages/main/components/static-qr-gens.ts":
+/*!*****************************************************!*\
+  !*** ./src/pages/main/components/static-qr-gens.ts ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var StaticQrGens = {
+    'wifi': function (values) {
+        return "WIFI:T:WPA;S:" + values[0] + ";P:" + values[1] + ";;";
+    },
+    'telephone': function (values) {
+        return "tel:" + values[0];
+    },
+    'sms': function (values) {
+        return "SMSTO:" + values[0] + ":" + values[1];
+    },
+    'event': function (values) {
+        return ("BEGIN:VEVENT\nSUMMARY:" + values[0] + "\nLOCATION:" + values[1] + "\nDTSTART:" + values[2] + "\nDTEND:" + values[3] + "\nEND:VEVENT");
+    },
+    'ylocation': function (values) {
+        return (encodeURI("https://yandex.ru/maps/?text=" + values[0]));
+    },
+};
+exports.default = StaticQrGens;
+
+
+/***/ }),
+
 /***/ "./src/pages/main/main-provider.ts":
 /*!*****************************************!*\
   !*** ./src/pages/main/main-provider.ts ***!
@@ -13792,6 +13866,10 @@ var header_1 = __webpack_require__(/*! components/header/header */ "./src/compon
 var main_provider_1 = __webpack_require__(/*! ./main-provider */ "./src/pages/main/main-provider.ts");
 var Templates = [
     { title: 'wifi', type: 'wifi' },
+    { title: 'telephone', type: 'telephone' },
+    { title: 'sms', type: 'sms' },
+    { title: 'event', type: 'event' },
+    { title: 'Yandex Maps Location', type: 'ylocation' }
 ];
 var MainPage = /** @class */ (function (_super) {
     __extends(MainPage, _super);

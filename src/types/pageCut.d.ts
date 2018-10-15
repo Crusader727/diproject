@@ -1,7 +1,7 @@
 interface PageCut {
-    uuid: string,
+    uuid?: string,
     title: string,
-    mine: boolean,
+    mine?: boolean,
     public: boolean,
     static: boolean,
     fieldsNames: string[],

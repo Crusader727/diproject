@@ -22,6 +22,10 @@ interface State {
 
 const Templates = [
     {title: 'wifi', type: 'wifi'}, 
+    {title: 'telephone', type: 'telephone'}, 
+    {title: 'sms', type: 'sms'},
+    {title: 'event', type: 'event'},
+    {title: 'Yandex Maps Location', type: 'ylocation'}
 ];
 
 export default class MainPage extends React.Component<Props> {

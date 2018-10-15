@@ -43,6 +43,7 @@ export default class Constructor extends React.Component<Props, State> {
     notificationTimeout: any = null;
     constructor(props: any) {
         super(props);
+
         let items: Item[] = [];
         let isNotEditable = false;
         const {type, id} = this.props;
@@ -94,8 +95,8 @@ export default class Constructor extends React.Component<Props, State> {
     private _savePage() {
         const page = {
             title: this.state.documentName,
-            isPublic: !this.state.isPrivate,
-            isStatic: this.state.isStatic,
+            public: !this.state.isPrivate,
+            static: this.state.isStatic,
             fieldsNames: this.state.items.map((el) => el.name),
             fieldsValues: this.state.items.map((el) => el.value),
             template: this.state.type

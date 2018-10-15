@@ -7,6 +7,7 @@ import ReactSVG from 'react-svg';
 import Button from 'components/button/button';
 import {deletePage} from './page-provider';
 import PageCut from 'types/pageCut';
+import StaticQrGens from './static-qr-gens';
 
 
 interface State {
@@ -34,9 +35,21 @@ export default class Page extends React.Component<PageCut> {
         );
     }
 
+    private _getQrCodeValue(): string {
+        const {uuid, fieldsNames, fieldsValues, title, template} = this.props;
+        if (template && template !== 'custom') {
+            return StaticQrGens[template](fieldsValues);
+        }
+        return (
+            this.props.static ?
+                `${title}\n${fieldsNames.map((el, i) => '\n' + el + ': ' + fieldsValues[i])}`:
+                `https://velox-app.herokuapp.com/qr/${uuid}`
+        );
+    }
+
     private _downloadSVG = (): string => {
         let svg = renderToString(
-            <QRCode value={`https://velox-app.herokuapp.com/qr/${this.props.uuid}`} size={130} renderAs="svg"/>
+            <QRCode value={this._getQrCodeValue()} size={130} renderAs="svg"/>
         );
         svg = svg.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
         svg = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
@@ -78,7 +91,7 @@ export default class Page extends React.Component<PageCut> {
         return (
             <div className="page">
                 <a className="page__content" href={`qr/${uuid}`} target="_blank">
-                    <QRCode value={`https://velox-app.herokuapp.com/qr/${uuid}`} size={130}/>
+                    <QRCode value={this._getQrCodeValue()} size={130}/>
                 </a>
                 {this._renderMenu()}
                 <div className="page__title">

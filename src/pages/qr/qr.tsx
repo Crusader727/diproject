@@ -1,6 +1,6 @@
 import './qr.scss';
 import * as React from 'react';
-import Page from 'types/page';
+import PageCut from 'types/pagecut';
 import {getQr} from './qr-provider';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 interface State {
-    page: Page | null;
+    page: PageCut | null;
     isNotAvilable: boolean;
 }
 
