@@ -8,6 +8,7 @@
         "jsx": "react",
         "baseUrl": "src",
         "paths": {
+            "qrcode-react": [ "typings/qrcode-react.d.ts" ],
             "components/*": [ "components/*" ],
             "app/*": [ "app/*" ],
             "pages/*": [ "pages/*" ],

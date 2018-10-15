@@ -9,8 +9,10 @@ const StaticQrGens: Record<string, (values: string[]) => string> = {
         return `SMSTO:${values[0]}:${values[1]}`;
     },
     'event': (values: string[]): string => {
+        const date1 = values[2].replace(/[\:\-]/g,'') + '00';
+        const date2 = values[3].replace(/[\:\-]/g,'') + '00';
         return (
-            `BEGIN:VEVENT\nSUMMARY:${values[0]}\nLOCATION:${values[1]}\nDTSTART:${values[2]}\nDTEND:${values[3]}\nEND:VEVENT`
+            `BEGIN:VEVENT\nSUMMARY:${values[0]}\nLOCATION:${values[1]}\nDTSTART:${date1}\nDTEND:${date2}\nEND:VEVENT`
         );
     },
     'ylocation': (values: string[]): string => {

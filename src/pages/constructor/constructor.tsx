@@ -24,6 +24,7 @@ export interface Item {
     name?: string;
     value?: string;
     isEditing?: boolean;
+    type?: 'date' | 'small';
 }
 
 interface State {
@@ -156,7 +157,7 @@ export default class Constructor extends React.Component<Props, State> {
     
     private _renderItem = (item: Item, index: number): React.ReactNode => {
         if (item.isEditing) {
-            return this._renderEditItem(item.name, item.value, index);
+            return this._renderEditItem(item.name, item.value, item.type, index);
         }
         return (
             <div
@@ -175,7 +176,22 @@ export default class Constructor extends React.Component<Props, State> {
         );
     }
 
-    private _renderEditItem(name?: string, value?: string, index?: number): React.ReactNode {
+    private _renderEditItem(name?: string, value?: string, type?: string, index?: number): React.ReactNode {
+        let secondfield = <TextArea
+            placeholder="Description"
+            value={value}
+            onChange={this._handleItemNameChange(index, 'value')}
+        />;
+        if (type) {
+            secondfield = <Input
+                size="large"
+                placeholder="Description"
+                isFocused
+                value={value}
+                type={type === 'date' ? 'datetime-local' : undefined}
+                onChange={this._handleItemNameChange(index, 'value')}                
+            />;
+        }
         return (
             <div
                 className="constructor__content__edit-item"
@@ -183,18 +199,14 @@ export default class Constructor extends React.Component<Props, State> {
             >
                 <div className="constructor__content__edit-item__content">
                     <Input
-                        size="large"
+                        size="medium"
                         placeholder="Title"
                         isFocused
                         value={name}
                         onChange={this._handleItemNameChange(index, 'name')}
                     />
                     <div className="constructor__content__edit-item__text-wrapper">
-                        <TextArea
-                            placeholder="Description"
-                            value={value}
-                            onChange={this._handleItemNameChange(index, 'value')}
-                        />
+                        {secondfield}
                     </div>
                 </div>
                 {!this.state.isNotEditable ? <ReactSVG

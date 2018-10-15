@@ -9,7 +9,6 @@ import {deletePage} from './page-provider';
 import PageCut from 'types/pageCut';
 import StaticQrGens from './static-qr-gens';
 
-
 interface State {
     isMenuShown: boolean;
     isShown: boolean;
@@ -91,7 +90,7 @@ export default class Page extends React.Component<PageCut> {
         return (
             <div className="page">
                 <a className="page__content" href={`qr/${uuid}`} target="_blank">
-                    <QRCode value={this._getQrCodeValue()} size={130}/>
+                    <QRCode value={this._getQrCodeValue()} size={130} />
                 </a>
                 {this._renderMenu()}
                 <div className="page__title">

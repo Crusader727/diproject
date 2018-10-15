@@ -3,7 +3,7 @@ import * as React from "react";
 
 interface Props {
     size?: 'small' | 'medium' | 'large' | 'larger';
-    type?: 'text';
+    type?: 'text' | 'datetime-local';
     placeholder?: string;
     isAnimated?: boolean;
     isFocused?: boolean;
@@ -27,7 +27,8 @@ export default class Input extends React.Component<Props> {
 
     public render() {
         const {type, isAnimated} = this.props;
-        const size = this.props.size ? this.props.size : this.default.size;
+        let size = this.props.size ? this.props.size : this.default.size;
+        size = type === 'datetime-local' ? 'medium' : size;
         return (
             <input
                 ref={input => this.inputElement = input}
