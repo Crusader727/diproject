@@ -798,7 +798,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".notification {\n  position: absolute;\n  padding-top: 22px;\n  padding-left: 12px;\n  width: 30%;\n  height: 8%;\n  font-size: 22px;\n  border-radius: 20px;\n  bottom: 16px;\n  left: 16px;\n  text-transform: capitalize; }\n  .notification._error {\n    background-color: rgba(255, 0, 0, 0.3);\n    border: 2px solid rgba(211, 1, 1, 0.8);\n    color: #d30101; }\n  .notification._success {\n    background-color: rgba(13, 206, 29, 0.3);\n    border: 2px solid rgba(17, 143, 28, 0.8);\n    color: #118f1c; }\n", ""]);
+exports.push([module.i, ".notification {\n  position: absolute;\n  padding: 12px 30px;\n  font-size: 22px;\n  border-radius: 20px;\n  bottom: 16px;\n  left: 16px;\n  text-transform: capitalize; }\n  .notification._error {\n    background-color: rgba(211, 1, 1, 0.2);\n    border: 5px solid rgba(211, 1, 1, 0.8);\n    color: #d30101; }\n  .notification._success {\n    background-color: rgba(17, 143, 28, 0.2);\n    border: 5px solid rgba(17, 143, 28, 0.8);\n    color: #118f1c; }\n", ""]);
 
 // exports
 
@@ -874,7 +874,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  max-height: 174px;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n    .page__title__left-block {\n      display: flex;\n      flex-direction: column; }\n    .page__title__date {\n      line-height: 12px;\n      font-size: 12px; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    bottom: 38px; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n", ""]);
+exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  max-height: 174px;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n    .page__title__left-block {\n      display: flex;\n      flex-direction: column; }\n    .page__title__date {\n      line-height: 12px;\n      font-size: 12px; }\n    .page__title__title {\n      display: flex;\n      flex-direction: row; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__small-icon {\n    margin-left: 5px;\n    margin-top: 2px;\n    width: 20px;\n    height: 20px;\n    color: #ffd900; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    bottom: 38px; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n", ""]);
 
 // exports
 
@@ -13737,19 +13737,23 @@ var Page = /** @class */ (function (_super) {
         if (!this.state.isShown) {
             return null;
         }
-        var _a = this.props, uuid = _a.uuid, title = _a.title;
+        var _a = this.props, uuid = _a.uuid, title = _a.title, template = _a.template, isStatic = _a.static, isPublic = _a.public;
         var date = new Date(this.props.date);
         var now = new Date();
         var formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
             date.toDateString() :
             date.toLocaleTimeString();
+        var smallIcon = isStatic ? template : !isPublic ? 'private' : null;
         return (React.createElement("div", { className: "page" },
             React.createElement("a", { className: "page__content", href: "qr/" + uuid, target: "_blank" },
                 React.createElement(QRCode, { value: this._getQrCodeValue(), size: 130 })),
             this._renderMenu(),
             React.createElement("div", { className: "page__title" },
                 React.createElement("div", { className: "page__title__left-block" },
-                    React.createElement("div", null, title),
+                    React.createElement("div", { className: "page__title__title" },
+                        title,
+                        smallIcon ?
+                            React.createElement(react_svg_1.default, { src: "/icons/templates/" + smallIcon + ".svg", svgClassName: "page__small-icon", tabIndex: 0 }) : null),
                     React.createElement("div", { className: "page__title__date" }, formatedDate)),
                 React.createElement(react_svg_1.default, { src: "/icons/more.svg", svgClassName: "page__icon", tabIndex: 0, onBlur: function () { return _this.menuTimeout = setTimeout(function () { return _this.setState({ isMenuShown: false }); }, 200); }, onClick: function () { return _this.setState({ isMenuShown: !_this.state.isMenuShown }); } }))));
     };

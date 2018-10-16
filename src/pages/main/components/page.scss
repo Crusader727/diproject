@@ -33,6 +33,10 @@
             line-height: 12px;
             font-size: $font-size-small;
         }
+        &__title {
+            display: flex;
+            flex-direction: row;
+        }
     }
     &__icon {
         width: 24px;
@@ -45,6 +49,13 @@
             opacity: 1;
         }
     }
+    &__small-icon {
+        margin-left: 5px;
+        margin-top: 2px;
+        width: 20px;
+        height: 20px;
+        color: $yellow;
+    }
     &__menu {
         position: absolute;
         background-color: $dark-grey;
@@ -56,4 +67,8 @@
     &:hover {
         border: 3px solid $yellow;
     }
+}
+
+.tooltip {
+    // position: absolute;
 }

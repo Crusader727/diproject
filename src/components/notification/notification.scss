@@ -1,23 +1,20 @@
 @import 'common/common.scss';
 .notification {
     position: absolute;
-    padding-top: 22px;
-    padding-left: 12px;
-    width: 30%;
-    height: 8%;
+    padding: 12px 30px;
     font-size: $font-size-larger;
     border-radius: 20px;
     bottom: 16px;
     left: 16px;
     text-transform: capitalize;
     &._error {
-        background-color: rgba(255, 0, 0, 0.3);
-        border: 2px solid rgba(211, 1, 1, 0.8);
+        background-color: rgba(211, 1, 1, 0.2);
+        border: 5px solid rgba(211, 1, 1, 0.8);
         color: rgb(211, 1, 1);
     }
     &._success {
-        background-color: rgba(13, 206, 29, 0.3);
-        border: 2px solid rgba(17, 143, 28, 0.8);
+        background-color: rgba(17, 143, 28, 0.2);
+        border: 5px solid rgba(17, 143, 28, 0.8);
         color: rgb(17, 143, 28);
     }
 }

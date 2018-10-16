@@ -1,7 +1,7 @@
 import './page.scss';
 import * as React from 'react';
-import { renderToString } from 'react-dom/server';
-import { Link } from 'react-router-dom';
+import {renderToString} from 'react-dom/server';
+import {Link}  from 'react-router-dom';
 import * as QRCode from 'qrcode.react';
 import ReactSVG from 'react-svg';
 import Button from 'components/button/button';
@@ -81,12 +81,13 @@ export default class Page extends React.Component<PageCut> {
         if (!this.state.isShown) {
             return null;
         }
-        const {uuid, title} = this.props;
+        const {uuid, title, template, static: isStatic, public: isPublic} = this.props;
         const date = new Date(this.props.date);
         const now = new Date();
         const formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
             date.toDateString() :
             date.toLocaleTimeString();
+        const smallIcon = isStatic ? template : !isPublic ? 'private' : null;
         return (
             <div className="page">
                 <a className="page__content" href={`qr/${uuid}`} target="_blank">
@@ -95,8 +96,15 @@ export default class Page extends React.Component<PageCut> {
                 {this._renderMenu()}
                 <div className="page__title">
                     <div className="page__title__left-block">
-                        <div>
+                        <div className="page__title__title">
                             {title}
+                            {smallIcon ?
+                                <ReactSVG
+                                    src={`/icons/templates/${smallIcon}.svg`}
+                                    svgClassName="page__small-icon"
+                                    tabIndex={0}
+                                /> : null
+                            }
                         </div>
                         <div className="page__title__date">
                             {formatedDate}
