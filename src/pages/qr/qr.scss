@@ -48,14 +48,16 @@
             font-family: $font-size-large;
             border: 2px solid $yellow;
             color: $white;
-            word-wrap: break-word;
             &__title {
                 color: $yellow;
                 margin-right: 8px;
+                word-wrap: none;
+                white-space: nowrap;
             }
             &__content {
-                max-width: 80%;
+                max-width: fit-content;
                 color: $white;
+                word-wrap: break-word;
             }
         }
     }
