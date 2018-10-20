@@ -14317,7 +14317,9 @@ var Qr = /** @class */ (function (_super) {
         }
         return (React.createElement("div", { className: "qr" },
             React.createElement("div", { className: "qr__title" }, title),
-            React.createElement("div", { className: "qr__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); }))));
+            React.createElement("div", { className: "qr__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); })),
+            React.createElement("div", null,
+                React.createElement("a", { href: "mailto:awdawd?subject=awdawd&body=awdawd" }, "click me"))));
     };
     return Qr;
 }(React.Component));
