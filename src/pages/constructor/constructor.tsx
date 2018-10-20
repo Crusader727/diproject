@@ -32,6 +32,7 @@ interface State {
     documentName: string;
     items: Item[];
     notification: 'error' | 'success' | null;
+    notificationText: string;
     isCreated: boolean;
     id: string;
     date: string | null;
@@ -58,10 +59,11 @@ export default class Constructor extends React.Component<Props, State> {
             items,
             isNotEditable,
             notification: null,
+            notificationText: '',
             isCreated: false,
             id,
             isPrivate: false,
-            isStatic: isNotEditable,
+            isStatic: isNotEditable && type !== 'html',
             type
         }
     }
@@ -106,15 +108,16 @@ export default class Constructor extends React.Component<Props, State> {
             createPage(page).then(
                 res => this.setState({
                     notification: 'success',
+                    notificationText: 'Data was successfully saved',
                     isCreated: true,
                     id: res.uuid
                 }),
-                () => this.setState({notification: 'error'})
+                () => this.setState({notification: 'error', notificationText: 'Error: changes were not saved'})
             );
         } else {
             editPage(page, this.state.id).then(
-                () => this.setState({notification: 'success'}),
-                () => this.setState({notification: 'error'})
+                () => this.setState({notification: 'success', notificationText: 'Page was successfully edited'}),
+                () => this.setState({notification: 'error', notificationText: 'Error: changes were not saved'})
             )
         }
         this.notificationTimeout = setTimeout(() => this.setState({notification: null}), 3000);
@@ -198,13 +201,19 @@ export default class Constructor extends React.Component<Props, State> {
                 key={index}
             >
                 <div className="constructor__content__edit-item__content">
-                    <Input
-                        size="medium"
-                        placeholder="Title"
-                        isFocused
-                        value={name}
-                        onChange={this._handleItemNameChange(index, 'name')}
-                    />
+                    
+                    {!this.state.isNotEditable ?
+                        <Input
+                            size="medium"
+                            placeholder="Title"
+                            isFocused
+                            value={name}
+                            onChange={this._handleItemNameChange(index, 'name')}
+                        /> :
+                        <div className="constructor__content__edit-item__content__title">
+                            {name}
+                        </div>
+                    }
                     <div className="constructor__content__edit-item__text-wrapper">
                         {secondfield}
                     </div>
@@ -238,7 +247,7 @@ export default class Constructor extends React.Component<Props, State> {
     }
 
     private _renderCheckboxes = (): React.ReactNode => {
-        const {isStatic, isPrivate, isNotEditable} = this.state;
+        const {isStatic, isPrivate, isNotEditable, type} = this.state;
         return (
             <div className="constructor__menu__checkboxes">
                 <Checkbox
@@ -249,7 +258,7 @@ export default class Constructor extends React.Component<Props, State> {
                 <Checkbox
                     text="Static"
                     disabled={isPrivate || isNotEditable}
-                    checked={isNotEditable}
+                    checked={isNotEditable && type !== 'html'}
                     onClick={() => this.setState({isStatic: !isStatic})}
                 />
             </div>
@@ -280,7 +289,7 @@ export default class Constructor extends React.Component<Props, State> {
     }
 
     public render(): React.ReactNode {
-        const {notification} = this.state;
+        const {notification, notificationText} = this.state;
         return (
             <>
                 <Header username={this.props.username}/>
@@ -291,7 +300,7 @@ export default class Constructor extends React.Component<Props, State> {
                     </div>
                     {this._renderMenu()}
                 </div>
-                {notification && <Notification text={notification} type={notification}/>}
+                {notification && <Notification text={notificationText} type={notification}/>}
             </>
         );
     }

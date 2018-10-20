@@ -24,7 +24,11 @@ const Templates = [
     {title: 'telephone', type: 'telephone'}, 
     {title: 'sms', type: 'sms'},
     {title: 'event', type: 'event'},
-    {title: 'Yandex Maps Location', type: 'ylocation'}
+    {title: 'Yandex Maps Location', type: 'ylocation'},
+    {title: 'Custom HTML page', type: 'html'},
+    {title: 'URL', type: 'url'},
+    {title: 'Email', type: 'email'},
+    {title: 'Contact', type: 'contact'}
 ];
 
 export default class MainPage extends React.Component<Props> {

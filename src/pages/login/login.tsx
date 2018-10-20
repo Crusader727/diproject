@@ -3,13 +3,26 @@ import * as React from 'react';
 import * as qs from 'qs';
 import ReactSVG from 'react-svg';
 import {sendToken} from './login-provider';
-import {yandexId} from 'core/config/config';
+import {yandexId, googleId} from 'core/config/config';
 import Loader from 'components/loader/loader';
 
 interface Props {
     hash: string;
     loginFunction: () => void;
+    service?: string;
 }
+
+const services = [{
+        name: 'yandex',
+        url: `https://oauth.yandex.ru/authorize?response_type=token&client_id=${yandexId}`
+    }, {
+        name: 'google',
+        url: 'https://accounts.google.com/o/oauth2/v2/auth?' +
+        'scope=https://www.googleapis.com/auth/userinfo.email&include_granted_scopes=true&' +
+        'state=state_parameter_passthrough_value&'+
+        'redirect_uri=http://localhost:8000/login/google&response_type=token&client_id=' + googleId
+    }
+]
 
 export default class Login extends React.Component<Props> {
     state = {
@@ -18,9 +31,10 @@ export default class Login extends React.Component<Props> {
     componentDidMount() {
         const params = qs.parse(this.props.hash.slice(1), {ignoreQueryPrefix: true});
         const {access_token, error} = params;
+        const {service} = this.props;
         if (access_token) {
             this.setState({isLoading: true})
-            sendToken(access_token).then(
+            sendToken(access_token, service).then(
                 () => {
                     this.props.loginFunction();
                     this.setState({isLoading: false});
@@ -54,13 +68,16 @@ export default class Login extends React.Component<Props> {
                             Please Sign In with one of the Services
                         </div>
                         <div className="login__content__services">
-                            <ReactSVG
-                                src={`/icons/oauth/yandex.svg`}
-                                svgClassName="oauth-icon"
-                                onClick={() =>
-                                    {window.open(`https://oauth.yandex.ru/authorize?response_type=token&client_id=${yandexId}`, "_self")}
-                                }
-                            />
+                            {services.map(service => (
+                                <ReactSVG
+                                    key={service.name}
+                                    src={`/icons/oauth/${service.name}.svg`}
+                                    svgClassName="oauth-icon"
+                                    onClick={() =>
+                                        {window.open(service.url, "_self")}
+                                    }
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>

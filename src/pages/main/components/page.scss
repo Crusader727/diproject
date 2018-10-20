@@ -36,6 +36,14 @@
         &__title {
             display: flex;
             flex-direction: row;
+            &__text {
+                white-space: nowrap;
+                max-width: 80px;
+                overflow-x: auto;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
         }
     }
     &__icon {

@@ -41,10 +41,25 @@ export default class App extends React.Component<{}, State> {
                         render={(props: RouteComponentProps<{id: string}>) => (<Qr id={props.match.params.id}/>)}
                     />
                     <Route
+                        path='/login/:service'
+                        render={(props: RouteComponentProps<{service: string}>) =>
+                            !isLoggedIn ?
+                                (<Login
+                                    hash={props.location.hash}
+                                    loginFunction={() => this.setState({isLoggedIn: true})}
+                                    service={props.match.params.service}
+                                />):
+                                this._redirectTo('/', this.props)
+                        }
+                    />
+                    <Route
                         path='/login'
                         render={(props) =>
                             !isLoggedIn ?
-                                (<Login hash={props.location.hash} loginFunction={() => this.setState({isLoggedIn: true})}/>):
+                                (<Login
+                                    hash={props.location.hash}
+                                    loginFunction={() => this.setState({isLoggedIn: true})}
+                                />):
                                 this._redirectTo('/', this.props)
                         }
                     />

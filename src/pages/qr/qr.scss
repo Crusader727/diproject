@@ -1,5 +1,12 @@
 @import 'common/common.scss';
 .qr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-grey;
+    height: 100%;
+    width: 100%;
     &__not-found {
         display: flex;
         flex-direction: column;
@@ -14,6 +21,42 @@
         &__text {
             color: $yellow;
             font-size: $font-size-larger;
+        }
+    }
+    &__html {
+        height: 100%;
+    }
+    &__title {
+        font-size: $font-size-larger;
+        color: $yellow;
+        margin-bottom: 20px;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        font-size: $font-size-large;
+        color: $yellow;
+        max-width: 50%;
+        overflow: auto;
+        &__item {
+            display: flex;
+            min-height: min-content;
+            margin: 12px;
+            padding: 12px;
+            background-color: $grey;
+            border-radius: 10px;
+            font-family: $font-size-large;
+            border: 2px solid $yellow;
+            color: $white;
+            word-wrap: break-word;
+            &__title {
+                color: $yellow;
+                margin-right: 8px;
+            }
+            &__content {
+                max-width: 80%;
+                color: $white;
+            }
         }
     }
 }

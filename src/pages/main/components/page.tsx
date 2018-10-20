@@ -36,7 +36,7 @@ export default class Page extends React.Component<PageCut> {
 
     private _getQrCodeValue(): string {
         const {uuid, fieldsNames, fieldsValues, title, template} = this.props;
-        if (template && template !== 'custom') {
+        if (template && template !== 'custom' && template !== 'html') {
             return StaticQrGens[template](fieldsValues);
         }
         return (
@@ -87,7 +87,7 @@ export default class Page extends React.Component<PageCut> {
         const formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
             date.toDateString() :
             date.toLocaleTimeString();
-        const smallIcon = isStatic ? template : !isPublic ? 'private' : null;
+        const smallIcon = isStatic || template === 'html' ? template : !isPublic ? 'private' : null;
         return (
             <div className="page">
                 <a className="page__content" href={`qr/${uuid}`} target="_blank">
@@ -97,7 +97,9 @@ export default class Page extends React.Component<PageCut> {
                 <div className="page__title">
                     <div className="page__title__left-block">
                         <div className="page__title__title">
-                            {title}
+                            <div className="page__title__title__text">
+                                {title}
+                            </div>
                             {smallIcon ?
                                 <ReactSVG
                                     src={`/icons/templates/${smallIcon}.svg`}

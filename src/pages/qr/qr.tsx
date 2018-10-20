@@ -26,8 +26,13 @@ export default class Qr extends React.Component<Props> {
 
     private _renderItem(name: string, value: string, index: number) {
         return (
-            <div key={index}>
-                {`${name}: ${value}`}
+            <div key={index} className="qr__content__item">
+                <div className="qr__content__item__title">
+                    {name ? name + ':' : ''}
+                </div>
+                <div className="qr__content__item__content">
+                    {value}
+                </div>
             </div>
         );
     }
@@ -48,13 +53,26 @@ export default class Qr extends React.Component<Props> {
                 </div>
             );
         }
-        const {title, fieldsNames, fieldsValues} = this.state.page;
+        const {title, fieldsNames, fieldsValues, template} = this.state.page;
+        if (template === 'html') {
+            return (
+                <div className="qr__html">
+                    <iframe
+                        srcDoc={fieldsValues[0]}
+                        sandbox=""
+                        width="100%"
+                        height="100%"
+                        frameBorder="false"
+                    />
+                </div>
+            );
+        }
         return (
-            <div>
-                <div>
+            <div className="qr">
+                <div className="qr__title">
                     {title}
                 </div>
-                <div>
+                <div className="qr__content">
                     {fieldsNames.map((name, index) => this._renderItem(name, fieldsValues[index], index))}
                 </div>
            </div>

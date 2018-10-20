@@ -20,6 +20,26 @@ const StaticQrGens: Record<string, (values: string[]) => string> = {
         encodeURI(`https://yandex.ru/maps/?text=${values[0]}`)
         );
     },
+    'html': (values: string[]): string => {
+        return (
+            values[0]
+        );
+    },
+    'url': (values: string[]): string => {
+        return (
+            values[0]
+        );
+    },
+    'email': (values: string[]): string => {
+        return (
+            `mailto:${values[0]}?subject=${values[1]}&body=${values[2]}`
+        );
+    },
+    'contact': (values: string[]): string => {
+        return (
+            `MECARD:N:${values[0]},${values[1]};NICKNAME:${values[2]};TEL:${values[3]};TEL:${values[4]};EMAIL:${values[5]};BDAY:${values[6]};NOTE:${values[7]};ADR:,,${values[8]},${values[9]},${values[10]},${values[11]},${values[12]};;`
+        );
+    },
 }
 
 export default StaticQrGens;
