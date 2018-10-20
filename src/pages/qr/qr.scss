@@ -60,3 +60,9 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .qr__content__item__title {
+        font-size: 150px;
+    }
+}

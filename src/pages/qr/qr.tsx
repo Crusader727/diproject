@@ -75,9 +75,6 @@ export default class Qr extends React.Component<Props> {
                 <div className="qr__content">
                     {fieldsNames.map((name, index) => this._renderItem(name, fieldsValues[index], index))}
                 </div>
-                <div>
-                    <a href="mailto:awdawd?subject=awdawd&body=awdawd">click me</a>
-                </div>
            </div>
         );
     }

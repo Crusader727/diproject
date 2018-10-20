@@ -931,7 +931,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: #2d2d2d;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #ffd900;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #ffd900;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 22px;\n    color: #ffd900;\n    margin-bottom: 20px; }\n  .qr__content {\n    display: flex;\n    flex-direction: column;\n    font-size: 18px;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white;\n      word-wrap: break-word; }\n      .qr__content__item__title {\n        color: #ffd900;\n        margin-right: 8px; }\n      .qr__content__item__content {\n        max-width: 80%;\n        color: white; }\n", ""]);
+exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: #2d2d2d;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #ffd900;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #ffd900;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 22px;\n    color: #ffd900;\n    margin-bottom: 20px; }\n  .qr__content {\n    display: flex;\n    flex-direction: column;\n    font-size: 18px;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white;\n      word-wrap: break-word; }\n      .qr__content__item__title {\n        color: #ffd900;\n        margin-right: 8px; }\n      .qr__content__item__content {\n        max-width: 80%;\n        color: white; }\n\n@media screen and (max-width: 768px) {\n  .qr__content__item__title {\n    font-size: 150px; } }\n", ""]);
 
 // exports
 
@@ -14317,9 +14317,7 @@ var Qr = /** @class */ (function (_super) {
         }
         return (React.createElement("div", { className: "qr" },
             React.createElement("div", { className: "qr__title" }, title),
-            React.createElement("div", { className: "qr__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); })),
-            React.createElement("div", null,
-                React.createElement("a", { href: "mailto:awdawd?subject=awdawd&body=awdawd" }, "click me"))));
+            React.createElement("div", { className: "qr__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); }))));
     };
     return Qr;
 }(React.Component));
