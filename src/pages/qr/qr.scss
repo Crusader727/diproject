@@ -62,7 +62,13 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .qr__title {
+        font-size: 60px;
+    }
+    .qr__content__item__content {
+        font-size: 40px;
+    }
     .qr__content__item__title {
-        font-size: 150px;
+        font-size: 40px;
     }
 }
