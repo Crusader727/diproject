@@ -1,15 +1,14 @@
 import './constructor.scss';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import ReactSVG from 'react-svg';
 import Header from 'components/header/header';
 import Input from 'components/input/input';
-import TextArea from 'components/text-area/text-area';
 import Button from 'components/button/button';
 import Notification from 'components/notification/notification';
 import Checkbox from 'components/checkbox/checkbox';
 
 import ConstructorContent from './constructor-content';
+import ConstructorActionMenu from './constructor-action-menu';
 
 import PageCut from 'types/PageCut';
 import {createPage, editPage, getPage} from './constructor-provider';
@@ -29,10 +28,17 @@ export interface Item {
     type?: 'date' | 'small';
 }
 
-interface State {
-    isNotEditable: boolean;
-    documentName: string;
+export interface Action {
+    name: string;
     items: Item[];
+    isNotEditable?: boolean;
+    type?: string
+}
+
+interface State {
+    actions: Action[];
+    currentAction: number;
+    documentName: string;
     notification: 'error' | 'success' | null;
     notificationText: string;
     isCreated: boolean;
@@ -40,7 +46,7 @@ interface State {
     date: string | null;
     isPrivate: boolean,
     isStatic: boolean,
-    type?: string
+    isCustom: boolean
 }
 
 export default class Constructor extends React.Component<Props, State> {
@@ -48,30 +54,30 @@ export default class Constructor extends React.Component<Props, State> {
     constructor(props: any) {
         super(props);
 
-        let items: Item[] = [];
-        let isNotEditable = false;
+        let action: Action = {name: 'test', items: []};
         const {type, id} = this.props;
         if (type && CommonItems[type]) {
-            items = CommonItems[type].items;
-            isNotEditable = CommonItems[type].isNotEditable;
+            action.items = CommonItems[type].items;
+            action.isNotEditable = CommonItems[type].isNotEditable;
+            action.type = type;
         }
         this.state = {
+            currentAction: 0,
+            actions: type === 'custom' ? [] : [action],
             documentName: '',
             date: null,
-            items,
-            isNotEditable,
             notification: null,
             notificationText: '',
             isCreated: false,
             id,
             isPrivate: false,
-            isStatic: isNotEditable && type !== 'html',
-            type
+            isStatic: action.isNotEditable && type !== 'html',
+            isCustom: type === 'custom'
         }
     }
 
     componentDidMount() {
-        if (!this.state.id) {
+        if (!this.state.id) { //TODO
             return;
         }
         getPage(this.state.id).then(
@@ -80,10 +86,10 @@ export default class Constructor extends React.Component<Props, State> {
                 const d = new Date(res.date);
                 const date = d.toDateString() + ' ' + d.toLocaleTimeString();
                 this.setState({
-                    items,
+                    actions: [{name: '', type: res.template, items}],
                     documentName: res.title,
                     date,
-                    type: res.template,
+                    isCustom: res.template === 'custom',
                     isCreated: true
                 })
             }, 
@@ -98,13 +104,16 @@ export default class Constructor extends React.Component<Props, State> {
     }
 
     private _savePage() {
+        if (this.state.isCustom) { //todo
+            return;
+        }
         const page = {
             title: this.state.documentName,
             public: !this.state.isPrivate,
             static: this.state.isStatic,
-            fieldsNames: this.state.items.map((el) => el.name),
-            fieldsValues: this.state.items.map((el) => el.value),
-            template: this.state.type
+            fieldsNames: this.state.actions[0].items.map((el) => el.name),
+            fieldsValues: this.state.actions[0].items.map((el) => el.value),
+            template: this.state.actions[0].type
         }
         if (!this.state.isCreated) {
             createPage(page).then(
@@ -126,7 +135,9 @@ export default class Constructor extends React.Component<Props, State> {
     }
 
     private _renderCheckboxes = (): React.ReactNode => {
-        const {isStatic, isPrivate, isNotEditable, type} = this.state;
+        const {isStatic, isPrivate, currentAction, actions, isCustom} = this.state;
+        const isNotEditable = !isCustom && actions[currentAction].isNotEditable;
+        const type = !isCustom && actions[currentAction].type;
         return (
             <div className="constructor__menu__checkboxes">
                 <Checkbox
@@ -134,12 +145,12 @@ export default class Constructor extends React.Component<Props, State> {
                     disabled={isStatic}
                     onClick={() => this.setState({isPrivate: !isPrivate})}
                 />
-                <Checkbox
+                {!isCustom && <Checkbox
                     text="Static"
                     disabled={isPrivate || isNotEditable}
                     checked={isNotEditable && type !== 'html'}
                     onClick={() => this.setState({isStatic: !isStatic})}
-                />
+                />}
             </div>
         );
     }
@@ -163,21 +174,38 @@ export default class Constructor extends React.Component<Props, State> {
                         <Button text="Cancel"/>
                     </Link>
                 </div>
+                {this.state.isCustom ?
+                    <ConstructorActionMenu
+                        actions={this.state.actions}
+                        currentAction={this.state.currentAction}
+                        saveChanges={(changes) => this.setState(changes)}
+                    /> :
+                    null
+                }
             </div>
         );
     }
 
     public render(): React.ReactNode {
-        const {notification, notificationText} = this.state;
+        const {notification, notificationText, currentAction, actions} = this.state;
+        const isNotEditable = actions.length && actions[currentAction].isNotEditable;
         return (
             <>
                 <Header username={this.props.username}/>
                 <div className="constructor">
-                    <ConstructorContent
-                        isNotEditable={this.state.isNotEditable}
-                        items={this.state.items}
-                        saveChanges={(chages) => this.setState(chages)}
-                    />
+                    {actions.length ?
+                        <ConstructorContent
+                            isNotEditable={isNotEditable}
+                            items={actions[currentAction].items}
+                            saveChanges={(changes) => {
+                                actions[currentAction].items = changes;
+                                this.setState({actions});
+                            }}
+                        /> :
+                        <div className="constructor__empty-content">
+
+                        </div>
+                    }
                     {this._renderMenu()}
                 </div>
                 {notification && <Notification text={notificationText} type={notification}/>}

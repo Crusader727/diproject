@@ -722,7 +722,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".dropdown__content {\n  position: absolute;\n  background-color: #515151;\n  min-width: 100px;\n  z-index: 1;\n  border-radius: 3px;\n  border: 2px solid #2d2d2d; }\n  .dropdown__content__item {\n    text-transform: capitalize;\n    font-size: 15px;\n    color: white;\n    padding: 8px 12px;\n    display: block;\n    box-sizing: border-box; }\n    .dropdown__content__item:hover {\n      color: #ffd900; }\n    .dropdown__content__item.chosen {\n      color: #ffd900; }\n", ""]);
+exports.push([module.i, ".dropdown {\n  display: flex;\n  flex-direction: row;\n  position: relative; }\n  .dropdown__content {\n    top: 20px;\n    position: absolute;\n    background-color: #515151;\n    min-width: 100px;\n    z-index: 1;\n    border-radius: 3px;\n    border: 2px solid #2d2d2d;\n    max-height: 160px;\n    overflow: auto; }\n    .dropdown__content__item {\n      text-transform: capitalize;\n      font-size: 15px;\n      color: white;\n      padding: 8px 12px;\n      display: block;\n      box-sizing: border-box; }\n      .dropdown__content__item:hover {\n        color: #ffd900; }\n      .dropdown__content__item.chosen {\n        color: #ffd900; }\n", ""]);
 
 // exports
 
@@ -824,6 +824,25 @@ exports.push([module.i, ".text-area {\n  width: 70%;\n  caret-color: #2d2d2d;\n 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor-action-menu.scss":
+/*!*******************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor-action-menu.scss ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".constructor__action-menu {\n  display: flex;\n  flex-direction: column;\n  margin: 12px 0 12px 0; }\n  .constructor__action-menu__title {\n    color: #ffd900;\n    font-size: 18px; }\n  .constructor__action-menu__content {\n    display: flex;\n    flex-direction: column;\n    overflow: auto;\n    margin-top: 12px;\n    min-height: 300px; }\n    .constructor__action-menu__content__item {\n      display: flex;\n      flex-direction: row;\n      min-height: min-content;\n      padding: 4px 12px;\n      color: #ffd900;\n      font-size: 15px;\n      border: 2px solid #ffd900;\n      border-radius: 20px;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between; }\n      .constructor__action-menu__content__item__name {\n        margin-left: 8px; }\n    .constructor__action-menu__content__edit-item {\n      display: flex;\n      min-height: min-content;\n      flex-direction: row;\n      height: 31px;\n      padding: 8px;\n      color: #ffd900;\n      font-size: 15px;\n      border: 4px solid #ffd900;\n      border-radius: 20px;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between; }\n    .constructor__action-menu__content__add-item {\n      min-height: min-content;\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      padding: 4px;\n      color: #ffd900;\n      border: 2px solid #ffd900;\n      border-radius: 20px; }\n    .constructor__action-menu__content__icon {\n      width: 25px;\n      height: 25px;\n      color: #ffd900;\n      margin-right: 4px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor-content.scss":
 /*!***************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor-content.scss ***!
@@ -836,7 +855,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".constructor__content {\n  display: flex;\n  flex-direction: column;\n  background-color: #515151;\n  width: 80%;\n  overflow: auto; }\n  .constructor__content__add-item {\n    position: relative;\n    margin: 12px;\n    width: auto;\n    height: 120px;\n    min-height: 120px;\n    color: #ffd900;\n    background-color: #2d2d2d;\n    border: 1px solid #ffd900;\n    box-sizing: border-box;\n    border-radius: 10px; }\n    .constructor__content__add-item:hover {\n      border: 3px solid #ffd900; }\n  .constructor__content__edit-item {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin: 12px;\n    padding: 12px;\n    background-color: #2d2d2d;\n    border-radius: 10px;\n    border: 2px solid #ffd900;\n    min-height: min-content; }\n    .constructor__content__edit-item__text-wrapper {\n      margin-top: 12px; }\n    .constructor__content__edit-item__content {\n      flex-grow: 1;\n      display: flex;\n      flex-direction: column; }\n      .constructor__content__edit-item__content__title {\n        color: #ffd900;\n        font-size: 18px; }\n  .constructor__content__item {\n    display: flex;\n    min-height: min-content;\n    margin: 12px;\n    padding: 12px;\n    background-color: #515151;\n    border-radius: 10px;\n    font-family: 18px;\n    border: 2px solid #ffd900;\n    color: white;\n    word-wrap: break-word; }\n    .constructor__content__item__title {\n      margin-right: 10px;\n      margin-bottom: 10px; }\n    .constructor__content__item:hover {\n      border: 3px solid #ffd900; }\n", ""]);
 
 // exports
 
@@ -855,7 +874,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 95%; }\n  .constructor__content {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    width: 80%;\n    overflow: auto; }\n    .constructor__content__add-item {\n      position: relative;\n      margin: 12px;\n      width: auto;\n      height: 120px;\n      min-height: 120px;\n      color: #ffd900;\n      background-color: #2d2d2d;\n      border: 1px solid #ffd900;\n      box-sizing: border-box;\n      border-radius: 10px; }\n      .constructor__content__add-item:hover {\n        border: 3px solid #ffd900; }\n    .constructor__content__edit-item {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      margin: 12px;\n      padding: 12px;\n      background-color: #2d2d2d;\n      border-radius: 10px;\n      border: 2px solid #ffd900;\n      min-height: min-content; }\n      .constructor__content__edit-item__text-wrapper {\n        margin-top: 12px; }\n      .constructor__content__edit-item__content {\n        flex-grow: 1;\n        display: flex;\n        flex-direction: column; }\n        .constructor__content__edit-item__content__title {\n          color: #ffd900;\n          font-size: 18px; }\n    .constructor__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white;\n      word-wrap: break-word; }\n      .constructor__content__item__title {\n        margin-right: 10px;\n        margin-bottom: 10px; }\n      .constructor__content__item:hover {\n        border: 3px solid #ffd900; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #2d2d2d;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0;\n      height: 8vh; }\n    .constructor__menu__date {\n      color: white;\n      margin-top: 8px; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #ffd900;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
+exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 95%; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #2d2d2d;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0;\n      height: 8vh; }\n    .constructor__menu__date {\n      color: white;\n      margin-top: 8px; }\n  .constructor__empty-content {\n    background-color: #515151;\n    width: 80%; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #ffd900;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
 
 // exports
 
@@ -912,7 +931,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".pages {\n  padding: 0 11% 0 15%;\n  background-color: #2d2d2d;\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto;\n    height: 100%; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer;\n    margin-right: 16px; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n", ""]);
+exports.push([module.i, ".pages {\n  padding: 0 11% 0 15%;\n  background-color: #2d2d2d;\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto;\n    height: 100%; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n", ""]);
 
 // exports
 
@@ -12677,6 +12696,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./dropdown.scss */ "./src/components/dropdown/dropdown.scss");
 var React = __webpack_require__(/*! react */ "react");
+var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var DropDown = /** @class */ (function (_super) {
     __extends(DropDown, _super);
     function DropDown() {
@@ -12703,6 +12723,7 @@ var DropDown = /** @class */ (function (_super) {
         var _this = this;
         return (React.createElement("div", { className: "dropdown", onClick: function () { return _this.setState({ isContentShown: true }); }, onBlur: function () { return _this.setState({ isContentShown: false }); }, tabIndex: 0 },
             this.props.children,
+            React.createElement(react_svg_1.default, { src: "/icons/dropdown-arrow.svg", svgClassName: "dropdown__icon" }),
             this._renderContent()));
     };
     return DropDown;
@@ -13205,6 +13226,138 @@ ReactDOM.render(React.createElement(app_1.default, null), document.getElementByI
 
 /***/ }),
 
+/***/ "./src/pages/constructor/constructor-action-menu.scss":
+/*!************************************************************!*\
+  !*** ./src/pages/constructor/constructor-action-menu.scss ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./constructor-action-menu.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor-action-menu.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/pages/constructor/constructor-action-menu.tsx":
+/*!***********************************************************!*\
+  !*** ./src/pages/constructor/constructor-action-menu.tsx ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./constructor-action-menu.scss */ "./src/pages/constructor/constructor-action-menu.scss");
+var React = __webpack_require__(/*! react */ "react");
+var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
+var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
+var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
+var items_1 = __webpack_require__(/*! ./views/items */ "./src/pages/constructor/views/items.ts");
+var ActionMenuTypes = ['custom', 'telephone', 'sms', 'event', 'ylocation', 'url', 'email', 'contact'];
+var ConstructorActionMenu = /** @class */ (function (_super) {
+    __extends(ConstructorActionMenu, _super);
+    function ConstructorActionMenu() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._handleActionNameChange = function (event) {
+            var _a = _this.props, actions = _a.actions, currentAction = _a.currentAction;
+            actions[currentAction].name = event.target.value;
+            _this.props.saveChanges({ actions: actions });
+        };
+        _this._handleActionTypeChange = function (type) {
+            var _a = _this.props, actions = _a.actions, currentAction = _a.currentAction;
+            actions[currentAction].type = type;
+            actions[currentAction].items = items_1.default[type].items;
+            actions[currentAction].isNotEditable = items_1.default[type].isNotEditable;
+            _this.props.saveChanges({ actions: actions });
+        };
+        _this._addAction = function () {
+            var actions = _this.props.actions;
+            var action = {
+                name: '',
+                items: [],
+                isNotEditable: false,
+                type: 'custom'
+            };
+            var currentAction = actions.push(action) - 1;
+            _this.props.saveChanges({ actions: actions, currentAction: currentAction });
+        };
+        _this._deleteAction = function (index) {
+            var actions = _this.props.actions.filter(function (item, i) { return i !== index; });
+            var currentAction = index - 1;
+            currentAction = currentAction < 0 ? 0 : currentAction;
+            _this.props.saveChanges({ actions: actions, currentAction: currentAction });
+        };
+        _this._renderAddItem = function () {
+            return (React.createElement("div", { className: "constructor__action-menu__content__add-item", onClick: _this._addAction },
+                React.createElement(react_svg_1.default, { src: "/icons/round-cross.svg", svgClassName: "constructor__action-menu__content__icon" })));
+        };
+        _this._renderEditItem = function (action, index) {
+            return (React.createElement("div", { className: "constructor__action-menu__content__edit-item", key: index },
+                React.createElement(input_1.default, { size: "small", placeholder: "Title", isFocused: true, value: action.name, onChange: _this._handleActionNameChange }),
+                React.createElement(dropdown_1.default, { onClick: _this._handleActionTypeChange, items: ActionMenuTypes },
+                    "Type: ",
+                    action.type),
+                React.createElement(react_svg_1.default, { src: "/icons/delete.svg", svgClassName: "constructor__action-menu__content__icon", onClick: function () { return _this._deleteAction(index); } })));
+        };
+        _this._renderItem = function (action, index) {
+            if (index === _this.props.currentAction) {
+                return _this._renderEditItem(action, index);
+            }
+            return (React.createElement("div", { className: "constructor__action-menu__content__item", key: index, onClick: function () { return _this.props.saveChanges({ currentAction: index }); } },
+                React.createElement("div", { className: "constructor__action-menu__content__item__name" }, action.name),
+                "Type: ",
+                action.type,
+                React.createElement(react_svg_1.default, { src: "/icons/delete.svg", svgClassName: "constructor__action-menu__content__icon", onClick: function () { return _this._deleteAction(index); } })));
+        };
+        return _this;
+    }
+    ConstructorActionMenu.prototype.render = function () {
+        var actions = this.props.actions;
+        return (React.createElement("div", { className: "constructor__action-menu" },
+            React.createElement("div", { className: "constructor__action-menu__title" }, "Action Menu"),
+            React.createElement("div", { className: "constructor__action-menu__content" },
+                actions.map(this._renderItem),
+                this._renderAddItem())));
+    };
+    return ConstructorActionMenu;
+}(React.Component));
+exports.default = ConstructorActionMenu;
+
+
+/***/ }),
+
 /***/ "./src/pages/constructor/constructor-content.scss":
 /*!********************************************************!*\
   !*** ./src/pages/constructor/constructor-content.scss ***!
@@ -13276,7 +13429,7 @@ var ConstructorContent = /** @class */ (function (_super) {
                 else if (type === 'value') {
                     items[index].value = event.target.value;
                 }
-                _this.props.saveChanges({ items: items });
+                _this.props.saveChanges(items);
             };
         };
         _this._renderItem = function (item, index) {
@@ -13292,7 +13445,7 @@ var ConstructorContent = /** @class */ (function (_super) {
     ConstructorContent.prototype._deleteItem = function (index) {
         var oldItems = this.props.items;
         var items = oldItems.filter(function (item, i) { return i !== index; });
-        this.props.saveChanges({ items: items });
+        this.props.saveChanges(items);
     };
     ConstructorContent.prototype._openEditor = function (index) {
         var items = this.props.items;
@@ -13300,14 +13453,14 @@ var ConstructorContent = /** @class */ (function (_super) {
         if (index !== undefined) {
             items[index].isEditing = true;
         }
-        this.props.saveChanges({ items: items });
+        this.props.saveChanges(items);
     };
     ConstructorContent.prototype._addItem = function () {
         this._openEditor();
         var item = { name: '', value: '', isEditing: true };
         var items = this.props.items;
         items.push(item);
-        this.props.saveChanges({ items: items });
+        this.props.saveChanges(items);
     };
     ConstructorContent.prototype._renderAddItem = function () {
         var _this = this;
@@ -13435,6 +13588,7 @@ var button_1 = __webpack_require__(/*! components/button/button */ "./src/compon
 var notification_1 = __webpack_require__(/*! components/notification/notification */ "./src/components/notification/notification.tsx");
 var checkbox_1 = __webpack_require__(/*! components/checkbox/checkbox */ "./src/components/checkbox/checkbox.tsx");
 var constructor_content_1 = __webpack_require__(/*! ./constructor-content */ "./src/pages/constructor/constructor-content.tsx");
+var constructor_action_menu_1 = __webpack_require__(/*! ./constructor-action-menu */ "./src/pages/constructor/constructor-action-menu.tsx");
 var constructor_provider_1 = __webpack_require__(/*! ./constructor-provider */ "./src/pages/constructor/constructor-provider.ts");
 var items_1 = __webpack_require__(/*! ./views/items */ "./src/pages/constructor/views/items.ts");
 var Constructor = /** @class */ (function (_super) {
@@ -13443,36 +13597,38 @@ var Constructor = /** @class */ (function (_super) {
         var _this = _super.call(this, props) || this;
         _this.notificationTimeout = null;
         _this._renderCheckboxes = function () {
-            var _a = _this.state, isStatic = _a.isStatic, isPrivate = _a.isPrivate, isNotEditable = _a.isNotEditable, type = _a.type;
+            var _a = _this.state, isStatic = _a.isStatic, isPrivate = _a.isPrivate, currentAction = _a.currentAction, actions = _a.actions, isCustom = _a.isCustom;
+            var isNotEditable = !isCustom && actions[currentAction].isNotEditable;
+            var type = !isCustom && actions[currentAction].type;
             return (React.createElement("div", { className: "constructor__menu__checkboxes" },
                 React.createElement(checkbox_1.default, { text: "Private", disabled: isStatic, onClick: function () { return _this.setState({ isPrivate: !isPrivate }); } }),
-                React.createElement(checkbox_1.default, { text: "Static", disabled: isPrivate || isNotEditable, checked: isNotEditable && type !== 'html', onClick: function () { return _this.setState({ isStatic: !isStatic }); } })));
+                !isCustom && React.createElement(checkbox_1.default, { text: "Static", disabled: isPrivate || isNotEditable, checked: isNotEditable && type !== 'html', onClick: function () { return _this.setState({ isStatic: !isStatic }); } })));
         };
-        var items = [];
-        var isNotEditable = false;
+        var action = { name: 'test', items: [] };
         var _a = _this.props, type = _a.type, id = _a.id;
         if (type && items_1.default[type]) {
-            items = items_1.default[type].items;
-            isNotEditable = items_1.default[type].isNotEditable;
+            action.items = items_1.default[type].items;
+            action.isNotEditable = items_1.default[type].isNotEditable;
+            action.type = type;
         }
         _this.state = {
+            currentAction: 0,
+            actions: type === 'custom' ? [] : [action],
             documentName: '',
             date: null,
-            items: items,
-            isNotEditable: isNotEditable,
             notification: null,
             notificationText: '',
             isCreated: false,
             id: id,
             isPrivate: false,
-            isStatic: isNotEditable && type !== 'html',
-            type: type
+            isStatic: action.isNotEditable && type !== 'html',
+            isCustom: type === 'custom'
         };
         return _this;
     }
     Constructor.prototype.componentDidMount = function () {
         var _this = this;
-        if (!this.state.id) {
+        if (!this.state.id) { //TODO
             return;
         }
         constructor_provider_1.getPage(this.state.id).then(function (res) {
@@ -13480,10 +13636,10 @@ var Constructor = /** @class */ (function (_super) {
             var d = new Date(res.date);
             var date = d.toDateString() + ' ' + d.toLocaleTimeString();
             _this.setState({
-                items: items,
+                actions: [{ name: '', type: res.template, items: items }],
                 documentName: res.title,
                 date: date,
-                type: res.template,
+                isCustom: res.template === 'custom',
                 isCreated: true
             });
         }, function () { return console.log('error'); });
@@ -13495,13 +13651,16 @@ var Constructor = /** @class */ (function (_super) {
     };
     Constructor.prototype._savePage = function () {
         var _this = this;
+        if (this.state.isCustom) { //todo
+            return;
+        }
         var page = {
             title: this.state.documentName,
             public: !this.state.isPrivate,
             static: this.state.isStatic,
-            fieldsNames: this.state.items.map(function (el) { return el.name; }),
-            fieldsValues: this.state.items.map(function (el) { return el.value; }),
-            template: this.state.type
+            fieldsNames: this.state.actions[0].items.map(function (el) { return el.name; }),
+            fieldsValues: this.state.actions[0].items.map(function (el) { return el.value; }),
+            template: this.state.actions[0].type
         };
         if (!this.state.isCreated) {
             constructor_provider_1.createPage(page).then(function (res) { return _this.setState({
@@ -13525,15 +13684,24 @@ var Constructor = /** @class */ (function (_super) {
             React.createElement("div", { className: "constructor__menu__actions" },
                 React.createElement(button_1.default, { text: "Save", onClick: function () { return _this._savePage(); } }),
                 React.createElement(react_router_dom_1.Link, { to: "/" },
-                    React.createElement(button_1.default, { text: "Cancel" })))));
+                    React.createElement(button_1.default, { text: "Cancel" }))),
+            this.state.isCustom ?
+                React.createElement(constructor_action_menu_1.default, { actions: this.state.actions, currentAction: this.state.currentAction, saveChanges: function (changes) { return _this.setState(changes); } }) :
+                null));
     };
     Constructor.prototype.render = function () {
         var _this = this;
-        var _a = this.state, notification = _a.notification, notificationText = _a.notificationText;
+        var _a = this.state, notification = _a.notification, notificationText = _a.notificationText, currentAction = _a.currentAction, actions = _a.actions;
+        var isNotEditable = actions.length && actions[currentAction].isNotEditable;
         return (React.createElement(React.Fragment, null,
             React.createElement(header_1.default, { username: this.props.username }),
             React.createElement("div", { className: "constructor" },
-                React.createElement(constructor_content_1.default, { isNotEditable: this.state.isNotEditable, items: this.state.items, saveChanges: function (chages) { return _this.setState(chages); } }),
+                actions.length ?
+                    React.createElement(constructor_content_1.default, { isNotEditable: isNotEditable, items: actions[currentAction].items, saveChanges: function (changes) {
+                            actions[currentAction].items = changes;
+                            _this.setState({ actions: actions });
+                        } }) :
+                    React.createElement("div", { className: "constructor__empty-content" }),
                 this._renderMenu()),
             notification && React.createElement(notification_1.default, { text: notificationText, type: notification })));
     };
@@ -13637,6 +13805,10 @@ var Items = {
     'contact': {
         isNotEditable: true,
         items: contactItems
+    },
+    'custom': {
+        isNotEditable: false,
+        items: []
     }
 };
 exports.default = Items;

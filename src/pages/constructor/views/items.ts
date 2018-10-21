@@ -84,6 +84,10 @@ const Items: Record<string, {items: Item[], isNotEditable: boolean}> = {
     'contact': {
         isNotEditable: true,
         items: contactItems
+    },
+    'custom': { // :(
+        isNotEditable: false,
+        items: []
     }
 }
 

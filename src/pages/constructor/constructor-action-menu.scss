@@ -1,0 +1,63 @@
+@import 'common/common.scss';
+.constructor__action-menu {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0 12px 0;
+    &__title {
+        color: $yellow;
+        font-size: $font-size-large;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        margin-top: 12px;
+        min-height: 300px;
+        &__item {
+            display: flex;
+            flex-direction: row;
+            min-height: min-content;
+            padding: 4px 12px;
+            color: $yellow;
+            font-size: $font-size-normal;
+            border: 2px solid $yellow;
+            border-radius: 20px;
+            line-height: 31px;
+            margin-bottom: 12px;
+            justify-content: space-between;
+            &__name {
+                margin-left: 8px;
+            }
+        }
+        &__edit-item {
+            display: flex;
+            min-height: min-content;
+            flex-direction: row;
+            height: 31px;
+            padding: 8px;
+            color: $yellow;
+            font-size: $font-size-normal;
+            border: 4px solid $yellow;
+            border-radius: 20px;
+            line-height: 31px;
+            margin-bottom: 12px;
+            justify-content: space-between;
+        }
+        &__add-item {
+            min-height: min-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 4px;
+            color: $yellow;
+            border: 2px solid $yellow;
+            border-radius: 20px;
+        }
+        &__icon {
+            width: 25px;
+            height: 25px;
+            color: $yellow;
+            margin-right: 4px;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import './dropdown.scss';
 import * as React from "react";
+import ReactSVG from 'react-svg';
 
 interface Props {
     items: string[];
@@ -51,6 +52,10 @@ export default class DropDown extends React.Component<Props> {
                 tabIndex={0}
             >
                 {this.props.children}
+                <ReactSVG
+                    src={`/icons/dropdown-arrow.svg`}
+                    svgClassName="dropdown__icon"
+                />
                 {this._renderContent()}
             </div>
         );

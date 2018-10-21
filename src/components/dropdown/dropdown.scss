@@ -1,12 +1,18 @@
 @import 'common/common.scss';
 .dropdown {
+    display: flex;
+    flex-direction: row;
+    position: relative;
     &__content {
+        top: 20px;
         position: absolute;
         background-color: $grey;
         min-width: 100px;
         z-index: 1;
         border-radius: 3px;
         border: 2px solid $dark-grey;
+        max-height: 160px;
+        overflow: auto;
         &__item {
             text-transform: capitalize;
             font-size: $font-size-normal;

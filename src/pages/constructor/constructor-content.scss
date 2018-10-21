@@ -1,0 +1,65 @@
+@import 'common/common.scss';
+.constructor__content {
+    display: flex;
+    flex-direction: column;
+    background-color: $grey;
+    width: 80%;
+    overflow: auto;
+    &__add-item {
+        position: relative;
+        margin: 12px;
+        width: auto;
+        height: 120px;
+        min-height: 120px;
+        color: $yellow;
+        background-color: $dark-grey;
+        border: 1px solid $yellow;
+        box-sizing: border-box;
+        border-radius: 10px;
+        &:hover {
+            border: 3px solid $yellow;
+        }
+    }
+    &__edit-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 12px;
+        padding: 12px;
+        background-color: $dark-grey;
+        border-radius: 10px;
+        border: 2px solid $yellow;
+        min-height: min-content;
+        &__text-wrapper {
+            margin-top: 12px;
+        }
+        &__content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            &__title {
+                color: $yellow;
+                font-size: $font-size-large;
+            }
+        }
+    }
+    &__item {
+        display: flex;
+        min-height: min-content;
+        margin: 12px;
+        padding: 12px;
+        background-color: $grey;
+        border-radius: 10px;
+        font-family: $font-size-large;
+        border: 2px solid $yellow;
+        color: $white;
+        word-wrap: break-word;
+        &__title {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        &:hover {
+            border: 3px solid $yellow;
+        }
+    }
+}

@@ -8,14 +8,14 @@ import {Item} from './constructor';
 interface Props {
     items: Item[];
     isNotEditable?: boolean;
-    saveChanges: (changes: {}) => void;
+    saveChanges: (changes: Item[]) => void;
 }
 
 export default class ConstructorContent extends React.Component<Props> {
     private _deleteItem(index: number) {
         const oldItems = this.props.items;
         const items = oldItems.filter((item, i) => i !== index);
-        this.props.saveChanges({items});
+        this.props.saveChanges(items);
     }
 
     private _handleItemNameChange = (index: number, type?: 'name' | 'value') => {
@@ -26,7 +26,7 @@ export default class ConstructorContent extends React.Component<Props> {
             } else if (type === 'value') {
                 items[index].value = event.target.value
             }
-            this.props.saveChanges({items});
+            this.props.saveChanges(items);
         }
     }
 
@@ -36,7 +36,7 @@ export default class ConstructorContent extends React.Component<Props> {
         if (index !== undefined) {
             items[index].isEditing = true;
         }
-        this.props.saveChanges({items});
+        this.props.saveChanges(items);
     }
 
     private _addItem() {
@@ -44,7 +44,7 @@ export default class ConstructorContent extends React.Component<Props> {
         const item: Item = {name: '', value: '', isEditing: true};
         const items = this.props.items;
         items.push(item);
-        this.props.saveChanges({items});
+        this.props.saveChanges(items);
     }
 
     private _renderAddItem(): React.ReactNode {
