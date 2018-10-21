@@ -824,6 +824,25 @@ exports.push([module.i, ".text-area {\n  width: 70%;\n  caret-color: #2d2d2d;\n 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor-content.scss":
+/*!***************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor-content.scss ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor.scss":
 /*!*******************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor.scss ***!
@@ -13186,6 +13205,147 @@ ReactDOM.render(React.createElement(app_1.default, null), document.getElementByI
 
 /***/ }),
 
+/***/ "./src/pages/constructor/constructor-content.scss":
+/*!********************************************************!*\
+  !*** ./src/pages/constructor/constructor-content.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./constructor-content.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/pages/constructor/constructor-content.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/pages/constructor/constructor-content.tsx":
+/*!*******************************************************!*\
+  !*** ./src/pages/constructor/constructor-content.tsx ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./constructor-content.scss */ "./src/pages/constructor/constructor-content.scss");
+var React = __webpack_require__(/*! react */ "react");
+var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
+var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
+var text_area_1 = __webpack_require__(/*! components/text-area/text-area */ "./src/components/text-area/text-area.tsx");
+var ConstructorContent = /** @class */ (function (_super) {
+    __extends(ConstructorContent, _super);
+    function ConstructorContent() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._handleItemNameChange = function (index, type) {
+            return function (event) {
+                var items = _this.props.items;
+                if (type === 'name' && !_this.props.isNotEditable) {
+                    items[index].name = event.target.value;
+                }
+                else if (type === 'value') {
+                    items[index].value = event.target.value;
+                }
+                _this.props.saveChanges({ items: items });
+            };
+        };
+        _this._renderItem = function (item, index) {
+            if (item.isEditing) {
+                return _this._renderEditItem(item.name, item.value, item.type, index);
+            }
+            return (React.createElement("div", { key: index, className: "constructor__content__item", style: { flexDirection: item.value.length > 30 ? 'column' : 'row' }, onClick: function () { return _this._openEditor(index); } },
+                React.createElement("div", { className: "constructor__content__item__title" }, item.name + ":"),
+                React.createElement("div", null, item.value)));
+        };
+        return _this;
+    }
+    ConstructorContent.prototype._deleteItem = function (index) {
+        var oldItems = this.props.items;
+        var items = oldItems.filter(function (item, i) { return i !== index; });
+        this.props.saveChanges({ items: items });
+    };
+    ConstructorContent.prototype._openEditor = function (index) {
+        var items = this.props.items;
+        items.forEach(function (item) { return item.isEditing = false; });
+        if (index !== undefined) {
+            items[index].isEditing = true;
+        }
+        this.props.saveChanges({ items: items });
+    };
+    ConstructorContent.prototype._addItem = function () {
+        this._openEditor();
+        var item = { name: '', value: '', isEditing: true };
+        var items = this.props.items;
+        items.push(item);
+        this.props.saveChanges({ items: items });
+    };
+    ConstructorContent.prototype._renderAddItem = function () {
+        var _this = this;
+        if (this.props.isNotEditable) {
+            return null;
+        }
+        return (React.createElement("div", { className: "constructor__content__add-item", onClick: function () { return _this._addItem(); } },
+            React.createElement(react_svg_1.default, { src: "/icons/round-cross.svg", svgClassName: "round-cross" })));
+    };
+    ConstructorContent.prototype._renderEditItem = function (name, value, type, index) {
+        var _this = this;
+        var secondfield = React.createElement(text_area_1.default, { placeholder: "Description", value: value, onChange: this._handleItemNameChange(index, 'value') });
+        if (type) {
+            secondfield = React.createElement(input_1.default, { size: "large", placeholder: "Description", isFocused: true, value: value, type: type === 'date' ? 'datetime-local' : undefined, onChange: this._handleItemNameChange(index, 'value') });
+        }
+        return (React.createElement("div", { className: "constructor__content__edit-item", key: index },
+            React.createElement("div", { className: "constructor__content__edit-item__content" },
+                !this.props.isNotEditable ?
+                    React.createElement(input_1.default, { size: "medium", placeholder: "Title", isFocused: true, value: name, onChange: this._handleItemNameChange(index, 'name') }) :
+                    React.createElement("div", { className: "constructor__content__edit-item__content__title" }, name),
+                React.createElement("div", { className: "constructor__content__edit-item__text-wrapper" }, secondfield)),
+            !this.props.isNotEditable ? React.createElement(react_svg_1.default, { src: "/icons/delete.svg", svgClassName: "close", onClick: function () { return _this._deleteItem(index); } }) : null,
+            React.createElement(react_svg_1.default, { src: "/icons/close.svg", svgClassName: "close", onClick: function () { return _this._openEditor(); } })));
+    };
+    ConstructorContent.prototype.render = function () {
+        var _this = this;
+        var items = this.props.items;
+        return (React.createElement("div", { className: "constructor__content" },
+            items.map(function (item, i) { return _this._renderItem(item, i); }),
+            this._renderAddItem()));
+    };
+    return ConstructorContent;
+}(React.Component));
+exports.default = ConstructorContent;
+
+
+/***/ }),
+
 /***/ "./src/pages/constructor/constructor-provider.ts":
 /*!*******************************************************!*\
   !*** ./src/pages/constructor/constructor-provider.ts ***!
@@ -13269,13 +13429,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./constructor.scss */ "./src/pages/constructor/constructor.scss");
 var React = __webpack_require__(/*! react */ "react");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var header_1 = __webpack_require__(/*! components/header/header */ "./src/components/header/header.tsx");
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
-var text_area_1 = __webpack_require__(/*! components/text-area/text-area */ "./src/components/text-area/text-area.tsx");
 var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
 var notification_1 = __webpack_require__(/*! components/notification/notification */ "./src/components/notification/notification.tsx");
 var checkbox_1 = __webpack_require__(/*! components/checkbox/checkbox */ "./src/components/checkbox/checkbox.tsx");
+var constructor_content_1 = __webpack_require__(/*! ./constructor-content */ "./src/pages/constructor/constructor-content.tsx");
 var constructor_provider_1 = __webpack_require__(/*! ./constructor-provider */ "./src/pages/constructor/constructor-provider.ts");
 var items_1 = __webpack_require__(/*! ./views/items */ "./src/pages/constructor/views/items.ts");
 var Constructor = /** @class */ (function (_super) {
@@ -13283,26 +13442,6 @@ var Constructor = /** @class */ (function (_super) {
     function Constructor(props) {
         var _this = _super.call(this, props) || this;
         _this.notificationTimeout = null;
-        _this._handleItemNameChange = function (index, type) {
-            return function (event) {
-                var items = _this.state.items;
-                if (type === 'name' && !_this.state.isNotEditable) {
-                    items[index].name = event.target.value;
-                }
-                else if (type === 'value') {
-                    items[index].value = event.target.value;
-                }
-                _this.setState({ items: items });
-            };
-        };
-        _this._renderItem = function (item, index) {
-            if (item.isEditing) {
-                return _this._renderEditItem(item.name, item.value, item.type, index);
-            }
-            return (React.createElement("div", { key: index, className: "constructor__content__item", style: { flexDirection: item.value.length > 30 ? 'column' : 'row' }, onClick: function () { return _this._openEditor(index); } },
-                React.createElement("div", { className: "constructor__content__item__title" }, item.name + ":"),
-                React.createElement("div", null, item.value)));
-        };
         _this._renderCheckboxes = function () {
             var _a = _this.state, isStatic = _a.isStatic, isPrivate = _a.isPrivate, isNotEditable = _a.isNotEditable, type = _a.type;
             return (React.createElement("div", { className: "constructor__menu__checkboxes" },
@@ -13377,49 +13516,6 @@ var Constructor = /** @class */ (function (_super) {
         }
         this.notificationTimeout = setTimeout(function () { return _this.setState({ notification: null }); }, 3000);
     };
-    Constructor.prototype._openEditor = function (index) {
-        var items = this.state.items;
-        items.forEach(function (item) { return item.isEditing = false; });
-        if (index !== undefined) {
-            items[index].isEditing = true;
-        }
-        this.setState({ items: items });
-    };
-    Constructor.prototype._deleteItem = function (index) {
-        var oldItems = this.state.items;
-        var items = oldItems.filter(function (item, i) { return i !== index; });
-        this.setState({ items: items });
-    };
-    Constructor.prototype._addItem = function () {
-        this._openEditor();
-        var item = { name: '', value: '', isEditing: true };
-        var items = this.state.items;
-        items.push(item);
-        this.setState({ items: items });
-    };
-    Constructor.prototype._renderEditItem = function (name, value, type, index) {
-        var _this = this;
-        var secondfield = React.createElement(text_area_1.default, { placeholder: "Description", value: value, onChange: this._handleItemNameChange(index, 'value') });
-        if (type) {
-            secondfield = React.createElement(input_1.default, { size: "large", placeholder: "Description", isFocused: true, value: value, type: type === 'date' ? 'datetime-local' : undefined, onChange: this._handleItemNameChange(index, 'value') });
-        }
-        return (React.createElement("div", { className: "constructor__content__edit-item", key: index },
-            React.createElement("div", { className: "constructor__content__edit-item__content" },
-                !this.state.isNotEditable ?
-                    React.createElement(input_1.default, { size: "medium", placeholder: "Title", isFocused: true, value: name, onChange: this._handleItemNameChange(index, 'name') }) :
-                    React.createElement("div", { className: "constructor__content__edit-item__content__title" }, name),
-                React.createElement("div", { className: "constructor__content__edit-item__text-wrapper" }, secondfield)),
-            !this.state.isNotEditable ? React.createElement(react_svg_1.default, { src: "/icons/delete.svg", svgClassName: "close", onClick: function () { return _this._deleteItem(index); } }) : null,
-            React.createElement(react_svg_1.default, { src: "/icons/close.svg", svgClassName: "close", onClick: function () { return _this._openEditor(); } })));
-    };
-    Constructor.prototype._renderAddItem = function () {
-        var _this = this;
-        if (this.state.isNotEditable) {
-            return null;
-        }
-        return (React.createElement("div", { className: "constructor__content__add-item", onClick: function () { return _this._addItem(); } },
-            React.createElement(react_svg_1.default, { src: "/icons/round-cross.svg", svgClassName: "round-cross" })));
-    };
     Constructor.prototype._renderMenu = function () {
         var _this = this;
         return (React.createElement("div", { className: "constructor__menu" },
@@ -13437,9 +13533,7 @@ var Constructor = /** @class */ (function (_super) {
         return (React.createElement(React.Fragment, null,
             React.createElement(header_1.default, { username: this.props.username }),
             React.createElement("div", { className: "constructor" },
-                React.createElement("div", { className: "constructor__content" },
-                    this.state.items.map(function (item, i) { return _this._renderItem(item, i); }),
-                    this._renderAddItem()),
+                React.createElement(constructor_content_1.default, { isNotEditable: this.state.isNotEditable, items: this.state.items, saveChanges: function (chages) { return _this.setState(chages); } }),
                 this._renderMenu()),
             notification && React.createElement(notification_1.default, { text: notificationText, type: notification })));
     };
