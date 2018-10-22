@@ -78,7 +78,7 @@ export default class Constructor extends React.Component<Props, State> {
     }
 
     componentDidMount() {
-        if (!this.state.id) { //TODO
+        if (!this.state.id) {
             return;
         }
         getPage(this.state.id).then(

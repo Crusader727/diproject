@@ -84,9 +84,9 @@ export default class Qr extends React.Component<Props> {
     private _renderMenuItem(el: PageCut): React.ReactNode {
         if (el.template === 'custom') {
             return (
-                <Link to={'/qr/' + el.uuid} className="qr__menu__item">
+                <a href={'/qr/' + el.uuid} className="qr__menu__item">
                     {el.title}
-                </Link>
+                </a>
             );
         }
         return (

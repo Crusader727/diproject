@@ -13636,7 +13636,7 @@ var Constructor = /** @class */ (function (_super) {
     }
     Constructor.prototype.componentDidMount = function () {
         var _this = this;
-        if (!this.state.id) { //TODO
+        if (!this.state.id) {
             return;
         }
         constructor_provider_1.getPage(this.state.id).then(function (res) {
@@ -14591,7 +14591,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./qr.scss */ "./src/pages/qr/qr.scss");
 var React = __webpack_require__(/*! react */ "react");
 var qr_provider_1 = __webpack_require__(/*! ./qr-provider */ "./src/pages/qr/qr-provider.ts");
-var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var static_qr_gens_1 = __webpack_require__(/*! pages/main/components/static-qr-gens */ "./src/pages/main/components/static-qr-gens.ts");
 var Qr = /** @class */ (function (_super) {
     __extends(Qr, _super);
@@ -14630,7 +14629,7 @@ var Qr = /** @class */ (function (_super) {
     };
     Qr.prototype._renderMenuItem = function (el) {
         if (el.template === 'custom') {
-            return (React.createElement(react_router_dom_1.Link, { to: '/qr/' + el.uuid, className: "qr__menu__item" }, el.title));
+            return (React.createElement("a", { href: '/qr/' + el.uuid, className: "qr__menu__item" }, el.title));
         }
         return (React.createElement("a", { href: static_qr_gens_1.default[el.template](el.fieldsValues), className: "qr__menu__item" }, el.title));
     };
