@@ -23,7 +23,7 @@ export default class Qr extends React.Component<Props> {
     componentDidMount() {
         getQr(this.props.id).then(
             (page) => this.setState({page}),
-            () => this.setState({isNotAvilable: true}) // todo Error
+            () => this.setState({isNotAvilable: true})
         );
     }
 
@@ -100,10 +100,10 @@ export default class Qr extends React.Component<Props> {
             return (
                 <div className="qr__menu">
                     <div className="qr__title">
-                        {page.title}
+                            {page.title}
                     </div>
                     {page.innerPages.map(this._renderMenuItem)}   
-               </div>
+                </div>
             );
         }
         return this._renderCustom(page as PageCut);

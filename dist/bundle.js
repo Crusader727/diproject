@@ -969,7 +969,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: #2d2d2d;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #ffd900;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #ffd900;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 22px;\n    color: #ffd900;\n    margin-bottom: 20px; }\n  .qr__content {\n    display: flex;\n    flex-direction: column;\n    font-size: 18px;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .qr__content__item__title {\n        color: #ffd900;\n        margin-right: 8px;\n        word-wrap: none;\n        white-space: nowrap; }\n      .qr__content__item__content {\n        max-width: fit-content;\n        color: white;\n        word-wrap: break-word; }\n  .qr__menu {\n    display: flex;\n    flex-direction: column;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__menu__item {\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #2d2d2d;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: #ffd900; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .qr__title {\n    font-size: 60px; }\n  .qr__content {\n    max-width: 90%; }\n  .qr__content__item__content {\n    font-size: 40px; }\n  .qr__content__item__title {\n    font-size: 40px; }\n  .qr__menu {\n    max-width: 90%; }\n  .qr__menu__item {\n    font-size: 40px; } }\n", ""]);
+exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: #2d2d2d;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #ffd900;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #ffd900;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 22px;\n    color: #ffd900;\n    margin-bottom: 20px; }\n  .qr__content {\n    display: flex;\n    flex-direction: column;\n    font-size: 18px;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .qr__content__item__title {\n        color: #ffd900;\n        margin-right: 8px;\n        word-wrap: none;\n        white-space: nowrap; }\n      .qr__content__item__content {\n        max-width: fit-content;\n        color: white;\n        word-wrap: break-word; }\n  .qr__menu {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    color: #ffd900;\n    justify-content: center;\n    align-items: center;\n    background-color: #515151;\n    overflow: auto; }\n    .qr__menu__item {\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #2d2d2d;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: #ffd900; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .qr__title {\n    font-size: 60px; }\n  .qr__content {\n    max-width: 90%; }\n  .qr__content__item__content {\n    font-size: 40px; }\n  .qr__content__item__title {\n    font-size: 40px; }\n  .qr__menu {\n    max-width: 90%; }\n  .qr__menu__item {\n    font-size: 40px; } }\n", ""]);
 
 // exports
 
@@ -13640,11 +13640,18 @@ var Constructor = /** @class */ (function (_super) {
             return;
         }
         constructor_provider_1.getPage(this.state.id).then(function (res) {
-            var items = res.fieldsNames.map(function (el, i) { return ({ name: el, value: res.fieldsValues[i] }); });
+            var actions = res.innerPages.map(function (el) {
+                return {
+                    name: el.title,
+                    type: el.template,
+                    isNotEditable: el.template !== 'custom',
+                    items: el.fieldsNames.map(function (item, i) { return ({ name: item, value: el.fieldsValues[i] }); })
+                };
+            });
             var d = new Date(res.date);
             var date = d.toDateString() + ' ' + d.toLocaleTimeString();
             _this.setState({
-                actions: [{ name: '', type: res.template, items: items }],
+                actions: actions,
                 documentName: res.title,
                 date: date,
                 isCustom: res.template === 'custom',
@@ -14598,8 +14605,7 @@ var Qr = /** @class */ (function (_super) {
     }
     Qr.prototype.componentDidMount = function () {
         var _this = this;
-        qr_provider_1.getQr(this.props.id).then(function (page) { return _this.setState({ page: page }); }, function () { return _this.setState({ isNotAvilable: true }); } // todo Error
-        );
+        qr_provider_1.getQr(this.props.id).then(function (page) { return _this.setState({ page: page }); }, function () { return _this.setState({ isNotAvilable: true }); });
     };
     Qr.prototype._renderItem = function (name, value, index) {
         return (React.createElement("div", { key: index, className: "qr__content__item" },

@@ -82,12 +82,19 @@ export default class Constructor extends React.Component<Props, State> {
             return;
         }
         getPage(this.state.id).then(
-            (res: PageCut) => {
-                const items = res.fieldsNames.map((el, i) => ({name: el, value: res.fieldsValues[i]}));
+            (res: PageFull) => {
+                const actions: Action[] = res.innerPages.map(el => {
+                    return {
+                        name: el.title,
+                        type: el.template,
+                        isNotEditable: el.template !== 'custom',
+                        items: el.fieldsNames.map((item, i) => ({name: item, value: el.fieldsValues[i]}))
+                    }
+                })
                 const d = new Date(res.date);
                 const date = d.toDateString() + ' ' + d.toLocaleTimeString();
                 this.setState({
-                    actions: [{name: '', type: res.template, items}],
+                    actions,
                     documentName: res.title,
                     date,
                     isCustom: res.template === 'custom',

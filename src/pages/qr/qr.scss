@@ -62,10 +62,14 @@
         }
     }
     &__menu {
+        height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         color: $yellow;
-        max-width: 50%;
+        justify-content: center;
+        align-items: center;
+        background-color: $grey;
         overflow: auto;
         &__item {
             min-height: min-content;
