@@ -11,9 +11,10 @@ import ConstructorContent from './constructor-content';
 import ConstructorActionMenu from './constructor-action-menu';
 
 import PageCut from 'types/PageCut';
-import {createPage, editPage, getPage} from './constructor-provider';
+import {createPage, editPage, getPage, createContainer, editContainer} from './constructor-provider';
 
 import CommonItems from './views/items';
+import PageFull from 'types/pagefull';
 
 interface Props {
     username: string;
@@ -104,34 +105,69 @@ export default class Constructor extends React.Component<Props, State> {
     }
 
     private _savePage() {
-        if (this.state.isCustom) { //todo
-            return;
-        }
-        const page = {
-            title: this.state.documentName,
-            public: !this.state.isPrivate,
-            static: this.state.isStatic,
-            fieldsNames: this.state.actions[0].items.map((el) => el.name),
-            fieldsValues: this.state.actions[0].items.map((el) => el.value),
-            template: this.state.actions[0].type
-        }
-        if (!this.state.isCreated) {
-            createPage(page).then(
-                res => this.setState({
-                    notification: 'success',
-                    notificationText: 'Data was successfully saved',
-                    isCreated: true,
-                    id: res.uuid
-                }),
-                () => this.setState({notification: 'error', notificationText: 'Error: changes were not saved'})
-            );
+        if (!this.state.isCustom) { // TODO refactor
+            const page = {
+                title: this.state.documentName,
+                public: !this.state.isPrivate,
+                static: this.state.isStatic,
+                fieldsNames: this.state.actions[0].items.map((el) => el.name),
+                fieldsValues: this.state.actions[0].items.map((el) => el.value),
+                template: this.state.actions[0].type
+            }
+            if (!this.state.isCreated) {
+                createPage(page).then(
+                    res => this.setState({
+                        notification: 'success',
+                        notificationText: 'Data was successfully saved',
+                        isCreated: true,
+                        id: res.uuid
+                    }),
+                    () => this.setState({notification: 'error', notificationText: 'Error: changes were not saved'})
+                );
+            } else {
+                editPage(page, this.state.id).then(
+                    () => this.setState({notification: 'success', notificationText: 'Page was successfully edited'}),
+                    () => this.setState({notification: 'error', notificationText: 'Error: changes were not saved'})
+                )
+            }
+            this.notificationTimeout = setTimeout(() => this.setState({notification: null}), 3000);
         } else {
-            editPage(page, this.state.id).then(
-                () => this.setState({notification: 'success', notificationText: 'Page was successfully edited'}),
-                () => this.setState({notification: 'error', notificationText: 'Error: changes were not saved'})
-            )
+            const {actions, isPrivate, documentName} = this.state;
+            const innerPages: PageCut[] = actions.map(el => {
+                return {
+                    title: el.name,
+                    template: el.type,
+                    fieldsNames: el.items.map(item => item.name),
+                    fieldsValues: el.items.map(item => item.value),
+                    public: true,
+                    static: false
+                };
+            });
+            const page: PageFull = {
+                title: documentName,
+                public: !isPrivate,  
+                template: 'custom',
+                innerPages
+            }
+            if (!this.state.isCreated) {
+                createContainer(page).then(
+                    res => this.setState({
+                        notification: 'success',
+                        notificationText: 'Data was successfully saved',
+                        isCreated: true,
+                        id: res.uuid
+                    }),
+                    () => this.setState({notification: 'error', notificationText: 'Error: changes were not saved'})
+                );
+            } else {
+                editContainer(page, this.state.id).then(
+                    () => this.setState({notification: 'success', notificationText: 'Page was successfully edited'}),
+                    () => this.setState({notification: 'error', notificationText: 'Error: changes were not saved'})
+                )
+            }
+            this.notificationTimeout = setTimeout(() => this.setState({notification: null}), 3000);
         }
-        this.notificationTimeout = setTimeout(() => this.setState({notification: null}), 3000);
+        
     }
 
     private _renderCheckboxes = (): React.ReactNode => {

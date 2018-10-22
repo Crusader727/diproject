@@ -1,6 +1,6 @@
 import './header.scss';
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import DropDown from 'components/dropdown/dropdown';
 import {logout} from './header-provider';
 

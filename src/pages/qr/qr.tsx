@@ -1,14 +1,17 @@
 import './qr.scss';
 import * as React from 'react';
 import PageCut from 'types/pagecut';
+import PageFull from 'types/PageFull';
 import {getQr} from './qr-provider';
+import {Link} from 'react-router-dom';
+import StaticQrGens from 'pages/main/components/static-qr-gens';
 
 interface Props {
     id: string
 }
 
 interface State {
-    page: PageCut | null;
+    page: PageFull | PageCut | null;
     isNotAvilable: boolean;
 }
 
@@ -37,36 +40,35 @@ export default class Qr extends React.Component<Props> {
         );
     }
 
-    render(): React.ReactNode {
-        if (!this.state.page && !this.state.isNotAvilable) {
-            return null;
-        }
-        if (this.state.isNotAvilable) {
-            return (
-                <div className="qr__not-found">
-                    <div className="qr__not-found__404">
-                        404
-                    </div>
-                    <div className="qr__not-found__text">
-                        This page is Private or Deleted
-                    </div>
+    private _render404(): React.ReactNode {
+        return (
+            <div className="qr__not-found">
+                <div className="qr__not-found__404">
+                    404
                 </div>
-            );
-        }
-        const {title, fieldsNames, fieldsValues, template} = this.state.page;
-        if (template === 'html') {
-            return (
-                <div className="qr__html">
-                    <iframe
-                        srcDoc={fieldsValues[0]}
-                        sandbox=""
-                        width="100%"
-                        height="100%"
-                        frameBorder="false"
-                    />
+                <div className="qr__not-found__text">
+                    This page is Private or Deleted
                 </div>
-            );
-        }
+            </div>
+        );
+    }
+
+    private _renderHTML(value: string): React.ReactNode {
+        return (
+            <div className="qr__html">
+                <iframe
+                    srcDoc={value}
+                    sandbox=""
+                    width="100%"
+                    height="100%"
+                    frameBorder="false"
+                />
+            </div>
+        );
+    }
+
+    private _renderCustom(page: PageCut): React.ReactNode {
+        const {title, fieldsNames, fieldsValues} = page;
         return (
             <div className="qr">
                 <div className="qr__title">
@@ -77,5 +79,47 @@ export default class Qr extends React.Component<Props> {
                 </div>
            </div>
         );
+    }
+
+    private _renderMenuItem(el: PageCut): React.ReactNode {
+        if (el.template === 'custom') {
+            return (
+                <Link to={'/qr/' + el.uuid} className="qr__menu__item">
+                    {el.title}
+                </Link>
+            );
+        }
+        return (
+            <a href={StaticQrGens[el.template](el.fieldsValues)} className="qr__menu__item">{el.title}</a>
+        );
+    }
+
+    private _renderMenu(): React.ReactNode {
+        const {page} = this.state;
+        if ('innerPages' in page) {
+            return (
+                <div className="qr__menu">
+                    <div className="qr__title">
+                        {page.title}
+                    </div>
+                    {page.innerPages.map(this._renderMenuItem)}   
+               </div>
+            );
+        }
+        return this._renderCustom(page as PageCut);
+    }
+
+    render(): React.ReactNode {
+        if (!this.state.page && !this.state.isNotAvilable) {
+            return null;
+        }
+        if (this.state.isNotAvilable) {
+            return this._render404();
+        }
+        const {template} = this.state.page;
+        if (template === 'html' && 'fieldsValues' in this.state.page) {
+            return this._renderHTML(this.state.page.fieldsValues[0]);
+        }
+        return this._renderMenu();
     }
 }

@@ -969,7 +969,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: #2d2d2d;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #ffd900;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #ffd900;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 22px;\n    color: #ffd900;\n    margin-bottom: 20px; }\n  .qr__content {\n    display: flex;\n    flex-direction: column;\n    font-size: 18px;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .qr__content__item__title {\n        color: #ffd900;\n        margin-right: 8px;\n        word-wrap: none;\n        white-space: nowrap; }\n      .qr__content__item__content {\n        max-width: fit-content;\n        color: white;\n        word-wrap: break-word; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .qr__title {\n    font-size: 60px; }\n  .qr__content {\n    max-width: 90%; }\n  .qr__content__item__content {\n    font-size: 40px; }\n  .qr__content__item__title {\n    font-size: 40px; } }\n", ""]);
+exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: #2d2d2d;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #ffd900;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #ffd900;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 22px;\n    color: #ffd900;\n    margin-bottom: 20px; }\n  .qr__content {\n    display: flex;\n    flex-direction: column;\n    font-size: 18px;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .qr__content__item__title {\n        color: #ffd900;\n        margin-right: 8px;\n        word-wrap: none;\n        white-space: nowrap; }\n      .qr__content__item__content {\n        max-width: fit-content;\n        color: white;\n        word-wrap: break-word; }\n  .qr__menu {\n    display: flex;\n    flex-direction: column;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__menu__item {\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #2d2d2d;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: #ffd900; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .qr__title {\n    font-size: 60px; }\n  .qr__content {\n    max-width: 90%; }\n  .qr__content__item__content {\n    font-size: 40px; }\n  .qr__content__item__title {\n    font-size: 40px; }\n  .qr__menu {\n    max-width: 90%; }\n  .qr__menu__item {\n    font-size: 40px; } }\n", ""]);
 
 // exports
 
@@ -13514,6 +13514,14 @@ function createPage(body) {
     return request_1.default('/qr/create', 'POST', body);
 }
 exports.createPage = createPage;
+function createContainer(body) {
+    return request_1.default('/qr/container/create', 'POST', body);
+}
+exports.createContainer = createContainer;
+function editContainer(body, id) {
+    return request_1.default("/qr/container/" + id + "/edit", 'POST', body);
+}
+exports.editContainer = editContainer;
 function editPage(body, id) {
     return request_1.default("/qr/" + id + "/edit", 'POST', body);
 }
@@ -13651,29 +13659,59 @@ var Constructor = /** @class */ (function (_super) {
     };
     Constructor.prototype._savePage = function () {
         var _this = this;
-        if (this.state.isCustom) { //todo
-            return;
-        }
-        var page = {
-            title: this.state.documentName,
-            public: !this.state.isPrivate,
-            static: this.state.isStatic,
-            fieldsNames: this.state.actions[0].items.map(function (el) { return el.name; }),
-            fieldsValues: this.state.actions[0].items.map(function (el) { return el.value; }),
-            template: this.state.actions[0].type
-        };
-        if (!this.state.isCreated) {
-            constructor_provider_1.createPage(page).then(function (res) { return _this.setState({
-                notification: 'success',
-                notificationText: 'Data was successfully saved',
-                isCreated: true,
-                id: res.uuid
-            }); }, function () { return _this.setState({ notification: 'error', notificationText: 'Error: changes were not saved' }); });
+        if (!this.state.isCustom) { // TODO refactor
+            var page = {
+                title: this.state.documentName,
+                public: !this.state.isPrivate,
+                static: this.state.isStatic,
+                fieldsNames: this.state.actions[0].items.map(function (el) { return el.name; }),
+                fieldsValues: this.state.actions[0].items.map(function (el) { return el.value; }),
+                template: this.state.actions[0].type
+            };
+            if (!this.state.isCreated) {
+                constructor_provider_1.createPage(page).then(function (res) { return _this.setState({
+                    notification: 'success',
+                    notificationText: 'Data was successfully saved',
+                    isCreated: true,
+                    id: res.uuid
+                }); }, function () { return _this.setState({ notification: 'error', notificationText: 'Error: changes were not saved' }); });
+            }
+            else {
+                constructor_provider_1.editPage(page, this.state.id).then(function () { return _this.setState({ notification: 'success', notificationText: 'Page was successfully edited' }); }, function () { return _this.setState({ notification: 'error', notificationText: 'Error: changes were not saved' }); });
+            }
+            this.notificationTimeout = setTimeout(function () { return _this.setState({ notification: null }); }, 3000);
         }
         else {
-            constructor_provider_1.editPage(page, this.state.id).then(function () { return _this.setState({ notification: 'success', notificationText: 'Page was successfully edited' }); }, function () { return _this.setState({ notification: 'error', notificationText: 'Error: changes were not saved' }); });
+            var _a = this.state, actions = _a.actions, isPrivate = _a.isPrivate, documentName = _a.documentName;
+            var innerPages = actions.map(function (el) {
+                return {
+                    title: el.name,
+                    template: el.type,
+                    fieldsNames: el.items.map(function (item) { return item.name; }),
+                    fieldsValues: el.items.map(function (item) { return item.value; }),
+                    public: true,
+                    static: false
+                };
+            });
+            var page = {
+                title: documentName,
+                public: !isPrivate,
+                template: 'custom',
+                innerPages: innerPages
+            };
+            if (!this.state.isCreated) {
+                constructor_provider_1.createContainer(page).then(function (res) { return _this.setState({
+                    notification: 'success',
+                    notificationText: 'Data was successfully saved',
+                    isCreated: true,
+                    id: res.uuid
+                }); }, function () { return _this.setState({ notification: 'error', notificationText: 'Error: changes were not saved' }); });
+            }
+            else {
+                constructor_provider_1.editContainer(page, this.state.id).then(function () { return _this.setState({ notification: 'success', notificationText: 'Page was successfully edited' }); }, function () { return _this.setState({ notification: 'error', notificationText: 'Error: changes were not saved' }); });
+            }
+            this.notificationTimeout = setTimeout(function () { return _this.setState({ notification: null }); }, 3000);
         }
-        this.notificationTimeout = setTimeout(function () { return _this.setState({ notification: null }); }, 3000);
     };
     Constructor.prototype._renderMenu = function () {
         var _this = this;
@@ -14546,6 +14584,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./qr.scss */ "./src/pages/qr/qr.scss");
 var React = __webpack_require__(/*! react */ "react");
 var qr_provider_1 = __webpack_require__(/*! ./qr-provider */ "./src/pages/qr/qr-provider.ts");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+var static_qr_gens_1 = __webpack_require__(/*! pages/main/components/static-qr-gens */ "./src/pages/main/components/static-qr-gens.ts");
 var Qr = /** @class */ (function (_super) {
     __extends(Qr, _super);
     function Qr() {
@@ -14566,24 +14606,49 @@ var Qr = /** @class */ (function (_super) {
             React.createElement("div", { className: "qr__content__item__title" }, name ? name + ':' : ''),
             React.createElement("div", { className: "qr__content__item__content" }, value)));
     };
-    Qr.prototype.render = function () {
+    Qr.prototype._render404 = function () {
+        return (React.createElement("div", { className: "qr__not-found" },
+            React.createElement("div", { className: "qr__not-found__404" }, "404"),
+            React.createElement("div", { className: "qr__not-found__text" }, "This page is Private or Deleted")));
+    };
+    Qr.prototype._renderHTML = function (value) {
+        return (React.createElement("div", { className: "qr__html" },
+            React.createElement("iframe", { srcDoc: value, sandbox: "", width: "100%", height: "100%", frameBorder: "false" })));
+    };
+    Qr.prototype._renderCustom = function (page) {
         var _this = this;
+        var title = page.title, fieldsNames = page.fieldsNames, fieldsValues = page.fieldsValues;
+        return (React.createElement("div", { className: "qr" },
+            React.createElement("div", { className: "qr__title" }, title),
+            React.createElement("div", { className: "qr__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); }))));
+    };
+    Qr.prototype._renderMenuItem = function (el) {
+        if (el.template === 'custom') {
+            return (React.createElement(react_router_dom_1.Link, { to: '/qr/' + el.uuid, className: "qr__menu__item" }, el.title));
+        }
+        return (React.createElement("a", { href: static_qr_gens_1.default[el.template](el.fieldsValues), className: "qr__menu__item" }, el.title));
+    };
+    Qr.prototype._renderMenu = function () {
+        var page = this.state.page;
+        if ('innerPages' in page) {
+            return (React.createElement("div", { className: "qr__menu" },
+                React.createElement("div", { className: "qr__title" }, page.title),
+                page.innerPages.map(this._renderMenuItem)));
+        }
+        return this._renderCustom(page);
+    };
+    Qr.prototype.render = function () {
         if (!this.state.page && !this.state.isNotAvilable) {
             return null;
         }
         if (this.state.isNotAvilable) {
-            return (React.createElement("div", { className: "qr__not-found" },
-                React.createElement("div", { className: "qr__not-found__404" }, "404"),
-                React.createElement("div", { className: "qr__not-found__text" }, "This page is Private or Deleted")));
+            return this._render404();
         }
-        var _a = this.state.page, title = _a.title, fieldsNames = _a.fieldsNames, fieldsValues = _a.fieldsValues, template = _a.template;
-        if (template === 'html') {
-            return (React.createElement("div", { className: "qr__html" },
-                React.createElement("iframe", { srcDoc: fieldsValues[0], sandbox: "", width: "100%", height: "100%", frameBorder: "false" })));
+        var template = this.state.page.template;
+        if (template === 'html' && 'fieldsValues' in this.state.page) {
+            return this._renderHTML(this.state.page.fieldsValues[0]);
         }
-        return (React.createElement("div", { className: "qr" },
-            React.createElement("div", { className: "qr__title" }, title),
-            React.createElement("div", { className: "qr__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); }))));
+        return this._renderMenu();
     };
     return Qr;
 }(React.Component));
