@@ -15,7 +15,7 @@ export default class Header extends React.Component<Props> {
                 <Link to="/">
                     <div className="header__title">Velox</div>
                 </Link>
-                <DropDown onClick={() => logout()} items={['logout']}>
+                <DropDown onClick={() => logout()} items={['logout']} hideArrow>
                     {this.props.username}
                 </DropDown>
             </div>

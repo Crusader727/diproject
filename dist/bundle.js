@@ -722,7 +722,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".dropdown {\n  display: flex;\n  flex-direction: row;\n  position: relative; }\n  .dropdown__content {\n    top: 20px;\n    position: absolute;\n    background-color: #515151;\n    min-width: 100px;\n    z-index: 1;\n    border-radius: 3px;\n    border: 2px solid #2d2d2d;\n    max-height: 160px;\n    overflow: auto; }\n    .dropdown__content__item {\n      text-transform: capitalize;\n      font-size: 15px;\n      color: white;\n      padding: 8px 12px;\n      display: block;\n      box-sizing: border-box; }\n      .dropdown__content__item:hover {\n        color: #ffd900; }\n      .dropdown__content__item.chosen {\n        color: #ffd900; }\n", ""]);
+exports.push([module.i, ".dropdown {\n  display: flex;\n  flex-direction: row;\n  position: relative; }\n  .dropdown__content {\n    top: 20px;\n    position: absolute;\n    background-color: #515151;\n    min-width: 100px;\n    z-index: 1;\n    border-radius: 3px;\n    border: 2px solid #2d2d2d;\n    max-height: 160px;\n    overflow: auto; }\n    .dropdown__content__item {\n      text-transform: capitalize;\n      font-size: 15px;\n      color: white;\n      padding: 8px 12px;\n      display: block;\n      box-sizing: border-box; }\n      .dropdown__content__item:hover {\n        color: #ffd900; }\n      .dropdown__content__item.chosen {\n        color: #ffd900; }\n  .dropdown__icon {\n    height: 30px; }\n", ""]);
 
 // exports
 
@@ -836,7 +836,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor__action-menu {\n  display: flex;\n  flex-direction: column;\n  margin: 12px 0 12px 0; }\n  .constructor__action-menu__title {\n    color: #ffd900;\n    font-size: 18px; }\n  .constructor__action-menu__content {\n    display: flex;\n    flex-direction: column;\n    overflow: auto;\n    margin-top: 12px;\n    min-height: 300px; }\n    .constructor__action-menu__content__item {\n      display: flex;\n      flex-direction: row;\n      min-height: min-content;\n      padding: 4px 12px;\n      color: #ffd900;\n      font-size: 15px;\n      border: 2px solid #ffd900;\n      border-radius: 20px;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between; }\n      .constructor__action-menu__content__item__name {\n        margin-left: 8px; }\n    .constructor__action-menu__content__edit-item {\n      display: flex;\n      min-height: min-content;\n      flex-direction: row;\n      height: 31px;\n      padding: 8px;\n      color: #ffd900;\n      font-size: 15px;\n      border: 4px solid #ffd900;\n      border-radius: 20px;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between; }\n    .constructor__action-menu__content__add-item {\n      min-height: min-content;\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      padding: 4px;\n      color: #ffd900;\n      border: 2px solid #ffd900;\n      border-radius: 20px; }\n    .constructor__action-menu__content__icon {\n      width: 25px;\n      height: 25px;\n      color: #ffd900;\n      margin-right: 4px; }\n", ""]);
+exports.push([module.i, ".constructor__action-menu {\n  display: flex;\n  flex-direction: column;\n  margin: 12px 0 12px 0;\n  max-height: 70%; }\n  .constructor__action-menu__title {\n    color: #ffd900;\n    font-size: 18px; }\n  .constructor__action-menu__content {\n    display: flex;\n    flex-direction: column;\n    overflow: auto;\n    margin-top: 12px;\n    min-height: 300px; }\n    .constructor__action-menu__content__item {\n      display: flex;\n      flex-direction: row;\n      min-height: min-content;\n      padding: 4px 12px;\n      color: #ffd900;\n      font-size: 15px;\n      border: 2px solid #ffd900;\n      box-sizing: border-box;\n      border-radius: 20px;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between;\n      opacity: 0.8; }\n      .constructor__action-menu__content__item__name {\n        margin-left: 8px; }\n      .constructor__action-menu__content__item:hover {\n        opacity: 1; }\n    .constructor__action-menu__content__edit-item {\n      display: flex;\n      min-height: min-content;\n      flex-direction: row;\n      height: 31px;\n      padding: 8px;\n      color: #ffd900;\n      font-size: 15px;\n      border: 3px solid #ffd900;\n      border-radius: 20px;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between; }\n    .constructor__action-menu__content__add-item {\n      min-height: min-content;\n      margin-bottom: 100px;\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      padding: 4px;\n      color: #ffd900;\n      box-sizing: border-box;\n      border: 2px solid #ffd900;\n      border-radius: 20px;\n      opacity: 0.8; }\n      .constructor__action-menu__content__add-item:hover {\n        opacity: 1; }\n    .constructor__action-menu__content__icon {\n      width: 25px;\n      height: 25px;\n      color: #ffd900;\n      margin-right: 4px; }\n", ""]);
 
 // exports
 
@@ -12696,7 +12696,6 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./dropdown.scss */ "./src/components/dropdown/dropdown.scss");
 var React = __webpack_require__(/*! react */ "react");
-var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var DropDown = /** @class */ (function (_super) {
     __extends(DropDown, _super);
     function DropDown() {
@@ -12723,7 +12722,8 @@ var DropDown = /** @class */ (function (_super) {
         var _this = this;
         return (React.createElement("div", { className: "dropdown", onClick: function () { return _this.setState({ isContentShown: true }); }, onBlur: function () { return _this.setState({ isContentShown: false }); }, tabIndex: 0 },
             this.props.children,
-            React.createElement(react_svg_1.default, { src: "/icons/dropdown-arrow.svg", svgClassName: "dropdown__icon" }),
+            !this.props.hideArrow && React.createElement("svg", { className: "dropdown__icon", xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24" },
+                React.createElement("path", { d: "M7 10l5 5 5-5z", fill: "currentColor" })),
             this._renderContent()));
     };
     return DropDown;
@@ -12819,7 +12819,7 @@ var Header = /** @class */ (function (_super) {
         return (React.createElement("div", { className: "header" },
             React.createElement(react_router_dom_1.Link, { to: "/" },
                 React.createElement("div", { className: "header__title" }, "Velox")),
-            React.createElement(dropdown_1.default, { onClick: function () { return header_provider_1.logout(); }, items: ['logout'] }, this.props.username)));
+            React.createElement(dropdown_1.default, { onClick: function () { return header_provider_1.logout(); }, items: ['logout'], hideArrow: true }, this.props.username)));
     };
     return Header;
 }(React.Component));

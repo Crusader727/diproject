@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     margin: 12px 0 12px 0;
+    max-height: 70%;
     &__title {
         color: $yellow;
         font-size: $font-size-large;
@@ -21,12 +22,17 @@
             color: $yellow;
             font-size: $font-size-normal;
             border: 2px solid $yellow;
+            box-sizing: border-box;
             border-radius: 20px;
             line-height: 31px;
             margin-bottom: 12px;
             justify-content: space-between;
+            opacity: 0.8;
             &__name {
                 margin-left: 8px;
+            }
+            &:hover {
+                opacity: 1;
             }
         }
         &__edit-item {
@@ -37,7 +43,7 @@
             padding: 8px;
             color: $yellow;
             font-size: $font-size-normal;
-            border: 4px solid $yellow;
+            border: 3px solid $yellow;
             border-radius: 20px;
             line-height: 31px;
             margin-bottom: 12px;
@@ -45,13 +51,19 @@
         }
         &__add-item {
             min-height: min-content;
+            margin-bottom: 100px;
             display: flex;
             flex-direction: row;
             justify-content: center;
             padding: 4px;
             color: $yellow;
+            box-sizing: border-box;
             border: 2px solid $yellow;
             border-radius: 20px;
+            opacity: 0.8;
+            &:hover {
+                opacity: 1;
+            }
         }
         &__icon {
             width: 25px;
