@@ -13,7 +13,7 @@ interface Props {
     saveChanges: (changes: {}) => void;
 }
 
-const ActionMenuTypes = ['custom', 'telephone', 'sms', 'event', 'ylocation', 'url', 'email', 'contact'];
+const ActionMenuTypes = ['custom', 'telephone', 'sms', 'event', 'ylocation', 'url', 'email', 'contact', 'whatsapp'];
 
 export default class ConstructorActionMenu extends React.Component<Props> {
     private _handleActionNameChange = (event: any) => {
@@ -46,7 +46,7 @@ export default class ConstructorActionMenu extends React.Component<Props> {
         const actions = this.props.actions.filter((item, i) => i !== index);
         let currentAction = index - 1;
         currentAction = currentAction < 0 ? 0 : currentAction;
-        this.props.saveChanges({actions, currentAction});
+        this.props.saveChanges({currentAction, actions});
     }
 
     private _renderAddItem = (): React.ReactNode => {
@@ -90,7 +90,7 @@ export default class ConstructorActionMenu extends React.Component<Props> {
             <div
                 className="constructor__action-menu__content__item"
                 key={index}
-                onClick={() => this.props.saveChanges({currentAction: index})}
+                onMouseUp={() => this.props.saveChanges({currentAction: index})}
             >
                 <div className="constructor__action-menu__content__item__name">
                     {action.name}
@@ -99,7 +99,7 @@ export default class ConstructorActionMenu extends React.Component<Props> {
                 <ReactSVG
                     src={`/icons/delete.svg`}
                     svgClassName="constructor__action-menu__content__icon"
-                    onClick={() => this._deleteAction(index)}
+                    onMouseDown={() => this._deleteAction(index)}
                 />
             </div>
         );

@@ -115,6 +115,9 @@ export default class Qr extends React.Component<Props> {
     private _renderMenu(): React.ReactNode {
         const {page} = this.state;
         if ('innerPages' in page) {
+            if (page.innerPages.length === 1 && page.innerPages[0].template === 'custom') {
+                return this._renderCustom(page.innerPages[0]);
+            }
             return (
                 <div className="qr__menu">
                     <div className="qr__title">

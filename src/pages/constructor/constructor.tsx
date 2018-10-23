@@ -18,6 +18,7 @@ import PageFull from 'types/pagefull';
 
 interface Props {
     username: string;
+    logout: () => void
     type?: string;
     id?: string;
 }
@@ -234,7 +235,7 @@ export default class Constructor extends React.Component<Props, State> {
         const isNotEditable = actions.length && actions[currentAction].isNotEditable;
         return (
             <>
-                <Header username={this.props.username}/>
+                <Header username={this.props.username} logout={this.props.logout}/>
                 <div className="constructor">
                     {actions.length ?
                         <ConstructorContent

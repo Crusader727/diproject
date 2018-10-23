@@ -36,8 +36,8 @@ export default class Login extends React.Component<Props> {
             this.setState({isLoading: true})
             sendToken(access_token, service).then(
                 () => {
-                    this.props.loginFunction();
                     this.setState({isLoading: false});
+                    this.props.loginFunction();
                 },
                 () => this.setState({isLoading: false})//error
             );

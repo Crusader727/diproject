@@ -6,6 +6,7 @@ import {logout} from './header-provider';
 
 interface Props {
     username: string;
+    logout: () => void;
 }
 
 export default class Header extends React.Component<Props> {
@@ -15,7 +16,14 @@ export default class Header extends React.Component<Props> {
                 <Link to="/">
                     <div className="header__title">Velox</div>
                 </Link>
-                <DropDown onClick={() => logout()} items={['logout']} hideArrow>
+                <DropDown
+                    onClick={() => {
+                        logout();
+                        this.props.logout();
+                        }}
+                    items={['logout']}
+                    hideArrow
+                >
                     {this.props.username}
                 </DropDown>
             </div>

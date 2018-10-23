@@ -10,6 +10,7 @@ import PageCut from 'types/pageCut';
 
 interface Props {
     username: string;
+    logout: () => void;
 }
 
 interface State {
@@ -28,6 +29,7 @@ const Templates = [
     {title: 'Custom HTML page', type: 'html'},
     {title: 'URL', type: 'url'},
     {title: 'Email', type: 'email'},
+    {title: 'WhatsApp', type: 'whatsapp'},
     {title: 'Contact', type: 'contact'}
 ];
 
@@ -132,7 +134,7 @@ export default class MainPage extends React.Component<Props> {
     public render() {
         return (
             <div className="main-page">
-                <Header username={this.props.username}/>
+                <Header username={this.props.username} logout={this.props.logout}/>
                 {/* <SketchPicker onChange={(color) => console.log(color)}/> */}
                 {this._renderTemplates()}
                 <Pages

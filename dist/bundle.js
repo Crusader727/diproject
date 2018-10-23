@@ -12414,16 +12414,19 @@ var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App(props) {
         var _this = _super.call(this, props) || this;
+        _this._login = function () {
+            login_provider_1.getUser().then(//loader
+            function (_a) {
+                var message = _a.message;
+                return _this.setState({ isLoggedIn: true, username: message });
+            }, function () { _this.setState({ isLoggedIn: false }); });
+        };
         _this._redirectTo = function (url, props) { return (React.createElement(react_router_dom_1.Redirect, { to: { pathname: url, state: { from: props.location } } })); };
         _this.state = {
             isLoggedIn: false,
             username: 'Profile'
         };
-        login_provider_1.getUser().then(//loader
-        function (_a) {
-            var message = _a.message;
-            return _this.setState({ isLoggedIn: true, username: message });
-        }, function () { });
+        _this._login();
         return _this;
     }
     App.prototype.render = function () {
@@ -12434,27 +12437,27 @@ var App = /** @class */ (function (_super) {
                 React.createElement(react_router_dom_1.Route, { path: '/qr/:id', render: function (props) { return (React.createElement(qr_1.default, { id: props.match.params.id })); } }),
                 React.createElement(react_router_dom_1.Route, { path: '/login/:service', render: function (props) {
                         return !isLoggedIn ?
-                            (React.createElement(login_1.default, { hash: props.location.hash, loginFunction: function () { return _this.setState({ isLoggedIn: true }); }, service: props.match.params.service })) :
+                            (React.createElement(login_1.default, { hash: props.location.hash, loginFunction: _this._login, service: props.match.params.service })) :
                             _this._redirectTo('/', _this.props);
                     } }),
                 React.createElement(react_router_dom_1.Route, { path: '/login', render: function (props) {
                         return !isLoggedIn ?
-                            (React.createElement(login_1.default, { hash: props.location.hash, loginFunction: function () { return _this.setState({ isLoggedIn: true }); } })) :
+                            (React.createElement(login_1.default, { hash: props.location.hash, loginFunction: _this._login })) :
                             _this._redirectTo('/', _this.props);
                     } }),
                 React.createElement(react_router_dom_1.Route, { path: '/new/:type', render: function (props) {
                         return isLoggedIn ?
-                            (React.createElement(constructor_1.default, { type: props.match.params.type, username: _this.state.username })) :
+                            (React.createElement(constructor_1.default, { type: props.match.params.type, username: _this.state.username, logout: function () { return _this.setState({ isLoggedIn: false }); } })) :
                             _this._redirectTo('/login', _this.props);
                     } }),
                 React.createElement(react_router_dom_1.Route, { path: '/:id/edit', render: function (props) {
                         return isLoggedIn ?
-                            (React.createElement(constructor_1.default, { id: props.match.params.id, username: _this.state.username })) :
+                            (React.createElement(constructor_1.default, { id: props.match.params.id, username: _this.state.username, logout: function () { return _this.setState({ isLoggedIn: false }); } })) :
                             _this._redirectTo('/login', _this.props);
                     } }),
                 React.createElement(react_router_dom_1.Route, { path: '/', render: function () {
                         return isLoggedIn ?
-                            (React.createElement(main_1.default, { username: _this.state.username })) :
+                            (React.createElement(main_1.default, { username: _this.state.username, logout: function () { return _this.setState({ isLoggedIn: false }); } })) :
                             _this._redirectTo('/login', _this.props);
                     } }))));
     };
@@ -12816,10 +12819,14 @@ var Header = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Header.prototype.render = function () {
+        var _this = this;
         return (React.createElement("div", { className: "header" },
             React.createElement(react_router_dom_1.Link, { to: "/" },
                 React.createElement("div", { className: "header__title" }, "Velox")),
-            React.createElement(dropdown_1.default, { onClick: function () { return header_provider_1.logout(); }, items: ['logout'], hideArrow: true }, this.props.username)));
+            React.createElement(dropdown_1.default, { onClick: function () {
+                    header_provider_1.logout();
+                    _this.props.logout();
+                }, items: ['logout'], hideArrow: true }, this.props.username)));
     };
     return Header;
 }(React.Component));
@@ -13285,7 +13292,7 @@ var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
 var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
 var items_1 = __webpack_require__(/*! ./views/items */ "./src/pages/constructor/views/items.ts");
-var ActionMenuTypes = ['custom', 'telephone', 'sms', 'event', 'ylocation', 'url', 'email', 'contact'];
+var ActionMenuTypes = ['custom', 'telephone', 'sms', 'event', 'ylocation', 'url', 'email', 'contact', 'whatsapp'];
 var ConstructorActionMenu = /** @class */ (function (_super) {
     __extends(ConstructorActionMenu, _super);
     function ConstructorActionMenu() {
@@ -13317,7 +13324,7 @@ var ConstructorActionMenu = /** @class */ (function (_super) {
             var actions = _this.props.actions.filter(function (item, i) { return i !== index; });
             var currentAction = index - 1;
             currentAction = currentAction < 0 ? 0 : currentAction;
-            _this.props.saveChanges({ actions: actions, currentAction: currentAction });
+            _this.props.saveChanges({ currentAction: currentAction, actions: actions });
         };
         _this._renderAddItem = function () {
             return (React.createElement("div", { className: "constructor__action-menu__content__add-item", onClick: _this._addAction },
@@ -13335,11 +13342,11 @@ var ConstructorActionMenu = /** @class */ (function (_super) {
             if (index === _this.props.currentAction) {
                 return _this._renderEditItem(action, index);
             }
-            return (React.createElement("div", { className: "constructor__action-menu__content__item", key: index, onClick: function () { return _this.props.saveChanges({ currentAction: index }); } },
+            return (React.createElement("div", { className: "constructor__action-menu__content__item", key: index, onMouseUp: function () { return _this.props.saveChanges({ currentAction: index }); } },
                 React.createElement("div", { className: "constructor__action-menu__content__item__name" }, action.name),
                 "Type: ",
                 action.type,
-                React.createElement(react_svg_1.default, { src: "/icons/delete.svg", svgClassName: "constructor__action-menu__content__icon", onClick: function () { return _this._deleteAction(index); } })));
+                React.createElement(react_svg_1.default, { src: "/icons/delete.svg", svgClassName: "constructor__action-menu__content__icon", onMouseDown: function () { return _this._deleteAction(index); } })));
         };
         return _this;
     }
@@ -13739,7 +13746,7 @@ var Constructor = /** @class */ (function (_super) {
         var _a = this.state, notification = _a.notification, notificationText = _a.notificationText, currentAction = _a.currentAction, actions = _a.actions;
         var isNotEditable = actions.length && actions[currentAction].isNotEditable;
         return (React.createElement(React.Fragment, null,
-            React.createElement(header_1.default, { username: this.props.username }),
+            React.createElement(header_1.default, { username: this.props.username, logout: this.props.logout }),
             React.createElement("div", { className: "constructor" },
                 actions.length ?
                     React.createElement(constructor_content_1.default, { isNotEditable: isNotEditable, items: actions[currentAction].items, saveChanges: function (changes) {
@@ -13854,6 +13861,10 @@ var Items = {
     'custom': {
         isNotEditable: false,
         items: []
+    },
+    'whatsapp': {
+        isNotEditable: true,
+        items: telephoneItems
     }
 };
 exports.default = Items;
@@ -13972,8 +13983,8 @@ var Login = /** @class */ (function (_super) {
         if (access_token) {
             this.setState({ isLoading: true });
             login_provider_1.sendToken(access_token, service).then(function () {
-                _this.props.loginFunction();
                 _this.setState({ isLoading: false });
+                _this.props.loginFunction();
             }, function () { return _this.setState({ isLoading: false }); } //error
             );
         }
@@ -14301,8 +14312,11 @@ var StaticQrGens = {
     'telephone': function (values) {
         return "tel:" + values[0];
     },
+    'whatsapp': function (values) {
+        return "https://wa.me/" + values[0];
+    },
     'sms': function (values) {
-        return encodeURI("sms:" + values[0] + ";body=" + values[1]);
+        return encodeURI("smsto:" + values[0] + ":" + values[1]);
     },
     'event': function (values) {
         var date1 = values[2].replace(/[\:\-]/g, '') + '00';
@@ -14422,6 +14436,7 @@ var Templates = [
     { title: 'Custom HTML page', type: 'html' },
     { title: 'URL', type: 'url' },
     { title: 'Email', type: 'email' },
+    { title: 'WhatsApp', type: 'whatsapp' },
     { title: 'Contact', type: 'contact' }
 ];
 var MainPage = /** @class */ (function (_super) {
@@ -14499,7 +14514,7 @@ var MainPage = /** @class */ (function (_super) {
     MainPage.prototype.render = function () {
         var _this = this;
         return (React.createElement("div", { className: "main-page" },
-            React.createElement(header_1.default, { username: this.props.username }),
+            React.createElement(header_1.default, { username: this.props.username, logout: this.props.logout }),
             this._renderTemplates(),
             React.createElement(pages_1.default, { pages: this.state.pages, searchValue: this.state.searchValue, onSearchChange: this._onSearchChange, getOwnerType: function (value) {
                     _this._ownerType = value;
@@ -14649,6 +14664,9 @@ var Qr = /** @class */ (function (_super) {
     Qr.prototype._renderMenu = function () {
         var page = this.state.page;
         if ('innerPages' in page) {
+            if (page.innerPages.length === 1 && page.innerPages[0].template === 'custom') {
+                return this._renderCustom(page.innerPages[0]);
+            }
             return (React.createElement("div", { className: "qr__menu" },
                 React.createElement("div", { className: "qr__title" }, page.title),
                 React.createElement("div", { className: "qr__menu__content" }, page.innerPages.map(this._renderMenuItem))));

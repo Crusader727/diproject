@@ -21,9 +21,12 @@ export default class App extends React.Component<{}, State> {
             isLoggedIn: false,
             username: 'Profile'
         };
+        this._login();
+    }
+    private _login = () => {
         getUser().then( //loader
             ({message}) => this.setState({isLoggedIn: true, username: message}),
-            () => {},//error handling
+            () => {this.setState({isLoggedIn: false})},//error handling
         );
     }
     _redirectTo = (url: string, props: any) => (
@@ -46,7 +49,7 @@ export default class App extends React.Component<{}, State> {
                             !isLoggedIn ?
                                 (<Login
                                     hash={props.location.hash}
-                                    loginFunction={() => this.setState({isLoggedIn: true})}
+                                    loginFunction={this._login}
                                     service={props.match.params.service}
                                 />):
                                 this._redirectTo('/', this.props)
@@ -58,7 +61,7 @@ export default class App extends React.Component<{}, State> {
                             !isLoggedIn ?
                                 (<Login
                                     hash={props.location.hash}
-                                    loginFunction={() => this.setState({isLoggedIn: true})}
+                                    loginFunction={this._login}
                                 />):
                                 this._redirectTo('/', this.props)
                         }
@@ -67,7 +70,11 @@ export default class App extends React.Component<{}, State> {
                         path='/new/:type'
                         render={(props: RouteComponentProps<{type: string}>) =>
                             isLoggedIn ?
-                                (<Constructor type={props.match.params.type} username={this.state.username}/>):
+                                (<Constructor
+                                    type={props.match.params.type}
+                                    username={this.state.username}
+                                    logout={() => this.setState({isLoggedIn: false})}
+                                />):
                                 this._redirectTo('/login', this.props)
                             }
                     />
@@ -75,14 +82,21 @@ export default class App extends React.Component<{}, State> {
                         path='/:id/edit'
                         render={(props: RouteComponentProps<{id: string}>) =>
                             isLoggedIn ?
-                                (<Constructor id={props.match.params.id} username={this.state.username}/>):
+                                (<Constructor
+                                    id={props.match.params.id} 
+                                    username={this.state.username}
+                                    logout={() => this.setState({isLoggedIn: false})}
+                                />):
                                 this._redirectTo('/login', this.props)
                             }
                     />
                     <Route path='/' 
                         render={() =>
                             isLoggedIn ?
-                                (<MainPage username={this.state.username}/>):
+                                (<MainPage
+                                    username={this.state.username}
+                                    logout={() => this.setState({isLoggedIn: false})}
+                                />):
                                 this._redirectTo('/login', this.props)
                         }
                     />
