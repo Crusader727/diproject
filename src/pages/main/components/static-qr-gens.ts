@@ -6,7 +6,7 @@ const StaticQrGens: Record<string, (values: string[]) => string> = {
         return `tel:${values[0]}`;
     },
     'sms': (values: string[]): string => {
-        return `sms:${values[0]}?body=${values[1]}`;
+        return `sms:${values[0]}&body=${values[1]}`;
     },
     'event': (values: string[]): string => {
         const date1 = values[2].replace(/[\:\-]/g,'') + '00';
