@@ -13,12 +13,14 @@ interface Props {
 interface State {
     page: PageFull | PageCut | null;
     isNotAvilable: boolean;
+    menuID: string | null;
 }
 
 export default class Qr extends React.Component<Props> {
     state: State = {
         page: null,
-        isNotAvilable: false
+        isNotAvilable: false,
+        menuID: null
     }
     componentDidMount() {
         getQr(this.props.id).then(
@@ -26,6 +28,15 @@ export default class Qr extends React.Component<Props> {
             () => this.setState({isNotAvilable: true})
         );
     }
+
+    componentDidUpdate(prevProps: Props) {
+        if (this.props.id !== prevProps.id) {
+            getQr(this.props.id).then(
+                (page) => this.setState({page, menuID: prevProps.id}),
+                () => this.setState({isNotAvilable: true})
+            );
+        }
+      }
 
     private _renderItem(name: string, value: string, index: number) {
         return (
@@ -69,9 +80,16 @@ export default class Qr extends React.Component<Props> {
 
     private _renderCustom(page: PageCut): React.ReactNode {
         const {title, fieldsNames, fieldsValues} = page;
+        const {menuID} = this.state;
         return (
             <div className="qr">
                 <div className="qr__title">
+                    {menuID ?
+                        <Link to={`/qr/${menuID}`} className="qr__back-button">
+                            Back
+                        </Link> :
+                        null
+                    }
                     {title}
                 </div>
                 <div className="qr__content">
@@ -81,16 +99,16 @@ export default class Qr extends React.Component<Props> {
         );
     }
 
-    private _renderMenuItem(el: PageCut): React.ReactNode {
+    private _renderMenuItem(el: PageCut, index: number): React.ReactNode {
         if (el.template === 'custom') {
             return (
-                <a href={'/qr/' + el.uuid} className="qr__menu__item">
+                <Link to={'/qr/' + el.uuid} className="qr__menu__item" key={index}>
                     {el.title}
-                </a>
+                </Link>
             );
         }
         return (
-            <a href={StaticQrGens[el.template](el.fieldsValues)} className="qr__menu__item">{el.title}</a>
+            <a href={StaticQrGens[el.template](el.fieldsValues)} className="qr__menu__item" key={index}>{el.title}</a>
         );
     }
 
@@ -102,7 +120,9 @@ export default class Qr extends React.Component<Props> {
                     <div className="qr__title">
                             {page.title}
                     </div>
-                    {page.innerPages.map(this._renderMenuItem)}   
+                    <div className="qr__menu__content">
+                        {page.innerPages.map(this._renderMenuItem)}   
+                    </div>
                 </div>
             );
         }

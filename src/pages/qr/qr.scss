@@ -70,7 +70,14 @@
         justify-content: center;
         align-items: center;
         background-color: $grey;
-        overflow: auto;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            background-color: $dark-grey;
+            border-radius: 10px;
+            overflow: auto;
+        }
         &__item {
             min-height: min-content;
             margin: 12px;
@@ -80,7 +87,21 @@
             font-family: $font-size-large;
             border: 2px solid $yellow;
             color: $yellow;
+            text-align: center;
         }
+    }
+    &__back-button {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: min-content;
+        margin: 12px;
+        padding: 12px;
+        background-color: $dark-grey;
+        border-radius: 10px;
+        font-family: $font-size-large;
+        border: 2px solid $yellow;
+        color: $yellow;
     }
 }
 
@@ -97,10 +118,10 @@
     .qr__content__item__title {
         font-size: 40px;
     }
-    .qr__menu {
-        max-width: 90%;
-    }
     .qr__menu__item {
         font-size: 40px;
+    }
+    .qr__menu__content {
+        width: 70%;
     }
 }

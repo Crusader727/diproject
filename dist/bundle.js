@@ -969,7 +969,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: #2d2d2d;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #ffd900;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #ffd900;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 22px;\n    color: #ffd900;\n    margin-bottom: 20px; }\n  .qr__content {\n    display: flex;\n    flex-direction: column;\n    font-size: 18px;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .qr__content__item__title {\n        color: #ffd900;\n        margin-right: 8px;\n        word-wrap: none;\n        white-space: nowrap; }\n      .qr__content__item__content {\n        max-width: fit-content;\n        color: white;\n        word-wrap: break-word; }\n  .qr__menu {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    color: #ffd900;\n    justify-content: center;\n    align-items: center;\n    background-color: #515151;\n    overflow: auto; }\n    .qr__menu__item {\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #2d2d2d;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: #ffd900; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .qr__title {\n    font-size: 60px; }\n  .qr__content {\n    max-width: 90%; }\n  .qr__content__item__content {\n    font-size: 40px; }\n  .qr__content__item__title {\n    font-size: 40px; }\n  .qr__menu {\n    max-width: 90%; }\n  .qr__menu__item {\n    font-size: 40px; } }\n", ""]);
+exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: #2d2d2d;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #ffd900;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #ffd900;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 22px;\n    color: #ffd900;\n    margin-bottom: 20px; }\n  .qr__content {\n    display: flex;\n    flex-direction: column;\n    font-size: 18px;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .qr__content__item__title {\n        color: #ffd900;\n        margin-right: 8px;\n        word-wrap: none;\n        white-space: nowrap; }\n      .qr__content__item__content {\n        max-width: fit-content;\n        color: white;\n        word-wrap: break-word; }\n  .qr__menu {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    color: #ffd900;\n    justify-content: center;\n    align-items: center;\n    background-color: #515151; }\n    .qr__menu__content {\n      display: flex;\n      flex-direction: column;\n      width: 40%;\n      background-color: #2d2d2d;\n      border-radius: 10px;\n      overflow: auto; }\n    .qr__menu__item {\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #2d2d2d;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: #ffd900;\n      text-align: center; }\n  .qr__back-button {\n    position: fixed;\n    top: 0;\n    left: 0;\n    min-height: min-content;\n    margin: 12px;\n    padding: 12px;\n    background-color: #2d2d2d;\n    border-radius: 10px;\n    font-family: 18px;\n    border: 2px solid #ffd900;\n    color: #ffd900; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .qr__title {\n    font-size: 60px; }\n  .qr__content {\n    max-width: 90%; }\n  .qr__content__item__content {\n    font-size: 40px; }\n  .qr__content__item__title {\n    font-size: 40px; }\n  .qr__menu__item {\n    font-size: 40px; }\n  .qr__menu__content {\n    width: 70%; } }\n", ""]);
 
 // exports
 
@@ -14591,6 +14591,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./qr.scss */ "./src/pages/qr/qr.scss");
 var React = __webpack_require__(/*! react */ "react");
 var qr_provider_1 = __webpack_require__(/*! ./qr-provider */ "./src/pages/qr/qr-provider.ts");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var static_qr_gens_1 = __webpack_require__(/*! pages/main/components/static-qr-gens */ "./src/pages/main/components/static-qr-gens.ts");
 var Qr = /** @class */ (function (_super) {
     __extends(Qr, _super);
@@ -14598,13 +14599,20 @@ var Qr = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
             page: null,
-            isNotAvilable: false
+            isNotAvilable: false,
+            menuID: null
         };
         return _this;
     }
     Qr.prototype.componentDidMount = function () {
         var _this = this;
         qr_provider_1.getQr(this.props.id).then(function (page) { return _this.setState({ page: page }); }, function () { return _this.setState({ isNotAvilable: true }); });
+    };
+    Qr.prototype.componentDidUpdate = function (prevProps) {
+        var _this = this;
+        if (this.props.id !== prevProps.id) {
+            qr_provider_1.getQr(this.props.id).then(function (page) { return _this.setState({ page: page, menuID: prevProps.id }); }, function () { return _this.setState({ isNotAvilable: true }); });
+        }
     };
     Qr.prototype._renderItem = function (name, value, index) {
         return (React.createElement("div", { key: index, className: "qr__content__item" },
@@ -14623,22 +14631,27 @@ var Qr = /** @class */ (function (_super) {
     Qr.prototype._renderCustom = function (page) {
         var _this = this;
         var title = page.title, fieldsNames = page.fieldsNames, fieldsValues = page.fieldsValues;
+        var menuID = this.state.menuID;
         return (React.createElement("div", { className: "qr" },
-            React.createElement("div", { className: "qr__title" }, title),
+            React.createElement("div", { className: "qr__title" },
+                menuID ?
+                    React.createElement(react_router_dom_1.Link, { to: "/qr/" + menuID, className: "qr__back-button" }, "Back") :
+                    null,
+                title),
             React.createElement("div", { className: "qr__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); }))));
     };
-    Qr.prototype._renderMenuItem = function (el) {
+    Qr.prototype._renderMenuItem = function (el, index) {
         if (el.template === 'custom') {
-            return (React.createElement("a", { href: '/qr/' + el.uuid, className: "qr__menu__item" }, el.title));
+            return (React.createElement(react_router_dom_1.Link, { to: '/qr/' + el.uuid, className: "qr__menu__item", key: index }, el.title));
         }
-        return (React.createElement("a", { href: static_qr_gens_1.default[el.template](el.fieldsValues), className: "qr__menu__item" }, el.title));
+        return (React.createElement("a", { href: static_qr_gens_1.default[el.template](el.fieldsValues), className: "qr__menu__item", key: index }, el.title));
     };
     Qr.prototype._renderMenu = function () {
         var page = this.state.page;
         if ('innerPages' in page) {
             return (React.createElement("div", { className: "qr__menu" },
                 React.createElement("div", { className: "qr__title" }, page.title),
-                page.innerPages.map(this._renderMenuItem)));
+                React.createElement("div", { className: "qr__menu__content" }, page.innerPages.map(this._renderMenuItem))));
         }
         return this._renderCustom(page);
     };
