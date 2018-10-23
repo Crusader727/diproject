@@ -62,9 +62,12 @@ export default class Page extends React.Component<PageCut> {
 
         return (
             <div className="page__menu">
-                {this.props.mine && !this.props.static ? <Link to={`/${this.props.uuid}/edit`}>
-                    <Button type="air" icon="edit" />
-                </Link> : null}
+                {this.props.mine && !this.props.static && this.props.template !=='html' ?
+                    <Link to={`/${this.props.uuid}/edit`}>
+                        <Button type="air" icon="edit" />
+                    </Link> :
+                    null
+                }
                 <Button type="air" icon="delete" onClick={this._deletePage}/>
                 <Button type="air" icon="print"/>
                 <Button

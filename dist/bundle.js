@@ -14133,8 +14133,10 @@ var Page = /** @class */ (function (_super) {
             return null;
         }
         return (React.createElement("div", { className: "page__menu" },
-            this.props.mine && !this.props.static ? React.createElement(react_router_dom_1.Link, { to: "/" + this.props.uuid + "/edit" },
-                React.createElement(button_1.default, { type: "air", icon: "edit" })) : null,
+            this.props.mine && !this.props.static && this.props.template !== 'html' ?
+                React.createElement(react_router_dom_1.Link, { to: "/" + this.props.uuid + "/edit" },
+                    React.createElement(button_1.default, { type: "air", icon: "edit" })) :
+                null,
             React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage }),
             React.createElement(button_1.default, { type: "air", icon: "print" }),
             React.createElement(button_1.default, { type: "air", icon: "download", downloadHref: this._downloadSVG(), downloadTitle: this.props.title })));
