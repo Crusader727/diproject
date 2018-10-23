@@ -13149,7 +13149,7 @@ var TextArea = /** @class */ (function (_super) {
     };
     TextArea.prototype.render = function () {
         var _this = this;
-        return (React.createElement("textarea", { ref: function (input) { return _this.inputElement = input; }, className: 'text-area', placeholder: this.props.placeholder, maxLength: 2000, onChange: this.props.onChange, value: this.props.value }));
+        return (React.createElement("textarea", { ref: function (input) { return _this.inputElement = input; }, className: 'text-area', placeholder: this.props.placeholder, maxLength: 10000, onChange: this.props.onChange, value: this.props.value }));
     };
     return TextArea;
 }(React.Component));

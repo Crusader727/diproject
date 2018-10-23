@@ -23,7 +23,7 @@ export default class TextArea extends React.Component<Props> {
                 ref={input => this.inputElement = input}
                 className={'text-area'}
                 placeholder={this.props.placeholder}
-                maxLength={2000}
+                maxLength={10000}
                 onChange={this.props.onChange}
                 value={this.props.value}
             />
