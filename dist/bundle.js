@@ -13292,7 +13292,7 @@ var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
 var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
 var items_1 = __webpack_require__(/*! ./views/items */ "./src/pages/constructor/views/items.ts");
-var ActionMenuTypes = ['custom', 'telephone', 'sms', 'event', 'ylocation', 'url', 'email', 'contact', 'whatsapp'];
+var ActionMenuTypes = ['custom', 'telephone', 'ylocation', 'url', 'email', 'whatsapp'];
 var ConstructorActionMenu = /** @class */ (function (_super) {
     __extends(ConstructorActionMenu, _super);
     function ConstructorActionMenu() {

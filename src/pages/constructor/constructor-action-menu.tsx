@@ -13,7 +13,7 @@ interface Props {
     saveChanges: (changes: {}) => void;
 }
 
-const ActionMenuTypes = ['custom', 'telephone', 'sms', 'event', 'ylocation', 'url', 'email', 'contact', 'whatsapp'];
+const ActionMenuTypes = ['custom', 'telephone', 'ylocation', 'url', 'email', 'whatsapp'];
 
 export default class ConstructorActionMenu extends React.Component<Props> {
     private _handleActionNameChange = (event: any) => {
