@@ -11,10 +11,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@types/firebase": "^3.2.1",
         "@types/qrcode.react": "^0.8.1",
         "dom": "0.0.3",
         "express": "^4.16.3",
         "express-http-to-https": "^1.1.4",
+        "firebase": "^5.5.5",
         "mini-css-extract-plugin": "^0.4.2",
         "qrcode-react": "^0.1.16",
         "qrcode.react": "^0.8.0",

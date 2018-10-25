@@ -26,6 +26,10 @@ const htmlItems: Item[] = [
 const urlItems: Item[] = [
     {name: 'URL', value: '', isEditing: true, type: 'small'}
 ];
+const pushItems: Item[] = [
+    {name: 'Title', value: '', isEditing: true, type: 'small'},
+    {name: 'Message', value: '', isEditing: true, type: 'small'},
+];
 const emailItems: Item[] = [
     {name: 'Email', value: '', isEditing: true, type: 'small'},
     {name: 'Subject', value: '', isEditing: true, type: 'small'},
@@ -89,9 +93,13 @@ const Items: Record<string, {items: Item[], isNotEditable: boolean}> = {
         isNotEditable: false,
         items: []
     },
-    'whatsapp': { // :(
+    'whatsapp': {
         isNotEditable: true,
         items: telephoneItems
+    },
+    'push': {
+        isNotEditable: true,
+        items: pushItems
     }
 }
 

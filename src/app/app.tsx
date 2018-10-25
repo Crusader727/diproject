@@ -8,6 +8,7 @@ import MainPage from 'pages/main/main';
 import Qr from 'pages/qr/qr';
 import Login from 'pages/login/login';
 import {getUser} from 'pages/login/login-provider';
+import subscribeOnNotification from './push-notification';
 
 interface State {
     isLoggedIn: boolean;
@@ -25,7 +26,10 @@ export default class App extends React.Component<{}, State> {
     }
     private _login = () => {
         getUser().then( //loader
-            ({message}) => this.setState({isLoggedIn: true, username: message}),
+            ({message}) => {
+                this.setState({isLoggedIn: true, username: message});
+                subscribeOnNotification();
+            },
             () => {this.setState({isLoggedIn: false})},//error handling
         );
     }

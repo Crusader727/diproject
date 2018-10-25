@@ -73,7 +73,7 @@ export default class Constructor extends React.Component<Props, State> {
             isCreated: false,
             id,
             isPrivate: false,
-            isStatic: action.isNotEditable && type !== 'html',
+            isStatic: action.isNotEditable && type !== 'html' && type !== 'push',
             isCustom: type === 'custom'
         }
     }

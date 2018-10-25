@@ -1,4 +1,4 @@
-const StaticQrGens: Record<string, (values: string[]) => string> = {
+const StaticQrGens: Record<string, (values: string[] | string) => string> = {
     'wifi': (values: string[]): string => {
         return `WIFI:T:WPA;S:${values[0]};P:${values[1]};;`;
     },
@@ -41,6 +41,11 @@ const StaticQrGens: Record<string, (values: string[]) => string> = {
     'contact': (values: string[]): string => {
         return (
             `MECARD:N:${values[0]},${values[1]};NICKNAME:${values[2]};TEL:${values[3]};TEL:${values[4]};EMAIL:${values[5]};BDAY:${values[6]};NOTE:${values[7]};ADR:,,${values[8]},${values[9]},${values[10]},${values[11]},${values[12]};;`
+        );
+    },
+    'push': (uuid: string): string => {
+        return (
+            `https://velox-app.herokuapp.com/qr/${uuid}`
         );
     },
 }

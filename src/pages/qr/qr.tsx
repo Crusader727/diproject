@@ -2,7 +2,7 @@ import './qr.scss';
 import * as React from 'react';
 import PageCut from 'types/pagecut';
 import PageFull from 'types/PageFull';
-import {getQr} from './qr-provider';
+import {getQr, sendPush} from './qr-provider';
 import {Link} from 'react-router-dom';
 import StaticQrGens from 'pages/main/components/static-qr-gens';
 
@@ -140,6 +140,13 @@ export default class Qr extends React.Component<Props> {
             return this._render404();
         }
         const {template} = this.state.page;
+        if (template === 'push') {
+            sendPush(this.props.id).then(
+                () => {},//TODO
+                () => {},//TODO
+            );
+            return <div>push was send</div> //TODO style + fetch request
+        }
         if (template === 'html' && 'fieldsValues' in this.state.page) {
             return this._renderHTML(this.state.page.fieldsValues[0]);
         }

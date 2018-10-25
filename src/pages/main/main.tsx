@@ -30,7 +30,8 @@ const Templates = [
     {title: 'URL', type: 'url'},
     {title: 'Email', type: 'email'},
     {title: 'WhatsApp', type: 'whatsapp'},
-    {title: 'Contact', type: 'contact'}
+    {title: 'Contact', type: 'contact'},
+    {title: 'Notification', type: 'push'}
 ];
 
 export default class MainPage extends React.Component<Props> {
