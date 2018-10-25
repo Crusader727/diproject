@@ -12,9 +12,9 @@ if ('Notification' in window) {
     var messaging = messagingFirebase();
     // пользователь уже разрешил получение уведомлений
     // подписываем на уведомления если ещё не подписали
-    if (Notification.permission === 'granted') {
-        subscribe();
-    }
+    // if (Notification.permission === 'granted') {
+    //     subscribe();
+    // }
 }
 
 function subscribe() {
@@ -25,6 +25,7 @@ function subscribe() {
             messaging.getToken()
                 .then(currentToken => {
                     if (currentToken) {
+                        console.log(currentToken);
                         sendTokenToServer(currentToken);
                     } else {
                         console.warn('couldnt get token');

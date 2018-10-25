@@ -61547,9 +61547,9 @@ if ('Notification' in window) {
     var messaging = firebase_1.messaging();
     // пользователь уже разрешил получение уведомлений
     // подписываем на уведомления если ещё не подписали
-    if (Notification.permission === 'granted') {
-        subscribe();
-    }
+    // if (Notification.permission === 'granted') {
+    //     subscribe();
+    // }
 }
 function subscribe() {
     // запрашиваем разрешение на получение уведомлений
@@ -61559,6 +61559,7 @@ function subscribe() {
         messaging.getToken()
             .then(function (currentToken) {
             if (currentToken) {
+                console.log(currentToken);
                 sendTokenToServer(currentToken);
             }
             else {
