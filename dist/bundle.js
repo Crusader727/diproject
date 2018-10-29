@@ -63247,6 +63247,13 @@ var Page = /** @class */ (function (_super) {
             isMenuShown: false,
             isShown: true
         };
+        _this._printDiv = function () {
+            var printContents = document.getElementById(_this.props.uuid).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        };
         _this._deletePage = function () {
             page_provider_1.deletePage(_this.props.uuid).then(function () { return _this.setState({ isShown: false }); }, function () { return console.log('error'); } //TODO error
             );
@@ -63283,7 +63290,7 @@ var Page = /** @class */ (function (_super) {
                     React.createElement(button_1.default, { type: "air", icon: "edit" })) :
                 null,
             React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage }),
-            React.createElement(button_1.default, { type: "air", icon: "print" }),
+            React.createElement(button_1.default, { type: "air", icon: "print", onClick: this._printDiv }),
             React.createElement(button_1.default, { type: "air", icon: "download", downloadHref: this._downloadSVG(), downloadTitle: this.props.title })));
     };
     Page.prototype.render = function () {
@@ -63300,8 +63307,8 @@ var Page = /** @class */ (function (_super) {
         var smallIcon = isStatic || template === 'html' || template === 'push' ?
             template : !isPublic ? 'private' : null;
         return (React.createElement("div", { className: "page" },
-            React.createElement("a", { className: "page__content", href: "qr/" + uuid, target: "_blank" },
-                React.createElement(QRCode, { value: this._getQrCodeValue(), size: 130 })),
+            React.createElement("a", { className: "page__content", href: "qr/" + uuid, target: "_blank", id: uuid },
+                React.createElement(QRCode, { value: this._getQrCodeValue(), size: 130, renderAs: "svg" })),
             this._renderMenu(),
             React.createElement("div", { className: "page__title" },
                 React.createElement("div", { className: "page__title__left-block" },
@@ -63812,7 +63819,7 @@ var Qr = /** @class */ (function (_super) {
             React.createElement("div", { className: "qr__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); }))));
     };
     Qr.prototype._renderMenuItem = function (el, index) {
-        if (el.template === 'custom') {
+        if (el.template === 'custom' || el.template === 'push') {
             return (React.createElement(react_router_dom_1.Link, { to: '/qr/' + el.uuid, className: "qr__menu__item", key: index }, el.title));
         }
         return (React.createElement("a", { href: static_qr_gens_1.default[el.template](el.fieldsValues), className: "qr__menu__item", key: index }, el.title));

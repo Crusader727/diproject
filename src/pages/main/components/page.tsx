@@ -26,6 +26,13 @@ export default class Page extends React.Component<PageCut> {
             clearTimeout(this.menuTimeout);
         }
     }
+    private _printDiv = () => {
+        var printContents = document.getElementById(this.props.uuid).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
 
     private _deletePage = (): void => {
         deletePage(this.props.uuid).then(
@@ -69,7 +76,7 @@ export default class Page extends React.Component<PageCut> {
                     null
                 }
                 <Button type="air" icon="delete" onClick={this._deletePage}/>
-                <Button type="air" icon="print"/>
+                <Button type="air" icon="print" onClick={this._printDiv}/>
                 <Button
                     type="air"
                     icon="download"
@@ -94,8 +101,8 @@ export default class Page extends React.Component<PageCut> {
             template : !isPublic ? 'private' : null;
         return (
             <div className="page">
-                <a className="page__content" href={`qr/${uuid}`} target="_blank">
-                    <QRCode value={this._getQrCodeValue()} size={130} />
+                <a className="page__content" href={`qr/${uuid}`} target="_blank" id={uuid}>
+                    <QRCode value={this._getQrCodeValue()} size={130} renderAs="svg" />
                 </a>
                 {this._renderMenu()}
                 <div className="page__title">
