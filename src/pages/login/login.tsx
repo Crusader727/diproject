@@ -64,12 +64,15 @@ export default class Login extends React.Component<Props> {
                         <div className="login__content__title">
                             Welcome to Velox
                         </div>
-                        <div className="login__content__title">
-                            Please Sign In with one of the Services
+                        <div className="login__content__text">
+                            Velox is a web-services that allows you to generate QR codes for
+                            templates and custom pages, static and dynamic Qr Codes.
+                            Editor has a function of adding several actions into one QR. Authorize to try it!  
                         </div>
                         <div className="login__content__services">
                             {services.map(service => (
                                 <ReactSVG
+                                    className="oauth-icon__container"
                                     key={service.name}
                                     src={`/icons/oauth/${service.name}.svg`}
                                     svgClassName="oauth-icon"

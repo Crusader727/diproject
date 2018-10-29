@@ -11,7 +11,7 @@
         flex-direction: column;
         margin-top: 20vh;
         width: 60vw;
-        height: 60vh;
+        height: 63vh;
         background-color: $dark-grey;
         border-radius: 20px;
         &__title {
@@ -20,6 +20,12 @@
             margin-top: 10vh;
             font-size: 35px;
             color: $yellow;
+            padding: 5px;
+        }
+        &__text {
+            font-size: 25px;
+            color: $white;
+            padding: 5vh 9vw;
         }
         &__services {
             cursor: pointer;
@@ -47,4 +53,10 @@
 .oauth-icon {
     width: 10vh;
     height: 10vh;
+    &__container {
+        margin-right: 3vw;
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
 }

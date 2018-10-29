@@ -25,7 +25,6 @@ function subscribe() {
             messaging.getToken()
                 .then(currentToken => {
                     if (currentToken) {
-                        console.log(currentToken);
                         sendTokenToServer(currentToken);
                     } else {
                         console.warn('couldnt get token');

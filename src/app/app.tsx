@@ -24,6 +24,17 @@ export default class App extends React.Component<{}, State> {
         };
         this._login();
     }
+    private _logout = () => {
+        window.localStorage.clear();
+        navigator.serviceWorker.getRegistrations().then(
+                function(registrations) {
+                    for(let registration of registrations) {  
+                        registration.unregister();
+            
+                    }
+            });
+        this.setState({isLoggedIn: false});        
+    }
     private _login = () => {
         getUser().then( //loader
             ({message}) => {
@@ -77,7 +88,7 @@ export default class App extends React.Component<{}, State> {
                                 (<Constructor
                                     type={props.match.params.type}
                                     username={this.state.username}
-                                    logout={() => this.setState({isLoggedIn: false})}
+                                    logout={this._logout}
                                 />):
                                 this._redirectTo('/login', this.props)
                             }
@@ -89,7 +100,7 @@ export default class App extends React.Component<{}, State> {
                                 (<Constructor
                                     id={props.match.params.id} 
                                     username={this.state.username}
-                                    logout={() => this.setState({isLoggedIn: false})}
+                                    logout={this._logout}
                                 />):
                                 this._redirectTo('/login', this.props)
                             }
@@ -99,7 +110,7 @@ export default class App extends React.Component<{}, State> {
                             isLoggedIn ?
                                 (<MainPage
                                     username={this.state.username}
-                                    logout={() => this.setState({isLoggedIn: false})}
+                                    logout={this._logout}
                                 />):
                                 this._redirectTo('/login', this.props)
                         }

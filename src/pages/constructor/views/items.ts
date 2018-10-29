@@ -55,39 +55,39 @@ const contactItems: Item[] = [
 const Items: Record<string, {items: Item[], isNotEditable: boolean}> = {
     'wifi': {
         isNotEditable: true,
-        items: wifiItems
+        items: JSON.parse(JSON.stringify(wifiItems))
     },
     'telephone': {
         isNotEditable: true,
-        items: telephoneItems
+        items: JSON.parse(JSON.stringify(telephoneItems))
     },
     'sms': {
         isNotEditable: true,
-        items: smsItems
+        items: JSON.parse(JSON.stringify(smsItems))
     },
     'event': {
         isNotEditable: true,
-        items: eventItems
+        items: JSON.parse(JSON.stringify(eventItems))
     },
     'ylocation': {
         isNotEditable: true,
-        items: ylocationItems
+        items: JSON.parse(JSON.stringify(ylocationItems))
     },
     'html': {
         isNotEditable: true,
-        items: htmlItems
+        items: JSON.parse(JSON.stringify(htmlItems))
     },
     'url': {
         isNotEditable: true,
-        items: urlItems
+        items: JSON.parse(JSON.stringify(urlItems))
     },
     'email': {
         isNotEditable: true,
-        items: emailItems
+        items: JSON.parse(JSON.stringify(emailItems))
     },
     'contact': {
         isNotEditable: true,
-        items: contactItems
+        items: JSON.parse(JSON.stringify(contactItems))
     },
     'custom': { // :(
         isNotEditable: false,
@@ -95,11 +95,11 @@ const Items: Record<string, {items: Item[], isNotEditable: boolean}> = {
     },
     'whatsapp': {
         isNotEditable: true,
-        items: telephoneItems
+        items: JSON.parse(JSON.stringify(telephoneItems))
     },
     'push': {
         isNotEditable: true,
-        items: pushItems
+        items: JSON.parse(JSON.stringify(pushItems))
     }
 }
 

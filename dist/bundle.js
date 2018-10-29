@@ -49310,7 +49310,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".login {\n  width: 100%;\n  height: 100vh;\n  background-color: #515151;\n  background-size: cover;\n  display: flex;\n  justify-content: center; }\n  .login__content {\n    display: flex;\n    flex-direction: column;\n    margin-top: 20vh;\n    width: 60vw;\n    height: 60vh;\n    background-color: #2d2d2d;\n    border-radius: 20px; }\n    .login__content__title {\n      margin-left: auto;\n      margin-right: auto;\n      margin-top: 10vh;\n      font-size: 35px;\n      color: #ffd900; }\n    .login__content__services {\n      cursor: pointer;\n      margin-top: 5vh;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: row;\n      color: #ffd900; }\n  .login__loader {\n    z-index: 1;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%); }\n  .login._isloading {\n    filter: blur(5px); }\n\n.oauth-icon {\n  width: 10vh;\n  height: 10vh; }\n", ""]);
+exports.push([module.i, ".login {\n  width: 100%;\n  height: 100vh;\n  background-color: #515151;\n  background-size: cover;\n  display: flex;\n  justify-content: center; }\n  .login__content {\n    display: flex;\n    flex-direction: column;\n    margin-top: 20vh;\n    width: 60vw;\n    height: 63vh;\n    background-color: #2d2d2d;\n    border-radius: 20px; }\n    .login__content__title {\n      margin-left: auto;\n      margin-right: auto;\n      margin-top: 10vh;\n      font-size: 35px;\n      color: #ffd900;\n      padding: 5px; }\n    .login__content__text {\n      font-size: 25px;\n      color: white;\n      padding: 5vh 9vw; }\n    .login__content__services {\n      cursor: pointer;\n      margin-top: 5vh;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: row;\n      color: #ffd900; }\n  .login__loader {\n    z-index: 1;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%); }\n  .login._isloading {\n    filter: blur(5px); }\n\n.oauth-icon {\n  width: 10vh;\n  height: 10vh; }\n  .oauth-icon__container {\n    margin-right: 3vw; }\n    .oauth-icon__container:last-child {\n      margin-right: 0px; }\n", ""]);
 
 // exports
 
@@ -61470,6 +61470,16 @@ var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App(props) {
         var _this = _super.call(this, props) || this;
+        _this._logout = function () {
+            window.localStorage.clear();
+            navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                for (var _i = 0, registrations_1 = registrations; _i < registrations_1.length; _i++) {
+                    var registration = registrations_1[_i];
+                    registration.unregister();
+                }
+            });
+            _this.setState({ isLoggedIn: false });
+        };
         _this._login = function () {
             login_provider_1.getUser().then(//loader
             function (_a) {
@@ -61504,17 +61514,17 @@ var App = /** @class */ (function (_super) {
                     } }),
                 React.createElement(react_router_dom_1.Route, { path: '/new/:type', render: function (props) {
                         return isLoggedIn ?
-                            (React.createElement(constructor_1.default, { type: props.match.params.type, username: _this.state.username, logout: function () { return _this.setState({ isLoggedIn: false }); } })) :
+                            (React.createElement(constructor_1.default, { type: props.match.params.type, username: _this.state.username, logout: _this._logout })) :
                             _this._redirectTo('/login', _this.props);
                     } }),
                 React.createElement(react_router_dom_1.Route, { path: '/:id/edit', render: function (props) {
                         return isLoggedIn ?
-                            (React.createElement(constructor_1.default, { id: props.match.params.id, username: _this.state.username, logout: function () { return _this.setState({ isLoggedIn: false }); } })) :
+                            (React.createElement(constructor_1.default, { id: props.match.params.id, username: _this.state.username, logout: _this._logout })) :
                             _this._redirectTo('/login', _this.props);
                     } }),
                 React.createElement(react_router_dom_1.Route, { path: '/', render: function () {
                         return isLoggedIn ?
-                            (React.createElement(main_1.default, { username: _this.state.username, logout: function () { return _this.setState({ isLoggedIn: false }); } })) :
+                            (React.createElement(main_1.default, { username: _this.state.username, logout: _this._logout })) :
                             _this._redirectTo('/login', _this.props);
                     } }))));
     };
@@ -61559,7 +61569,6 @@ function subscribe() {
         messaging.getToken()
             .then(function (currentToken) {
             if (currentToken) {
-                console.log(currentToken);
                 sendTokenToServer(currentToken);
             }
             else {
@@ -62420,7 +62429,7 @@ var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
 var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
 var items_1 = __webpack_require__(/*! ./views/items */ "./src/pages/constructor/views/items.ts");
-var ActionMenuTypes = ['custom', 'telephone', 'ylocation', 'url', 'email', 'whatsapp'];
+var ActionMenuTypes = ['custom', 'telephone', 'ylocation', 'url', 'email', 'whatsapp', 'push'];
 var ConstructorActionMenu = /** @class */ (function (_super) {
     __extends(ConstructorActionMenu, _super);
     function ConstructorActionMenu() {
@@ -62956,39 +62965,39 @@ var contactItems = [
 var Items = {
     'wifi': {
         isNotEditable: true,
-        items: wifiItems
+        items: JSON.parse(JSON.stringify(wifiItems))
     },
     'telephone': {
         isNotEditable: true,
-        items: telephoneItems
+        items: JSON.parse(JSON.stringify(telephoneItems))
     },
     'sms': {
         isNotEditable: true,
-        items: smsItems
+        items: JSON.parse(JSON.stringify(smsItems))
     },
     'event': {
         isNotEditable: true,
-        items: eventItems
+        items: JSON.parse(JSON.stringify(eventItems))
     },
     'ylocation': {
         isNotEditable: true,
-        items: ylocationItems
+        items: JSON.parse(JSON.stringify(ylocationItems))
     },
     'html': {
         isNotEditable: true,
-        items: htmlItems
+        items: JSON.parse(JSON.stringify(htmlItems))
     },
     'url': {
         isNotEditable: true,
-        items: urlItems
+        items: JSON.parse(JSON.stringify(urlItems))
     },
     'email': {
         isNotEditable: true,
-        items: emailItems
+        items: JSON.parse(JSON.stringify(emailItems))
     },
     'contact': {
         isNotEditable: true,
-        items: contactItems
+        items: JSON.parse(JSON.stringify(contactItems))
     },
     'custom': {
         isNotEditable: false,
@@ -62996,11 +63005,11 @@ var Items = {
     },
     'whatsapp': {
         isNotEditable: true,
-        items: telephoneItems
+        items: JSON.parse(JSON.stringify(telephoneItems))
     },
     'push': {
         isNotEditable: true,
-        items: pushItems
+        items: JSON.parse(JSON.stringify(pushItems))
     }
 };
 exports.default = Items;
@@ -63138,8 +63147,8 @@ var Login = /** @class */ (function (_super) {
             React.createElement("div", { className: "login" + (this.state.isLoading ? ' _isloading' : '') },
                 React.createElement("div", { className: "login__content" },
                     React.createElement("div", { className: "login__content__title" }, "Welcome to Velox"),
-                    React.createElement("div", { className: "login__content__title" }, "Please Sign In with one of the Services"),
-                    React.createElement("div", { className: "login__content__services" }, services.map(function (service) { return (React.createElement(react_svg_1.default, { key: service.name, src: "/icons/oauth/" + service.name + ".svg", svgClassName: "oauth-icon", onClick: function () { window.open(service.url, "_self"); } })); }))))));
+                    React.createElement("div", { className: "login__content__text" }, "Velox is a web-services that allows you to generate QR codes for templates and custom pages, static and dynamic Qr Codes. Editor has a function of adding several actions into one QR. Authorize to try it!"),
+                    React.createElement("div", { className: "login__content__services" }, services.map(function (service) { return (React.createElement(react_svg_1.default, { className: "oauth-icon__container", key: service.name, src: "/icons/oauth/" + service.name + ".svg", svgClassName: "oauth-icon", onClick: function () { window.open(service.url, "_self"); } })); }))))));
     };
     return Login;
 }(React.Component));
@@ -63257,7 +63266,7 @@ var Page = /** @class */ (function (_super) {
     };
     Page.prototype._getQrCodeValue = function () {
         var _a = this.props, uuid = _a.uuid, fieldsNames = _a.fieldsNames, fieldsValues = _a.fieldsValues, title = _a.title, template = _a.template;
-        if (template && template !== 'custom' && template !== 'html') {
+        if (template && template !== 'custom' && template !== 'html' && template !== 'push') {
             return static_qr_gens_1.default[template](fieldsValues);
         }
         return (this.props.static ?
@@ -63288,7 +63297,8 @@ var Page = /** @class */ (function (_super) {
         var formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
             date.toDateString() :
             date.toLocaleTimeString();
-        var smallIcon = isStatic || template === 'html' ? template : !isPublic ? 'private' : null;
+        var smallIcon = isStatic || template === 'html' || template === 'push' ?
+            template : !isPublic ? 'private' : null;
         return (React.createElement("div", { className: "page" },
             React.createElement("a", { className: "page__content", href: "qr/" + uuid, target: "_blank" },
                 React.createElement(QRCode, { value: this._getQrCodeValue(), size: 130 })),
