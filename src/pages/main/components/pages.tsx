@@ -87,7 +87,8 @@ export default class Pages extends React.Component<Props> {
                         {this._renderDropDownButton({
                             icon: 'sort',
                             items: sortActions,
-                            onClick: this.props.getSortValue
+                            onClick: this.props.getSortValue,
+                            className: 'owner'
                         })
                         }
                     </div>

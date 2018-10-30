@@ -54,3 +54,23 @@
     background-color: $white;
     border-radius: 8px;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .pages {
+        padding: 0 4% 0 6%;
+        &__header {
+            &__title {
+                font-size: 35px;
+            }
+        }
+    }
+    .icon {
+        width: 40px;
+        height: 40px;
+        &-owner {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
