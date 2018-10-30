@@ -7,7 +7,7 @@ import Input from 'components/input/input';
 import PageCut from 'types/pageCut';
 import Page from './page';
 
-const sortActions = ['a-z', 'z-a', 'date'];
+const sortActions = ['date', 'a-z', 'z-a'];
 const ownerTypes = ['all', 'me', 'others'];
 
 interface State {

@@ -36,7 +36,7 @@ const Templates = [
 
 export default class MainPage extends React.Component<Props> {
     _ownerType = 'all';
-    _sortValue = 'a-z';
+    _sortValue = 'date';
     state: State = {
         isRightArrowShown: true,
         isLeftArrowShown: false,

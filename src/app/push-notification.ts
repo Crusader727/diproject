@@ -1,4 +1,5 @@
-import {initializeApp as initializeAppFirebase, messaging as messagingFirebase} from 'firebase';
+import {initializeApp as initializeAppFirebase} from 'firebase';
+import {messaging as messagingFirebase} from 'firebase/app';
 import request from 'core/request/request';
 
 // firebase_subscribe.js

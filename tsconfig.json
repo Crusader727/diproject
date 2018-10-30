@@ -9,6 +9,7 @@
         "baseUrl": "src",
         "paths": {
             "qrcode-react": [ "typings/qrcode-react.d.ts" ],
+            "react-to-print": [ "typings/react-to-print.d.ts" ],
             "components/*": [ "components/*" ],
             "app/*": [ "app/*" ],
             "pages/*": [ "pages/*" ],

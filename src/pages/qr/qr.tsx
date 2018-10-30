@@ -14,19 +14,28 @@ interface State {
     page: PageFull | PageCut | null;
     isNotAvilable: boolean;
     menuID: string | null;
+    isSuccessfullPush: boolean;
 }
 
 export default class Qr extends React.Component<Props> {
     state: State = {
         page: null,
         isNotAvilable: false,
-        menuID: null
+        menuID: null,
+        isSuccessfullPush: false
     }
-    componentDidMount() {
-        getQr(this.props.id).then(
+
+    async componentDidMount() { //todo loader
+        await getQr(this.props.id).then(
             (page) => this.setState({page}),
             () => this.setState({isNotAvilable: true})
         );
+        if (this.state.page.template === 'push') {
+            await sendPush(this.props.id).then(
+                () => this.setState({isSuccessfullPush: true}),
+                () => this.setState({isSuccessfullPush: false}),
+            );
+        }
     }
 
     componentDidUpdate(prevProps: Props) {
@@ -133,6 +142,7 @@ export default class Qr extends React.Component<Props> {
     }
 
     render(): React.ReactNode {
+        const {menuID} = this.state;
         if (!this.state.page && !this.state.isNotAvilable) {
             return null;
         }
@@ -141,11 +151,35 @@ export default class Qr extends React.Component<Props> {
         }
         const {template} = this.state.page;
         if (template === 'push') {
-            sendPush(this.props.id).then(
-                () => {},//TODO
-                () => {},//TODO
+            if (this.state.isSuccessfullPush) {
+                return (
+                    <div className="qr">
+                        <div className="qr__push-succsessfull">
+                            {menuID ?
+                                <Link to={`/qr/${menuID}`} className="qr__back-button">
+                                    Back
+                                </Link> :
+                                null
+                            }
+                            Push was successfully send                           
+                        </div>
+                    </div>
+                );
+                    
+            }
+            return (
+                <div className="qr">
+                    <div className="qr__push-error">
+                        {menuID ?
+                            <Link to={`/qr/${menuID}`} className="qr__back-button">
+                                Back
+                            </Link> :
+                            null
+                        }
+                        Error: Push was not send, user didn`t get yor message
+                    </div>
+                </div>
             );
-            return <div>push was send</div> //TODO style + fetch request
         }
         if (template === 'html' && 'fieldsValues' in this.state.page) {
             return this._renderHTML(this.state.page.fieldsValues[0]);

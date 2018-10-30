@@ -1,5 +1,6 @@
 import './page.scss';
 import * as React from 'react';
+import * as ReactToPrint from 'react-to-print';
 import {renderToString} from 'react-dom/server';
 import {Link}  from 'react-router-dom';
 import * as QRCode from 'qrcode.react';
@@ -16,6 +17,7 @@ interface State {
 
 export default class Page extends React.Component<PageCut> {
     menuTimeout: any = null;
+    _qrImageRef: HTMLAnchorElement | null = null;
     state: State = {
         isMenuShown: false,
         isShown: true
@@ -25,13 +27,6 @@ export default class Page extends React.Component<PageCut> {
         if (this.menuTimeout) {
             clearTimeout(this.menuTimeout);
         }
-    }
-    private _printDiv = () => {
-        var printContents = document.getElementById(this.props.uuid).innerHTML;
-        var originalContents = document.body.innerHTML;
-        document.body.innerHTML = printContents;
-        window.print();
-        document.body.innerHTML = originalContents;
     }
 
     private _deletePage = (): void => {
@@ -76,7 +71,11 @@ export default class Page extends React.Component<PageCut> {
                     null
                 }
                 <Button type="air" icon="delete" onClick={this._deletePage}/>
-                <Button type="air" icon="print" onClick={this._printDiv}/>
+                <ReactToPrint
+                    trigger={() =>  <Button type="air" icon="print" />}
+                    content={() => this._qrImageRef}
+                    bodyClass="print-page"
+                />
                 <Button
                     type="air"
                     icon="download"
@@ -101,8 +100,13 @@ export default class Page extends React.Component<PageCut> {
             template : !isPublic ? 'private' : null;
         return (
             <div className="page">
-                <a className="page__content" href={`qr/${uuid}`} target="_blank" id={uuid}>
-                    <QRCode value={this._getQrCodeValue()} size={130} renderAs="svg" />
+                <a
+                    className="page__content"
+                    href={`qr/${uuid}`}
+                    target="_blank"
+                    ref={el => (this._qrImageRef = el)}
+                >
+                    <QRCode value={this._getQrCodeValue()} size={130} />
                 </a>
                 {this._renderMenu()}
                 <div className="page__title">
