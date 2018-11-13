@@ -49101,7 +49101,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n  width: 80px;\n  height: 40px;\n  font-size: 15px;\n  border-radius: 6px;\n  text-transform: uppercase;\n  display: inline-block;\n  background-color: #ffd900;\n  opacity: 0.9;\n  cursor: pointer; }\n  .button:hover {\n    opacity: 1; }\n  .button._air {\n    background: none;\n    width: auto;\n    height: auto;\n    font-size: 15px;\n    color: #ffd900;\n    opacity: 0.8; }\n    .button._air:hover {\n      opacity: 1; }\n    .button._air:active {\n      opacity: 1; }\n", ""]);
+exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n  width: 80px;\n  height: 40px;\n  font-size: 15px;\n  border-radius: 6px;\n  text-transform: uppercase;\n  display: inline-block;\n  background-color: #ffd900;\n  opacity: 0.9;\n  cursor: pointer; }\n  .button:hover {\n    opacity: 1; }\n  .button._air {\n    display: flex;\n    flex-direction: row;\n    background: none;\n    width: auto;\n    height: auto;\n    font-size: 15px;\n    color: #ffd900;\n    opacity: 0.8; }\n    .button._air:hover {\n      opacity: 1; }\n    .button._air:active {\n      opacity: 1; }\n  .button._size-small {\n    justify-content: flex-end;\n    line-height: 20px;\n    font-size: 10px; }\n  .button._disabled {\n    opacity: 0.7; }\n    .button._disabled:hover {\n      opacity: 0.7; }\n    .button._disabled:active {\n      opacity: 0.7; }\n  .button__icon {\n    margin: 0 2px;\n    width: 20px;\n    height: 20px; }\n", ""]);
 
 // exports
 
@@ -49177,7 +49177,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".input {\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  height: 30px;\n  border: 2px solid #ffd900;\n  background-color: white;\n  font-size: 15px;\n  border-radius: 4px;\n  animation-duration: 1s; }\n  .input:focus {\n    border-width: 3px; }\n  .input.size-small {\n    width: 100px; }\n  .input.size-medium {\n    width: 250px; }\n  .input.size-large {\n    width: 600px; }\n  .input.size-larger {\n    width: 900px; }\n\n@keyframes enlarge-small {\n  0% {\n    width: 0; }\n  100% {\n    width: 100px; } }\n\n@keyframes enlarge-medium {\n  0% {\n    width: 0; }\n  100% {\n    width: 300px; } }\n\n@keyframes enlarge-large {\n  0% {\n    width: 0; }\n  100% {\n    width: 600px; } }\n\n@keyframes enlarge-larger {\n  0% {\n    width: 0; }\n  100% {\n    width: 900px; } }\n", ""]);
+exports.push([module.i, ".input {\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  height: 30px;\n  border: 2px solid #ffd900;\n  background-color: white;\n  font-size: 15px;\n  border-radius: 4px;\n  animation-duration: 1s; }\n  .input:focus {\n    border-width: 3px; }\n  .input.size-small {\n    width: 100px; }\n  .input.size-medium {\n    width: 250px; }\n  .input.size-large {\n    width: 600px; }\n  .input.size-larger {\n    width: 800px; }\n\n@keyframes enlarge-small {\n  0% {\n    width: 0; }\n  100% {\n    width: 100px; } }\n\n@keyframes enlarge-medium {\n  0% {\n    width: 0; }\n  100% {\n    width: 300px; } }\n\n@keyframes enlarge-large {\n  0% {\n    width: 0; }\n  100% {\n    width: 600px; } }\n\n@keyframes enlarge-larger {\n  0% {\n    width: 0; }\n  100% {\n    width: 800px; } }\n", ""]);
 
 // exports
 
@@ -49329,7 +49329,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  max-height: 174px;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n    .page__title__left-block {\n      display: flex;\n      flex-direction: column; }\n    .page__title__date {\n      line-height: 12px;\n      font-size: 12px; }\n    .page__title__title {\n      display: flex;\n      flex-direction: row; }\n      .page__title__title__text {\n        white-space: nowrap;\n        max-width: 80px;\n        overflow-x: auto; }\n        .page__title__title__text::-webkit-scrollbar {\n          display: none; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__small-icon {\n    margin-left: 5px;\n    margin-top: 2px;\n    width: 20px;\n    height: 20px;\n    color: #ffd900; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    bottom: 38px; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n\n.print-page {\n  margin-left: 20px;\n  margin-top: 20px; }\n", ""]);
+exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  max-height: 174px;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n    .page__title__left-block {\n      display: flex;\n      flex-direction: column; }\n    .page__title__date {\n      line-height: 12px;\n      font-size: 12px; }\n    .page__title__title {\n      display: flex;\n      flex-direction: row; }\n      .page__title__title__text {\n        white-space: nowrap;\n        max-width: 80px;\n        overflow-x: auto; }\n        .page__title__title__text::-webkit-scrollbar {\n          display: none; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__small-icon {\n    margin-left: 5px;\n    margin-top: 2px;\n    width: 20px;\n    height: 20px;\n    color: #ffd900; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    bottom: 38px; }\n    .page__menu__edit-link {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-end; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n\n.print-page {\n  margin-left: 20px;\n  margin-top: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .page {\n    width: 100%;\n    height: 300px;\n    max-height: 300px; } }\n", ""]);
 
 // exports
 
@@ -61717,24 +61717,28 @@ var Button = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.anchor = null;
         _this._onClick = function () {
-            if (_this.anchor) {
-                _this.anchor.click();
-                return;
-            }
-            if (_this.props.onClick) {
-                _this.props.onClick();
+            if (!_this.props.isDisabled) {
+                if (_this.anchor) {
+                    _this.anchor.click();
+                    return;
+                }
+                if (_this.props.onClick) {
+                    _this.props.onClick();
+                }
             }
         };
         return _this;
     }
     Button.prototype.render = function () {
         var _this = this;
-        var _a = this.props, type = _a.type, downloadHref = _a.downloadHref, downloadTitle = _a.downloadTitle, text = _a.text, onClick = _a.onClick, icon = _a.icon, onBlur = _a.onBlur;
-        return (React.createElement("button", { 
-            // className={'input_size-' + (size ? size : this.defaultProps.size)}
-            className: 'button' + (type ? ' _' + type : ''), onClick: this._onClick, onBlur: onBlur },
+        var _a = this.props, type = _a.type, downloadHref = _a.downloadHref, downloadTitle = _a.downloadTitle, text = _a.text, onClick = _a.onClick, icon = _a.icon, onBlur = _a.onBlur, size = _a.size, isDisabled = _a.isDisabled;
+        var className = 'button' +
+            (type ? ' _' + type : '') +
+            (size === 'small' ? ' _size-small' : '') +
+            (isDisabled ? ' _disabled' : '');
+        return (React.createElement("button", { className: className, onClick: this._onClick, onBlur: onBlur },
             text,
-            icon && React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "" }),
+            icon && React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "button__icon" }),
             downloadHref ?
                 React.createElement("a", { href: downloadHref, download: downloadTitle, ref: function (anchor) { return _this.anchor = anchor; } }) :
                 null));
@@ -61910,9 +61914,11 @@ var DropDown = /** @class */ (function (_super) {
     };
     DropDown.prototype.render = function () {
         var _this = this;
+        var _a = this.props, items = _a.items, children = _a.children, showChosen = _a.showChosen, hideArrow = _a.hideArrow;
         return (React.createElement("div", { className: "dropdown", onClick: function () { return _this.setState({ isContentShown: true }); }, onBlur: function () { return _this.setState({ isContentShown: false }); }, tabIndex: 0 },
-            this.props.children,
-            !this.props.hideArrow && React.createElement("svg", { className: "dropdown__icon", xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24" },
+            children,
+            showChosen ? ': ' + items.filter(function (_, index) { return index === _this.state.chosenIndex; })[0] : '',
+            !hideArrow && React.createElement("svg", { className: "dropdown__icon", xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24" },
                 React.createElement("path", { d: "M7 10l5 5 5-5z", fill: "currentColor" })),
             this._renderContent()));
     };
@@ -62921,9 +62927,9 @@ var Constructor = /** @class */ (function (_super) {
             React.createElement("div", { className: "constructor__menu__date" }, this.state.date),
             this._renderCheckboxes(),
             React.createElement("div", { className: "constructor__menu__actions" },
-                React.createElement(button_1.default, { text: "Save", onClick: function () { return _this._savePage(); } }),
+                React.createElement(button_1.default, { text: "Save", onClick: function () { return _this._savePage(); }, isDisabled: this.state.actions.length === 0 }),
                 React.createElement(react_router_dom_1.Link, { to: "/" },
-                    React.createElement(button_1.default, { text: "Cancel" }))),
+                    React.createElement(button_1.default, { text: "Back" }))),
             this.state.isCustom ?
                 React.createElement(constructor_action_menu_1.default, { actions: this.state.actions, currentAction: this.state.currentAction, saveChanges: function (changes) { return _this.setState(changes); } }) :
                 null));
@@ -63332,12 +63338,12 @@ var Page = /** @class */ (function (_super) {
         }
         return (React.createElement("div", { className: "page__menu" },
             this.props.mine && !this.props.static && this.props.template !== 'html' ?
-                React.createElement(react_router_dom_1.Link, { to: "/" + this.props.uuid + "/edit" },
-                    React.createElement(button_1.default, { type: "air", icon: "edit" })) :
+                React.createElement(react_router_dom_1.Link, { to: "/" + this.props.uuid + "/edit", className: "page__menu__edit-link" },
+                    React.createElement(button_1.default, { type: "air", icon: "edit", text: "Edit", size: "small" })) :
                 null,
-            React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage }),
-            React.createElement(ReactToPrint, { trigger: function () { return React.createElement(button_1.default, { type: "air", icon: "print" }); }, content: function () { return _this._qrImageRef; }, bodyClass: "print-page" }),
-            React.createElement(button_1.default, { type: "air", icon: "download", downloadHref: this._downloadSVG(), downloadTitle: this.props.title })));
+            React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage, text: "Delete", size: "small" }),
+            React.createElement(ReactToPrint, { trigger: function () { return React.createElement(button_1.default, { type: "air", icon: "print", text: "Print", size: "small" }); }, content: function () { return _this._qrImageRef; }, bodyClass: "print-page" }),
+            React.createElement(button_1.default, { type: "air", icon: "download", text: "Download", size: "small", downloadHref: this._downloadSVG(), downloadTitle: this.props.title })));
     };
     Page.prototype.render = function () {
         var _this = this;
@@ -63455,19 +63461,20 @@ var Pages = /** @class */ (function (_super) {
     }
     Pages.prototype._renderDropDownButton = function (_a) {
         var icon = _a.icon, items = _a.items, onClick = _a.onClick, className = _a.className;
-        return (React.createElement(dropdown_1.default, { items: items, onClick: onClick },
+        return (React.createElement(dropdown_1.default, { items: items, onClick: onClick, showChosen: true },
             React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : '') })));
     };
     Pages.prototype._renderSearch = function () {
         var _this = this;
-        if (!this.state.isSearchOpen) {
+        var searchValue = this.props.searchValue;
+        if (!this.state.isSearchOpen && searchValue === '') {
             return (React.createElement(react_svg_1.default, { src: "/icons/search.svg", svgClassName: "icon", onClick: function () { return _this.setState({ isSearchOpen: true }); } }));
         }
-        return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: false }); } },
-            React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search", value: this.props.searchValue, onChange: this.props.onSearchChange })));
+        return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: searchValue !== '' }); } },
+            React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search", value: searchValue, onChange: this.props.onSearchChange })));
     };
     Pages.prototype.render = function () {
-        var pages = this.props.pages;
+        var _a = this.props, pages = _a.pages, searchValue = _a.searchValue;
         return (React.createElement("div", { className: "pages" },
             React.createElement("div", { className: "pages__header" },
                 React.createElement("div", { className: "pages__header__block" },
@@ -63488,7 +63495,7 @@ var Pages = /** @class */ (function (_super) {
                     }))),
             React.createElement("div", { className: "pages__content" }, pages.length ?
                 pages.map(function (page) { return React.createElement(page_1.default, __assign({}, page, { key: page.uuid })); }) :
-                React.createElement("div", null, "You dont have any pages yet."))));
+                React.createElement("div", null, searchValue === '' ? 'You dont have any pages yet.' : 'No search results'))));
     };
     return Pages;
 }(React.Component));
@@ -63895,7 +63902,7 @@ var Qr = /** @class */ (function (_super) {
             return null; // TODO might be loader
         }
         var text = isSuccessfullPush ?
-            'Push was successfully send' :
+            'Push was successfully sent' :
             'Error: Push was not send, user didn`t get yor message';
         return (React.createElement("div", { className: "qr" },
             React.createElement("div", { className: 'qr__push-' + (isSuccessfullPush ? 'succsessfull' : 'error') },

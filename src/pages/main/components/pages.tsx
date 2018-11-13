@@ -32,7 +32,7 @@ export default class Pages extends React.Component<Props> {
         {icon: string, items: any[], onClick: (value: string) => void, className?: string})
     : React.ReactNode {
         return (
-            <DropDown items={items} onClick={onClick}>
+            <DropDown items={items} onClick={onClick} showChosen>
                 <ReactSVG
                     src={`/icons/${icon}.svg`}
                     svgClassName={"icon" + (className ? `-${className}` : '')}
@@ -42,7 +42,8 @@ export default class Pages extends React.Component<Props> {
     }
 
     private _renderSearch(): React.ReactNode {
-        if (!this.state.isSearchOpen) {          
+        const {searchValue} = this.props;
+        if (!this.state.isSearchOpen && searchValue === '') {          
             return (
                 <ReactSVG
                     src="/icons/search.svg"
@@ -52,13 +53,13 @@ export default class Pages extends React.Component<Props> {
             );
         }
         return (
-            <div className="search-bar" onBlur={() => this.setState({isSearchOpen: false})}>
+            <div className="search-bar" onBlur={() => this.setState({isSearchOpen: searchValue !== ''})}>
                 <Input
                     size="larger"
                     isAnimated
                     isFocused
                     placeholder="Search"
-                    value={this.props.searchValue}
+                    value={searchValue}
                     onChange={this.props.onSearchChange}
                 />
             </div>
@@ -66,7 +67,7 @@ export default class Pages extends React.Component<Props> {
     }
 
     render() {
-        const {pages} = this.props;
+        const {pages, searchValue} = this.props;
         return (
             <div className="pages">
                 <div className="pages__header">
@@ -97,7 +98,7 @@ export default class Pages extends React.Component<Props> {
                     {pages.length ?
                         pages.map((page) => <Page {...page} key={page.uuid}/>) :
                         <div>
-                            You dont have any pages yet.
+                            {searchValue === '' ? 'You dont have any pages yet.' : 'No search results'}
                         </div>
                     }
                 </div>

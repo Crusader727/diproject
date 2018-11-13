@@ -65,20 +65,22 @@ export default class Page extends React.Component<PageCut> {
         return (
             <div className="page__menu">
                 {this.props.mine && !this.props.static && this.props.template !=='html' ?
-                    <Link to={`/${this.props.uuid}/edit`}>
-                        <Button type="air" icon="edit" />
+                    <Link to={`/${this.props.uuid}/edit`} className="page__menu__edit-link">
+                        <Button type="air" icon="edit" text="Edit" size="small"/>
                     </Link> :
                     null
                 }
-                <Button type="air" icon="delete" onClick={this._deletePage}/>
+                <Button type="air" icon="delete" onClick={this._deletePage} text="Delete" size="small"/>
                 <ReactToPrint
-                    trigger={() =>  <Button type="air" icon="print" />}
+                    trigger={() =>  <Button type="air" icon="print" text="Print" size="small"/>}
                     content={() => this._qrImageRef}
                     bodyClass="print-page"
                 />
                 <Button
                     type="air"
                     icon="download"
+                    text="Download"
+                    size="small"
                     downloadHref={this._downloadSVG()}
                     downloadTitle={this.props.title}
                 />

@@ -11,32 +11,39 @@ interface Props {
     onBlur?: () => void;
     downloadHref?: string;
     downloadTitle?: string;
+    isDisabled?: boolean;
 }
 
 export default class Button extends React.Component<Props> {
     anchor: null | HTMLAnchorElement = null;
     private _onClick = () => {
-        if (this.anchor) {
-            this.anchor.click();
-            return;
-        }
-        if (this.props.onClick) {
-            this.props.onClick();
+        if (!this.props.isDisabled) {
+            if (this.anchor) {
+                this.anchor.click();
+                return;
+            }
+            if (this.props.onClick) {
+                this.props.onClick();
+            }
         }
     }
+
     public render() {
-        const {type, downloadHref, downloadTitle, text, onClick, icon, onBlur} = this.props;
+        const {type, downloadHref, downloadTitle, text, onClick, icon, onBlur, size, isDisabled} = this.props;
+        const className = 'button' +
+            (type ? ' _' + type : '') +
+            (size === 'small' ? ' _size-small' : '') +
+            (isDisabled ? ' _disabled' : '');
         return (
             <button 
-                // className={'input_size-' + (size ? size : this.defaultProps.size)}
-                className={'button' + (type ? ' _' + type : '')}
+                className={className}
                 onClick={this._onClick}
                 onBlur={onBlur}
             >
                 {text}
                 {icon && <ReactSVG
                         src={`/icons/${icon}.svg`}
-                        svgClassName=""
+                        svgClassName="button__icon"
                     />
                 }
                 {downloadHref ? 

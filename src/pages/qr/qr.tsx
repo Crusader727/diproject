@@ -150,7 +150,7 @@ export default class Qr extends React.Component<Props> {
             return null;// TODO might be loader
         }
         const text = isSuccessfullPush ?
-            'Push was successfully send' :
+            'Push was successfully sent' :
             'Error: Push was not send, user didn`t get yor message'; 
         return (
             <div className="qr">

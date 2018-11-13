@@ -213,9 +213,9 @@ export default class Constructor extends React.Component<Props, State> {
                 </div>
                 {this._renderCheckboxes()}
                 <div className="constructor__menu__actions">
-                    <Button text="Save" onClick={() => this._savePage()}/>
+                    <Button text="Save" onClick={() => this._savePage()} isDisabled={this.state.actions.length === 0}/>
                     <Link to="/">
-                        <Button text="Cancel"/>
+                        <Button text="Back"/>
                     </Link>
                 </div>
                 {this.state.isCustom ?
