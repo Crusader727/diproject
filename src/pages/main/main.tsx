@@ -7,6 +7,7 @@ import Pages from './components/pages';
 import Header from 'components/header/header';
 import {getPages} from './main-provider';
 import PageCut from 'types/pageCut';
+import Button from 'components/button/button';
 
 interface Props {
     username: string;
@@ -23,10 +24,10 @@ interface State {
 const Templates = [
     {title: 'wifi', type: 'wifi'}, 
     {title: 'telephone', type: 'telephone'}, 
-    {title: 'sms', type: 'sms'},
+    {title: 'SMS', type: 'sms'},
     {title: 'event', type: 'event'},
-    {title: 'Yandex Maps Location', type: 'ylocation'},
-    {title: 'Custom HTML page', type: 'html'},
+    {title: 'Maps Location', type: 'ylocation'},
+    {title: 'Custom HTML', type: 'html'},
     {title: 'URL', type: 'url'},
     {title: 'Email', type: 'email'},
     {title: 'WhatsApp', type: 'whatsapp'},
@@ -122,11 +123,11 @@ export default class MainPage extends React.Component<Props> {
                 </div>
                 <div className="main-page__templates__content">
                     {this._renderTemplate('custom', 'custom')}
-                    {this._renderArrow('left')}
+                    {/* {this._renderArrow('left')} */}
                     <div className="main-page__templates__content__scrollable" onScroll={this._onTemplatesScroll}>
                         {Templates.map(({title, type}) => this._renderTemplate(title, type))}
                     </div>
-                    {this._renderArrow('right')}
+                    {/* {this._renderArrow('right')} */}
                 </div>
             </div>
         );
@@ -137,20 +138,22 @@ export default class MainPage extends React.Component<Props> {
             <div className="main-page">
                 <Header username={this.props.username} logout={this.props.logout}/>
                 {/* <SketchPicker onChange={(color) => console.log(color)}/> */}
-                {this._renderTemplates()}
-                <Pages
-                    pages={this.state.pages}
-                    searchValue={this.state.searchValue}
-                    onSearchChange={this._onSearchChange}
-                    getOwnerType={value => {
-                        this._ownerType = value;
-                        this._getPages();
-                    }}
-                    getSortValue={value => {
-                        this._sortValue = value;
-                        this._getPages();
-                    }}
-                />
+                <div className="main-page__content">
+                    {this._renderTemplates()}
+                    <Pages
+                        pages={this.state.pages}
+                        searchValue={this.state.searchValue}
+                        onSearchChange={this._onSearchChange}
+                        getOwnerType={value => {
+                            this._ownerType = value;
+                            this._getPages();
+                        }}
+                        getSortValue={value => {
+                            this._sortValue = value;
+                            this._getPages();
+                        }}
+                    />
+                </div>
             </div>
         );
     }

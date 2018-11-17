@@ -32,7 +32,7 @@ export default class Pages extends React.Component<Props> {
         {icon: string, items: any[], onClick: (value: string) => void, className?: string})
     : React.ReactNode {
         return (
-            <DropDown items={items} onClick={onClick} showChosen>
+            <DropDown items={items} onClick={onClick}>
                 <ReactSVG
                     src={`/icons/${icon}.svg`}
                     svgClassName={"icon" + (className ? `-${className}` : '')}
@@ -70,6 +70,11 @@ export default class Pages extends React.Component<Props> {
         const {pages, searchValue} = this.props;
         return (
             <div className="pages">
+                <div className="pages__stats">
+                    <div className="pages__stats__item"></div>
+                    <div className="pages__stats__item"></div>
+                    <div className="pages__stats__item"></div>
+                </div>
                 <div className="pages__header">
                     <div className="pages__header__block">
                         <div className="pages__header__title">

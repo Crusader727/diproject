@@ -102,7 +102,7 @@ export default class Page extends React.Component<PageCut> {
             template : !isPublic ? 'private' : null;
         return (
             <div className="page">
-                <a
+                {/* <a
                     className="page__content"
                     href={`qr/${uuid}`}
                     target="_blank"
@@ -135,6 +135,60 @@ export default class Page extends React.Component<PageCut> {
                         tabIndex={0}
                         onBlur={() => this.menuTimeout = setTimeout(() => this.setState({isMenuShown: false}), 200)}
                         onClick={() => this.setState({isMenuShown: !this.state.isMenuShown})}
+                    />
+                </div> */}
+                <div className="page__content">
+                    <div className="page__content__qr">
+                        <a
+                            className="page__content"
+                            href={`qr/${uuid}`}
+                            target="_blank"
+                            ref={el => (this._qrImageRef = el)}
+                        >
+                            <QRCode value={this._getQrCodeValue()} size={90} />
+                        </a>
+                    </div>
+                    <div className="page__content__info">
+                        <div className="page__content__info__title">
+                            {title}                            
+                        </div>
+                        <div className="page__content__info__type">
+                            {smallIcon ? smallIcon : 'custom'}
+                            {smallIcon ?
+                                <ReactSVG
+                                    src={`/icons/templates/${smallIcon}.svg`}
+                                    svgClassName="page__small-icon"
+                                    tabIndex={0}
+                                /> : null
+                            }
+                        </div>
+                        <div>
+                            {formatedDate}
+                        </div>
+                    </div>
+                    <div className="page__content__actions">
+                        {this.props.mine && !this.props.static && this.props.template !=='html' ?
+                            <Link to={`/${this.props.uuid}/edit`} className="page__menu__edit-link">
+                                <Button type="air" icon="edit" size="small"/>
+                            </Link> :
+                            null
+                        }
+                        <Button type="air" icon="delete" onClick={this._deletePage} size="small"/>
+                    </div>
+                </div>
+                <div className="page__actions">
+                    <ReactToPrint
+                        trigger={() =>  <Button type="air" icon="print" text="Print" size="small"/>}
+                        content={() => this._qrImageRef}
+                        bodyClass="print-page"
+                    />
+                    <Button
+                        type="air"
+                        icon="download"
+                        text="Download"
+                        size="small"
+                        downloadHref={this._downloadSVG()}
+                        downloadTitle={this.props.title}
                     />
                 </div>
             </div>

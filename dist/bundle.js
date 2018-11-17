@@ -49101,7 +49101,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n  width: 80px;\n  height: 40px;\n  font-size: 15px;\n  border-radius: 6px;\n  text-transform: uppercase;\n  display: inline-block;\n  background-color: #ffd900;\n  opacity: 0.9;\n  cursor: pointer; }\n  .button:hover {\n    opacity: 1; }\n  .button._air {\n    display: flex;\n    flex-direction: row;\n    background: none;\n    width: auto;\n    height: auto;\n    font-size: 15px;\n    color: #ffd900;\n    opacity: 0.8; }\n    .button._air:hover {\n      opacity: 1; }\n    .button._air:active {\n      opacity: 1; }\n  .button._size-small {\n    justify-content: flex-end;\n    line-height: 20px;\n    font-size: 10px; }\n  .button._disabled {\n    opacity: 0.7; }\n    .button._disabled:hover {\n      opacity: 0.7; }\n    .button._disabled:active {\n      opacity: 0.7; }\n  .button__icon {\n    margin: 0 2px;\n    width: 20px;\n    height: 20px; }\n", ""]);
+exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n  width: 80px;\n  height: 40px;\n  font-size: 15px;\n  border-radius: 6px;\n  text-transform: uppercase;\n  display: inline-block;\n  background-color: #F08177;\n  opacity: 0.9;\n  cursor: pointer; }\n  .button:hover {\n    opacity: 1; }\n  .button._air {\n    display: flex;\n    flex-direction: row;\n    background: none;\n    width: auto;\n    height: auto;\n    font-size: 15px;\n    color: #F08177;\n    opacity: 0.8; }\n    .button._air:hover {\n      opacity: 1; }\n    .button._air:active {\n      opacity: 1; }\n  .button._size-small {\n    justify-content: flex-end;\n    line-height: 20px;\n    font-size: 10px; }\n  .button._disabled {\n    opacity: 0.7; }\n    .button._disabled:hover {\n      opacity: 0.7; }\n    .button._disabled:active {\n      opacity: 0.7; }\n  .button__icon {\n    margin: 0 2px;\n    width: 20px;\n    height: 20px; }\n", ""]);
 
 // exports
 
@@ -49329,7 +49329,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".page {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px;\n  margin-bottom: 20px;\n  max-height: 174px;\n  box-sizing: border-box;\n  border: 3px solid #515151; }\n  .page:last-child {\n    margin-right: 0px; }\n  .page__content {\n    height: 130px;\n    width: 130px;\n    box-sizing: border-box; }\n  .page__title {\n    background-color: #515151;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    color: white;\n    text-transform: capitalize;\n    font-size: 15px;\n    line-height: 25px; }\n    .page__title__left-block {\n      display: flex;\n      flex-direction: column; }\n    .page__title__date {\n      line-height: 12px;\n      font-size: 12px; }\n    .page__title__title {\n      display: flex;\n      flex-direction: row; }\n      .page__title__title__text {\n        white-space: nowrap;\n        max-width: 80px;\n        overflow-x: auto; }\n        .page__title__title__text::-webkit-scrollbar {\n          display: none; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__small-icon {\n    margin-left: 5px;\n    margin-top: 2px;\n    width: 20px;\n    height: 20px;\n    color: #ffd900; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    bottom: 38px; }\n    .page__menu__edit-link {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-end; }\n  .page:hover {\n    border: 3px solid #ffd900; }\n\n.print-page {\n  margin-left: 20px;\n  margin-top: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .page {\n    width: 100%;\n    height: 300px;\n    max-height: 300px; } }\n", ""]);
+exports.push([module.i, ".page {\n  color: #F08177;\n  background-color: #FCFBFD;\n  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);\n  display: flex;\n  flex-direction: column;\n  min-width: 42%;\n  margin-right: 60px;\n  margin-bottom: 20px;\n  justify-content: space-between; }\n  .page__content {\n    padding: 6px;\n    display: flex;\n    flex-direction: row; }\n    .page__content__qr {\n      flex-grow: 1; }\n    .page__content__info {\n      display: flex;\n      flex-direction: column;\n      flex-grow: 13; }\n      .page__content__info__title {\n        color: #515151;\n        font-size: 18px;\n        font-weight: bold;\n        margin-top: 4px; }\n      .page__content__info__type {\n        display: flex;\n        flex-direction: row;\n        line-height: 26px; }\n    .page__content__actions {\n      flex-grow: 1;\n      display: flex;\n      flex-direction: row;\n      align-items: flex-start;\n      justify-content: flex-end; }\n  .page__actions {\n    color: #F08177;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    padding: 6px;\n    background-color: #D6D7D7; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__small-icon {\n    margin-left: 5px;\n    margin-top: 2px;\n    width: 20px;\n    height: 20px;\n    color: #F08177; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    bottom: 38px; }\n    .page__menu__edit-link {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-end; }\n\n.print-page {\n  margin-left: 20px;\n  margin-top: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .page {\n    width: 100%;\n    height: 300px;\n    max-height: 300px; } }\n", ""]);
 
 // exports
 
@@ -49348,7 +49348,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".pages {\n  padding: 0 11% 0 15%;\n  background-color: #2d2d2d;\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n  .pages__header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: white;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto;\n    height: 100%; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .pages {\n    padding: 0 4% 0 6%; }\n    .pages__header__title {\n      font-size: 35px; }\n  .icon {\n    width: 40px;\n    height: 40px; }\n    .icon-owner {\n      cursor: pointer;\n      width: 40px;\n      height: 40px; } }\n", ""]);
+exports.push([module.i, ".pages {\n  padding: 0 2% 0 60px;\n  background-color: #D6D7D7;\n  display: flex;\n  flex-direction: column;\n  margin-top: 20px; }\n  .pages__stats {\n    display: flex;\n    flex-direction: row; }\n    .pages__stats__item {\n      min-width: 28%;\n      min-height: 120px;\n      background-color: #FCFBFD;\n      margin-right: 30px; }\n  .pages__header {\n    color: #F08177;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px;\n    margin-right: 105px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: #515151;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    padding: 2px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto;\n    height: 68vh; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .pages {\n    padding: 0 4% 0 6%; }\n    .pages__header__title {\n      font-size: 35px; }\n  .icon {\n    width: 40px;\n    height: 40px; }\n    .icon-owner {\n      cursor: pointer;\n      width: 40px;\n      height: 40px; } }\n", ""]);
 
 // exports
 
@@ -49367,7 +49367,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900;\n  height: 100%; }\n  .main-page__templates {\n    background-color: #515151;\n    padding: 0 10% 0 15%;\n    display: flex;\n    flex-direction: column; }\n    .main-page__templates__title {\n      color: white;\n      margin-top: 12px;\n      margin-bottom: 12px;\n      font-size: 22px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: row; }\n      .main-page__templates__content__scrollable {\n        overflow-x: auto;\n        overflow-y: none;\n        display: flex;\n        flex-direction: row; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n\n.template {\n  display: flex;\n  flex-direction: column;\n  margin-right: 40px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    color: #ffd900;\n    position: relative;\n    background-color: white;\n    height: 48vh;\n    width: 11vw;\n    margin: 2px;\n    box-sizing: border-box; }\n    .template__content:hover {\n      border: 2px solid #ffd900; }\n  .template__title {\n    color: white;\n    text-transform: capitalize;\n    margin-top: 8px;\n    margin-bottom: 8px;\n    font-size: 15px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.template-icon {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 90px;\n  height: 90px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .template__content {\n    height: 400px;\n    width: 200px; }\n  .template__title {\n    font-size: 25px; }\n  .main-page__templates {\n    padding: 0 4% 0 6%; }\n    .main-page__templates__title {\n      font-size: 35px; } }\n", ""]);
+exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page__templates {\n    background-color: #FCFBFD;\n    padding: 0 20px;\n    display: flex;\n    min-width: 240px;\n    flex-direction: column;\n    margin-left: 30px;\n    margin-top: 20px;\n    margin-bottom: 20px; }\n    .main-page__templates__title {\n      color: #F08177;\n      margin-top: 12px;\n      font-size: 22px;\n      margin-bottom: 12px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: column; }\n      .main-page__templates__content__scrollable {\n        overflow-x: none;\n        overflow-y: auto;\n        display: flex;\n        flex-direction: column; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n  .main-page__content {\n    display: flex;\n    flex-direction: row;\n    background-color: #D6D7D7; }\n\n.template {\n  display: flex;\n  flex-direction: row;\n  margin-top: 12px;\n  padding: 2px 11px;\n  line-height: 28px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    margin-right: 15px;\n    color: #F08177; }\n  .template__title {\n    color: #515151;\n    text-transform: capitalize;\n    font-size: 18px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.template-icon {\n  margin-top: 4px;\n  width: 20px;\n  height: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .template__content {\n    height: 400px;\n    width: 200px; }\n  .template__title {\n    font-size: 25px; }\n  .main-page__templates {\n    padding: 0 4% 0 6%; }\n    .main-page__templates__title {\n      font-size: 35px; } }\n", ""]);
 
 // exports
 
@@ -63359,17 +63359,26 @@ var Page = /** @class */ (function (_super) {
         var smallIcon = isStatic || template === 'html' || template === 'push' ?
             template : !isPublic ? 'private' : null;
         return (React.createElement("div", { className: "page" },
-            React.createElement("a", { className: "page__content", href: "qr/" + uuid, target: "_blank", ref: function (el) { return (_this._qrImageRef = el); } },
-                React.createElement(QRCode, { value: this._getQrCodeValue(), size: 130 })),
-            this._renderMenu(),
-            React.createElement("div", { className: "page__title" },
-                React.createElement("div", { className: "page__title__left-block" },
-                    React.createElement("div", { className: "page__title__title" },
-                        React.createElement("div", { className: "page__title__title__text" }, title),
+            React.createElement("div", { className: "page__content" },
+                React.createElement("div", { className: "page__content__qr" },
+                    React.createElement("a", { className: "page__content", href: "qr/" + uuid, target: "_blank", ref: function (el) { return (_this._qrImageRef = el); } },
+                        React.createElement(QRCode, { value: this._getQrCodeValue(), size: 90 }))),
+                React.createElement("div", { className: "page__content__info" },
+                    React.createElement("div", { className: "page__content__info__title" }, title),
+                    React.createElement("div", { className: "page__content__info__type" },
+                        smallIcon ? smallIcon : 'custom',
                         smallIcon ?
                             React.createElement(react_svg_1.default, { src: "/icons/templates/" + smallIcon + ".svg", svgClassName: "page__small-icon", tabIndex: 0 }) : null),
-                    React.createElement("div", { className: "page__title__date" }, formatedDate)),
-                React.createElement(react_svg_1.default, { src: "/icons/more.svg", svgClassName: "page__icon", tabIndex: 0, onBlur: function () { return _this.menuTimeout = setTimeout(function () { return _this.setState({ isMenuShown: false }); }, 200); }, onClick: function () { return _this.setState({ isMenuShown: !_this.state.isMenuShown }); } }))));
+                    React.createElement("div", null, formatedDate)),
+                React.createElement("div", { className: "page__content__actions" },
+                    this.props.mine && !this.props.static && this.props.template !== 'html' ?
+                        React.createElement(react_router_dom_1.Link, { to: "/" + this.props.uuid + "/edit", className: "page__menu__edit-link" },
+                            React.createElement(button_1.default, { type: "air", icon: "edit", size: "small" })) :
+                        null,
+                    React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage, size: "small" }))),
+            React.createElement("div", { className: "page__actions" },
+                React.createElement(ReactToPrint, { trigger: function () { return React.createElement(button_1.default, { type: "air", icon: "print", text: "Print", size: "small" }); }, content: function () { return _this._qrImageRef; }, bodyClass: "print-page" }),
+                React.createElement(button_1.default, { type: "air", icon: "download", text: "Download", size: "small", downloadHref: this._downloadSVG(), downloadTitle: this.props.title }))));
     };
     return Page;
 }(React.Component));
@@ -63461,7 +63470,7 @@ var Pages = /** @class */ (function (_super) {
     }
     Pages.prototype._renderDropDownButton = function (_a) {
         var icon = _a.icon, items = _a.items, onClick = _a.onClick, className = _a.className;
-        return (React.createElement(dropdown_1.default, { items: items, onClick: onClick, showChosen: true },
+        return (React.createElement(dropdown_1.default, { items: items, onClick: onClick },
             React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "icon" + (className ? "-" + className : '') })));
     };
     Pages.prototype._renderSearch = function () {
@@ -63476,6 +63485,10 @@ var Pages = /** @class */ (function (_super) {
     Pages.prototype.render = function () {
         var _a = this.props, pages = _a.pages, searchValue = _a.searchValue;
         return (React.createElement("div", { className: "pages" },
+            React.createElement("div", { className: "pages__stats" },
+                React.createElement("div", { className: "pages__stats__item" }),
+                React.createElement("div", { className: "pages__stats__item" }),
+                React.createElement("div", { className: "pages__stats__item" })),
             React.createElement("div", { className: "pages__header" },
                 React.createElement("div", { className: "pages__header__block" },
                     React.createElement("div", { className: "pages__header__title" }, "Pages"),
@@ -63642,10 +63655,10 @@ var main_provider_1 = __webpack_require__(/*! ./main-provider */ "./src/pages/ma
 var Templates = [
     { title: 'wifi', type: 'wifi' },
     { title: 'telephone', type: 'telephone' },
-    { title: 'sms', type: 'sms' },
+    { title: 'SMS', type: 'sms' },
     { title: 'event', type: 'event' },
-    { title: 'Yandex Maps Location', type: 'ylocation' },
-    { title: 'Custom HTML page', type: 'html' },
+    { title: 'Maps Location', type: 'ylocation' },
+    { title: 'Custom HTML', type: 'html' },
     { title: 'URL', type: 'url' },
     { title: 'Email', type: 'email' },
     { title: 'WhatsApp', type: 'whatsapp' },
@@ -63717,25 +63730,24 @@ var MainPage = /** @class */ (function (_super) {
             React.createElement("div", { className: "main-page__templates__title" }, "Templates"),
             React.createElement("div", { className: "main-page__templates__content" },
                 this._renderTemplate('custom', 'custom'),
-                this._renderArrow('left'),
                 React.createElement("div", { className: "main-page__templates__content__scrollable", onScroll: this._onTemplatesScroll }, Templates.map(function (_a) {
                     var title = _a.title, type = _a.type;
                     return _this._renderTemplate(title, type);
-                })),
-                this._renderArrow('right'))));
+                })))));
     };
     MainPage.prototype.render = function () {
         var _this = this;
         return (React.createElement("div", { className: "main-page" },
             React.createElement(header_1.default, { username: this.props.username, logout: this.props.logout }),
-            this._renderTemplates(),
-            React.createElement(pages_1.default, { pages: this.state.pages, searchValue: this.state.searchValue, onSearchChange: this._onSearchChange, getOwnerType: function (value) {
-                    _this._ownerType = value;
-                    _this._getPages();
-                }, getSortValue: function (value) {
-                    _this._sortValue = value;
-                    _this._getPages();
-                } })));
+            React.createElement("div", { className: "main-page__content" },
+                this._renderTemplates(),
+                React.createElement(pages_1.default, { pages: this.state.pages, searchValue: this.state.searchValue, onSearchChange: this._onSearchChange, getOwnerType: function (value) {
+                        _this._ownerType = value;
+                        _this._getPages();
+                    }, getSortValue: function (value) {
+                        _this._sortValue = value;
+                        _this._getPages();
+                    } }))));
     };
     return MainPage;
 }(React.Component));
