@@ -6,25 +6,26 @@
     &__content {
         top: 20px;
         position: absolute;
-        background-color: $grey;
+        background-color: $snow;
         min-width: 100px;
         z-index: 1;
         border-radius: 3px;
-        border: 2px solid $dark-grey;
+        // border: 2px solid $dark-grey;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
         max-height: 160px;
         overflow: auto;
         &__item {
             text-transform: capitalize;
             font-size: $font-size-normal;
-            color: $white;
+            color: $grey;
             padding: 8px 12px;
             display: block;
             box-sizing: border-box;
             &:hover {
-                color: $yellow;
+                color: $light-peach;
             }
             &.chosen {
-                color: $yellow;
+                color: $peach;
             }
         }
     }

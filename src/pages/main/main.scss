@@ -2,7 +2,7 @@
 .main-page {
     display: flex;
     flex-direction: column;
-    color: $yellow;
+    color: $peach;
     &__templates {
         background-color: $snow;
         padding: 0 20px;
@@ -42,34 +42,23 @@
 .template {
     display: flex;
     flex-direction: row;
-    // margin-right: 40px;
     margin-top: 12px;
-    // background-color: $prim;
     padding: 2px 11px;
     line-height: 28px;
     &:last-child {
         margin-right: 0px;
     }
     &__content {
-        // color: $yellow;
-        // position: relative;
-        // background-color: $white;
-        // height: 48vh;
-        // width: 11vw;
-        // margin: 2px;
-        // box-sizing: border-box;
-        // &:hover {
-        //     border: 2px solid $yellow;
-        // }
         margin-right: 15px;
         color: $peach;
     }
     &__title {
         color: $grey;
         text-transform: capitalize;
-        // margin-top: 8px;
-        // margin-bottom: 8px;
         font-size: $font-size-large;
+    }
+    &:hover {
+        background-color: $prim;
     }
 }
 
@@ -85,12 +74,6 @@
 }
 
 .template-icon {
-    // position: absolute;
-    // left: 0;
-    // top: 0;
-    // bottom: 0;
-    // right: 0;
-    // margin: auto;
     margin-top: 4px;
     width: 20px;
     height: 20px;

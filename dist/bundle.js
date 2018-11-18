@@ -49101,7 +49101,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n  width: 80px;\n  height: 40px;\n  font-size: 15px;\n  border-radius: 6px;\n  text-transform: uppercase;\n  display: inline-block;\n  background-color: #F08177;\n  opacity: 0.9;\n  cursor: pointer; }\n  .button:hover {\n    opacity: 1; }\n  .button._air {\n    display: flex;\n    flex-direction: row;\n    background: none;\n    width: auto;\n    height: auto;\n    font-size: 15px;\n    color: #F08177;\n    opacity: 0.8; }\n    .button._air:hover {\n      opacity: 1; }\n    .button._air:active {\n      opacity: 1; }\n  .button._size-small {\n    justify-content: flex-end;\n    line-height: 20px;\n    font-size: 10px; }\n  .button._disabled {\n    opacity: 0.7; }\n    .button._disabled:hover {\n      opacity: 0.7; }\n    .button._disabled:active {\n      opacity: 0.7; }\n  .button__icon {\n    margin: 0 2px;\n    width: 20px;\n    height: 20px; }\n", ""]);
+exports.push([module.i, ".button {\n  border: none;\n  box-sizing: border-box;\n  font-size: 15px;\n  text-transform: uppercase;\n  display: inline-block;\n  background: linear-gradient(45deg, #F08177, #ffd900);\n  opacity: 1;\n  cursor: pointer;\n  padding: 4px 8px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  color: #FCFBFD; }\n  .button:hover {\n    opacity: 0.9; }\n  .button._air {\n    display: flex;\n    flex-direction: row;\n    background: none;\n    width: auto;\n    height: auto;\n    font-size: 15px;\n    color: #F08177;\n    opacity: 1;\n    padding: 0; }\n    .button._air:hover {\n      opacity: 0.8; }\n    .button._air:active {\n      opacity: 0.8; }\n  .button._size-small {\n    justify-content: flex-end;\n    line-height: 20px;\n    font-size: 10px; }\n  .button._size-medium {\n    justify-content: flex-end;\n    line-height: 20px;\n    font-size: 14px; }\n  .button._size-large {\n    text-transform: none;\n    justify-content: flex-end;\n    line-height: 37px;\n    font-size: 18px; }\n  .button._disabled {\n    opacity: 0.7; }\n    .button._disabled:hover {\n      opacity: 0.7; }\n    .button._disabled:active {\n      opacity: 0.7; }\n  .button__icon {\n    margin: 0 2px;\n    width: 20px;\n    height: 20px; }\n    .button__icon__small {\n      margin: 0 2px;\n      width: 20px;\n      height: 20px; }\n    .button__icon__medium {\n      width: 24px;\n      height: 24px; }\n    .button__icon__large {\n      margin-top: 8px;\n      margin-left: 10px;\n      width: 24px;\n      height: 24px; }\n", ""]);
 
 // exports
 
@@ -49139,7 +49139,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".dropdown {\n  display: flex;\n  flex-direction: row;\n  position: relative; }\n  .dropdown__content {\n    top: 20px;\n    position: absolute;\n    background-color: #515151;\n    min-width: 100px;\n    z-index: 1;\n    border-radius: 3px;\n    border: 2px solid #2d2d2d;\n    max-height: 160px;\n    overflow: auto; }\n    .dropdown__content__item {\n      text-transform: capitalize;\n      font-size: 15px;\n      color: white;\n      padding: 8px 12px;\n      display: block;\n      box-sizing: border-box; }\n      .dropdown__content__item:hover {\n        color: #ffd900; }\n      .dropdown__content__item.chosen {\n        color: #ffd900; }\n  .dropdown__icon {\n    height: 30px; }\n", ""]);
+exports.push([module.i, ".dropdown {\n  display: flex;\n  flex-direction: row;\n  position: relative; }\n  .dropdown__content {\n    top: 20px;\n    position: absolute;\n    background-color: #FCFBFD;\n    min-width: 100px;\n    z-index: 1;\n    border-radius: 3px;\n    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);\n    max-height: 160px;\n    overflow: auto; }\n    .dropdown__content__item {\n      text-transform: capitalize;\n      font-size: 15px;\n      color: #515151;\n      padding: 8px 12px;\n      display: block;\n      box-sizing: border-box; }\n      .dropdown__content__item:hover {\n        color: #FB9F74; }\n      .dropdown__content__item.chosen {\n        color: #F08177; }\n  .dropdown__icon {\n    height: 30px; }\n", ""]);
 
 // exports
 
@@ -49158,7 +49158,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".header {\n  display: flex;\n  flex-direction: row;\n  min-height: 45px;\n  line-height: 45px;\n  background-color: #2d2d2d;\n  justify-content: space-between;\n  padding: 0 30px;\n  border-bottom: 1px solid #ffd900;\n  font-size: 18px;\n  color: #ffd900; }\n  .header__title {\n    display: inline-block;\n    font-size: 22px;\n    color: #ffd900; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .header {\n    min-height: 45px;\n    line-height: 45px;\n    font-size: 32px; }\n    .header__title {\n      font-size: 32px; } }\n", ""]);
+exports.push([module.i, ".header {\n  display: flex;\n  flex-direction: row;\n  min-height: 45px;\n  line-height: 45px;\n  background-color: #FCFBFD;\n  justify-content: space-between;\n  padding: 0 30px;\n  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);\n  font-size: 18px;\n  color: #515151; }\n  .header__title {\n    display: inline-block;\n    font-size: 22px;\n    color: #F08177; }\n  .header__right-block {\n    display: flex;\n    flex-direction: row;\n    line-height: 48px; }\n    .header__right-block__accaunt {\n      margin-right: 12px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .header {\n    min-height: 45px;\n    line-height: 45px;\n    font-size: 32px; }\n    .header__title {\n      font-size: 32px; } }\n", ""]);
 
 // exports
 
@@ -49177,7 +49177,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".input {\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  height: 30px;\n  border: 2px solid #ffd900;\n  background-color: white;\n  font-size: 15px;\n  border-radius: 4px;\n  animation-duration: 1s; }\n  .input:focus {\n    border-width: 3px; }\n  .input.size-small {\n    width: 100px; }\n  .input.size-medium {\n    width: 250px; }\n  .input.size-large {\n    width: 600px; }\n  .input.size-larger {\n    width: 800px; }\n\n@keyframes enlarge-small {\n  0% {\n    width: 0; }\n  100% {\n    width: 100px; } }\n\n@keyframes enlarge-medium {\n  0% {\n    width: 0; }\n  100% {\n    width: 300px; } }\n\n@keyframes enlarge-large {\n  0% {\n    width: 0; }\n  100% {\n    width: 600px; } }\n\n@keyframes enlarge-larger {\n  0% {\n    width: 0; }\n  100% {\n    width: 800px; } }\n", ""]);
+exports.push([module.i, ".input {\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  height: 30px;\n  border: 1px solid #F08177;\n  background-color: #FCFBFD;\n  font-size: 15px;\n  animation-duration: 1s; }\n  .input:focus {\n    border-width: 2px; }\n  .input.size-small {\n    width: 100px; }\n  .input.size-medium {\n    width: 250px; }\n  .input.size-large {\n    width: 600px; }\n  .input.size-larger {\n    width: 700px; }\n\n@keyframes enlarge-small {\n  0% {\n    width: 0; }\n  100% {\n    width: 100px; } }\n\n@keyframes enlarge-medium {\n  0% {\n    width: 0; }\n  100% {\n    width: 300px; } }\n\n@keyframes enlarge-large {\n  0% {\n    width: 0; }\n  100% {\n    width: 600px; } }\n\n@keyframes enlarge-larger {\n  0% {\n    width: 0; }\n  100% {\n    width: 700px; } }\n", ""]);
 
 // exports
 
@@ -49196,7 +49196,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".loader {\n  display: inline-block;\n  z-index: 1;\n  border: 5px solid #2d2d2d;\n  background-color: #515151;\n  box-sizing: border-box; }\n  .loader__text {\n    color: white;\n    font-weight: bold;\n    font-size: 18px;\n    padding-left: 20%; }\n", ""]);
+exports.push([module.i, ".loader {\n  display: inline-block;\n  z-index: 1;\n  border: 5px solid #D6D7D7;\n  background-color: #D6D7D7;\n  box-sizing: border-box; }\n  .loader__text {\n    color: #F08177;\n    font-weight: bold;\n    font-size: 18px;\n    padding-left: 20%; }\n", ""]);
 
 // exports
 
@@ -49310,7 +49310,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".login {\n  width: 100%;\n  height: 100vh;\n  background-color: #515151;\n  background-size: cover;\n  display: flex;\n  justify-content: center; }\n  .login__content {\n    min-height: max-content;\n    display: flex;\n    flex-direction: column;\n    margin-top: 20vh;\n    width: 60vw;\n    height: 63vh;\n    background-color: #2d2d2d;\n    border-radius: 20px; }\n    .login__content__title {\n      margin-left: auto;\n      margin-right: auto;\n      margin-top: 10vh;\n      font-size: 35px;\n      color: #ffd900;\n      padding: 5px; }\n    .login__content__text {\n      font-size: 25px;\n      color: white;\n      padding: 5vh 9vw; }\n    .login__content__services {\n      cursor: pointer;\n      margin-top: 5vh;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: row;\n      color: #ffd900; }\n  .login__loader {\n    z-index: 1;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%); }\n  .login._isloading {\n    filter: blur(5px); }\n\n.oauth-icon {\n  width: 10vh;\n  height: 10vh; }\n  .oauth-icon__container {\n    margin-right: 3vw; }\n    .oauth-icon__container:last-child {\n      margin-right: 0px; }\n", ""]);
+exports.push([module.i, ".login__heading {\n  width: 100%;\n  height: 40vh;\n  background: url(/images/background.jpg) no-repeat;\n  background-size: cover; }\n  .login__heading__content {\n    display: flex;\n    flex-direction: column;\n    background-color: rgba(240, 129, 119, 0.8);\n    height: 100%; }\n    .login__heading__content__title {\n      margin: 30px 40px;\n      font-weight: bold;\n      color: #FCFBFD;\n      font-size: 35px; }\n    .login__heading__content__description {\n      color: #FCFBFD;\n      font-size: 30px;\n      margin-left: 35%;\n      margin-top: 25px; }\n    .login__heading__content__subdescription {\n      color: #FCFBFD;\n      font-size: 18px;\n      margin-left: 38%;\n      margin-top: 8px; }\n\n.login__content {\n  height: 60vh;\n  background-color: #FCFBFD;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .login__content__title {\n    margin-top: 20px;\n    font-weight: bold;\n    color: #515151;\n    font-size: 35px; }\n  .login__content__underline {\n    background-color: #F08177;\n    height: 5px;\n    width: 70px; }\n  .login__content__features {\n    margin-top: 40px;\n    display: flex;\n    flex-direction: row;\n    width: 70%;\n    justify-content: space-between; }\n    .login__content__features__item {\n      align-items: center;\n      display: flex;\n      flex-direction: column; }\n      .login__content__features__item__text {\n        font-size: 18px;\n        margin-top: 20px;\n        text-align: center;\n        color: #515151; }\n  .login__content__singins {\n    margin-top: 20px;\n    display: flex;\n    flex-direction: row;\n    width: 35%;\n    justify-content: space-between; }\n    .login__content__singins__title {\n      color: #515151;\n      font-size: 22px;\n      margin-top: 40px; }\n\n.login__loader {\n  z-index: 1;\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\n.login._isloading {\n  filter: blur(5px); }\n\n.oauth-icon {\n  width: 10vh;\n  height: 10vh; }\n  .oauth-icon__container {\n    margin-right: 3vw; }\n    .oauth-icon__container:last-child {\n      margin-right: 0px; }\n\n.feature-icon {\n  width: 75px;\n  height: 75px;\n  color: #F08177; }\n", ""]);
 
 // exports
 
@@ -49329,7 +49329,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".page {\n  color: #F08177;\n  background-color: #FCFBFD;\n  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);\n  display: flex;\n  flex-direction: column;\n  min-width: 42%;\n  margin-right: 60px;\n  margin-bottom: 20px;\n  justify-content: space-between; }\n  .page__content {\n    padding: 6px;\n    display: flex;\n    flex-direction: row; }\n    .page__content__qr {\n      flex-grow: 1; }\n    .page__content__info {\n      display: flex;\n      flex-direction: column;\n      flex-grow: 13; }\n      .page__content__info__title {\n        color: #515151;\n        font-size: 18px;\n        font-weight: bold;\n        margin-top: 4px; }\n      .page__content__info__type {\n        display: flex;\n        flex-direction: row;\n        line-height: 26px; }\n    .page__content__actions {\n      flex-grow: 1;\n      display: flex;\n      flex-direction: row;\n      align-items: flex-start;\n      justify-content: flex-end; }\n  .page__actions {\n    color: #F08177;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    padding: 6px;\n    background-color: #D6D7D7; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__small-icon {\n    margin-left: 5px;\n    margin-top: 2px;\n    width: 20px;\n    height: 20px;\n    color: #F08177; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    bottom: 38px; }\n    .page__menu__edit-link {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-end; }\n\n.print-page {\n  margin-left: 20px;\n  margin-top: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .page {\n    width: 100%;\n    height: 300px;\n    max-height: 300px; } }\n", ""]);
+exports.push([module.i, ".page {\n  max-height: 168px;\n  color: #F08177;\n  background-color: #FCFBFD;\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n  display: flex;\n  flex-direction: column;\n  min-width: 42%;\n  margin-right: 60px;\n  margin-bottom: 20px;\n  justify-content: space-between; }\n  .page__content {\n    padding: 6px;\n    display: flex;\n    flex-direction: row; }\n    .page__content__qr {\n      flex-grow: 1; }\n    .page__content__info {\n      display: flex;\n      flex-direction: column;\n      flex-grow: 13; }\n      .page__content__info__title {\n        color: #515151;\n        font-size: 18px;\n        font-weight: bold;\n        margin-top: 4px; }\n      .page__content__info__type {\n        display: flex;\n        flex-direction: row;\n        line-height: 26px; }\n      .page__content__info__date {\n        color: #D6D7D7;\n        display: flex;\n        flex-direction: row;\n        line-height: 21px; }\n        .page__content__info__date__icon {\n          margin-left: 5px;\n          color: #D6D7D7;\n          width: 20px;\n          height: 20px; }\n    .page__content__actions {\n      flex-grow: 1;\n      display: flex;\n      flex-direction: row;\n      align-items: flex-start;\n      justify-content: flex-end; }\n  .page__actions {\n    color: #F08177;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    padding: 10px 12px;\n    background-color: #D6D7D7; }\n  .page__icon {\n    width: 24px;\n    height: 24px;\n    opacity: 0.8;\n    cursor: pointer;\n    margin-right: -5px;\n    padding-top: 7px; }\n    .page__icon:hover {\n      opacity: 1; }\n  .page__small-icon {\n    margin-left: 5px;\n    margin-top: 2px;\n    width: 20px;\n    height: 20px;\n    color: #F08177; }\n  .page__menu {\n    position: absolute;\n    background-color: #2d2d2d;\n    display: flex;\n    flex-direction: column;\n    right: 0;\n    bottom: 38px; }\n    .page__menu__edit-link {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-end; }\n\n.print-page {\n  margin-left: 20px;\n  margin-top: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .page {\n    width: 100%;\n    height: 300px;\n    max-height: 300px; } }\n", ""]);
 
 // exports
 
@@ -49348,7 +49348,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".pages {\n  padding: 0 2% 0 60px;\n  background-color: #D6D7D7;\n  display: flex;\n  flex-direction: column;\n  margin-top: 20px; }\n  .pages__stats {\n    display: flex;\n    flex-direction: row; }\n    .pages__stats__item {\n      min-width: 28%;\n      min-height: 120px;\n      background-color: #FCFBFD;\n      margin-right: 30px; }\n  .pages__header {\n    color: #F08177;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px;\n    margin-right: 105px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: #515151;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    padding: 2px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto;\n    height: 68vh; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 0.8;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 1; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .pages {\n    padding: 0 4% 0 6%; }\n    .pages__header__title {\n      font-size: 35px; }\n  .icon {\n    width: 40px;\n    height: 40px; }\n    .icon-owner {\n      cursor: pointer;\n      width: 40px;\n      height: 40px; } }\n", ""]);
+exports.push([module.i, ".pages {\n  padding: 0 2% 0 60px;\n  background-color: #D6D7D7;\n  display: flex;\n  flex-direction: column;\n  margin-top: 20px;\n  width: 100%; }\n  .pages__stats {\n    display: flex;\n    flex-direction: row; }\n    .pages__stats__item {\n      min-width: 26%;\n      min-height: 120px;\n      background-color: #FCFBFD;\n      margin-right: 25px;\n      padding: 12px; }\n      .pages__stats__item__count {\n        font-size: 22px;\n        color: #F08177;\n        margin-bottom: 2px; }\n      .pages__stats__item__title {\n        font-size: 15px;\n        color: #515151; }\n      .pages__stats__item._first {\n        background: url(/images/orange.jpg) no-repeat;\n        background-size: contain; }\n      .pages__stats__item._second {\n        background: url(/images/blue.jpg) no-repeat;\n        background-size: contain; }\n      .pages__stats__item._third {\n        background: url(/images/purple.jpg) no-repeat;\n        background-size: contain; }\n  .pages__header {\n    color: #F08177;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px;\n    margin-right: 105px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: #515151;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    padding: 2px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto;\n    height: 65vh; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 1;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 0.8; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .pages {\n    padding: 0 4% 0 6%; }\n    .pages__header__title {\n      font-size: 35px; }\n  .icon {\n    width: 40px;\n    height: 40px; }\n    .icon-owner {\n      cursor: pointer;\n      width: 40px;\n      height: 40px; } }\n", ""]);
 
 // exports
 
@@ -49367,7 +49367,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #ffd900; }\n  .main-page__templates {\n    background-color: #FCFBFD;\n    padding: 0 20px;\n    display: flex;\n    min-width: 240px;\n    flex-direction: column;\n    margin-left: 30px;\n    margin-top: 20px;\n    margin-bottom: 20px; }\n    .main-page__templates__title {\n      color: #F08177;\n      margin-top: 12px;\n      font-size: 22px;\n      margin-bottom: 12px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: column; }\n      .main-page__templates__content__scrollable {\n        overflow-x: none;\n        overflow-y: auto;\n        display: flex;\n        flex-direction: column; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n  .main-page__content {\n    display: flex;\n    flex-direction: row;\n    background-color: #D6D7D7; }\n\n.template {\n  display: flex;\n  flex-direction: row;\n  margin-top: 12px;\n  padding: 2px 11px;\n  line-height: 28px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    margin-right: 15px;\n    color: #F08177; }\n  .template__title {\n    color: #515151;\n    text-transform: capitalize;\n    font-size: 18px; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.template-icon {\n  margin-top: 4px;\n  width: 20px;\n  height: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .template__content {\n    height: 400px;\n    width: 200px; }\n  .template__title {\n    font-size: 25px; }\n  .main-page__templates {\n    padding: 0 4% 0 6%; }\n    .main-page__templates__title {\n      font-size: 35px; } }\n", ""]);
+exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #F08177; }\n  .main-page__templates {\n    background-color: #FCFBFD;\n    padding: 0 20px;\n    display: flex;\n    min-width: 240px;\n    flex-direction: column;\n    margin-left: 30px;\n    margin-top: 20px;\n    margin-bottom: 20px; }\n    .main-page__templates__title {\n      color: #F08177;\n      margin-top: 12px;\n      font-size: 22px;\n      margin-bottom: 12px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: column; }\n      .main-page__templates__content__scrollable {\n        overflow-x: none;\n        overflow-y: auto;\n        display: flex;\n        flex-direction: column; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n  .main-page__content {\n    display: flex;\n    flex-direction: row;\n    background-color: #D6D7D7; }\n\n.template {\n  display: flex;\n  flex-direction: row;\n  margin-top: 12px;\n  padding: 2px 11px;\n  line-height: 28px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    margin-right: 15px;\n    color: #F08177; }\n  .template__title {\n    color: #515151;\n    text-transform: capitalize;\n    font-size: 18px; }\n  .template:hover {\n    background-color: #D6D7D7; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.template-icon {\n  margin-top: 4px;\n  width: 20px;\n  height: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .template__content {\n    height: 400px;\n    width: 200px; }\n  .template__title {\n    font-size: 25px; }\n  .main-page__templates {\n    padding: 0 4% 0 6%; }\n    .main-page__templates__title {\n      font-size: 35px; } }\n", ""]);
 
 // exports
 
@@ -61734,11 +61734,11 @@ var Button = /** @class */ (function (_super) {
         var _a = this.props, type = _a.type, downloadHref = _a.downloadHref, downloadTitle = _a.downloadTitle, text = _a.text, onClick = _a.onClick, icon = _a.icon, onBlur = _a.onBlur, size = _a.size, isDisabled = _a.isDisabled;
         var className = 'button' +
             (type ? ' _' + type : '') +
-            (size === 'small' ? ' _size-small' : '') +
+            (size ? ' _size-' + size : '') +
             (isDisabled ? ' _disabled' : '');
         return (React.createElement("button", { className: className, onClick: this._onClick, onBlur: onBlur },
             text,
-            icon && React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "button__icon" }),
+            icon && React.createElement(react_svg_1.default, { src: "/icons/" + icon + ".svg", svgClassName: "button__icon" + (size ? '__' + size : '') }),
             downloadHref ?
                 React.createElement("a", { href: downloadHref, download: downloadTitle, ref: function (anchor) { return _this.anchor = anchor; } }) :
                 null));
@@ -62004,7 +62004,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./header.scss */ "./src/components/header/header.scss");
 var React = __webpack_require__(/*! react */ "react");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
+var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
 var header_provider_1 = __webpack_require__(/*! ./header-provider */ "./src/components/header/header-provider.ts");
 var Header = /** @class */ (function (_super) {
     __extends(Header, _super);
@@ -62016,10 +62016,12 @@ var Header = /** @class */ (function (_super) {
         return (React.createElement("div", { className: "header" },
             React.createElement(react_router_dom_1.Link, { to: "/" },
                 React.createElement("div", { className: "header__title" }, "Velox")),
-            React.createElement(dropdown_1.default, { onClick: function () {
-                    header_provider_1.logout();
-                    _this.props.logout();
-                }, items: ['logout'], hideArrow: true }, this.props.username)));
+            React.createElement("div", { className: "header__right-block" },
+                React.createElement("div", { className: "header__right-block__accaunt" }, this.props.username),
+                React.createElement(button_1.default, { onClick: function () {
+                        header_provider_1.logout();
+                        _this.props.logout();
+                    }, text: "logout", type: "air", icon: "exit" }))));
     };
     return Header;
 }(React.Component));
@@ -62194,7 +62196,7 @@ var Loader = /** @class */ (function (_super) {
     };
     Loader.prototype.render = function () {
         return (React.createElement("div", { className: "loader" },
-            React.createElement(QRCode, { value: this.state.value, bgColor: "#2d2d2d", fgColor: "#ffd900", size: sizes[this.props.size] }),
+            React.createElement(QRCode, { value: this.state.value, bgColor: "#D6D7D7", fgColor: "#515151", size: sizes[this.props.size] }),
             React.createElement("div", { className: "loader__text" }, "Loading...")));
     };
     return Loader;
@@ -63156,6 +63158,7 @@ var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg
 var login_provider_1 = __webpack_require__(/*! ./login-provider */ "./src/pages/login/login-provider.ts");
 var config_1 = __webpack_require__(/*! core/config/config */ "./src/core/config/config.ts");
 var loader_1 = __webpack_require__(/*! components/loader/loader */ "./src/components/loader/loader.tsx");
+var button_1 = __webpack_require__(/*! components/button/button */ "./src/components/button/button.tsx");
 var services = [{
         name: 'yandex',
         url: "https://oauth.yandex.ru/authorize?response_type=token&client_id=" + config_1.yandexId
@@ -63201,10 +63204,43 @@ var Login = /** @class */ (function (_super) {
         return (React.createElement(React.Fragment, null,
             this._renderLoader(),
             React.createElement("div", { className: "login" + (this.state.isLoading ? ' _isloading' : '') },
+                React.createElement("div", { className: "login__heading" },
+                    React.createElement("div", { className: "login__heading__content" },
+                        React.createElement("div", { className: "login__heading__content__title" }, "Velox"),
+                        React.createElement("div", { className: "login__heading__content__description" }, "Create and manage your QR codes"),
+                        React.createElement("div", { className: "login__heading__content__subdescription" }, "We provide solutions that make your life better!"))),
                 React.createElement("div", { className: "login__content" },
-                    React.createElement("div", { className: "login__content__title" }, "Welcome to Velox"),
-                    React.createElement("div", { className: "login__content__text" }, "Velox is a web-services that allows you to generate QR codes for templates and custom pages, static and dynamic Qr Codes. Editor has a function of adding several actions into one QR. Authorize to try it!"),
-                    React.createElement("div", { className: "login__content__services" }, services.map(function (service) { return (React.createElement(react_svg_1.default, { className: "oauth-icon__container", key: service.name, src: "/icons/oauth/" + service.name + ".svg", svgClassName: "oauth-icon", onClick: function () { window.open(service.url, "_self"); } })); }))))));
+                    React.createElement("div", { className: "login__content__title" }, "Our Features"),
+                    React.createElement("div", { className: "login__content__underline" }),
+                    React.createElement("div", { className: "login__content__features" },
+                        React.createElement("div", { className: "login__content__features__item" },
+                            React.createElement(react_svg_1.default, { src: "/icons/features/qr.svg", svgClassName: "feature-icon" }),
+                            React.createElement("div", { className: "login__content__features__item__text" },
+                                "QRs are",
+                                React.createElement("br", null),
+                                "Handy")),
+                        React.createElement("div", { className: "login__content__features__item" },
+                            React.createElement(react_svg_1.default, { src: "/icons/features/menu.svg", svgClassName: "feature-icon" }),
+                            React.createElement("div", { className: "login__content__features__item__text" },
+                                "Create your",
+                                React.createElement("br", null),
+                                "Custom menu")),
+                        React.createElement("div", { className: "login__content__features__item" },
+                            React.createElement(react_svg_1.default, { src: "/icons/features/trust.svg", svgClassName: "feature-icon" }),
+                            React.createElement("div", { className: "login__content__features__item__text" },
+                                "We protect",
+                                React.createElement("br", null),
+                                "Your information")),
+                        React.createElement("div", { className: "login__content__features__item" },
+                            React.createElement(react_svg_1.default, { src: "/icons/features/stack.svg", svgClassName: "feature-icon" }),
+                            React.createElement("div", { className: "login__content__features__item__text" },
+                                "Updated",
+                                React.createElement("br", null),
+                                "Tech stack"))),
+                    React.createElement("div", { className: "login__content__singins__title" }, "Sign in to try it out"),
+                    React.createElement("div", { className: "login__content__singins" },
+                        React.createElement(button_1.default, { text: "Sign in with Google", icon: "/oauth/google", size: "large", onClick: function () { window.open(services[1].url, "_self"); } }),
+                        React.createElement(button_1.default, { text: "Sign in with Yandex", icon: "/oauth/yandex", size: "large", onClick: function () { window.open(services[0].url, "_self"); } }))))));
     };
     return Login;
 }(React.Component));
@@ -63331,20 +63367,6 @@ var Page = /** @class */ (function (_super) {
             title + "\n" + fieldsNames.map(function (el, i) { return '\n' + el + ': ' + fieldsValues[i]; }) :
             "https://velox-app.herokuapp.com/qr/" + uuid);
     };
-    Page.prototype._renderMenu = function () {
-        var _this = this;
-        if (!this.state.isMenuShown) {
-            return null;
-        }
-        return (React.createElement("div", { className: "page__menu" },
-            this.props.mine && !this.props.static && this.props.template !== 'html' ?
-                React.createElement(react_router_dom_1.Link, { to: "/" + this.props.uuid + "/edit", className: "page__menu__edit-link" },
-                    React.createElement(button_1.default, { type: "air", icon: "edit", text: "Edit", size: "small" })) :
-                null,
-            React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage, text: "Delete", size: "small" }),
-            React.createElement(ReactToPrint, { trigger: function () { return React.createElement(button_1.default, { type: "air", icon: "print", text: "Print", size: "small" }); }, content: function () { return _this._qrImageRef; }, bodyClass: "print-page" }),
-            React.createElement(button_1.default, { type: "air", icon: "download", text: "Download", size: "small", downloadHref: this._downloadSVG(), downloadTitle: this.props.title })));
-    };
     Page.prototype.render = function () {
         var _this = this;
         if (!this.state.isShown) {
@@ -63355,7 +63377,7 @@ var Page = /** @class */ (function (_super) {
         var now = new Date();
         var formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
             date.toDateString() :
-            date.toLocaleTimeString();
+            'Today at ' + date.toLocaleTimeString();
         var smallIcon = isStatic || template === 'html' || template === 'push' ?
             template : !isPublic ? 'private' : null;
         return (React.createElement("div", { className: "page" },
@@ -63369,16 +63391,18 @@ var Page = /** @class */ (function (_super) {
                         smallIcon ? smallIcon : 'custom',
                         smallIcon ?
                             React.createElement(react_svg_1.default, { src: "/icons/templates/" + smallIcon + ".svg", svgClassName: "page__small-icon", tabIndex: 0 }) : null),
-                    React.createElement("div", null, formatedDate)),
+                    React.createElement("div", { className: "page__content__info__date" },
+                        formatedDate,
+                        React.createElement(react_svg_1.default, { src: "/icons/datetime.svg", svgClassName: "page__content__info__date__icon", tabIndex: 0 }))),
                 React.createElement("div", { className: "page__content__actions" },
                     this.props.mine && !this.props.static && this.props.template !== 'html' ?
                         React.createElement(react_router_dom_1.Link, { to: "/" + this.props.uuid + "/edit", className: "page__menu__edit-link" },
-                            React.createElement(button_1.default, { type: "air", icon: "edit", size: "small" })) :
+                            React.createElement(button_1.default, { type: "air", icon: "edit", size: "medium" })) :
                         null,
-                    React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage, size: "small" }))),
+                    React.createElement(button_1.default, { type: "air", icon: "delete", onClick: this._deletePage, size: "medium" }))),
             React.createElement("div", { className: "page__actions" },
-                React.createElement(ReactToPrint, { trigger: function () { return React.createElement(button_1.default, { type: "air", icon: "print", text: "Print", size: "small" }); }, content: function () { return _this._qrImageRef; }, bodyClass: "print-page" }),
-                React.createElement(button_1.default, { type: "air", icon: "download", text: "Download", size: "small", downloadHref: this._downloadSVG(), downloadTitle: this.props.title }))));
+                React.createElement(ReactToPrint, { trigger: function () { return React.createElement(button_1.default, { type: "air", icon: "print", text: "Print", size: "medium" }); }, content: function () { return _this._qrImageRef; }, bodyClass: "print-page" }),
+                React.createElement(button_1.default, { icon: "download", text: "Download", size: "small", downloadHref: this._downloadSVG(), downloadTitle: this.props.title }))));
     };
     return Page;
 }(React.Component));
@@ -63486,9 +63510,15 @@ var Pages = /** @class */ (function (_super) {
         var _a = this.props, pages = _a.pages, searchValue = _a.searchValue;
         return (React.createElement("div", { className: "pages" },
             React.createElement("div", { className: "pages__stats" },
-                React.createElement("div", { className: "pages__stats__item" }),
-                React.createElement("div", { className: "pages__stats__item" }),
-                React.createElement("div", { className: "pages__stats__item" })),
+                React.createElement("div", { className: "pages__stats__item _first" },
+                    React.createElement("div", { className: "pages__stats__item__count" }, "100"),
+                    React.createElement("div", { className: "pages__stats__item__title" }, "Total users registered")),
+                React.createElement("div", { className: "pages__stats__item _second" },
+                    React.createElement("div", { className: "pages__stats__item__count" }, "300"),
+                    React.createElement("div", { className: "pages__stats__item__title" }, "Total QRs created")),
+                React.createElement("div", { className: "pages__stats__item _third" },
+                    React.createElement("div", { className: "pages__stats__item__count" }, "1000"),
+                    React.createElement("div", { className: "pages__stats__item__title" }, "Total QRs scanned"))),
             React.createElement("div", { className: "pages__header" },
                 React.createElement("div", { className: "pages__header__block" },
                     React.createElement("div", { className: "pages__header__title" }, "Pages"),
@@ -63715,14 +63745,6 @@ var MainPage = /** @class */ (function (_super) {
             React.createElement("div", { className: "template__content" },
                 React.createElement(react_svg_1.default, { src: "/icons/templates/" + type + ".svg", svgClassName: "template-icon" })),
             React.createElement("div", { className: "template__title" }, title)));
-    };
-    MainPage.prototype._renderArrow = function (type) {
-        var style = {};
-        var flag = type === 'left' ? this.state.isLeftArrowShown : this.state.isRightArrowShown;
-        if (!flag) {
-            style = { opacity: 0.2 };
-        }
-        return (React.createElement(react_svg_1.default, { src: "/icons/arrow-" + type + ".svg", className: "arrow-container", svgClassName: "arrow", style: style }));
     };
     MainPage.prototype._renderTemplates = function () {
         var _this = this;

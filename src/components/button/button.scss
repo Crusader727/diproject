@@ -2,17 +2,19 @@
 .button {
     border: none;
     box-sizing: border-box;
-    width: 80px;
-    height: 40px;
     font-size: $font-size-normal;
-    border-radius: 6px;
     text-transform: uppercase;
     display: inline-block;
-    background-color: $peach;
-    opacity: 0.9;
+    background: linear-gradient(45deg, $peach, #ffd900);
+    opacity: 1;
     cursor: pointer;
+    padding: 4px 8px;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $snow;
     &:hover {
-        opacity: 1;
+        opacity: 0.9;
     }
     &._air {
         display: flex;
@@ -22,18 +24,30 @@
         height: auto;
         font-size: $font-size-normal;
         color: $peach;
-        opacity: 0.8;
+        opacity: 1;
+        padding: 0;
         &:hover {
-            opacity: 1;
+            opacity: 0.8;
         }
         &:active {
-            opacity: 1;
+            opacity: 0.8;
         }
     }
     &._size-small {
         justify-content: flex-end;
         line-height: 20px;
         font-size: 10px;
+    }
+    &._size-medium {
+        justify-content: flex-end;
+        line-height: 20px;
+        font-size: 14px;
+    }
+    &._size-large {
+        text-transform: none;
+        justify-content: flex-end;
+        line-height: 37px;
+        font-size: 18px;
     }
     &._disabled {
         opacity: 0.7;
@@ -48,5 +62,20 @@
         margin: 0 2px;
         width: 20px;
         height: 20px;
+        &__small {
+            margin: 0 2px;
+            width: 20px;
+            height: 20px;
+        }
+        &__medium {
+            width: 24px;
+            height: 24px;  
+        }
+        &__large {
+            margin-top: 8px;
+            margin-left: 10px;
+            width: 24px;
+            height: 24px;  
+        }
     }
 }

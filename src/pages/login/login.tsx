@@ -5,6 +5,7 @@ import ReactSVG from 'react-svg';
 import {sendToken} from './login-provider';
 import {yandexId, googleId} from 'core/config/config';
 import Loader from 'components/loader/loader';
+import Button from 'components/button/button';
 
 interface Props {
     hash: string;
@@ -60,8 +61,92 @@ export default class Login extends React.Component<Props> {
             <>
                 {this._renderLoader()}
                 <div className={"login" + (this.state.isLoading ? ' _isloading' : '')}>
+                    <div className="login__heading">
+                        <div className="login__heading__content">
+                            <div className="login__heading__content__title">
+                                Velox
+                            </div>
+                            <div className="login__heading__content__description">
+                                Create and manage your QR codes
+                            </div>
+                            <div className="login__heading__content__subdescription">
+                                We provide solutions that make your life better!
+                            </div>
+                        </div>
+                    </div>
                     <div className="login__content">
                         <div className="login__content__title">
+                            Our Features
+                        </div>
+                        <div className="login__content__underline" />
+                        <div className="login__content__features">
+                            <div className="login__content__features__item">
+                                <ReactSVG
+                                    src={`/icons/features/qr.svg`}
+                                    svgClassName="feature-icon"
+                                />
+                                <div className="login__content__features__item__text">
+                                    QRs are
+                                    <br/>
+                                    Handy
+                                </div>
+                            </div>
+                            <div className="login__content__features__item">
+                                <ReactSVG
+                                    src={`/icons/features/menu.svg`}
+                                    svgClassName="feature-icon"
+                                />
+                                <div className="login__content__features__item__text">
+                                    Create your
+                                    <br/>
+                                    Custom menu
+                                </div>
+                            </div>
+                            <div className="login__content__features__item">
+                                <ReactSVG
+                                    src={`/icons/features/trust.svg`}
+                                    svgClassName="feature-icon"
+                                />
+                                <div className="login__content__features__item__text">
+                                    We protect
+                                    <br/>
+                                    Your information
+                                </div>
+                            </div>
+                            <div className="login__content__features__item">
+                                <ReactSVG
+                                    src={`/icons/features/stack.svg`}
+                                    svgClassName="feature-icon"
+                                />
+                                <div className="login__content__features__item__text">
+                                    Updated
+                                    <br/>
+                                    Tech stack
+                                </div>
+                            </div>
+                        </div>
+                        <div className="login__content__singins__title">
+                            Sign in to try it out
+                        </div>
+                        <div className="login__content__singins">
+                            <Button
+                                text="Sign in with Google" 
+                                icon="/oauth/google"
+                                size="large"
+                                onClick={() =>
+                                    {window.open(services[1].url, "_self")}
+                                }
+                            />
+                            <Button
+                                text="Sign in with Yandex" 
+                                icon="/oauth/yandex"
+                                size="large"
+                                onClick={() =>
+                                    {window.open(services[0].url, "_self")}
+                                }
+                            />
+                        </div>
+                        {/* <div className="login__content__title">
                             Welcome to Velox
                         </div>
                         <div className="login__content__text">
@@ -81,7 +166,7 @@ export default class Login extends React.Component<Props> {
                                     }
                                 />
                             ))}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </>

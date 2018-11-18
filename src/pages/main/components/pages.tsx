@@ -71,9 +71,30 @@ export default class Pages extends React.Component<Props> {
         return (
             <div className="pages">
                 <div className="pages__stats">
-                    <div className="pages__stats__item"></div>
-                    <div className="pages__stats__item"></div>
-                    <div className="pages__stats__item"></div>
+                    <div className="pages__stats__item _first">
+                        <div className="pages__stats__item__count">
+                            100
+                        </div>
+                        <div className="pages__stats__item__title">
+                            Total users registered
+                        </div>
+                    </div>
+                    <div className="pages__stats__item _second">
+                        <div className="pages__stats__item__count">
+                            300
+                        </div>
+                        <div className="pages__stats__item__title">
+                            Total QRs created
+                        </div>
+                    </div>
+                    <div className="pages__stats__item _third">
+                        <div className="pages__stats__item__count">
+                            1000
+                        </div>
+                        <div className="pages__stats__item__title">
+                            Total QRs scanned
+                        </div>
+                    </div>
                 </div>
                 <div className="pages__header">
                     <div className="pages__header__block">

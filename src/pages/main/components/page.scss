@@ -1,8 +1,9 @@
 @import 'common/common.scss';
 .page {
+    max-height: 168px;
     color: $peach;
     background-color: $snow;
-    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     min-width: 42%;
@@ -31,6 +32,18 @@
                 flex-direction: row;
                 line-height: 26px;
             }
+            &__date {
+                color: $prim;
+                display: flex;
+                flex-direction: row;
+                line-height: 21px;
+                &__icon {
+                    margin-left: 5px;
+                    color: $prim;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
         }
         &__actions {
             flex-grow: 1;
@@ -45,7 +58,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 6px;
+        padding: 10px 12px;
         background-color: $prim;
     }
     &__icon {
@@ -79,13 +92,6 @@
             justify-content: flex-end;
         }
     }
-    // &:hover {
-    //     border: 3px solid $peach;
-    // }
-}
-
-.tooltip {
-    // position: absolute;
 }
 
 .print-page {

@@ -7,7 +7,6 @@ import Pages from './components/pages';
 import Header from 'components/header/header';
 import {getPages} from './main-provider';
 import PageCut from 'types/pageCut';
-import Button from 'components/button/button';
 
 interface Props {
     username: string;
@@ -97,24 +96,6 @@ export default class MainPage extends React.Component<Props> {
         );
     }
 
-    private _renderArrow(type: string): React.ReactNode {
-        let style = {};
-        const flag = type === 'left' ? this.state.isLeftArrowShown : this.state.isRightArrowShown;
-        if (!flag) {
-            style = {opacity: 0.2}
-        }
-        return (
-            <ReactSVG
-                src={`/icons/arrow-${type}.svg`}
-                className="arrow-container"
-                svgClassName="arrow"
-                style={style}
-            />
-        );
-    }
-
-    
-
     private _renderTemplates(): React.ReactNode {
         return (
             <div className="main-page__templates">
@@ -123,11 +104,9 @@ export default class MainPage extends React.Component<Props> {
                 </div>
                 <div className="main-page__templates__content">
                     {this._renderTemplate('custom', 'custom')}
-                    {/* {this._renderArrow('left')} */}
                     <div className="main-page__templates__content__scrollable" onScroll={this._onTemplatesScroll}>
                         {Templates.map(({title, type}) => this._renderTemplate(title, type))}
                     </div>
-                    {/* {this._renderArrow('right')} */}
                 </div>
             </div>
         );
@@ -137,7 +116,6 @@ export default class MainPage extends React.Component<Props> {
         return (
             <div className="main-page">
                 <Header username={this.props.username} logout={this.props.logout}/>
-                {/* <SketchPicker onChange={(color) => console.log(color)}/> */}
                 <div className="main-page__content">
                     {this._renderTemplates()}
                     <Pages

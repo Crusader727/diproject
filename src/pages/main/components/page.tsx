@@ -57,37 +57,6 @@ export default class Page extends React.Component<PageCut> {
         return svg;
     }
 
-    private _renderMenu(): React.ReactNode {
-        if (!this.state.isMenuShown) {
-            return null;
-        }
-
-        return (
-            <div className="page__menu">
-                {this.props.mine && !this.props.static && this.props.template !=='html' ?
-                    <Link to={`/${this.props.uuid}/edit`} className="page__menu__edit-link">
-                        <Button type="air" icon="edit" text="Edit" size="small"/>
-                    </Link> :
-                    null
-                }
-                <Button type="air" icon="delete" onClick={this._deletePage} text="Delete" size="small"/>
-                <ReactToPrint
-                    trigger={() =>  <Button type="air" icon="print" text="Print" size="small"/>}
-                    content={() => this._qrImageRef}
-                    bodyClass="print-page"
-                />
-                <Button
-                    type="air"
-                    icon="download"
-                    text="Download"
-                    size="small"
-                    downloadHref={this._downloadSVG()}
-                    downloadTitle={this.props.title}
-                />
-            </div>
-        );
-    }
-
     render(): React.ReactNode {
         if (!this.state.isShown) {
             return null;
@@ -97,46 +66,11 @@ export default class Page extends React.Component<PageCut> {
         const now = new Date();
         const formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
             date.toDateString() :
-            date.toLocaleTimeString();
+            'Today at ' + date.toLocaleTimeString();
         const smallIcon = isStatic || template === 'html' || template === 'push' ?
             template : !isPublic ? 'private' : null;
         return (
             <div className="page">
-                {/* <a
-                    className="page__content"
-                    href={`qr/${uuid}`}
-                    target="_blank"
-                    ref={el => (this._qrImageRef = el)}
-                >
-                    <QRCode value={this._getQrCodeValue()} size={130} />
-                </a>
-                {this._renderMenu()}
-                <div className="page__title">
-                    <div className="page__title__left-block">
-                        <div className="page__title__title">
-                            <div className="page__title__title__text">
-                                {title}
-                            </div>
-                            {smallIcon ?
-                                <ReactSVG
-                                    src={`/icons/templates/${smallIcon}.svg`}
-                                    svgClassName="page__small-icon"
-                                    tabIndex={0}
-                                /> : null
-                            }
-                        </div>
-                        <div className="page__title__date">
-                            {formatedDate}
-                        </div>
-                    </div>
-                    <ReactSVG
-                        src="/icons/more.svg"
-                        svgClassName="page__icon"
-                        tabIndex={0}
-                        onBlur={() => this.menuTimeout = setTimeout(() => this.setState({isMenuShown: false}), 200)}
-                        onClick={() => this.setState({isMenuShown: !this.state.isMenuShown})}
-                    />
-                </div> */}
                 <div className="page__content">
                     <div className="page__content__qr">
                         <a
@@ -162,28 +96,32 @@ export default class Page extends React.Component<PageCut> {
                                 /> : null
                             }
                         </div>
-                        <div>
+                        <div className="page__content__info__date">
                             {formatedDate}
+                            <ReactSVG
+                                src={`/icons/datetime.svg`}
+                                svgClassName="page__content__info__date__icon"
+                                tabIndex={0}
+                            />
                         </div>
                     </div>
                     <div className="page__content__actions">
                         {this.props.mine && !this.props.static && this.props.template !=='html' ?
                             <Link to={`/${this.props.uuid}/edit`} className="page__menu__edit-link">
-                                <Button type="air" icon="edit" size="small"/>
+                                <Button type="air" icon="edit" size="medium"/>
                             </Link> :
                             null
                         }
-                        <Button type="air" icon="delete" onClick={this._deletePage} size="small"/>
+                        <Button type="air" icon="delete" onClick={this._deletePage} size="medium"/>
                     </div>
                 </div>
                 <div className="page__actions">
                     <ReactToPrint
-                        trigger={() =>  <Button type="air" icon="print" text="Print" size="small"/>}
+                        trigger={() =>  <Button type="air" icon="print" text="Print" size="medium"/>}
                         content={() => this._qrImageRef}
                         bodyClass="print-page"
                     />
                     <Button
-                        type="air"
                         icon="download"
                         text="Download"
                         size="small"

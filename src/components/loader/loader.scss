@@ -2,11 +2,11 @@
 .loader {
     display: inline-block;
     z-index: 1;
-    border: 5px solid $dark-grey;
-    background-color: $grey;
+    border: 5px solid $prim;
+    background-color: $prim;
     box-sizing: border-box;
     &__text {
-        color: $white;
+        color: $peach;
         font-weight: bold;
         font-size: $font-size-large;
         padding-left: 20%;

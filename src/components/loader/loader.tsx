@@ -28,7 +28,7 @@ export default class Loader extends React.Component<Props> {
     public render() {
         return (
             <div className="loader">
-                <QRCode value={this.state.value} bgColor="#2d2d2d" fgColor="#ffd900" size={sizes[this.props.size]}/>
+                <QRCode value={this.state.value} bgColor="#D6D7D7" fgColor="#515151" size={sizes[this.props.size]}/>
                 <div className="loader__text">
                     Loading...
                 </div>

@@ -3,7 +3,7 @@ import * as React from "react";
 import ReactSVG from 'react-svg';
 
 interface Props {
-    size?: 'small' | 'medium';
+    size?: 'small' | 'medium' | 'large';
     type?: 'action' | 'air';
     text?: string;
     icon?: string;
@@ -32,7 +32,7 @@ export default class Button extends React.Component<Props> {
         const {type, downloadHref, downloadTitle, text, onClick, icon, onBlur, size, isDisabled} = this.props;
         const className = 'button' +
             (type ? ' _' + type : '') +
-            (size === 'small' ? ' _size-small' : '') +
+            (size ? ' _size-' + size : '') +
             (isDisabled ? ' _disabled' : '');
         return (
             <button 
@@ -43,7 +43,7 @@ export default class Button extends React.Component<Props> {
                 {text}
                 {icon && <ReactSVG
                         src={`/icons/${icon}.svg`}
-                        svgClassName="button__icon"
+                        svgClassName={"button__icon" + (size ? '__' + size : '')}
                     />
                 }
                 {downloadHref ? 

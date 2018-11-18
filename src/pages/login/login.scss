@@ -1,41 +1,81 @@
 @import 'common/common.scss';
 .login {
-    width: 100%;
-    height: 100vh;
-    background-color: $grey;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
+    &__heading {
+        width: 100%;
+        height: 40vh;
+        background: url(/images/background.jpg) no-repeat;
+        background-size: cover;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(240, 129, 119, 0.8);
+            height: 100%;
+            &__title {
+                margin: 30px 40px;
+                font-weight: bold;
+                color: $snow;
+                font-size: 35px;
+            }
+            &__description {
+                color: $snow;
+                font-size: 30px;
+                margin-left: 35%;
+                margin-top: 25px;
+            }
+            &__subdescription {
+                color: $snow;
+                font-size: 18px;
+                margin-left: 38%;
+                margin-top: 8px;
+            }
+        }
+    }
     &__content {
-        min-height: max-content;
+        height: 60vh;
+        background-color: $snow;
         display: flex;
         flex-direction: column;
-        margin-top: 20vh;
-        width: 60vw;
-        height: 63vh;
-        background-color: $dark-grey;
-        border-radius: 20px;
+        align-items: center;
         &__title {
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 10vh;
+            margin-top: 20px;
+            font-weight: bold;
+            color: $grey;
             font-size: 35px;
-            color: $yellow;
-            padding: 5px;
         }
-        &__text {
-            font-size: 25px;
-            color: $white;
-            padding: 5vh 9vw;
+        &__underline {
+            background-color: $peach;
+            height: 5px;
+            width: 70px;
         }
-        &__services {
-            cursor: pointer;
-            margin-top: 5vh;
-            margin-left: auto;
-            margin-right: auto;
+        &__features {
+            margin-top: 40px;
             display: flex;
             flex-direction: row;
-            color: $yellow;
+            width: 70%;
+            justify-content: space-between;
+            &__item {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                &__text {
+                    font-size: $font-size-large;
+                    margin-top: 20px;
+                    text-align: center;
+                    color: $grey;
+                }
+            }
+        }
+        &__singins {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            width: 35%;
+            justify-content: space-between;
+            &__title {
+                color: $grey;
+                font-size: 22px;
+                margin-top: 40px;
+            }
         }
     }
     &__loader {
@@ -46,7 +86,6 @@
         transform: translate(-50%, -50%);
     }
     &._isloading {
-        // opacity: 0.4;
         filter: blur(5px);
     }
 }
@@ -60,4 +99,10 @@
             margin-right: 0px;
         }
     }
+}
+
+.feature-icon {
+    width: 75px;
+    height: 75px;
+    color: $peach;
 }

@@ -1,7 +1,7 @@
 import './header.scss';
 import * as React from 'react';
 import {Link} from 'react-router-dom';
-import DropDown from 'components/dropdown/dropdown';
+import Button from 'components/button/button';
 import {logout} from './header-provider';
 
 interface Props {
@@ -16,16 +16,20 @@ export default class Header extends React.Component<Props> {
                 <Link to="/">
                     <div className="header__title">Velox</div>
                 </Link>
-                <DropDown
-                    onClick={() => {
-                        logout();
-                        this.props.logout();
+                <div className="header__right-block">
+                    <div className="header__right-block__accaunt">
+                        {this.props.username}                 
+                    </div>
+                    <Button
+                        onClick={() => {
+                            logout();
+                            this.props.logout();
                         }}
-                    items={['logout']}
-                    hideArrow
-                >
-                    {this.props.username}
-                </DropDown>
+                        text="logout"
+                        type="air"
+                        icon="exit"
+                    />
+                </div>
             </div>
         );
     }

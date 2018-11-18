@@ -4,13 +4,13 @@
     color: $dark-grey;
     box-sizing: border-box;
     height: 30px;
-    border: 2px solid $yellow;
-    background-color: $white;
+    border: 1px solid $peach;
+    background-color: $snow;
     font-size: $font-size-normal;
-    border-radius: 4px;
+    // border-radius: 4px;
     animation-duration: 1s;
     &:focus {
-        border-width: 3px;
+        border-width: 2px;
     }
     &.size-small {
         width: 100px;
@@ -22,7 +22,7 @@
         width: 600px;
     }
     &.size-larger {
-        width: 800px;
+        width: 700px;
     }
 }
 
@@ -58,6 +58,6 @@
         width: 0;
     }
     100% {
-        width: 800px;
+        width: 700px;
     }
 }
