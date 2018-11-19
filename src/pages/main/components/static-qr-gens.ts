@@ -45,7 +45,7 @@ const StaticQrGens: Record<string, (values: string[] | string) => string> = {
     },
     'push': (uuid: string): string => {
         return (
-            `https://velox-app.herokuapp.com/qr/${uuid}`
+            `https://velox-qr.herokuapp.com/qr/${uuid}`
         );
     },
 }

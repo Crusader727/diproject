@@ -44,7 +44,7 @@ export default class Page extends React.Component<PageCut> {
         return (
             this.props.static ?
                 `${title}\n${fieldsNames.map((el, i) => '\n' + el + ': ' + fieldsValues[i])}`:
-                `https://velox-app.herokuapp.com/qr/${uuid}`
+                `https://velox-qr.herokuapp.com/qr/${uuid}`
         );
     }
 

@@ -63363,7 +63363,7 @@ var Page = /** @class */ (function (_super) {
         }
         return (this.props.static ?
             title + "\n" + fieldsNames.map(function (el, i) { return '\n' + el + ': ' + fieldsValues[i]; }) :
-            "https://velox-app.herokuapp.com/qr/" + uuid);
+            "https://velox-qr.herokuapp.com/qr/" + uuid);
     };
     Page.prototype.render = function () {
         var _this = this;
@@ -63593,7 +63593,7 @@ var StaticQrGens = {
         return ("MECARD:N:" + values[0] + "," + values[1] + ";NICKNAME:" + values[2] + ";TEL:" + values[3] + ";TEL:" + values[4] + ";EMAIL:" + values[5] + ";BDAY:" + values[6] + ";NOTE:" + values[7] + ";ADR:,," + values[8] + "," + values[9] + "," + values[10] + "," + values[11] + "," + values[12] + ";;");
     },
     'push': function (uuid) {
-        return ("https://velox-app.herokuapp.com/qr/" + uuid);
+        return ("https://velox-qr.herokuapp.com/qr/" + uuid);
     },
 };
 exports.default = StaticQrGens;
