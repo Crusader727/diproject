@@ -184,17 +184,11 @@ export default class Constructor extends React.Component<Props, State> {
         const type = !isCustom && actions[currentAction].type;
         return (
             <div className="constructor__menu__checkboxes">
-                <Checkbox
+                {!isStatic ? <Checkbox
                     text="Private"
                     disabled={isStatic}
                     onClick={() => this.setState({isPrivate: !isPrivate})}
-                />
-                {!isCustom && <Checkbox
-                    text="Static"
-                    disabled={isPrivate || isNotEditable}
-                    checked={isNotEditable && type !== 'html'}
-                    onClick={() => this.setState({isStatic: !isStatic})}
-                />}
+                /> : null}
             </div>
         );
     }
@@ -213,10 +207,10 @@ export default class Constructor extends React.Component<Props, State> {
                 </div>
                 {this._renderCheckboxes()}
                 <div className="constructor__menu__actions">
-                    <Button text="Save" onClick={() => this._savePage()} isDisabled={this.state.actions.length === 0}/>
                     <Link to="/">
-                        <Button text="Back"/>
+                        <Button text="Back" size="large"/>
                     </Link>
+                    <Button text="Save QR" onClick={() => this._savePage()} isDisabled={this.state.actions.length === 0} size="large"/>
                 </div>
                 {this.state.isCustom ?
                     <ConstructorActionMenu
@@ -237,6 +231,7 @@ export default class Constructor extends React.Component<Props, State> {
             <>
                 <Header username={this.props.username} logout={this.props.logout}/>
                 <div className="constructor">
+                    {this._renderMenu()}
                     {actions.length ?
                         <ConstructorContent
                             isNotEditable={isNotEditable}
@@ -250,7 +245,6 @@ export default class Constructor extends React.Component<Props, State> {
 
                         </div>
                     }
-                    {this._renderMenu()}
                 </div>
                 {notification && <Notification text={notificationText} type={notification}/>}
             </>

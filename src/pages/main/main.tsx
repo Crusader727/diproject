@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import ReactSVG from 'react-svg'
 import Pages from './components/pages';
 import Header from 'components/header/header';
-import {getPages} from './main-provider';
+import {getPages, getStats} from './main-provider';
 import PageCut from 'types/pageCut';
+import Stats from 'types/stats';
 
 interface Props {
     username: string;
@@ -18,6 +19,7 @@ interface State {
     isLeftArrowShown: boolean;
     pages: PageCut[];
     searchValue: string;
+    stats: Stats | null;
 }
 
 const Templates = [
@@ -41,7 +43,8 @@ export default class MainPage extends React.Component<Props> {
         isRightArrowShown: true,
         isLeftArrowShown: false,
         searchValue: '',
-        pages: []
+        pages: [],
+        stats: null,
     }
     componentDidMount() {
         this._getPages();
@@ -58,6 +61,7 @@ export default class MainPage extends React.Component<Props> {
             pages => this.setState({pages}),
             () => this.setState({pages: []})
         );// error
+        getStats().then(stats => this.setState({stats}, () => {}));
     }
 
     private _onSearchChange = (e: any) => {
@@ -122,6 +126,7 @@ export default class MainPage extends React.Component<Props> {
                         pages={this.state.pages}
                         searchValue={this.state.searchValue}
                         onSearchChange={this._onSearchChange}
+                        stats={this.state.stats}
                         getOwnerType={value => {
                             this._ownerType = value;
                             this._getPages();

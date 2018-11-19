@@ -5,6 +5,8 @@
     color: $peach;
     &__templates {
         background-color: $snow;
+        margin: 3px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.2);
         padding: 0 20px;
         display: flex;
         min-width: 240px;

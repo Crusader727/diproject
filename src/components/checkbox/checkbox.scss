@@ -7,7 +7,7 @@
     font-size: $font-size-large;
     line-height: 20px;
     user-select: none;
-    color: $white;
+    color: $grey;
     &__input {
         position: absolute;
         opacity: 0;
@@ -22,10 +22,10 @@
         height: 20px;
         width: 20px;
         border-radius: 4px;
-        border: 3px solid $yellow;
+        border: 3px solid $peach;
         box-sizing: border-box;
         &._checked {
-            background-color: $yellow;
+            background-color: $light-peach;
         }
     }
     &._disabled {

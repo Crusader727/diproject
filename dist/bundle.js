@@ -49120,7 +49120,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".checkbox {\n  display: block;\n  position: relative;\n  padding-left: 28px;\n  cursor: pointer;\n  font-size: 18px;\n  line-height: 20px;\n  user-select: none;\n  color: white; }\n  .checkbox__input {\n    position: absolute;\n    opacity: 0;\n    cursor: pointer;\n    height: 0;\n    width: 0; }\n  .checkbox__checkmark {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 20px;\n    width: 20px;\n    border-radius: 4px;\n    border: 3px solid #ffd900;\n    box-sizing: border-box; }\n    .checkbox__checkmark._checked {\n      background-color: #ffd900; }\n  .checkbox._disabled {\n    opacity: 0.7; }\n", ""]);
+exports.push([module.i, ".checkbox {\n  display: block;\n  position: relative;\n  padding-left: 28px;\n  cursor: pointer;\n  font-size: 18px;\n  line-height: 20px;\n  user-select: none;\n  color: #515151; }\n  .checkbox__input {\n    position: absolute;\n    opacity: 0;\n    cursor: pointer;\n    height: 0;\n    width: 0; }\n  .checkbox__checkmark {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 20px;\n    width: 20px;\n    border-radius: 4px;\n    border: 3px solid #F08177;\n    box-sizing: border-box; }\n    .checkbox__checkmark._checked {\n      background-color: #FB9F74; }\n  .checkbox._disabled {\n    opacity: 0.7; }\n", ""]);
 
 // exports
 
@@ -49234,7 +49234,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".text-area {\n  width: 70%;\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  border: 2px solid #ffd900;\n  font-size: 15px;\n  border-radius: 4px;\n  background-color: white; }\n  .text-area:focus {\n    border-width: 3px; }\n", ""]);
+exports.push([module.i, ".text-area {\n  width: 70%;\n  caret-color: #2d2d2d;\n  color: #2d2d2d;\n  box-sizing: border-box;\n  border: 2px solid #F08177;\n  font-size: 15px;\n  background-color: white; }\n  .text-area:focus {\n    border-width: 3px; }\n", ""]);
 
 // exports
 
@@ -49253,7 +49253,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor__action-menu {\n  display: flex;\n  flex-direction: column;\n  margin: 12px 0 12px 0;\n  max-height: 70%; }\n  .constructor__action-menu__title {\n    color: #ffd900;\n    font-size: 18px; }\n  .constructor__action-menu__content {\n    display: flex;\n    flex-direction: column;\n    overflow: auto;\n    margin-top: 12px;\n    min-height: 300px; }\n    .constructor__action-menu__content__item {\n      display: flex;\n      flex-direction: row;\n      min-height: min-content;\n      padding: 4px 12px;\n      color: #ffd900;\n      font-size: 15px;\n      border: 2px solid #ffd900;\n      box-sizing: border-box;\n      border-radius: 20px;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between;\n      opacity: 0.8; }\n      .constructor__action-menu__content__item__name {\n        margin-left: 8px; }\n      .constructor__action-menu__content__item:hover {\n        opacity: 1; }\n    .constructor__action-menu__content__edit-item {\n      display: flex;\n      min-height: min-content;\n      flex-direction: row;\n      height: 31px;\n      padding: 8px;\n      color: #ffd900;\n      font-size: 15px;\n      border: 3px solid #ffd900;\n      border-radius: 20px;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between; }\n    .constructor__action-menu__content__add-item {\n      min-height: min-content;\n      margin-bottom: 100px;\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      padding: 4px;\n      color: #ffd900;\n      box-sizing: border-box;\n      border: 2px solid #ffd900;\n      border-radius: 20px;\n      opacity: 0.8; }\n      .constructor__action-menu__content__add-item:hover {\n        opacity: 1; }\n    .constructor__action-menu__content__icon {\n      width: 25px;\n      height: 25px;\n      color: #ffd900;\n      margin-right: 4px; }\n", ""]);
+exports.push([module.i, ".constructor__action-menu {\n  display: flex;\n  flex-direction: column;\n  margin: 12px 0 12px 0;\n  max-height: 70%; }\n  .constructor__action-menu__title {\n    color: #2d2d2d;\n    font-size: 22px;\n    font-weight: bold; }\n  .constructor__action-menu__content {\n    display: flex;\n    flex-direction: column;\n    overflow: auto;\n    margin-top: 12px;\n    min-height: 300px; }\n    .constructor__action-menu__content__item {\n      display: flex;\n      flex-direction: row;\n      min-height: min-content;\n      padding: 4px 12px;\n      color: #F08177;\n      font-size: 15px;\n      border: 2px solid #515151;\n      box-sizing: border-box;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between;\n      opacity: 1; }\n      .constructor__action-menu__content__item__name {\n        margin-left: 8px; }\n      .constructor__action-menu__content__item:hover {\n        opacity: 0.8; }\n    .constructor__action-menu__content__edit-item {\n      display: flex;\n      min-height: min-content;\n      flex-direction: row;\n      height: 31px;\n      padding: 8px;\n      color: #515151;\n      font-size: 15px;\n      border: 3px solid #F08177;\n      line-height: 31px;\n      margin-bottom: 12px;\n      justify-content: space-between; }\n    .constructor__action-menu__content__add-item {\n      min-height: min-content;\n      margin-bottom: 100px;\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      padding: 4px;\n      color: #F08177;\n      box-sizing: border-box;\n      border: 2px solid #515151;\n      opacity: 1; }\n      .constructor__action-menu__content__add-item:hover {\n        opacity: 0.8; }\n    .constructor__action-menu__content__icon {\n      margin-top: 4px;\n      width: 25px;\n      height: 25px;\n      color: #F08177;\n      margin-right: 4px; }\n", ""]);
 
 // exports
 
@@ -49272,7 +49272,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor__content {\n  display: flex;\n  flex-direction: column;\n  background-color: #515151;\n  width: 80%;\n  overflow: auto; }\n  .constructor__content__add-item {\n    position: relative;\n    margin: 12px;\n    width: auto;\n    height: 120px;\n    min-height: 120px;\n    color: #ffd900;\n    background-color: #2d2d2d;\n    border: 1px solid #ffd900;\n    box-sizing: border-box;\n    border-radius: 10px; }\n    .constructor__content__add-item:hover {\n      border: 3px solid #ffd900; }\n  .constructor__content__edit-item {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin: 12px;\n    padding: 12px;\n    background-color: #2d2d2d;\n    border-radius: 10px;\n    border: 2px solid #ffd900;\n    min-height: min-content; }\n    .constructor__content__edit-item__text-wrapper {\n      margin-top: 12px; }\n    .constructor__content__edit-item__content {\n      flex-grow: 1;\n      display: flex;\n      flex-direction: column; }\n      .constructor__content__edit-item__content__title {\n        color: #ffd900;\n        font-size: 18px; }\n  .constructor__content__item {\n    display: flex;\n    min-height: min-content;\n    margin: 12px;\n    padding: 12px;\n    background-color: #515151;\n    border-radius: 10px;\n    font-family: 18px;\n    border: 2px solid #ffd900;\n    color: white;\n    word-wrap: break-word; }\n    .constructor__content__item__title {\n      margin-right: 10px;\n      margin-bottom: 10px; }\n    .constructor__content__item:hover {\n      border: 3px solid #ffd900; }\n", ""]);
+exports.push([module.i, ".constructor__content {\n  display: flex;\n  flex-direction: column;\n  background-color: #D6D7D7;\n  width: 78%;\n  overflow: auto; }\n  .constructor__content__add-item {\n    position: relative;\n    margin: 20px 15% 0 40px;\n    width: auto;\n    height: 120px;\n    min-height: 120px;\n    color: #F08177;\n    background-color: #FCFBFD;\n    box-sizing: border-box;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }\n    .constructor__content__add-item:hover {\n      opacity: 0.8; }\n  .constructor__content__edit-item {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin: 20px 15% 0 40px;\n    padding: 12px;\n    background-color: #FCFBFD;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    min-height: min-content;\n    color: #F08177; }\n    .constructor__content__edit-item__text-wrapper {\n      margin-top: 8px; }\n    .constructor__content__edit-item__content {\n      flex-grow: 1;\n      display: flex;\n      flex-direction: column; }\n      .constructor__content__edit-item__content__title {\n        color: #F08177;\n        font-size: 18px; }\n  .constructor__content__item {\n    align-items: center;\n    display: flex;\n    min-height: min-content;\n    margin: 20px 15% 0 40px;\n    padding: 10px;\n    background-color: #FCFBFD;\n    font-family: 18px;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    color: #515151;\n    word-wrap: break-word; }\n    .constructor__content__item__title {\n      margin-right: 10px; }\n    .constructor__content__item:hover {\n      opacity: 0.8; }\n", ""]);
 
 // exports
 
@@ -49291,7 +49291,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 95%; }\n  .constructor__menu {\n    display: flex;\n    flex-direction: column;\n    background-color: #2d2d2d;\n    width: 20%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 20px 38px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0;\n      height: 8vh; }\n    .constructor__menu__date {\n      color: white;\n      margin-top: 8px; }\n  .constructor__empty-content {\n    background-color: #515151;\n    width: 80%; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #ffd900;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 0.8;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 1; }\n", ""]);
+exports.push([module.i, ".constructor {\n  display: flex;\n  flex-direction: row;\n  height: 95%;\n  background-color: #D6D7D7; }\n  .constructor__menu {\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    display: flex;\n    flex-direction: column;\n    background-color: #FCFBFD;\n    margin: 20px 3px 20px 30px;\n    width: 22%;\n    padding: 12px; }\n    .constructor__menu__actions {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      padding: 0 30px 0 0; }\n    .constructor__menu__checkboxes {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      margin: 10px 0; }\n    .constructor__menu__date {\n      color: #515151;\n      margin-top: 8px; }\n  .constructor__empty-content {\n    background-color: #515151;\n    width: 80%; }\n\n.round-cross {\n  position: absolute;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  margin: auto;\n  width: 70px;\n  height: 70px; }\n\n.close {\n  color: #F08177;\n  margin-top: -7px;\n  width: 40px;\n  height: 40px;\n  opacity: 1;\n  margin-right: 5px; }\n  .close:hover {\n    opacity: 0.8; }\n", ""]);
 
 // exports
 
@@ -49348,7 +49348,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".pages {\n  padding: 0 2% 0 60px;\n  background-color: #D6D7D7;\n  display: flex;\n  flex-direction: column;\n  margin-top: 20px;\n  width: 100%; }\n  .pages__stats {\n    display: flex;\n    flex-direction: row; }\n    .pages__stats__item {\n      min-width: 26%;\n      min-height: 120px;\n      background-color: #FCFBFD;\n      margin-right: 25px;\n      padding: 12px; }\n      .pages__stats__item__count {\n        font-size: 22px;\n        color: #F08177;\n        margin-bottom: 2px; }\n      .pages__stats__item__title {\n        font-size: 15px;\n        color: #515151; }\n      .pages__stats__item._first {\n        background: url(/images/orange.jpg) no-repeat;\n        background-size: contain; }\n      .pages__stats__item._second {\n        background: url(/images/blue.jpg) no-repeat;\n        background-size: contain; }\n      .pages__stats__item._third {\n        background: url(/images/purple.jpg) no-repeat;\n        background-size: contain; }\n  .pages__header {\n    color: #F08177;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px;\n    margin-right: 105px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: #515151;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    padding: 2px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto;\n    height: 65vh; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 1;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 0.8; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .pages {\n    padding: 0 4% 0 6%; }\n    .pages__header__title {\n      font-size: 35px; }\n  .icon {\n    width: 40px;\n    height: 40px; }\n    .icon-owner {\n      cursor: pointer;\n      width: 40px;\n      height: 40px; } }\n", ""]);
+exports.push([module.i, ".pages {\n  padding: 0 2% 0 60px;\n  background-color: #D6D7D7;\n  display: flex;\n  flex-direction: column;\n  margin-top: 20px;\n  width: 100%; }\n  .pages__stats {\n    display: flex;\n    flex-direction: row; }\n    .pages__stats__item {\n      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n      min-width: 26%;\n      min-height: 97px;\n      background-color: #FCFBFD;\n      margin-right: 25px;\n      padding: 12px; }\n      .pages__stats__item__count {\n        font-size: 22px;\n        color: #F08177;\n        margin-bottom: 2px; }\n      .pages__stats__item__title {\n        font-size: 15px;\n        color: #515151; }\n      .pages__stats__item._first {\n        background: url(/images/orange.jpg) no-repeat;\n        background-size: contain; }\n      .pages__stats__item._second {\n        background: url(/images/blue.jpg) no-repeat;\n        background-size: contain; }\n      .pages__stats__item._third {\n        background: url(/images/purple.jpg) no-repeat;\n        background-size: contain; }\n  .pages__header {\n    color: #F08177;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin-top: 12px;\n    margin-bottom: 30px;\n    margin-right: 105px; }\n    .pages__header__block {\n      display: flex;\n      flex-direction: row; }\n    .pages__header__title {\n      color: #515151;\n      font-size: 22px;\n      margin-right: 12px; }\n  .pages__content {\n    padding: 2px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    overflow: auto;\n    height: 65vh; }\n    .pages__content::-webkit-scrollbar {\n      display: none; }\n\n.icon {\n  width: 26px;\n  height: 26px;\n  opacity: 1;\n  cursor: pointer; }\n  .icon:hover {\n    opacity: 0.8; }\n  .icon.small {\n    width: 20px;\n    height: 20px; }\n  .icon-owner {\n    cursor: pointer; }\n\n.search-bar {\n  background-color: white;\n  border-radius: 8px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .pages {\n    padding: 0 4% 0 6%; }\n    .pages__header__title {\n      font-size: 35px; }\n  .icon {\n    width: 40px;\n    height: 40px; }\n    .icon-owner {\n      cursor: pointer;\n      width: 40px;\n      height: 40px; } }\n", ""]);
 
 // exports
 
@@ -49367,7 +49367,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #F08177; }\n  .main-page__templates {\n    background-color: #FCFBFD;\n    padding: 0 20px;\n    display: flex;\n    min-width: 240px;\n    flex-direction: column;\n    margin-left: 30px;\n    margin-top: 20px;\n    margin-bottom: 20px; }\n    .main-page__templates__title {\n      color: #F08177;\n      margin-top: 12px;\n      font-size: 22px;\n      margin-bottom: 12px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: column; }\n      .main-page__templates__content__scrollable {\n        overflow-x: none;\n        overflow-y: auto;\n        display: flex;\n        flex-direction: column; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n  .main-page__content {\n    display: flex;\n    flex-direction: row;\n    background-color: #D6D7D7; }\n\n.template {\n  display: flex;\n  flex-direction: row;\n  margin-top: 12px;\n  padding: 2px 11px;\n  line-height: 28px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    margin-right: 15px;\n    color: #F08177; }\n  .template__title {\n    color: #515151;\n    text-transform: capitalize;\n    font-size: 18px; }\n  .template:hover {\n    background-color: #D6D7D7; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.template-icon {\n  margin-top: 4px;\n  width: 20px;\n  height: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .template__content {\n    height: 400px;\n    width: 200px; }\n  .template__title {\n    font-size: 25px; }\n  .main-page__templates {\n    padding: 0 4% 0 6%; }\n    .main-page__templates__title {\n      font-size: 35px; } }\n", ""]);
+exports.push([module.i, ".main-page {\n  display: flex;\n  flex-direction: column;\n  color: #F08177; }\n  .main-page__templates {\n    background-color: #FCFBFD;\n    margin: 3px;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0 20px;\n    display: flex;\n    min-width: 240px;\n    flex-direction: column;\n    margin-left: 30px;\n    margin-top: 20px;\n    margin-bottom: 20px; }\n    .main-page__templates__title {\n      color: #F08177;\n      margin-top: 12px;\n      font-size: 22px;\n      margin-bottom: 12px; }\n    .main-page__templates__content {\n      display: flex;\n      flex-direction: column; }\n      .main-page__templates__content__scrollable {\n        overflow-x: none;\n        overflow-y: auto;\n        display: flex;\n        flex-direction: column; }\n        .main-page__templates__content__scrollable::-webkit-scrollbar {\n          display: none; }\n  .main-page__content {\n    display: flex;\n    flex-direction: row;\n    background-color: #D6D7D7; }\n\n.template {\n  display: flex;\n  flex-direction: row;\n  margin-top: 12px;\n  padding: 2px 11px;\n  line-height: 28px; }\n  .template:last-child {\n    margin-right: 0px; }\n  .template__content {\n    margin-right: 15px;\n    color: #F08177; }\n  .template__title {\n    color: #515151;\n    text-transform: capitalize;\n    font-size: 18px; }\n  .template:hover {\n    background-color: #D6D7D7; }\n\n.arrow-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.arrow {\n  width: 50px;\n  height: 50px; }\n\n.template-icon {\n  margin-top: 4px;\n  width: 20px;\n  height: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .template__content {\n    height: 400px;\n    width: 200px; }\n  .template__title {\n    font-size: 25px; }\n  .main-page__templates {\n    padding: 0 4% 0 6%; }\n    .main-page__templates__title {\n      font-size: 35px; } }\n", ""]);
 
 // exports
 
@@ -62363,7 +62363,7 @@ exports.default = TextArea;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var backendUrl = 'https://velox-server.herokuapp.com';
+var backendUrl = 'https://velox-server-usa.herokuapp.com';
 exports.backendUrl = backendUrl;
 var yandexId = '6f0aee3855ce4eee9bf32bf716010d1e';
 exports.yandexId = yandexId;
@@ -62810,9 +62810,7 @@ var Constructor = /** @class */ (function (_super) {
             var _a = _this.state, isStatic = _a.isStatic, isPrivate = _a.isPrivate, currentAction = _a.currentAction, actions = _a.actions, isCustom = _a.isCustom;
             var isNotEditable = !isCustom && actions[currentAction].isNotEditable;
             var type = !isCustom && actions[currentAction].type;
-            return (React.createElement("div", { className: "constructor__menu__checkboxes" },
-                React.createElement(checkbox_1.default, { text: "Private", disabled: isStatic, onClick: function () { return _this.setState({ isPrivate: !isPrivate }); } }),
-                !isCustom && React.createElement(checkbox_1.default, { text: "Static", disabled: isPrivate || isNotEditable, checked: isNotEditable && type !== 'html', onClick: function () { return _this.setState({ isStatic: !isStatic }); } })));
+            return (React.createElement("div", { className: "constructor__menu__checkboxes" }, !isStatic ? React.createElement(checkbox_1.default, { text: "Private", disabled: isStatic, onClick: function () { return _this.setState({ isPrivate: !isPrivate }); } }) : null));
         };
         var action = { name: 'test', items: [] };
         var _a = _this.props, type = _a.type, id = _a.id;
@@ -62929,9 +62927,9 @@ var Constructor = /** @class */ (function (_super) {
             React.createElement("div", { className: "constructor__menu__date" }, this.state.date),
             this._renderCheckboxes(),
             React.createElement("div", { className: "constructor__menu__actions" },
-                React.createElement(button_1.default, { text: "Save", onClick: function () { return _this._savePage(); }, isDisabled: this.state.actions.length === 0 }),
                 React.createElement(react_router_dom_1.Link, { to: "/" },
-                    React.createElement(button_1.default, { text: "Back" }))),
+                    React.createElement(button_1.default, { text: "Back", size: "large" })),
+                React.createElement(button_1.default, { text: "Save QR", onClick: function () { return _this._savePage(); }, isDisabled: this.state.actions.length === 0, size: "large" })),
             this.state.isCustom ?
                 React.createElement(constructor_action_menu_1.default, { actions: this.state.actions, currentAction: this.state.currentAction, saveChanges: function (changes) { return _this.setState(changes); } }) :
                 null));
@@ -62943,13 +62941,13 @@ var Constructor = /** @class */ (function (_super) {
         return (React.createElement(React.Fragment, null,
             React.createElement(header_1.default, { username: this.props.username, logout: this.props.logout }),
             React.createElement("div", { className: "constructor" },
+                this._renderMenu(),
                 actions.length ?
                     React.createElement(constructor_content_1.default, { isNotEditable: isNotEditable, items: actions[currentAction].items, saveChanges: function (changes) {
                             actions[currentAction].items = changes;
                             _this.setState({ actions: actions });
                         } }) :
-                    React.createElement("div", { className: "constructor__empty-content" }),
-                this._renderMenu()),
+                    React.createElement("div", { className: "constructor__empty-content" })),
             notification && React.createElement(notification_1.default, { text: notificationText, type: notification })));
     };
     return Constructor;
@@ -63506,19 +63504,23 @@ var Pages = /** @class */ (function (_super) {
         return (React.createElement("div", { className: "search-bar", onBlur: function () { return _this.setState({ isSearchOpen: searchValue !== '' }); } },
             React.createElement(input_1.default, { size: "larger", isAnimated: true, isFocused: true, placeholder: "Search", value: searchValue, onChange: this.props.onSearchChange })));
     };
+    Pages.prototype._renderStats = function () {
+        var _a = this.props.stats || { users: 0, pages: 0, views: 0 }, users = _a.users, pages = _a.pages, views = _a.views;
+        return (React.createElement("div", { className: "pages__stats" },
+            React.createElement("div", { className: "pages__stats__item _first" },
+                React.createElement("div", { className: "pages__stats__item__count" }, users),
+                React.createElement("div", { className: "pages__stats__item__title" }, "Total users registered")),
+            React.createElement("div", { className: "pages__stats__item _second" },
+                React.createElement("div", { className: "pages__stats__item__count" }, pages),
+                React.createElement("div", { className: "pages__stats__item__title" }, "Total QRs created")),
+            React.createElement("div", { className: "pages__stats__item _third" },
+                React.createElement("div", { className: "pages__stats__item__count" }, views),
+                React.createElement("div", { className: "pages__stats__item__title" }, "Total QRs scanned"))));
+    };
     Pages.prototype.render = function () {
         var _a = this.props, pages = _a.pages, searchValue = _a.searchValue;
         return (React.createElement("div", { className: "pages" },
-            React.createElement("div", { className: "pages__stats" },
-                React.createElement("div", { className: "pages__stats__item _first" },
-                    React.createElement("div", { className: "pages__stats__item__count" }, "100"),
-                    React.createElement("div", { className: "pages__stats__item__title" }, "Total users registered")),
-                React.createElement("div", { className: "pages__stats__item _second" },
-                    React.createElement("div", { className: "pages__stats__item__count" }, "300"),
-                    React.createElement("div", { className: "pages__stats__item__title" }, "Total QRs created")),
-                React.createElement("div", { className: "pages__stats__item _third" },
-                    React.createElement("div", { className: "pages__stats__item__count" }, "1000"),
-                    React.createElement("div", { className: "pages__stats__item__title" }, "Total QRs scanned"))),
+            this._renderStats(),
             React.createElement("div", { className: "pages__header" },
                 React.createElement("div", { className: "pages__header__block" },
                     React.createElement("div", { className: "pages__header__title" }, "Pages"),
@@ -63617,6 +63619,10 @@ function getPages(_a) {
     return request_1.default("/" + params);
 }
 exports.getPages = getPages;
+function getStats() {
+    return request_1.default("/stats");
+}
+exports.getStats = getStats;
 
 
 /***/ }),
@@ -63705,7 +63711,8 @@ var MainPage = /** @class */ (function (_super) {
             isRightArrowShown: true,
             isLeftArrowShown: false,
             searchValue: '',
-            pages: []
+            pages: [],
+            stats: null,
         };
         _this._onSearchChange = function (e) {
             var value = e.target.value;
@@ -63739,6 +63746,7 @@ var MainPage = /** @class */ (function (_super) {
             sort: this._sortValue,
             own: this._ownerType
         }).then(function (pages) { return _this.setState({ pages: pages }); }, function () { return _this.setState({ pages: [] }); }); // error
+        main_provider_1.getStats().then(function (stats) { return _this.setState({ stats: stats }, function () { }); });
     };
     MainPage.prototype._renderTemplate = function (title, type) {
         return (React.createElement(react_router_dom_1.Link, { to: "/new/" + type, className: "template", key: title },
@@ -63763,7 +63771,7 @@ var MainPage = /** @class */ (function (_super) {
             React.createElement(header_1.default, { username: this.props.username, logout: this.props.logout }),
             React.createElement("div", { className: "main-page__content" },
                 this._renderTemplates(),
-                React.createElement(pages_1.default, { pages: this.state.pages, searchValue: this.state.searchValue, onSearchChange: this._onSearchChange, getOwnerType: function (value) {
+                React.createElement(pages_1.default, { pages: this.state.pages, searchValue: this.state.searchValue, onSearchChange: this._onSearchChange, stats: this.state.stats, getOwnerType: function (value) {
                         _this._ownerType = value;
                         _this._getPages();
                     }, getSortValue: function (value) {

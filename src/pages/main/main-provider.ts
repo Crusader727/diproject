@@ -5,3 +5,7 @@ export function getPages({search, sort, own}: {search?: string, sort?: string, o
     const params = qs.stringify({search, sort, own}, {addQueryPrefix: true});
     return request(`/${params}`);
 }
+
+export function getStats() {
+    return request(`/stats`);
+}

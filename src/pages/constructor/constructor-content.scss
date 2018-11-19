@@ -2,64 +2,69 @@
 .constructor__content {
     display: flex;
     flex-direction: column;
-    background-color: $grey;
-    width: 80%;
+    background-color: $prim;
+    width: 78%;
     overflow: auto;
     &__add-item {
         position: relative;
-        margin: 12px;
+        margin: 20px 15% 0 40px;        
         width: auto;
         height: 120px;
         min-height: 120px;
-        color: $yellow;
-        background-color: $dark-grey;
-        border: 1px solid $yellow;
+        color: $peach;
+        background-color: $snow;
+        // border: 2px solid $grey;
         box-sizing: border-box;
-        border-radius: 10px;
+        // border-radius: 10px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.2);
         &:hover {
-            border: 3px solid $yellow;
+            opacity: 0.8;
+            // border: 3px solid $peach;
         }
     }
     &__edit-item {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 12px;
+        margin: 20px 15% 0 40px;
         padding: 12px;
-        background-color: $dark-grey;
-        border-radius: 10px;
-        border: 2px solid $yellow;
+        background-color: $snow;
+        // border-radius: 10px;
+        // border: 3px solid $grey;
+        box-shadow: 0 0 6px rgba(0,0,0,0.2);
         min-height: min-content;
+        color: $peach;
         &__text-wrapper {
-            margin-top: 12px;
+            margin-top: 8px;
         }
         &__content {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             &__title {
-                color: $yellow;
+                color: $peach;
                 font-size: $font-size-large;
             }
         }
     }
     &__item {
+        align-items: center;
         display: flex;
         min-height: min-content;
-        margin: 12px;
-        padding: 12px;
-        background-color: $grey;
-        border-radius: 10px;
+        margin: 20px 15% 0 40px;
+        padding: 10px;
+        background-color: $snow;
+        // border-radius: 10px;
         font-family: $font-size-large;
-        border: 2px solid $yellow;
-        color: $white;
+        box-shadow: 0 0 6px rgba(0,0,0,0.2);
+        // border: 2px solid $peach;
+        color: $grey;
         word-wrap: break-word;
         &__title {
             margin-right: 10px;
-            margin-bottom: 10px;
         }
         &:hover {
-            border: 3px solid $yellow;
+            opacity: 0.8;
         }
     }
 }
