@@ -49386,7 +49386,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: #2d2d2d;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #515151;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #ffd900;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #ffd900;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 22px;\n    color: #ffd900;\n    margin-bottom: 20px; }\n  .qr__content {\n    display: flex;\n    flex-direction: column;\n    font-size: 18px;\n    color: #ffd900;\n    max-width: 50%;\n    overflow: auto; }\n    .qr__content__item {\n      display: flex;\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #515151;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: white; }\n      .qr__content__item__title {\n        color: #ffd900;\n        margin-right: 8px;\n        word-wrap: none;\n        white-space: nowrap; }\n      .qr__content__item__content {\n        max-width: fit-content;\n        color: white;\n        word-wrap: break-word; }\n  .qr__menu {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    color: #ffd900;\n    justify-content: center;\n    align-items: center;\n    background-color: #515151; }\n    .qr__menu__content {\n      display: flex;\n      flex-direction: column;\n      width: 40%;\n      background-color: #2d2d2d;\n      border-radius: 10px;\n      overflow: auto; }\n    .qr__menu__item {\n      min-height: min-content;\n      margin: 12px;\n      padding: 12px;\n      background-color: #2d2d2d;\n      border-radius: 10px;\n      font-family: 18px;\n      border: 2px solid #ffd900;\n      color: #ffd900;\n      text-align: center; }\n  .qr__back-button {\n    position: fixed;\n    top: 0;\n    left: 0;\n    min-height: min-content;\n    margin: 12px;\n    padding: 12px;\n    background-color: #2d2d2d;\n    border-radius: 10px;\n    font-family: 18px;\n    border: 2px solid #ffd900;\n    color: #ffd900; }\n\n.qr__push-succsessfull {\n  font-size: 22px;\n  color: #ffd900;\n  margin-bottom: 20px; }\n\n.qr__push-error {\n  font-size: 22px;\n  color: red;\n  margin-bottom: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .qr__push-succsessfull {\n    font-size: 60px; }\n  .qr__push-error {\n    font-size: 60px; }\n  .qr__title {\n    font-size: 60px; }\n  .qr__content {\n    max-width: 90%; }\n  .qr__content__item__content {\n    font-size: 40px; }\n  .qr__content__item__title {\n    font-size: 40px; }\n  .qr__menu__item {\n    margin: 30px;\n    font-size: 40px; }\n  .qr__menu__content {\n    width: 70%; } }\n", ""]);
+exports.push([module.i, ".qr {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  background-color: #D6D7D7;\n  height: 100%;\n  width: 100%; }\n  .qr__not-found {\n    display: flex;\n    flex-direction: column;\n    background-color: #D6D7D7;\n    justify-content: center;\n    align-items: center;\n    height: 100vh; }\n    .qr__not-found__404 {\n      color: #F08177;\n      font-size: 30vh; }\n    .qr__not-found__text {\n      color: #515151;\n      font-size: 22px; }\n  .qr__html {\n    height: 100%; }\n  .qr__title {\n    font-size: 35px;\n    color: #F08177;\n    margin-top: 30px;\n    margin-bottom: 30px; }\n  .qr__custom {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    color: #F08177;\n    align-items: center;\n    background-color: #D6D7D7; }\n    .qr__custom__content {\n      display: flex;\n      flex-direction: row;\n      width: 80%;\n      height: 80%;\n      justify-content: center;\n      flex-wrap: wrap;\n      overflow: auto; }\n      .qr__custom__content__item {\n        background-color: #FCFBFD;\n        width: max-content;\n        height: max-content;\n        margin: 12px;\n        padding: 20px;\n        text-align: center; }\n        .qr__custom__content__item__title {\n          color: #F08177; }\n        .qr__custom__content__item__text {\n          color: #515151; }\n  .qr__menu {\n    height: 100%;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    color: #F08177;\n    align-items: center;\n    background-color: #D6D7D7; }\n    .qr__menu__content {\n      display: flex;\n      flex-direction: row;\n      width: 80%;\n      height: 80%;\n      justify-content: center;\n      flex-wrap: wrap;\n      overflow: auto; }\n    .qr__menu__item {\n      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n      margin: 12px;\n      padding: 12px;\n      width: 20%;\n      height: 25%;\n      background-color: #FCFBFD;\n      font-family: 22px;\n      color: #515151;\n      text-align: center; }\n  .qr__back-button {\n    position: fixed;\n    top: 0;\n    left: 0;\n    min-height: min-content;\n    margin: 20px;\n    padding: 12px;\n    background-color: #FCFBFD;\n    font-size: 25px;\n    color: #F08177; }\n  .qr__template-icon {\n    width: 40%;\n    height: 40%;\n    color: #F08177; }\n\n.qr__push-succsessfull {\n  display: flex;\n  justify-content: center;\n  font-size: 22px;\n  color: #515151;\n  margin-bottom: 20px; }\n\n.qr__push-error {\n  display: flex;\n  justify-content: center;\n  font-size: 22px;\n  color: #F08177;\n  margin-bottom: 20px; }\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  .qr__push-succsessfull {\n    font-size: 60px; }\n  .qr__push-error {\n    font-size: 60px; }\n  .qr__title {\n    font-size: 60px; }\n  .qr__content {\n    max-width: 90%; }\n  .qr__content__item__content {\n    font-size: 40px; }\n  .qr__content__item__title {\n    font-size: 40px; }\n  .qr__menu__item {\n    margin: 30px;\n    font-size: 25px;\n    width: 40%;\n    height: 200px; }\n  .qr__menu__content {\n    width: 90%;\n    height: 90%; } }\n", ""]);
 
 // exports
 
@@ -63867,6 +63867,7 @@ var React = __webpack_require__(/*! react */ "react");
 var qr_provider_1 = __webpack_require__(/*! ./qr-provider */ "./src/pages/qr/qr-provider.ts");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 var static_qr_gens_1 = __webpack_require__(/*! pages/main/components/static-qr-gens */ "./src/pages/main/components/static-qr-gens.ts");
+var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/es/react-svg.js");
 var Qr = /** @class */ (function (_super) {
     __extends(Qr, _super);
     function Qr() {
@@ -63894,9 +63895,9 @@ var Qr = /** @class */ (function (_super) {
         qr_provider_1.sendPush(this.props.id).then(function () { return _this.setState({ isSuccessfullPush: true }); }, function () { return _this.setState({ isSuccessfullPush: false }); });
     };
     Qr.prototype._renderItem = function (name, value, index) {
-        return (React.createElement("div", { key: index, className: "qr__content__item" },
-            React.createElement("div", { className: "qr__content__item__title" }, name ? name + ':' : ''),
-            React.createElement("div", { className: "qr__content__item__content" }, value)));
+        return (React.createElement("div", { key: index, className: "qr__custom__content__item" },
+            React.createElement("div", { className: "qr__custom__content__item__title" }, name),
+            React.createElement("div", { className: "qr__custom__content__item__text" }, value)));
     };
     Qr.prototype._render404 = function () {
         return (React.createElement("div", { className: "qr__not-found" },
@@ -63912,18 +63913,22 @@ var Qr = /** @class */ (function (_super) {
         var title = page.title, fieldsNames = page.fieldsNames, fieldsValues = page.fieldsValues;
         var menuID = this.state.menuID;
         return (React.createElement("div", { className: "qr" },
-            React.createElement("div", { className: "qr__title" },
+            React.createElement("div", { className: "qr__custom" },
+                React.createElement("div", { className: "qr__title" }, title),
                 menuID ?
                     React.createElement(react_router_dom_1.Link, { to: "/qr/" + menuID, className: "qr__back-button" }, "Back") :
                     null,
-                title),
-            React.createElement("div", { className: "qr__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); }))));
+                React.createElement("div", { className: "qr__custom__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); })))));
     };
     Qr.prototype._renderMenuItem = function (el, index) {
         if (el.template === 'custom' || el.template === 'push') {
-            return (React.createElement(react_router_dom_1.Link, { to: '/qr/' + el.uuid, className: "qr__menu__item", key: index }, el.title));
+            return (React.createElement(react_router_dom_1.Link, { to: '/qr/' + el.uuid, className: "qr__menu__item", key: index },
+                el.template === 'push' ? React.createElement(react_svg_1.default, { src: "/icons/templates/" + el.template + ".svg", svgClassName: "qr__template-icon", tabIndex: 0 }) : null,
+                el.title));
         }
-        return (React.createElement("a", { href: static_qr_gens_1.default[el.template](el.fieldsValues), className: "qr__menu__item", key: index }, el.title));
+        return (React.createElement("a", { href: static_qr_gens_1.default[el.template](el.fieldsValues), className: "qr__menu__item", key: index },
+            React.createElement(react_svg_1.default, { src: "/icons/templates/" + el.template + ".svg", svgClassName: "qr__template-icon", tabIndex: 0 }),
+            el.title));
     };
     Qr.prototype._renderMenu = function () {
         var page = this.state.page;
@@ -63945,7 +63950,7 @@ var Qr = /** @class */ (function (_super) {
         }
         var text = isSuccessfullPush ?
             'Push was successfully sent' :
-            'Error: Push was not send, user didn`t get yor message';
+            'Error: Push was not send, user didn`t get your message';
         return (React.createElement("div", { className: "qr" },
             React.createElement("div", { className: 'qr__push-' + (isSuccessfullPush ? 'succsessfull' : 'error') },
                 menuID ?

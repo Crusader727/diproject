@@ -5,7 +5,7 @@ import PageFull from 'types/PageFull';
 import {getQr, sendPush} from './qr-provider';
 import {Link} from 'react-router-dom';
 import StaticQrGens from 'pages/main/components/static-qr-gens';
-import Loader from 'components/loader/loader';
+import ReactSVG from 'react-svg';
 
 interface Props {
     id: string
@@ -51,11 +51,11 @@ export default class Qr extends React.Component<Props> {
 
     private _renderItem(name: string, value: string, index: number) {
         return (
-            <div key={index} className="qr__content__item">
-                <div className="qr__content__item__title">
-                    {name ? name + ':' : ''}
+            <div key={index} className="qr__custom__content__item">
+                <div className="qr__custom__content__item__title">
+                    {name}
                 </div>
-                <div className="qr__content__item__content">
+                <div className="qr__custom__content__item__text">
                     {value}
                 </div>
             </div>
@@ -94,17 +94,19 @@ export default class Qr extends React.Component<Props> {
         const {menuID} = this.state;
         return (
             <div className="qr">
-                <div className="qr__title">
+                <div className="qr__custom">
+                    <div className="qr__title">
+                        {title}
+                    </div>
                     {menuID ?
                         <Link to={`/qr/${menuID}`} className="qr__back-button">
                             Back
                         </Link> :
                         null
                     }
-                    {title}
-                </div>
-                <div className="qr__content">
-                    {fieldsNames.map((name, index) => this._renderItem(name, fieldsValues[index], index))}
+                    <div className="qr__custom__content">
+                        {fieldsNames.map((name, index) => this._renderItem(name, fieldsValues[index], index))}
+                    </div>
                 </div>
            </div>
         );
@@ -114,12 +116,24 @@ export default class Qr extends React.Component<Props> {
         if (el.template === 'custom' || el.template === 'push') {
             return (
                 <Link to={'/qr/' + el.uuid} className="qr__menu__item" key={index}>
+                    { el.template === 'push' ? <ReactSVG
+                        src={`/icons/templates/${el.template}.svg`}
+                        svgClassName="qr__template-icon"
+                        tabIndex={0}
+                    /> : null}
                     {el.title}
                 </Link>
             );
         }
         return (
-            <a href={StaticQrGens[el.template](el.fieldsValues)} className="qr__menu__item" key={index}>{el.title}</a>
+            <a href={StaticQrGens[el.template](el.fieldsValues)} className="qr__menu__item" key={index}>
+                <ReactSVG
+                    src={`/icons/templates/${el.template}.svg`}
+                    svgClassName="qr__template-icon"
+                    tabIndex={0}
+                />
+                {el.title}
+            </a>
         );
     }
 
@@ -132,7 +146,7 @@ export default class Qr extends React.Component<Props> {
             return (
                 <div className="qr__menu">
                     <div className="qr__title">
-                            {page.title}
+                        {page.title}
                     </div>
                     <div className="qr__menu__content">
                         {page.innerPages.map(this._renderMenuItem)}   
@@ -151,7 +165,7 @@ export default class Qr extends React.Component<Props> {
         }
         const text = isSuccessfullPush ?
             'Push was successfully sent' :
-            'Error: Push was not send, user didn`t get yor message'; 
+            'Error: Push was not send, user didn`t get your message'; 
         return (
             <div className="qr">
                 <div className={'qr__push-' + (isSuccessfullPush ? 'succsessfull' : 'error')}>
