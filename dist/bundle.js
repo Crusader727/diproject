@@ -62487,7 +62487,7 @@ var react_svg_1 = __webpack_require__(/*! react-svg */ "./node_modules/react-svg
 var input_1 = __webpack_require__(/*! components/input/input */ "./src/components/input/input.tsx");
 var dropdown_1 = __webpack_require__(/*! components/dropdown/dropdown */ "./src/components/dropdown/dropdown.tsx");
 var items_1 = __webpack_require__(/*! ./views/items */ "./src/pages/constructor/views/items.ts");
-var ActionMenuTypes = ['custom', 'telephone', 'ylocation', 'url', 'email', 'whatsapp', 'push'];
+var ActionMenuTypes = ['custom', 'telephone', 'ylocation', 'url', 'email', 'whatsapp', 'push', 'html'];
 var ConstructorActionMenu = /** @class */ (function (_super) {
     __extends(ConstructorActionMenu, _super);
     function ConstructorActionMenu() {
@@ -63921,9 +63921,9 @@ var Qr = /** @class */ (function (_super) {
                 React.createElement("div", { className: "qr__custom__content" }, fieldsNames.map(function (name, index) { return _this._renderItem(name, fieldsValues[index], index); })))));
     };
     Qr.prototype._renderMenuItem = function (el, index) {
-        if (el.template === 'custom' || el.template === 'push') {
+        if (el.template === 'custom' || el.template === 'push' || el.template === 'html') {
             return (React.createElement(react_router_dom_1.Link, { to: '/qr/' + el.uuid, className: "qr__menu__item", key: index },
-                el.template === 'push' ? React.createElement(react_svg_1.default, { src: "/icons/templates/" + el.template + ".svg", svgClassName: "qr__template-icon", tabIndex: 0 }) : null,
+                el.template === 'push' || el.template === 'html' ? React.createElement(react_svg_1.default, { src: "/icons/templates/" + el.template + ".svg", svgClassName: "qr__template-icon", tabIndex: 0 }) : null,
                 el.title));
         }
         return (React.createElement("a", { href: static_qr_gens_1.default[el.template](el.fieldsValues), className: "qr__menu__item", key: index },

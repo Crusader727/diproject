@@ -113,10 +113,10 @@ export default class Qr extends React.Component<Props> {
     }
 
     private _renderMenuItem(el: PageCut, index: number): React.ReactNode {
-        if (el.template === 'custom' || el.template === 'push') {
+        if (el.template === 'custom' || el.template === 'push' || el.template === 'html') {
             return (
                 <Link to={'/qr/' + el.uuid} className="qr__menu__item" key={index}>
-                    { el.template === 'push' ? <ReactSVG
+                    { el.template === 'push' || el.template === 'html' ? <ReactSVG
                         src={`/icons/templates/${el.template}.svg`}
                         svgClassName="qr__template-icon"
                         tabIndex={0}
