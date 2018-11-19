@@ -128,10 +128,10 @@
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .qr__push-succsessfull {
-        font-size: 60px;
+        font-size: 40px;
     }
     .qr__push-error {
-        font-size: 60px;
+        font-size: 40px;
     }
     .qr__title {
         font-size: 60px;
@@ -154,5 +154,11 @@
     .qr__menu__content {
         width: 90%;
         height: 90%;
+    }
+    .qr__back-button {
+        font-size: 50px;
+    }
+    .qr__custom {
+        font-size: 30px;
     }
 }
