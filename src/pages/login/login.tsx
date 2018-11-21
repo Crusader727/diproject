@@ -133,7 +133,7 @@ export default class Login extends React.Component<Props> {
                             </div>
                         </div>
                         <div className="login__content__singins__title">
-                            Sign in to try it out
+                            Try it out
                         </div>
                         <div className="login__content__singins">
                             <Button
@@ -153,7 +153,7 @@ export default class Login extends React.Component<Props> {
                                 }
                             />
                             <Button
-                                text="Sign in with Vkontakte" 
+                                text="Sign in with VK" 
                                 icon="oauth/vk"
                                 size="large"
                                 onClick={() =>

@@ -66,13 +66,14 @@
             }
         }
         &__singins {
-            margin-top: 20px;
+            margin-top: 40px;
             display: flex;
             flex-direction: row;
             width: 55%;
             justify-content: space-between;
             &__title {
                 color: $grey;
+                font-weight: bold;
                 font-size: 22px;
                 margin-top: 40px;
             }
