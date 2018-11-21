@@ -121,16 +121,18 @@ export default class ConstructorContent extends React.Component<Props> {
                         {secondfield}
                     </div>
                 </div>
-                {!this.props.isNotEditable ? <ReactSVG
-                    src={`/icons/delete.svg`}
-                    svgClassName="close"
-                    onClick={() => this._deleteItem(index)}
-                /> : null}
                 <ReactSVG
                     src={`/icons/close.svg`}
                     svgClassName="close"
                     onClick={() => this._openEditor()}
+                    title="Close"
                 />
+                {!this.props.isNotEditable ? <ReactSVG
+                    src={`/icons/delete.svg`}
+                    svgClassName="close"
+                    onClick={() => this._deleteItem(index)}
+                    title="Delete"
+                />: null}
             </div>
         );
     }

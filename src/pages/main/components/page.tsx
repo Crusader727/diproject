@@ -67,7 +67,7 @@ export default class Page extends React.Component<PageCut> {
         const formatedDate = Math.ceil(Math.abs(now.getTime() - date.getTime()) / (1000 * 3600)) > 24 ?
             date.toDateString() :
             'Today at ' + date.toLocaleTimeString();
-        const smallIcon = isStatic || template === 'html' || template === 'push' ?
+        const smallIcon = isStatic || template === 'html' || template === 'push' || template === 'custom' ?
             template : !isPublic ? 'private' : null;
         return (
             <div className="page">

@@ -12,6 +12,7 @@
         height: 120px;
         min-height: 120px;
         color: $peach;
+        color: $dark-grey;
         background-color: $snow;
         // border: 2px solid $grey;
         box-sizing: border-box;
@@ -19,6 +20,7 @@
         box-shadow: 0 0 6px rgba(0,0,0,0.2);
         &:hover {
             opacity: 0.8;
+            cursor: pointer;
             // border: 3px solid $peach;
         }
     }
@@ -42,7 +44,7 @@
             display: flex;
             flex-direction: column;
             &__title {
-                color: $peach;
+                color: $dark-grey;
                 font-size: $font-size-large;
             }
         }
@@ -65,6 +67,7 @@
         }
         &:hover {
             opacity: 0.8;
+            cursor: pointer;
         }
     }
 }

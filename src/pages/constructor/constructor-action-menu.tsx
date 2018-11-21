@@ -70,8 +70,8 @@ export default class ConstructorActionMenu extends React.Component<Props> {
                     value={action.name}
                     onChange={this._handleActionNameChange}
                 />
-                <DropDown onClick={this._handleActionTypeChange} items={ActionMenuTypes}>
-                    Type: {action.type}
+                <DropDown onClick={this._handleActionTypeChange} items={ActionMenuTypes} showChosen>
+                    Type
                 </DropDown>
                 <ReactSVG
                     src={`/icons/delete.svg`}
@@ -95,12 +95,16 @@ export default class ConstructorActionMenu extends React.Component<Props> {
                 <div className="constructor__action-menu__content__item__name">
                     {action.name}
                 </div>
-                Type: {action.type}
-                <ReactSVG
-                    src={`/icons/delete.svg`}
-                    svgClassName="constructor__action-menu__content__icon"
-                    onMouseDown={() => this._deleteAction(index)}
-                />
+                <div className="constructor__action-menu__content__item__right-block">
+                    <div className="constructor__action-menu__content__item__right-block__type">
+                        Type: {action.type}
+                    </div>
+                    <ReactSVG
+                        src={`/icons/delete.svg`}
+                        svgClassName="constructor__action-menu__content__icon"
+                        onMouseDown={() => this._deleteAction(index)}
+                    />
+                </div>   
             </div>
         );
     }

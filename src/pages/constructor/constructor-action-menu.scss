@@ -15,22 +15,36 @@
         overflow: auto;
         margin-top: 12px;
         min-height: 300px;
+        padding: 4px;
         &__item {
             display: flex;
             flex-direction: row;
+            align-items: center;
             min-height: min-content;
             padding: 4px 12px;
-            color: $peach;
+            color: $grey;
             font-size: $font-size-normal;
-            border: 2px solid $grey;
+            // border: 2px solid $grey;
+            box-shadow: 0 0 6px rgba(0,0,0,0.3);
             box-sizing: border-box;
             // border-radius: 20px;
             line-height: 31px;
             margin-bottom: 12px;
             justify-content: space-between;
             opacity: 1;
+            &:hover {
+                cursor: pointer;
+            }
             &__name {
                 margin-left: 8px;
+            }
+            &__right-block {
+                display: flex;
+                flex-direction: row;
+                &__type {
+                    margin-top: 2px;
+                    margin-right: 8px;
+                }
             }
             &:hover {
                 opacity: 0.8;
@@ -39,13 +53,13 @@
         &__edit-item {
             display: flex;
             min-height: min-content;
+            align-items: center;
             flex-direction: row;
             height: 31px;
             padding: 8px;
             color: $grey;
             font-size: $font-size-normal;
-            border: 3px solid $peach;
-            // border-radius: 20px;
+            border: 2px solid $grey;
             line-height: 31px;
             margin-bottom: 12px;
             justify-content: space-between;
@@ -59,11 +73,12 @@
             padding: 4px;
             color: $peach;
             box-sizing: border-box;
-            border: 2px solid $grey;
+            box-shadow: 0 0 6px rgba(0,0,0,0.3);
             // border-radius: 20px;
             opacity: 1;
             &:hover {
                 opacity: 0.8;
+                cursor: pointer;
             }
         }
         &__icon {

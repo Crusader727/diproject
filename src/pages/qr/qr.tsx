@@ -116,11 +116,11 @@ export default class Qr extends React.Component<Props> {
         if (el.template === 'custom' || el.template === 'push' || el.template === 'html') {
             return (
                 <Link to={'/qr/' + el.uuid} className="qr__menu__item" key={index}>
-                    { el.template === 'push' || el.template === 'html' ? <ReactSVG
+                    <ReactSVG
                         src={`/icons/templates/${el.template}.svg`}
                         svgClassName="qr__template-icon"
                         tabIndex={0}
-                    /> : null}
+                    />
                     {el.title}
                 </Link>
             );
@@ -165,7 +165,7 @@ export default class Qr extends React.Component<Props> {
         }
         const text = isSuccessfullPush ?
             'Push was successfully sent' :
-            'Error: Push was not send, user didn`t get your message'; 
+            'Error: Push was not sent, user didn`t get your message'; 
         return (
             <div className="qr">
                 <div className={'qr__push-' + (isSuccessfullPush ? 'succsessfull' : 'error')}>

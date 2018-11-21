@@ -34,7 +34,7 @@ export default class Pages extends React.Component<Props> {
         {icon: string, items: any[], onClick: (value: string) => void, className?: string})
     : React.ReactNode {
         return (
-            <DropDown items={items} onClick={onClick}>
+            <DropDown items={items} onClick={onClick} showChosen>
                 <ReactSVG
                     src={`/icons/${icon}.svg`}
                     svgClassName={"icon" + (className ? `-${className}` : '')}
@@ -57,7 +57,7 @@ export default class Pages extends React.Component<Props> {
         return (
             <div className="search-bar" onBlur={() => this.setState({isSearchOpen: searchValue !== ''})}>
                 <Input
-                    size="larger"
+                    size="large"
                     isAnimated
                     isFocused
                     placeholder="Search"

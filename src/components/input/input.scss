@@ -4,13 +4,17 @@
     color: $dark-grey;
     box-sizing: border-box;
     height: 30px;
-    border: 1px solid $peach;
+    // border: 1px solid $peach;
+    border: 1px solid transparent;
+    border-top: none;
+    border-bottom: 1px solid #DDD;
+    box-shadow: $box-shadow;
     background-color: $snow;
     font-size: $font-size-normal;
-    // border-radius: 4px;
     animation-duration: 1s;
+    padding-left: 6px; 
     &:focus {
-        border-width: 2px;
+        // border-width: 2px;
     }
     &.size-small {
         width: 100px;

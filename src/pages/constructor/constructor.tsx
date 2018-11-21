@@ -196,6 +196,9 @@ export default class Constructor extends React.Component<Props, State> {
     private _renderMenu(): React.ReactNode {
         return (
             <div className="constructor__menu">
+                <div className="constructor__menu__title">
+                    Title
+                </div>
                 <Input
                     size="medium"
                     placeholder="Document Title"
@@ -206,12 +209,6 @@ export default class Constructor extends React.Component<Props, State> {
                     {this.state.date}
                 </div>
                 {this._renderCheckboxes()}
-                <div className="constructor__menu__actions">
-                    <Link to="/">
-                        <Button text="Back" size="large"/>
-                    </Link>
-                    <Button text="Save QR" onClick={() => this._savePage()} isDisabled={this.state.actions.length === 0} size="large"/>
-                </div>
                 {this.state.isCustom ?
                     <ConstructorActionMenu
                         actions={this.state.actions}
@@ -220,6 +217,13 @@ export default class Constructor extends React.Component<Props, State> {
                     /> :
                     null
                 }
+                <div className="constructor__menu__actions">
+                    <Link to="/">
+                        <Button text="Back" size="large"/>
+                    </Link>
+                    <Button text="Save QR" onClick={() => this._savePage()} isDisabled={this.state.actions.length === 0} size="large"/>
+                </div>
+                
             </div>
         );
     }

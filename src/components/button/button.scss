@@ -5,7 +5,7 @@
     font-size: $font-size-normal;
     text-transform: uppercase;
     display: inline-block;
-    background: linear-gradient(45deg, $peach, #ffd900);
+    background: linear-gradient(45deg, $peach, #ffc400);
     opacity: 1;
     cursor: pointer;
     padding: 4px 8px;    
@@ -13,6 +13,9 @@
     flex-direction: row;
     align-items: center;
     color: $snow;
+    border-radius: 3px;
+    box-shadow: 0 24px 36px -11px rgba(0,0,0,.1);
+    font-weight: 450;
     &:hover {
         opacity: 0.9;
     }

@@ -12,11 +12,16 @@
         margin: 20px 3px 20px 30px;
         width: 22%;
         padding: 12px;
+        &__title {
+            color: $dark-grey;
+            font-size: $font-size-larger;
+            margin-bottom: 5px;
+        }
         &__actions {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 0 30px 0 0;
+            padding: 10px 0 0 0;
         }
         &__checkboxes {
             display: flex;
@@ -47,13 +52,14 @@
 }
 
 .close {
-    color: $peach;
+    color: $dark-grey;
     margin-top: -7px;
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     opacity: 1;
     margin-right: 5px;
     &:hover {
         opacity: 0.8;
+        cursor: pointer;
     }
 }
