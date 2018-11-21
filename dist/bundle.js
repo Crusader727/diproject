@@ -63190,14 +63190,14 @@ var Login = /** @class */ (function (_super) {
     Login.prototype.componentDidMount = function () {
         var _this = this;
         var params = qs.parse(this.props.hash.slice(1), { ignoreQueryPrefix: true });
-        var access_token = params.access_token, error = params.error;
+        var access_token = params.access_token, error = params.error, user_id = params.user_id;
         var service = this.props.service;
         if (access_token) {
             this.setState({ isLoading: true });
-            login_provider_1.sendToken(access_token, service).then(function () {
+            login_provider_1.sendToken(service === 'vk' ? user_id : access_token, service).then(function () {
                 _this.setState({ isLoading: false });
                 _this.props.loginFunction();
-            }, function () { return _this.setState({ isLoading: false }); } //error
+            }, function () { return _this.setState({ isLoading: false }); } // TODO error
             );
         }
     };

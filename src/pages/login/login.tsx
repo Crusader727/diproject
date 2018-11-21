@@ -38,16 +38,16 @@ export default class Login extends React.Component<Props> {
     }
     componentDidMount() {
         const params = qs.parse(this.props.hash.slice(1), {ignoreQueryPrefix: true});
-        const {access_token, error} = params;
+        const {access_token, error, user_id} = params;
         const {service} = this.props;
         if (access_token) {
             this.setState({isLoading: true})
-            sendToken(access_token, service).then(
+            sendToken(service === 'vk' ? user_id : access_token, service).then(
                 () => {
                     this.setState({isLoading: false});
                     this.props.loginFunction();
                 },
-                () => this.setState({isLoading: false})//error
+                () => this.setState({isLoading: false})// TODO error
             );
         }
     }
