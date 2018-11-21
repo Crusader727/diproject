@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as qs from 'qs';
 import ReactSVG from 'react-svg';
 import {sendToken} from './login-provider';
-import {yandexId, googleId} from 'core/config/config';
+import {yandexId, googleId, vkId} from 'core/config/config';
 import Loader from 'components/loader/loader';
 import Button from 'components/button/button';
 
@@ -26,6 +26,9 @@ const services = [{
         // 'scope=https://www.googleapis.com/auth/userinfo.email&include_granted_scopes=true&' +
         // 'state=state_parameter_passthrough_value&'+
         // 'redirect_uri=http://localhost:8000/login/google&response_type=token&client_id=' + googleId
+    }, {
+        name: 'vk',
+        url: `https://oauth.vk.com/authorize?client_id=${vkId}&redirect_uri=https://velox-qr.herokuapp.com/login/vk&response_type=token&v=5.92`
     }
 ]
 
@@ -135,7 +138,7 @@ export default class Login extends React.Component<Props> {
                         <div className="login__content__singins">
                             <Button
                                 text="Sign in with Google" 
-                                icon="/oauth/google"
+                                icon="oauth/google"
                                 size="large"
                                 onClick={() =>
                                     {window.open(services[1].url, "_self")}
@@ -143,10 +146,18 @@ export default class Login extends React.Component<Props> {
                             />
                             <Button
                                 text="Sign in with Yandex" 
-                                icon="/oauth/yandex"
+                                icon="oauth/yandex"
                                 size="large"
                                 onClick={() =>
                                     {window.open(services[0].url, "_self")}
+                                }
+                            />
+                            <Button
+                                text="Sign in with Vkontakte" 
+                                icon="oauth/vk"
+                                size="large"
+                                onClick={() =>
+                                    {window.open(services[2].url, "_self")}
                                 }
                             />
                         </div>
