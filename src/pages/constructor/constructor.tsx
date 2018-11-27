@@ -59,7 +59,7 @@ export default class Constructor extends React.Component<Props, State> {
         let action: Action = {name: 'test', items: []};
         const {type, id} = this.props;
         if (type && CommonItems[type]) {
-            action.items = CommonItems[type].items;
+            action.items = CommonItems[type].getItems();
             action.isNotEditable = CommonItems[type].isNotEditable;
             action.type = type;
         }

@@ -52,54 +52,54 @@ const contactItems: Item[] = [
     {name: 'Notes', value: '', isEditing: false},
 ];
 
-const Items: Record<string, {items: Item[], isNotEditable: boolean}> = {
+const Items: Record<string, {getItems: () => Item[], isNotEditable: boolean}> = {
     'wifi': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(wifiItems))
+        getItems: () => JSON.parse(JSON.stringify(wifiItems))
     },
     'telephone': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(telephoneItems))
+        getItems: () => JSON.parse(JSON.stringify(telephoneItems))
     },
     'sms': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(smsItems))
+        getItems: () => JSON.parse(JSON.stringify(smsItems))
     },
     'event': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(eventItems))
+        getItems: () => JSON.parse(JSON.stringify(eventItems))
     },
     'ylocation': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(ylocationItems))
+        getItems: () => JSON.parse(JSON.stringify(ylocationItems))
     },
     'html': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(htmlItems))
+        getItems: () => JSON.parse(JSON.stringify(htmlItems))
     },
     'url': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(urlItems))
+        getItems: () => JSON.parse(JSON.stringify(urlItems))
     },
     'email': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(emailItems))
+        getItems: () => JSON.parse(JSON.stringify(emailItems))
     },
     'contact': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(contactItems))
+        getItems: () => JSON.parse(JSON.stringify(contactItems))
     },
     'custom': { // :(
         isNotEditable: false,
-        items: []
+        getItems: () => []
     },
     'whatsapp': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(telephoneItems))
+        getItems: () => JSON.parse(JSON.stringify(telephoneItems))
     },
     'push': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(pushItems))
+        getItems: () => JSON.parse(JSON.stringify(pushItems))
     }
 }
 

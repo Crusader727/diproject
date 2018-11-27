@@ -62502,7 +62502,7 @@ var ConstructorActionMenu = /** @class */ (function (_super) {
         _this._handleActionTypeChange = function (type) {
             var _a = _this.props, actions = _a.actions, currentAction = _a.currentAction;
             actions[currentAction].type = type;
-            actions[currentAction].items = items_1.default[type].items;
+            actions[currentAction].items = items_1.default[type].getItems();
             actions[currentAction].isNotEditable = items_1.default[type].isNotEditable;
             _this.props.saveChanges({ actions: actions });
         };
@@ -62817,7 +62817,7 @@ var Constructor = /** @class */ (function (_super) {
         var action = { name: 'test', items: [] };
         var _a = _this.props, type = _a.type, id = _a.id;
         if (type && items_1.default[type]) {
-            action.items = items_1.default[type].items;
+            action.items = items_1.default[type].getItems();
             action.isNotEditable = items_1.default[type].isNotEditable;
             action.type = type;
         }
@@ -63024,51 +63024,51 @@ var contactItems = [
 var Items = {
     'wifi': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(wifiItems))
+        getItems: function () { return JSON.parse(JSON.stringify(wifiItems)); }
     },
     'telephone': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(telephoneItems))
+        getItems: function () { return JSON.parse(JSON.stringify(telephoneItems)); }
     },
     'sms': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(smsItems))
+        getItems: function () { return JSON.parse(JSON.stringify(smsItems)); }
     },
     'event': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(eventItems))
+        getItems: function () { return JSON.parse(JSON.stringify(eventItems)); }
     },
     'ylocation': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(ylocationItems))
+        getItems: function () { return JSON.parse(JSON.stringify(ylocationItems)); }
     },
     'html': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(htmlItems))
+        getItems: function () { return JSON.parse(JSON.stringify(htmlItems)); }
     },
     'url': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(urlItems))
+        getItems: function () { return JSON.parse(JSON.stringify(urlItems)); }
     },
     'email': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(emailItems))
+        getItems: function () { return JSON.parse(JSON.stringify(emailItems)); }
     },
     'contact': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(contactItems))
+        getItems: function () { return JSON.parse(JSON.stringify(contactItems)); }
     },
     'custom': {
         isNotEditable: false,
-        items: []
+        getItems: function () { return []; }
     },
     'whatsapp': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(telephoneItems))
+        getItems: function () { return JSON.parse(JSON.stringify(telephoneItems)); }
     },
     'push': {
         isNotEditable: true,
-        items: JSON.parse(JSON.stringify(pushItems))
+        getItems: function () { return JSON.parse(JSON.stringify(pushItems)); }
     }
 };
 exports.default = Items;

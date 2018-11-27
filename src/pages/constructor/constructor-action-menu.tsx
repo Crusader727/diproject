@@ -25,7 +25,7 @@ export default class ConstructorActionMenu extends React.Component<Props> {
     private _handleActionTypeChange = (type: string) => {
         const {actions, currentAction} = this.props;
         actions[currentAction].type = type;
-        actions[currentAction].items = CommonItems[type].items;
+        actions[currentAction].items = CommonItems[type].getItems();
         actions[currentAction].isNotEditable = CommonItems[type].isNotEditable;
         this.props.saveChanges({actions});
     }
